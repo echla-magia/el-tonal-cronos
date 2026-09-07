@@ -1366,7 +1366,7 @@ function render(tipo){
     const rels=DB.rels.filter(r=>r.subject===id||r.object===id);
     document.getElementById('app').innerHTML=`<div class="grid grid2">
       <div class="lateral">
-        ${o.img&&o.img!=='#'?`<div style="width:170px;height:170px;border-radius:14px;overflow:hidden;background:#fff;margin-bottom:12px;display:flex;align-items:center;justify-content:center;border:2px solid #C79227"><img src="/cronos/img/${o.img.split('/').pop()}" alt="${o.name}" style="max-width:100%;max-height:100%;object-fit:contain" onerror="this.parentNode.innerHTML=String.fromCharCode(60)+'div style=font-size:56px;color:#C79227>'+(o.name||'?')[0]+'</div>'+String.fromCharCode(62)"</div>`:`<div style="font-size:34px;margin-bottom:8px">🏢</div>`}
+        ${o.img&&o.img!=='#'?`<div style="width:170px;height:170px;border-radius:14px;overflow:hidden;margin-bottom:12px;display:flex;align-items:center;justify-content:center;border:2px solid var(--dorado)"><img src="/cronos/img/${o.img.split('/').pop()}" alt="${o.name}" style="max-width:100%;max-height:100%;object-fit:contain" onerror="this.parentNode.innerHTML=String.fromCharCode(60)+'div style=font-size:56px;color:#C79227>'+(o.name||'?')[0]+'</div>'+String.fromCharCode(62)"</div>`:`<div style="font-size:34px;margin-bottom:8px">🏢</div>`}
         <h3 style="margin-top:0">${o.name}</h3>${o.full?`<div style="color:var(--gris);font-size:12px">${o.full}</div>`:''}
         ${certezaBadge(o.certainty)} <span class="badge b-cer">${o.review||'PENDIENTE'}</span>
         <dl><dt>Tipo</dt><dd>${o.type}</dd><dt>País</dt><dd>${o.country}</dd><dt>ID</dt><dd>${o.id}</dd></dl>
