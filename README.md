@@ -1,68 +1,40 @@
-# CRONOS — Archivo Documental OSINT
-## Prototipo navegable (Fases 1–4 y 6 del Prompt Maestro)
+# CRONOS — Archivo Documental de Guerra (El Tonal del León)
 
-### 🚀 Cómo abrir el prototipo
-Abre este archivo en tu navegador (doble clic):
-```
-docs/04_prototipo/index.html
-```
-No requiere servidor ni instalación: es autónomo (carga sus datos de
-`data/db_seed_v01.js`).
+Archivo documental de investigación (Israel-Palestina y geopolítica mundial) con método probatorio: evidencia, relaciones, fuentes y grados de certeza. **No almacena conclusiones: almacena lo necesario para construirlas o refutarlas.**
 
-### 📁 Estructura del proyecto
+## Entidades
+- **PERSONAS** (101): figuras con foto, rol, nacionalidad, certeza ([CONFIRMADO]/[PROBABLE]/[HIPÓTESIS]/[NO VERIFICADO]) y estado de revisión.
+- **ORGANIZACIONES** (10): con logo oficial + **guía documental** vinculada (AIPAC, IDF, CUFI, NSO, NRA, CIA, FBI, Mossad, Palantir).
+- **VIDEOS / AFIRMACIONES / RELACIONES** y **ORGANIGRAMAS** por país.
+- **GUÍAS** (Archivos de Guerra): infografías documentales (CIA, FBI, Mossad, NSO, Palantir, Complejo Militar-Industrial, Fondos, Lobby/Think Tanks).
+
+## Vistas / Pestañas
+Inicio · Personas · Organizaciones · Afirmaciones · Cronología · Grafo · **Organigrama** · Analizar · Investigador · Todos.
+
+## Estructura
 ```
 archivo_documental_osint/
-├── docs/
-│   ├── 01_fase1_erd/
-│   │   ├── ERD_archivo_documental_v01.md       ← Documento maestro FASE 1
-│   │   ├── ERD_diagrama_v01.html               ← Diagrama visual del modelo
-│   │   └── ERD_diagrama_v01.md                 ← Versión Mermaid (portable)
-│   └── 04_prototipo/
-│       └── index.html                          ← Prototipo web navegable
-├── data/
-│   └── db_seed_v01.js                          ← Base semilla (FASE 2)
-├── scripts/
-│   └── schema_v01.sql                          ← Esquema PostgreSQL completo
-└── evidencia/                                  ← (reservado para archivos maestros)
+├─ docs/04_prototipo/
+│   ├─ index.html          (TODO el front: db_seed + funciones, JS inline)
+│   ├─ img/                (fotos personas, logos orgs, guías ag_*, organigramas)
+│   └─ index_bak_*.html    (respaldo: restaurar ante rotura — validar node --check)
+├─ data/db_seed_v01.js     (seed original: videos/cuentas)
+├─ scripts/                (transcribir, integrar personajes, enriquecer imágenes)
+└─ .gitignore              (excluye videos/media/voces/ogg/mp4)
 ```
 
-### ✅ Qué funciona en el prototipo
-- **Búsqueda universal** en tiempo real (barra superior): prueba "Netanyahu", "AIPAC", "Gaza", "Kushner".
-- **Fichas enciclopédicas** de personas, organizaciones, videos, afirmaciones y fuentes,
-  con **hipervínculos internos pulsables** (patrón Wikipedia).
-- **Cronología doble** (histórica + documental).
-- **Grafo de relaciones** interactivo (nodos pulsables; líneas rojas = lobby/contrato).
-- **Organigramas institucionales** (EE.UU.: ejecutivo/legislativo/judicial).
-- **Mapa mundial** de acontecimientos (Gaza/Israel, EE.UU., México-Pegasus).
-- **Análisis audiovisual** con clases A–F + checklist forense.
-- **Ingesta automática**: pega una URL, la IA propone ficha preliminar (el humano valida).
-- **Panel del investigador** con conteos de pendientes y filtros avanzados.
-- **Etiquetas de certeza** y **estatus de revisión** en cada registro.
-- **Regla de oro** visible: toda relación exige fuente.
+## ⚠️ Pitfalls clave
+1. **El JS va inline en `index.html`** (una sola `<script>` o dos: db_seed + funciones). Tras cada edición **validar con `node --check`** el script completo.
+2. **Nunca reemplazar bloques con `s[:i]+nuevo+s[j:]` si `j` es el siguiente `\nfunction`** (borra funciones adyacentes). Usar rangos exactos.
+3. **Imágenes**: extensiones de archivo deben coincidir con el formato real (PNG/JPEG). Antes: guías y organigramas eran JPEG con extensión `.png` → el navegador las rechazaba (imágenes rotas). Verificar con PIL; **renombrar a archivo nuevo** al actualizar un logo (evita caché).
+4. **Caché del backend**: tras editar `index.html` del CRONOS, reiniciar `python main.py` en `backend/`.
+5. CRONOS se muestra **in-page** (iframe `/cronos`), no `window.open`.
 
-### 🔎 Datos semilla cargados (FASE 2 — muestra real, ampliada)
-- **10 personas**: Netanyahu, Trump, Feiglin, Halevi, Finkelstein, Carlson, Cruz, Kushner, Abdelhadi, Golan.
-- **5 organizaciones**: AIPAC, IDF, CUFI, Clock Tower X LLC, NSO Group.
-- **21 videos** (los que Christo ha ido pasando), **3 afirmaciones**, **2 eventos**, **3 fuentes**, **6 relaciones**.
+## Estados (honestidad)
+Subir a CORROBORADO **solo figuras públicas reales verificables**; mantener REPORTADO para acusaciones/supuestos no probados y figuras oscuras. No inflar niveles de certeza; distinguir siempre centralidad ≠ poder.
 
-> ⚠️ **Importante (principio probatorio):** estos son DATOS SEMILLA de muestra para probar la
-> arquitectura. La IA propone; el humano valida. Cada certeza ("REPORTADO", "CORROBORADO…")
-> es una clasificación provisional que puede cambiar con nueva evidencia. Nada aquí es un
-> "hecho consumado".
+## Repo Git
+Este es un repositorio Git separado del CAZADOR. El código y datos se versionan; los **videos/media quedan excluidos** (`.gitignore`) por tamaño. Respaldo del expidiante documental completo en `Downloads\CRONOS`.
 
-### 🗂️ Estado del roadmap
-| Fase | Contenido | Estado |
-|---|---|---|
-| 1 | ERD + esquema | ✅ Completada |
-| 2 | Base semilla / datos | ✅ Completada (muestra) |
-| 3 | Interfaz enciclopédica + hipervínculos | ✅ Completada (prototipo) |
-| 4 | Timeline doble | ✅ Completada (prototipo) |
-| 5 | Organigramas institucionales | ✅ Completada (prototipo) |
-| 6 | Grafo de relaciones | ✅ Completada (prototipo) |
-| 7 | Mapa mundial | ✅ Completada (prototipo) |
-| 8 | Análisis audiovisual (A–F + forense) | ✅ Completada (prototipo) |
-| 9 | Ingesta automática con IA (propone) | ✅ Completada (prototipo) |
-| 10 | Dashboard investigador + filtros OSINT | ✅ Completada (prototipo) |
-
----
-*Generado por Atenea (perfil academia) · 2026-09-03 · Proyecto de Christo*
+## Fuente del método
+Expediente de arranque: `C:\Users\USUARIO\Downloads\expediente_sombras_israel_2026-08-29\` — 143 videos/fragmentos documentales en 11 carpetas bajo `Downloads`.
