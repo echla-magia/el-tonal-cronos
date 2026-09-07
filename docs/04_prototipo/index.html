@@ -1459,49 +1459,26 @@ function _orgFoto(nombre){
   return F[nombre]||null;
 }
 function renderOrganigrama(){
-  var O=typeof window._ORGANIGRAMA==='object'?window._ORGANIGRAMA:{};
-  var paises=Object.keys(O);
-  if(!paises.length) paises=['ESTADOS UNIDOS','CHINA','RUSIA','ISRAEL','MEXICO'];
-  function tarjeta(m, esJefe){
-    var nom=m.nombre,cargo=m.cargo,per=m.per||null;
-    var foto=_orgFoto(nom);
-    var img=foto
-      ?'<img src="/cronos/img/'+foto+'" style="width:72px;height:72px;border-radius:50%;object-fit:cover;border:2px solid var(--dorado);display:block;margin:0 auto 6px;cursor:pointer">'
-      :'<div style="width:72px;height:72px;border-radius:50%;background:var(--dorado);color:var(--azul-osc);font-weight:800;font-size:28px;display:flex;align-items:center;justify-content:center;margin:0 auto 6px">'+(nom[0]||'?')+'</div>';
-    var onclick=per?'onclick="window.CRONOS_OPEN_FICHA(\''+per+'\')" title="Clic para ver ficha de '+nom+'"':'';
-    var tam=esJefe?{w:'200px',font:'16px'}:{w:'170px',font:'13px'};
-    return '<div style="width:'+tam.w+';background:var(--azul-osc);border:2px solid '+(esJefe?'#C79227':'#3b4a63')+';border-radius:12px;padding:14px 10px;text-align:center;cursor:pointer;transition:transform .15s" '+onclick+' onmouseover="this.style.transform=\'scale(1.05)\';this.style.borderColor=\'#C79227\'" onmouseout="this.style.transform=\'scale(1)\';this.style.borderColor='+(esJefe?"'#C79227'":"'#3b4a63'")+'" >'
-      +img
-      +'<div style="font-weight:800;color:#fff;font-size:'+tam.font+';line-height:1.1">'+nom+'</div>'
-      +'<div style="color:var(--gris);font-size:11px;margin-top:3px">'+cargo+'</div>'
-      +'</div>';
-  }
+  var paises=[['ESTADOS UNIDOS','organigrama_estados_unidos.png'],['CHINA','organigrama_china.png'],
+              ['RUSIA','organigrama_rusia.png'],['IRAN','organigrama_iran.png'],
+              ['ISRAEL','organigrama_israel.png'],['MEXICO','organigrama_mexico.png']];
   var h='<div class="panel"><h2>🏛️ Organigramas de Gobiernos</h2>'
-    +'<p style="color:var(--gris);font-size:13px;margin-bottom:6px">Archivos de Guerra · Septiembre 2026. Selecciona un país y haz clic sobre un integrante para abrir su ficha.</p>';
-  // select/botones de pais
-  h+='<div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px">';
-  paises.forEach(function(pn){
-    h+='<button onclick="window._ORGP=this.dataset.p;renderOrganigrama()" data-p="'+pn+'" style="background:var(--azul-osc);color:#fff;border:1px solid var(--dorado);border-radius:8px;padding:8px 14px;cursor:pointer;font-weight:600">'+pn+'</button>';
-  });
+    +'<p style="color:var(--gris);font-size:13px;margin-bottom:6px">Archivos de Guerra · Septiembre 2026. Selecciona un país para ver su organigrama institucional.</p>';
+  h+='<div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px">';
+  paises.forEach(function(pr){ h+='<button onclick="window._ORGPIM=this.dataset.p;renderOrganigrama()" data-p="'+pr[0]+'" style="background:var(--azul-osc);color:#fff;border:1px solid var(--dorado);border-radius:8px;padding:8px 14px;cursor:pointer;font-weight:600'+(window._ORGPIM===pr[0]?';background:#C79227;color:#063B32':'')+'">'+pr[0]+'</button>'; });
   h+='</div>';
-  // pais seleccionado
-  var sel=window._ORGP||paises[0];
-  var miembros=O[sel]||[];
-  h+='<h3 style="color:#C79227;margin:6px 0 4px">'+sel+'</h3>';
-  if(miembros.length){
-    // jefe arriba (primero), gabinete abajo en fila
-    h+='<div style="display:flex;justify-content:center;margin-bottom:18px">'+tarjeta(miembros[0],true)+'</div>';
-    if(miembros.length>1){
-      h+='<div style="border-top:2px solid #3b4a63;padding-top:16px;display:flex;gap:12px;flex-wrap:wrap;justify-content:center">';
-      for(var k=1;k<miembros.length;k++) h+=tarjeta(miembros[k],false);
-      h+='</div>';
-    }
+  var sel=window._ORGPIM||'ESTADOS UNIDOS';
+  var f=paises.find(function(pr){return pr[0]===sel;});
+  h+='<h3 style="color:#C79227;margin:4px 0 8px">'+sel+'</h3>';
+  if(f && f[1]){
+    h+='<div style="margin:0 auto;text-align:center"><img src="/cronos/img/'+f[1]+'" alt="Organigrama '+sel+'" style="width:100%;max-width:1100px;height:auto;object-fit:contain;border:1px solid var(--dorado);border-radius:8px"></div>';
   } else {
-    h+='<p style="color:var(--gris)">Sin datos de organigrama para '+sel+'.</p>';
+    h+='<p style="color:var(--gris)">No hay organigrama de '+sel+' en el archivo.</p>';
   }
   document.getElementById('app').innerHTML=h+'</div>';
 }
 window.renderOrganigrama=renderOrganigrama;
+
 window._orgFoto=_orgFoto;
 
 function renderGrafo(){
