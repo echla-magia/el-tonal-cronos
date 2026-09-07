@@ -1,0 +1,1123 @@
+{
+ "proyecto": "CRONOS",
+ "generado": "2026-09-05",
+ "total_registrado": 157,
+ "con_archivo": 143,
+ "sin_archivo_muestra": [
+  "VID-000008",
+  "VID-000009",
+  "VID-000010",
+  "VID-000011",
+  "VID-000012",
+  "VID-000013",
+  "VID-000014",
+  "VID-000015",
+  "VID-000016",
+  "VID-000017",
+  "VID-000018",
+  "VID-000019",
+  "VID-000020",
+  "VID-000021"
+ ],
+ "videos": [
+  {
+   "id": "VID-000001",
+   "sha256": "c0710ede597fb3f7fd221444d2221c2c10edbcfe1ccca3bfb1c1292ba8a0c609",
+   "titulo": "Feiglin: exterminio implícito",
+   "platform": "X",
+   "estado": "OK"
+  },
+  {
+   "id": "VID-000002",
+   "sha256": "5ed7791552331ed58bcda20e6a5fb9136ea1d9f98f87c113a5043f903856342e",
+   "titulo": "Amit Halevi: '300 terroristas'",
+   "platform": "X",
+   "estado": "OK"
+  },
+  {
+   "id": "VID-000003",
+   "sha256": "7e8e0f09ea58448817e23b2cab650a789c2d53f9802daaa3bf17a40c3f5d60f6",
+   "titulo": "Ted Cruz vs Tucker Carlson",
+   "platform": "X",
+   "estado": "OK"
+  },
+  {
+   "id": "VID-000004",
+   "sha256": "8609bd66a0b7fb33761c0736f42f19e63b849b341105510d7834a88f21fce007",
+   "titulo": "Kushner: Gaza teardown",
+   "platform": "X",
+   "estado": "OK"
+  },
+  {
+   "id": "VID-000005",
+   "sha256": "062902a64145786e23374150ad8fba75466ff86c6a35d8e88ae5f27d9115af9b",
+   "titulo": "Haitham: crítica al sionismo",
+   "platform": "YouTube",
+   "estado": "OK"
+  },
+  {
+   "id": "VID-000006",
+   "sha256": "48797708308e95b7f4791238a77fbfbe84f80e2c20c2c90670f0f0c66966c836",
+   "titulo": "May Golan: destrucción Gaza",
+   "platform": "X",
+   "estado": "OK"
+  },
+  {
+   "id": "VID-000007",
+   "sha256": "b34c9cb7644c05d7b8c413bc7c0d6ef974115d75ace36ed89ba48f6e298f092c",
+   "titulo": "GBC: denuncias de Gaza (Golan/IDF)",
+   "platform": "X",
+   "estado": "OK"
+  },
+  {
+   "id": "VID-000008",
+   "sha256": "",
+   "titulo": "Dr. Hossam: escenario Gaza",
+   "platform": "X",
+   "estado": "NO_EXISTE"
+  },
+  {
+   "id": "VID-000009",
+   "sha256": "",
+   "titulo": "GBC: presas/política israelí",
+   "platform": "X",
+   "estado": "NO_EXISTE"
+  },
+  {
+   "id": "VID-000010",
+   "sha256": "",
+   "titulo": "MrsRoyKeaneo: testimonio",
+   "platform": "X",
+   "estado": "NO_EXISTE"
+  },
+  {
+   "id": "VID-000011",
+   "sha256": "",
+   "titulo": "DavidVargasA18: análisis",
+   "platform": "X",
+   "estado": "NO_EXISTE"
+  },
+  {
+   "id": "VID-000012",
+   "sha256": "",
+   "titulo": "GBC: otro clip Gaza",
+   "platform": "X",
+   "estado": "NO_EXISTE"
+  },
+  {
+   "id": "VID-000013",
+   "sha256": "",
+   "titulo": "RealTheForce: narrativa",
+   "platform": "X",
+   "estado": "NO_EXISTE"
+  },
+  {
+   "id": "VID-000014",
+   "sha256": "",
+   "titulo": "DaniMayakovski: colonos",
+   "platform": "X",
+   "estado": "NO_EXISTE"
+  },
+  {
+   "id": "VID-000015",
+   "sha256": "",
+   "titulo": "hippyygoat: análisis",
+   "platform": "X",
+   "estado": "NO_EXISTE"
+  },
+  {
+   "id": "VID-000016",
+   "sha256": "",
+   "titulo": "GBC: otro clip (16)",
+   "platform": "X",
+   "estado": "NO_EXISTE"
+  },
+  {
+   "id": "VID-000017",
+   "sha256": "",
+   "titulo": "DaniMayakovski: (17)",
+   "platform": "X",
+   "estado": "NO_EXISTE"
+  },
+  {
+   "id": "VID-000018",
+   "sha256": "",
+   "titulo": "Bry: testimonio",
+   "platform": "X",
+   "estado": "NO_EXISTE"
+  },
+  {
+   "id": "VID-000019",
+   "sha256": "",
+   "titulo": "daniel153177: análisis",
+   "platform": "X",
+   "estado": "NO_EXISTE"
+  },
+  {
+   "id": "VID-000020",
+   "sha256": "",
+   "titulo": "Ginnysaidso: (20)",
+   "platform": "X",
+   "estado": "NO_EXISTE"
+  },
+  {
+   "id": "VID-000021",
+   "sha256": "",
+   "titulo": "YouTube Short: Gaza (21)",
+   "platform": "YouTube",
+   "estado": "NO_EXISTE"
+  },
+  {
+   "id": "VID-000022",
+   "sha256": "5114f28100277d1540938a2815ede478fa65d06e4a4f8309d6156e52f395d95a",
+   "titulo": "Soldado israelí grabado antes de entrar en una operación en Rafah",
+   "platform": "X",
+   "estado": "OK"
+  },
+  {
+   "id": "VID-000023",
+   "sha256": "0413036570f2275256485d60af3d052de7fd179dd33a23e8fda358f366abcafc",
+   "titulo": "Recitado en árabe de una oración con frases alteradas",
+   "platform": "X",
+   "estado": "OK"
+  },
+  {
+   "id": "VID-000024",
+   "sha256": "73055254e02bac23407d4592cf0cc73ed245ecb98118613510888b85c69d2b49",
+   "titulo": "Voz pro-israelí equipara a Israel con EE.UU. como 'nación moral'",
+   "platform": "X",
+   "estado": "OK"
+  },
+  {
+   "id": "VID-000025",
+   "sha256": "a7fd4adf958ae26a5900e0f5829de0f3d20c1c119af424c38385415df6cacfd3",
+   "titulo": "Portavoz del Ministerio de Exteriores ruso critica a la élite occidental por el caso Epstein",
+   "platform": "X",
+   "estado": "OK"
+  },
+  {
+   "id": "VID-000026",
+   "sha256": "eda5a02b2b2548a43a3bd30b700dd1cfc1cf328a639639adc30d2726796f0610",
+   "titulo": "Reportaje sobre rescate de 163 menores desaparecidos en Florida",
+   "platform": "X",
+   "estado": "OK"
+  },
+  {
+   "id": "VID-000027",
+   "sha256": "ad93ed9c1abb0b720bc10f10a4c9367e018eb535f58e0fbafe07ab6812351a58",
+   "titulo": "Análisis en francés sobre 11-S, bancos centrales e Irán",
+   "platform": "X",
+   "estado": "OK"
+  },
+  {
+   "id": "VID-000028",
+   "sha256": "294be6789b08fc850c8c52501d3df9b01d949e94c77ae1963e44a3f2c5221845",
+   "titulo": "Dershowitz defiende publicación de los expedientes Epstein y critica a feministas",
+   "platform": "X",
+   "estado": "OK"
+  },
+  {
+   "id": "VID-000029",
+   "sha256": "cdcb63c7f10d6e248b333f0a3c271f28fd4d0f53210325a10bc47048056f47a9",
+   "titulo": "Intercambio Fetterman–Stewart sobre si Israel comete genocidio",
+   "platform": "X",
+   "estado": "OK"
+  },
+  {
+   "id": "VID-000030",
+   "sha256": "e4d7683586b194b1f65767c1454c94a5f1ba67be0f661fa88c8323714be60949",
+   "titulo": "Noticiero por una declaración conjunta entre jefes de Estado",
+   "platform": "X",
+   "estado": "OK"
+  },
+  {
+   "id": "VID-000031",
+   "sha256": "3d7d2d5d3d1e20cb6e7f875b576ba1b6c825d504c0623459b271c6be87049ca9",
+   "titulo": "Entrevista a un jefe de Estado sobre amenaza de EE.UU., petróleo y golpes de Estado históricos",
+   "platform": "X",
+   "estado": "OK"
+  },
+  {
+   "id": "VID-000032",
+   "sha256": "ea0542da721beddf43b6f9c9c76a360aaa72f1d7a8b2ee93612966f0ddd23040",
+   "titulo": "Debate en árabe sobre Turquía, Hamás y los gaseoductos",
+   "platform": "X",
+   "estado": "OK"
+  },
+  {
+   "id": "VID-000033",
+   "sha256": "2716a9c3b825e20bcf99a383af904ba2d7d0641d91a5fd0784aa8268265487a0",
+   "titulo": "Agente de la Policía Metropolitana del Reino Unido condiciona protestas por Palestina",
+   "platform": "X",
+   "estado": "OK"
+  },
+  {
+   "id": "VID-000034",
+   "sha256": "f37670f4925834c8caa44f3b2d5a932475682da9825b9f40c03fb997f84535a6",
+   "titulo": "Miembro del servicio estadounidense presume de combatir en Gaza",
+   "platform": "X",
+   "estado": "OK"
+  },
+  {
+   "id": "VID-000035",
+   "sha256": "406993e6f80ba0694cb319981de4e1018d8adec62cb3ed5a44fa11f9e69ae924",
+   "titulo": "Acto de supuesta detención de un activista internacional",
+   "platform": "X",
+   "estado": "OK"
+  },
+  {
+   "id": "VID-000036",
+   "sha256": "6b43b2e749b398a11dc5f2ed312b3adf8f5cd7db06e1d086d3b20f25c65f6dbf",
+   "titulo": "EE.UU. congela activos de la presidenta de la CPI y presiona países de AL para salir del Estatuto de Roma",
+   "platform": "X",
+   "estado": "OK"
+  },
+  {
+   "id": "VID-000037",
+   "sha256": "b1672755a996df687c73b6845d7c7f10881301afc17952828c540bd758c037bd",
+   "titulo": "Audio atribuido a Richard Nixon sobre el lobby judío y 'Israel primero'",
+   "platform": "X",
+   "estado": "OK"
+  },
+  {
+   "id": "VID-000038",
+   "sha256": "96e13aab1256c5fb1ca8a7deded34b9381d6934d68c8a96914a7ca87a32ec67b",
+   "titulo": "Rabino critica al primer ministro israelí y se desvincula de Israel",
+   "platform": "X",
+   "estado": "OK"
+  },
+  {
+   "id": "VID-000039",
+   "sha256": "30b3e39cbcdaae796f8bc1857aaa5d79855f6eac71dc6ea443dd38f75db2a0c9",
+   "titulo": "Soldado israelí describe el sistema como 'apartheid' en Hebrón",
+   "platform": "X",
+   "estado": "OK"
+  },
+  {
+   "id": "VID-000040",
+   "sha256": "eac0d118741b09425acf5afb056a61309f78286df353525fbd1b49c1fb8d3bc1",
+   "titulo": "(Sin transcripción)",
+   "platform": "X",
+   "estado": "OK"
+  },
+  {
+   "id": "VID-000041",
+   "sha256": "39516f73fb49e40e5bf17957fac9f030e944de93d396b9f08b005c4eddbac05d",
+   "titulo": "Testimonios de una mujer sobre un consultor político en campañas de Chile",
+   "platform": "X",
+   "estado": "OK"
+  },
+  {
+   "id": "VID-000042",
+   "sha256": "c506edb1fd4ccf5bd6ec8d5cd4bdcbd1b0e9397ca358e0d5bd7a0086fb07230b",
+   "titulo": "Diálogo en hebreo/árabe de baja calidad sobre 'Umm al-Bir' y esclavitud",
+   "platform": "X",
+   "estado": "OK"
+  },
+  {
+   "id": "VID-000043",
+   "sha256": "01d0e52f74f2bc2c6fee2c055b4fe0f620ad2eea35e77c8bc60edf39e0714903",
+   "titulo": "Voz que cuestiona la cifra de seis millones y el relato del Holocausto",
+   "platform": "X",
+   "estado": "OK"
+  },
+  {
+   "id": "VID-000044",
+   "sha256": "8b892f243be0816838772356f01c134ec910de324c0f952ab2737cee43c95b1c",
+   "titulo": "Entrevista sobre el caso de Hind Rajab y los paramédicos hallados muertos",
+   "platform": "X",
+   "estado": "OK"
+  },
+  {
+   "id": "VID-000045",
+   "sha256": "76daf26051dbd66dbcda20daf8591e79b6f159f7bf7f5eef964fcb189b88bafb",
+   "titulo": "Enfrentamiento por compra de propiedad en Cisjordania vinculada a una sinagoga",
+   "platform": "X",
+   "estado": "OK"
+  },
+  {
+   "id": "VID-000046",
+   "sha256": "8e1f6171ec0f87a996a00e937875fadd9c62c762ef81d182ec3d33e8cb6abe88",
+   "titulo": "Análisis de por qué se resiste la publicación de los expedientes Epstein",
+   "platform": "X",
+   "estado": "OK"
+  },
+  {
+   "id": "VID-000047",
+   "sha256": "a50ca984e7e2176e9caf38ecf0294b6ae19e9766f51fc7ec30d9fc5761a5bada",
+   "titulo": "Discurso hebreo extremista sobre la tierra y los palestinos/islamistas",
+   "platform": "X",
+   "estado": "OK"
+  },
+  {
+   "id": "VID-000048",
+   "sha256": "749466bee57cd633c54462cec054a708c543c5b6b0e39695d0ccddb8398c9a40",
+   "titulo": "Crítica a Trump, Mossad, CIA y MI6 por la situación en Irán",
+   "platform": "X",
+   "estado": "OK"
+  },
+  {
+   "id": "VID-000049",
+   "sha256": "95898c844970b10de8d982c97fe864681ebef63bdf9e0910c68764329f423752",
+   "titulo": "Crítica a que EE.UU. financie a Israel y a los aplausos a Netanyahu",
+   "platform": "X",
+   "estado": "OK"
+  },
+  {
+   "id": "VID-000050",
+   "sha256": "1a185d36030d63941e5f81efea4bab14ac9d4ed1f0b9f75b2e07eb19a93bc457",
+   "titulo": "Cuestionamiento de la cifra de seis millones y del relato del Holocausto (republicación)",
+   "platform": "X",
+   "estado": "OK"
+  },
+  {
+   "id": "VID-000051",
+   "sha256": "2cb7d10563f51a4b999233236e406fe3fc464d438512258a31235ef7e9d4526e",
+   "titulo": "Soldado israelí relata que se ordenó suspender patrullas de la valla de Gaza la mañana del 7-O",
+   "platform": "X",
+   "estado": "OK"
+  },
+  {
+   "id": "VID-000052",
+   "sha256": "b1fbd9037bb564bc0d5bb6e171360036358762d6297d2e553af319f286b23d7b",
+   "titulo": "Escena breve de gritos en francés",
+   "platform": "X",
+   "estado": "OK"
+  },
+  {
+   "id": "VID-000053",
+   "sha256": "12cd8e23e2dc1ee8b28e05c4b9ed6206a6704a366b6094fa5683cf9bb05485d7",
+   "titulo": "Voz discute vaciar y reconstruir Gaza 'limpiándola'",
+   "platform": "X",
+   "estado": "OK"
+  },
+  {
+   "id": "VID-000054",
+   "sha256": "5ff575508f9f69dcfdd5f444d010cbffd1d586f6a3671d3166046c595fa555e0",
+   "titulo": "Rant acusatorio contra Israel por muertes de niños en Gaza",
+   "platform": "X",
+   "estado": "OK"
+  },
+  {
+   "id": "VID-000055",
+   "sha256": "aec020dfb85e0afcb1838fef30ce5430aa41c84134b39435f7844a5054a59be8",
+   "titulo": "Frase repetida 'hasta aquí' en hebreo",
+   "platform": "X",
+   "estado": "OK"
+  },
+  {
+   "id": "VID-000056",
+   "sha256": "c97af7fd303d491f07d22af3b01f33fe88839cb46700191fef719c26070a183d",
+   "titulo": "Voz que pide dejar morir de hambre a los palestinos por el 7-O",
+   "platform": "X",
+   "estado": "OK"
+  },
+  {
+   "id": "VID-000057",
+   "sha256": "1f09ddfea76006ea7ff3626db34377bd32a9bd147f5981c00fe3e575a8861228",
+   "titulo": "Diálogo sobre muertes en el Hospital Al-Shifa ('150 terroristas' vs '300, niños')",
+   "platform": "X",
+   "estado": "OK"
+  },
+  {
+   "id": "VID-000058",
+   "sha256": "acbb75738bd7d97be49fcf7366d80719c6872f7b5b0bd18a6edde05a0798a38a",
+   "titulo": "Análisis de la declaración 'todos saben que Epstein era agente del Mossad'",
+   "platform": "X",
+   "estado": "OK"
+  },
+  {
+   "id": "VID-000059",
+   "sha256": "392a4eecd665562307c18abee1b72394005f5bd485e8e47126ccafa1b76c4890",
+   "titulo": "Líder evangélico pro-Israel denuncia antisemitismo y ataca a Tucker Carlson",
+   "platform": "X",
+   "estado": "OK"
+  },
+  {
+   "id": "VID-000060",
+   "sha256": "3a7adb6ec399d0f213165a3474ba6579bc59167ce69efa634c83affc09a9eb37",
+   "titulo": "Argumento sobre la responsabilidad de los judíos por las acciones de Israel",
+   "platform": "X",
+   "estado": "OK"
+  },
+  {
+   "id": "VID-000061",
+   "sha256": "a3e26b1ff675ca727dc7b36bff73bd5147dfc1622246949cdf47e27ba2274963",
+   "titulo": "(Sin transcripción)",
+   "platform": "X",
+   "estado": "OK"
+  },
+  {
+   "id": "VID-000062",
+   "sha256": "cb5277ab6da7a62ba3f0b18d33b0928277c24f5aef418c5f6d0d9993ce838bd8",
+   "titulo": "Narrativa sobre la 'teoría jázara', los Rothschild y el 'dinero'",
+   "platform": "X",
+   "estado": "OK"
+  },
+  {
+   "id": "VID-000063",
+   "sha256": "25f44507f60360849eec1f4a887ab9faa499759bba298a997f726eebe592e808",
+   "titulo": "Frase en árabe de baja calidad",
+   "platform": "X",
+   "estado": "OK"
+  },
+  {
+   "id": "VID-000064",
+   "sha256": "384f8a12fb4de02b2296eef1ac38f50b5577248c0724b9dfbf5614391c2c9e6e",
+   "titulo": "Intercambio sobre tropas estadounidenses desplegadas por Israel",
+   "platform": "X",
+   "estado": "OK"
+  },
+  {
+   "id": "VID-000065",
+   "sha256": "eb873f79855fc9bd12a112c90edb9879983209404d46b165ba4f65c406c46f50",
+   "titulo": "Reacción en árabe a un bombardeo",
+   "platform": "X",
+   "estado": "OK"
+  },
+  {
+   "id": "VID-000066",
+   "sha256": "e17a0c51e9c6bb46c403dd8867dc87fce5f263b8a8414d06b4d43117459c5fb3",
+   "titulo": "Voz israelí propone 'eliminaciones selectivas' nocturnas en Gaza",
+   "platform": "X",
+   "estado": "OK"
+  },
+  {
+   "id": "VID-000067",
+   "sha256": "643d329372b76bbdc65dee814f3f49b58a3616fa4fbc20a029c7eb96c6aa773a",
+   "titulo": "Saludo breve en árabe",
+   "platform": "X",
+   "estado": "OK"
+  },
+  {
+   "id": "VID-000068",
+   "sha256": "b04770a7e37f56f139e1af63da6976b39644f68a6768ad4db2d7f97f1909aa9a",
+   "titulo": "Frase en hebreo pidiendo que los niños de Gaza mueran de hambre",
+   "platform": "X",
+   "estado": "OK"
+  },
+  {
+   "id": "VID-000069",
+   "sha256": "f297f1dbbe55b923ac09bfe11debf99160b7fb8ef08e3643834a10dcfd82b1b7",
+   "titulo": "'Mickey', mayor de la reserva del IDF, admite matar niños en Gaza, Líbano e Irán",
+   "platform": "X",
+   "estado": "OK"
+  },
+  {
+   "id": "VID-000070",
+   "sha256": "8e751ebf412cb1d7c2f4bab6c8789f78012c498802c7ea260a0a884c923a6277",
+   "titulo": "Crítica a pastores 'sionistas cristianos' que recaudan dinero para Israel",
+   "platform": "X",
+   "estado": "OK"
+  },
+  {
+   "id": "VID-000071",
+   "sha256": "22fbaeb7665c0a3c8b7020b61234796e743933a4d9299b741c6c29220962d66f",
+   "titulo": "May Golan defiende la moralidad del ejército israelí ante Piers Morgan, quien la confronta por la destrucción de Gaza",
+   "platform": "X",
+   "estado": "OK"
+  },
+  {
+   "id": "VID-000072",
+   "sha256": "24c99f573bb7a32e6eb1d4314bfb0dd5d8362b7ffc047e63b02fe2af70f96f21",
+   "titulo": "Discurso de una israelí criada en familia de supervivientes del Holocausto que define y critica el sionismo",
+   "platform": "X",
+   "estado": "OK"
+  },
+  {
+   "id": "VID-000073",
+   "sha256": "bd007126ce420af5d8aef060a4fca4bea83dc78326149202aa2a58f0dafdd3ca",
+   "titulo": "Tucker Carlson responde a preguntas sobre el derecho de Israel a existir y defiende estándares universales",
+   "platform": "X",
+   "estado": "OK"
+  },
+  {
+   "id": "VID-000074",
+   "sha256": "a8d1ce9b15ae8eeae7b1d92f79c5ed9efe48bf812eb6d99e7b2db3ab03edfbd5",
+   "titulo": "Participante católico sostiene en una comisión que criticar el sionismo no es antisemitismo",
+   "platform": "X",
+   "estado": "OK"
+  },
+  {
+   "id": "VID-000075",
+   "sha256": "cce4a2527241a2b6cb516dbc2c5386d59d23be0bbd09db72fb7af62d7250d1a3",
+   "titulo": "Denuncia de una supuesta operación israelí global de interferencia electoral (Black Core/Mossad)",
+   "platform": "X",
+   "estado": "OK"
+  },
+  {
+   "id": "VID-000076",
+   "sha256": "d2c1503f35f5a6e5d4c5c62b97b3f3cb79fb3511826bc4a4ae169ebc671fe100",
+   "titulo": "Negacionismo del Holocausto atribuido a un rabino y comparaciones con el estado de Israel",
+   "platform": "X",
+   "estado": "OK"
+  },
+  {
+   "id": "VID-000077",
+   "sha256": "b3754f9dc63ffa1f1a770aabb93d60444c4f735c0eec89c2d2ffb3865de0c732",
+   "titulo": "Eran Efrati, exsoldado israelí, relata su paso por el ejército y critica el uso político del antisemitismo",
+   "platform": "X",
+   "estado": "OK"
+  },
+  {
+   "id": "VID-000078",
+   "sha256": "d6922026ad3060ea74d2387bbe3f9cf63c7e87730dfae5b4a296851a6ae394d7",
+   "titulo": "Presentación de la base de datos 'whofundedgenocide.com' sobre el dinero pro-Israel en la política de EEUU",
+   "platform": "X",
+   "estado": "OK"
+  },
+  {
+   "id": "VID-000079",
+   "sha256": "c5de03b5210535c23d130707a71e1d50dbe93da91fc4c1400c5ac71888240265",
+   "titulo": "Mark Weber ofrece una explicación revisionista de las fotos del campo de Bergen-Belsen",
+   "platform": "X",
+   "estado": "OK"
+  },
+  {
+   "id": "VID-000080",
+   "sha256": "02f4d932824c043ad5cfee0b2a3d5d42f4dcbd5d0871904e1a713663fd989517",
+   "titulo": "Un maestro/rabino afirma que miles de millones de 'adoradores de ídolos' no tienen derecho a vivir según la Torá",
+   "platform": "X",
+   "estado": "OK"
+  },
+  {
+   "id": "VID-000081",
+   "sha256": "57d47421b5a9977914267a7e0feef3fe4768e0177cdc78a4f967f717c64900f1",
+   "titulo": "Jeffrey Sachs atribuye las guerras actuales a la pretensión hegemónica de EEUU y Europa",
+   "platform": "X",
+   "estado": "OK"
+  },
+  {
+   "id": "VID-000082",
+   "sha256": "ef98bf4dcbd7de20f131ab8ead2a7a794d4c3e8990c56d924e35608d10b16cb9",
+   "titulo": "Publicación sobre el demonio japonés Tengu ('nariz larga') con connotación de 'sembrar guerra'",
+   "platform": "X",
+   "estado": "OK"
+  },
+  {
+   "id": "VID-000083",
+   "sha256": "07c953c1eed0ff07a9ecbf9bd6564d16223c9e807fef22cd3b66509acca8c03d",
+   "titulo": "Discurso en hebreo con lenguaje deshumanizante sobre los palestinos, etiquetado 'N-A-Z-I-S'",
+   "platform": "X",
+   "estado": "OK"
+  },
+  {
+   "id": "VID-000084",
+   "sha256": "0aaf5d83a91dac2540f1689da942879a92a008960eaf20fb95e3f350657c8c89",
+   "titulo": "Cámara oculta a un promotor de un centro de datos en Oklahoma que dice no importar la oposición vecinal",
+   "platform": "X",
+   "estado": "OK"
+  },
+  {
+   "id": "VID-000085",
+   "sha256": "7aba5d655e2c38239063de314eeaaf04c6191edd46554208366722dd07aea813",
+   "titulo": "Discurso mesiánico sobre superioridad judía, la muerte de 'dos tercios del mundo' y la herencia de la riqueza",
+   "platform": "X",
+   "estado": "OK"
+  },
+  {
+   "id": "VID-000086",
+   "sha256": "b3104f1f9b1308a4a401f676910cd00de2f1e963a0fa1a70cc8e6313d2599827",
+   "titulo": "Declaración sobre que el petróleo venezolano habría cubierto '25 veces' el coste de una guerra",
+   "platform": "X",
+   "estado": "OK"
+  },
+  {
+   "id": "VID-000087",
+   "sha256": "bfddd5bb65518142c9e281c1dfaf9469a973ea5a118980204bf6080b3b8533c6",
+   "titulo": "Joe Kent afirma que el lobby israelí 'dictaba términos' dentro de la Casa Blanca de Trump",
+   "platform": "X",
+   "estado": "OK"
+  },
+  {
+   "id": "VID-000088",
+   "sha256": "0d0e6f42d2f5a77199423de5924f87fd167c953ec600050898e701787e990d4f",
+   "titulo": "Conferencia: la CIA como organización con 'rama de la muerte' y 'rama de la propaganda'",
+   "platform": "X",
+   "estado": "OK"
+  },
+  {
+   "id": "VID-000089",
+   "sha256": "0f3a79e8cd2b9764ad812fbc218ec1a70728204994a374192f8a7dfd1520565a",
+   "titulo": "Itamar Ben-Gvir se enfrenta y altera ante críticos en el Capitolio de EEUU",
+   "platform": "X",
+   "estado": "OK"
+  },
+  {
+   "id": "VID-000090",
+   "sha256": "30357a610af907d6267eaf6d1b6d5f7ba526f1597ef231e4066c2914e735d189",
+   "titulo": "Publicación sobre supuesto uso por Israel de órganos de palestinos muertos (sin audio)",
+   "platform": "X",
+   "estado": "OK"
+  },
+  {
+   "id": "VID-000091",
+   "sha256": "84ba0aead262494ddd950c20aa6691a25d1d640f73497e57175c0aad4c7b5dec",
+   "titulo": "Conversación en hebreo sobre donaciones y mano de obra en Israel",
+   "platform": "X",
+   "estado": "OK"
+  },
+  {
+   "id": "VID-000092",
+   "sha256": "7dfbaa685e9234ae74c44586089062f57daae502c3c79101d8ca9afb20a7fb7b",
+   "titulo": "Robert D. Steele: las 1.000 bases militares de EEUU sirven para contrabandear oro, armas, drogas y niños",
+   "platform": "X",
+   "estado": "OK"
+  },
+  {
+   "id": "VID-000093",
+   "sha256": "35a7cb0ae5d6bdb4330253ebe737e8704b593873622c02dc72859bbc79de183e",
+   "titulo": "Soldados del IDF se filman prendiendo fuego a tierras palestinas en Cisjordania (sin audio)",
+   "platform": "X",
+   "estado": "OK"
+  },
+  {
+   "id": "VID-000094",
+   "sha256": "0c77d2f3ab203bb219193c68585b80cf1ad7f88a80b44027e57cd308240cfff3",
+   "titulo": "Dick Cheney (2002) defiende ante la prensa la invasión de Irak y la doctrina de 'ganar, ganar, ganar'",
+   "platform": "X",
+   "estado": "OK"
+  },
+  {
+   "id": "VID-000095",
+   "sha256": "ca446f9cb9ce7c1d53489e8035f993c13ff269acde1fa7bf96dba7d6d456947a",
+   "titulo": "George Lincoln Rockwell cuestiona la cifra de seis millones de víctimas del Holocausto",
+   "platform": "X",
+   "estado": "OK"
+  },
+  {
+   "id": "VID-000096",
+   "sha256": "1164a49ab729b156a9415b05af4d6c89ab056c6f00ffb14be30488f7efb97f28",
+   "titulo": "Un orador con padres supervivientes de Auschwitz responde a una crítica judía sobre las comparaciones con los nazis",
+   "platform": "X",
+   "estado": "OK"
+  },
+  {
+   "id": "VID-000097",
+   "sha256": "4867a0f9840a8ef9ea727072d03141f1d97979c3bb68af0de2e6b9e65b5c856c",
+   "titulo": "El eurodiputado Jussi Saramo pregunta en el Parlamento Europeo cuántos palestinos mataba Israel antes del 7-0 de Hamás",
+   "platform": "X",
+   "estado": "OK"
+  },
+  {
+   "id": "VID-000098",
+   "sha256": "1381301366f0c0cf89e282151fcc3de87f4ad76b6a817cb51410c9facf830c97",
+   "titulo": "Enfrentamiento verbal entre un portavoz israelí y una comentarista italiana sobre si la guerra en Gaza es 'una guerra'",
+   "platform": "X",
+   "estado": "OK"
+  },
+  {
+   "id": "VID-000099",
+   "sha256": "be7edc866540f976abc1d6012b092e74b1794bbefabc5800d560ba2f334648d0",
+   "titulo": "El embajador israelí ante la ONU suspende su rueda de prensa ante una pregunta sobre armas nucleares",
+   "platform": "X",
+   "estado": "OK"
+  },
+  {
+   "id": "VID-000100",
+   "sha256": "1bf7977b29c21375b09be4a37fede7144164e4a423e75b347072906eaff89ad2",
+   "titulo": "Riccardo Bosi sostiene que Ucrania 'no es un estado soberano' y que la guerra es una distracción del 'deep state'",
+   "platform": "X",
+   "estado": "OK"
+  },
+  {
+   "id": "VID-000101",
+   "sha256": "424af24d8cd34bde0eb3b8914f7af0a3016f0c96507444bd0c560d2175b44aae",
+   "titulo": "Afirmación de que las fotos de la 'liberación de Auschwitz' fueron escenificadas",
+   "platform": "X",
+   "estado": "OK"
+  },
+  {
+   "id": "VID-000102",
+   "sha256": "85e5d3b527b359abe0eca23bcd93ac7b4209508d828b517c2a02368f1920c47f",
+   "titulo": "Informe de The Guardian: la guerra de Trump contra Irán habría quebrado financieramente a la Armada de EEUU",
+   "platform": "X",
+   "estado": "OK"
+  },
+  {
+   "id": "VID-000103",
+   "sha256": "2babae30222e1837862d4cffa14a3a0c0ede6369059b85086621b5b9df05df11",
+   "titulo": "Discurso en hebreo sobre la UNRWA en el marco de la denuncia del ataque a las instituciones de la ONU",
+   "platform": "X",
+   "estado": "OK"
+  },
+  {
+   "id": "VID-000104",
+   "sha256": "756461000c8f6af98c627949276e51e3f4076eaa275a12ee546b29a4c9d904b0",
+   "titulo": "Llamada a aislar a Israel como 'estado apartheid/genocida' y denuncia de una ley sobre ejecución de presos palestinos",
+   "platform": "X",
+   "estado": "OK"
+  },
+  {
+   "id": "VID-000105",
+   "sha256": "5e746668c99a430368441dd37f9e691e3b4e4e271b44e1e1aac53ea3f3e0d72f",
+   "titulo": "DW reporta a Ben Gvir frente a una presa palestina: 'Se acabaron los campamentos de verano'",
+   "platform": "X",
+   "estado": "OK"
+  },
+  {
+   "id": "VID-000106",
+   "sha256": "0560ed91dc36d3fc8b635574898f4709f621a0db0bc5c7daf77181ff138d35a8",
+   "titulo": "Gustavo Petro difunde una investigación sobre presunto vínculo de la primera dama de Bolivia con el narcotráfico y critica a Marco Rubio",
+   "platform": "X",
+   "estado": "OK"
+  },
+  {
+   "id": "VID-000107",
+   "sha256": "c74aaecd9ea0af4be8b946aeb469d1ebd0d5df1147d45d649c7e864d274dc38d",
+   "titulo": "David Icke relata la teoría de los 'israelíes danzantes' del 11-S y la liberación por Michael Chertoff",
+   "platform": "X",
+   "estado": "OK"
+  },
+  {
+   "id": "VID-000108",
+   "sha256": "d408b9186c1aaff66b2f4cdc6f97adf62d12c0231d9adccfa01755756f8c047b",
+   "titulo": "Video sobre la afirmación de que los sionistas no serían los judíos originales sino 'adoradores de demonios' franquistas",
+   "platform": "X",
+   "estado": "OK"
+  },
+  {
+   "id": "VID-000109",
+   "sha256": "7e9caa159bf11a96909469961636dad177f33d0e314602f8be05971f527b167f",
+   "titulo": "Relato de que Israel bloqueó cientos de alimentos y bienes de primera necesidad a Gaza durante 19 años",
+   "platform": "X",
+   "estado": "OK"
+  },
+  {
+   "id": "VID-000110",
+   "sha256": "c5634f0e0a49ecff8decc6518dd8936a15abefdd337e14defd20f4d69fa96294",
+   "titulo": "Un hombre israelí es retenido en la aduana australiana tras invocar herencia aborigen para saltarse la cuarentena",
+   "platform": "X",
+   "estado": "OK"
+  },
+  {
+   "id": "VID-000111",
+   "sha256": "21ac09815b050f8bad2fddb889d6f07f62f94e67f6d471e05046ad61021b9f37",
+   "titulo": "AJ+ denuncia una supuesta operación israelí con Havas para manipular los resultados de ChatGPT con un falso instituto",
+   "platform": "X",
+   "estado": "OK"
+  },
+  {
+   "id": "VID-000112",
+   "sha256": "a9f905eb45ecd898be8e4be440f161034f3831da438b15aea103db0d94ddbbae",
+   "titulo": "El rabino Yitzchak Breitowitz es citado pidiendo el exterminio de Amalek según la Torá",
+   "platform": "X",
+   "estado": "OK"
+  },
+  {
+   "id": "VID-000113",
+   "sha256": "a730208578903fe3943486e9aad71b07f22df401a4750b31a122b30e9d44ead9",
+   "titulo": "Clip que defiende el 'aplanamiento' de Gaza con comparación a los bombardeos de la Segunda Guerra Mundial",
+   "platform": "YouTube",
+   "estado": "OK"
+  },
+  {
+   "id": "VID-000114",
+   "sha256": "bf1f1b227d1d66247b24b02ba23d50f946c5503f6e9ecb77f4ddb5be5c8f663f",
+   "titulo": "La iglesia de San Porfirio en Gaza, una de las más antiguas del mundo, 'borrada de la historia'",
+   "platform": "X",
+   "estado": "OK"
+  },
+  {
+   "id": "VID-000115",
+   "sha256": "d49a7322bf0282c41a9f2704f20a706b39254ee976adf651ed3347757343c07a",
+   "titulo": "Réplica: 'la guerra contra los palestinos lleva 75 años' y fue iniciada por Israel en 1948",
+   "platform": "YouTube",
+   "estado": "OK"
+  },
+  {
+   "id": "VID-000116",
+   "sha256": "bbe1dabfc1e9f963dbbd10c2dc38f886834ba5e55cc4388ff81d1b6771382065",
+   "titulo": "Peña Nieto, captado en una boda judía en Italia junto a Avishay Neriah, empresario israelí vinculado a Pegasus",
+   "platform": "YouTube",
+   "estado": "OK"
+  },
+  {
+   "id": "VID-000117",
+   "sha256": "be44fd1b74a3d61c2d0c6816d19303a9715f21fde6736892cc446ec626082dff",
+   "titulo": "Narración documental: expulsión de judíos de países árabes por el sionismo",
+   "platform": "X",
+   "estado": "OK"
+  },
+  {
+   "id": "VID-000118",
+   "sha256": "c73f4324ceff027e7f1a531a62531c8644f1ffd903ff6597c2a3b9990d5f9ba3",
+   "titulo": "Documental: bombas en sitios judíos de Irak tras la guerra de 1948",
+   "platform": "X",
+   "estado": "OK"
+  },
+  {
+   "id": "VID-000119",
+   "sha256": "fb35819adbd6ba8d67226e997dec8aecc50d086da69d428b2af4a399d78d4cf0",
+   "titulo": "NA_twitter_58HKN58H",
+   "platform": "X",
+   "estado": "OK"
+  },
+  {
+   "id": "VID-000120",
+   "sha256": "1ce3eb81f39acab4ca77c65fb4e892fa65c8e9cf01ec67e5595117d6b86d1447",
+   "titulo": "Testimonio: control de identidad en un bus de Jerusalén",
+   "platform": "X",
+   "estado": "OK"
+  },
+  {
+   "id": "VID-000121",
+   "sha256": "55e8df9987f65fcb6ed5c6bd652b8dce5df2bb418b11777fab6e75121263d96a",
+   "titulo": "Narración: Israel como protector de los cristianos en Oriente Medio",
+   "platform": "X",
+   "estado": "OK"
+  },
+  {
+   "id": "VID-000122",
+   "sha256": "352b5a32418cbb39929eae4d868dacd12688030ecfca9d1705f405de554ea670",
+   "titulo": "Discurso religioso interpretando las guerras entre naciones como protección para Israel",
+   "platform": "X",
+   "estado": "OK"
+  },
+  {
+   "id": "VID-000123",
+   "sha256": "1d120aaea0bbb34d69dec5ad00139178ba4e8fe959c34c2a25e44f1f67cf1bf4",
+   "titulo": "Reportaje: detención administrativa de palestinos sin cargos",
+   "platform": "X",
+   "estado": "OK"
+  },
+  {
+   "id": "VID-000124",
+   "sha256": "a996e084b99ce4fac80cd46198abadaf505f7130975bab1c137f41c1239f79ba",
+   "titulo": "Discurso antisemita sobre la cifra de seis millones del Holocausto",
+   "platform": "X",
+   "estado": "OK"
+  },
+  {
+   "id": "VID-000125",
+   "sha256": "1c13838a18f6cc76b1814432ecc50bdd3d56e085e3a2fd9f0c7124745391db7b",
+   "titulo": "Conferencia en hebreo sobre la formación de los combatientes y las mujeres",
+   "platform": "X",
+   "estado": "OK"
+  },
+  {
+   "id": "VID-000126",
+   "sha256": "d8131eff9b283fd279d3bd4ac8986fe36c940bfb782c100f05af2d235bebd8d0",
+   "titulo": "Comentario sobre Jeffrey Epstein y la corrupción del gobierno de EE.UU.",
+   "platform": "X",
+   "estado": "OK"
+  },
+  {
+   "id": "VID-000127",
+   "sha256": "e66d19dd3863250aa79cf53c0f9524d5bbd01b51c29623e464a2e3b21b3ba92d",
+   "titulo": "Legislador de EE.UU. introduce resolución 502B sobre abusos en Cisjordania",
+   "platform": "X",
+   "estado": "OK"
+  },
+  {
+   "id": "VID-000128",
+   "sha256": "017e6ca45952327c5039ec6432bb43931e96a354ea8d5b706c4110ced3b03158",
+   "titulo": "Testimonio: un operador político vinculado a campañas en Chile",
+   "platform": "X",
+   "estado": "OK"
+  },
+  {
+   "id": "VID-000129",
+   "sha256": "eac1df11c05709da1f25267c1086afb3830120faf5e4a7f6c18366bf6e6c9b3a",
+   "titulo": "Acusación: supuestos soldados del IDF actuando como provocadores en NY",
+   "platform": "X",
+   "estado": "OK"
+  },
+  {
+   "id": "VID-000130",
+   "sha256": "d01ae84a63f5349859a778b5f3e9133a809eff179d1c33b78634bb7918073db3",
+   "titulo": "Reportaje de TRT World sobre turistas israelíes en Asia",
+   "platform": "X",
+   "estado": "OK"
+  },
+  {
+   "id": "VID-000131",
+   "sha256": "ddc966139c8682a3bd9d05bbef425152c8ef8894941edd718e10491f39188751",
+   "titulo": "Convocatoria a la Cumbre de Solidaridad Saharaui de enero de 2027",
+   "platform": "X",
+   "estado": "OK"
+  },
+  {
+   "id": "VID-000132",
+   "sha256": "f54cdf08d2600b97845f56d2863bf05d6f1542e7acde19c2b28fae9813dc53fc",
+   "titulo": "Entrevista: críticas al tratamiento israelí de Gaza y a la prensa",
+   "platform": "YouTube",
+   "estado": "OK"
+  },
+  {
+   "id": "VID-000133",
+   "sha256": "212a03af123d0f32e6b722702c2cee5dc36e9219cefb963be43730d643a536ba",
+   "titulo": "Monólogo contra la corrupción de EE.UU. con acusaciones antisemitas",
+   "platform": "X",
+   "estado": "OK"
+  },
+  {
+   "id": "VID-000134",
+   "sha256": "4a88aa2f88557d618b11e5823362ddbdc9781791b208e502e8867c2f42bbe3f7",
+   "titulo": "Crítica a la desregulación de tierras rurales y a los incendios en la Patagonia",
+   "platform": "X",
+   "estado": "OK"
+  },
+  {
+   "id": "VID-000135",
+   "sha256": "231d90ae6b48fbbc278e49b0c958e9b3a40bb1f9d7e68ffd4c05e278401a497e",
+   "titulo": "Teoría del 'Plan Andinia' y la anexión de la Patagonia",
+   "platform": "X",
+   "estado": "OK"
+  },
+  {
+   "id": "VID-000136",
+   "sha256": "80facdfbc3c3933efa54daedbf641d2bc37217e7d35d4158c06523c885022f48",
+   "titulo": "Cita de Sergio Bergman sobre Argentina como tierra prometida",
+   "platform": "X",
+   "estado": "OK"
+  },
+  {
+   "id": "VID-000137",
+   "sha256": "882666b45a2f3e69f7222cb156d3e335dd21be119110afd84ae4f5d8bd6ca776",
+   "titulo": "Acusaciones sobre incendios intencionales en la Patagonia y presencia israelí",
+   "platform": "X",
+   "estado": "OK"
+  },
+  {
+   "id": "VID-000138",
+   "sha256": "2eb0cbb84c9e8c70e236b1ac25308438ffb742a07c7a10e3415272ff00c11f28",
+   "titulo": "Análisis sobre incendios en la Patagonia y compra de tierras",
+   "platform": "X",
+   "estado": "OK"
+  },
+  {
+   "id": "VID-000139",
+   "sha256": "b089e483e75f026317d8df943f4278e5508e37540bcd131efdf3aa2c2504c402",
+   "titulo": "Monólogo: acusación de que Israel controla EE.UU.",
+   "platform": "X",
+   "estado": "OK"
+  },
+  {
+   "id": "VID-000140",
+   "sha256": "13309feb8c119582bf21adfc79f388700061b18e33e477abbc27678b7006a92b",
+   "titulo": "Transcripción fragmentada y de baja confianza",
+   "platform": "X",
+   "estado": "OK"
+  },
+  {
+   "id": "VID-000141",
+   "sha256": "dba6a29ab0a956c4da2623e2bb29b789e43127395aebc030b54174e34970c063",
+   "titulo": "Conferencia en hebreo sobre el servicio militar y la unidad nacional",
+   "platform": "X",
+   "estado": "OK"
+  },
+  {
+   "id": "VID-000142",
+   "sha256": "064d8c9df1eedac589d899ace265cf31a51375b89ab18bb2ba1511ad626f7fe2",
+   "titulo": "Crítica de los sionistas por vincular a todos los judíos con las guerras de Israel",
+   "platform": "X",
+   "estado": "OK"
+  },
+  {
+   "id": "VID-000143",
+   "sha256": "0b0605ba60f7e2561fe4fea35c39b63e472741ba8a11bc5fa83dd4cf685a7976",
+   "titulo": "Advertencia sobre la capacidad militar de Israel",
+   "platform": "X",
+   "estado": "OK"
+  },
+  {
+   "id": "VID-000144",
+   "sha256": "116fc89f5ba6c5c48dbd4fd82a0d1b64c0b41a186050279b1b4dd931dff2eff5",
+   "titulo": "Acusaciones contra la 'derecha' digital latinoamericana",
+   "platform": "X",
+   "estado": "OK"
+  },
+  {
+   "id": "VID-000145",
+   "sha256": "63028a182013b8536cfefeab9463a59b1f503052a6e60b2d64c8b0c9ec5cbb42",
+   "titulo": "Intervención de un representante israelí sobre Gaza y Hamás",
+   "platform": "X",
+   "estado": "OK"
+  },
+  {
+   "id": "VID-000146",
+   "sha256": "b551d1e3819613312f8c5db5af7480f9e084bcd46605db1b4870c5ff02b70401",
+   "titulo": "Altercado doméstico con llamada a la policía (transcripción confusa)",
+   "platform": "X",
+   "estado": "OK"
+  },
+  {
+   "id": "VID-000147",
+   "sha256": "36e6e62b79f24426c7d8d62948a51d5c9eefae5d6d39be291b21f4b2175f662f",
+   "titulo": "Explicación sobre el significado legal del término genocidio",
+   "platform": "X",
+   "estado": "OK"
+  },
+  {
+   "id": "VID-000148",
+   "sha256": "c4ff2a82b59a9b031934f269e6ae737e86cf089e82dbf650d5550a18fff95de7",
+   "titulo": "Testimonio: le ofrecieron crear un medio de 'la derecha' en México",
+   "platform": "X",
+   "estado": "OK"
+  },
+  {
+   "id": "VID-000149",
+   "sha256": "ec00f2cb6b45d06a151ce3ccdbc1ef91589ee92aab4ced88eb3c286f09704c8a",
+   "titulo": "Análisis del caso Fernando Cerimedo y su billetera fría",
+   "platform": "X",
+   "estado": "OK"
+  },
+  {
+   "id": "VID-000150",
+   "sha256": "106cf502e353fa0d479b6490465fffe1ffea64cd3ea328d55b218118ca477ef8",
+   "titulo": "Entrevista callejera sobre la cifra del Holocausto y Gaza",
+   "platform": "X",
+   "estado": "OK"
+  },
+  {
+   "id": "VID-000151",
+   "sha256": "15ed2b94a5609c9b1596864c5a152c122091b9eb0983e3f521f86d8bdeb23682",
+   "titulo": "Cruza entre 'Tucker' y una congresista sobre Israel y antisemitismo",
+   "platform": "X",
+   "estado": "OK"
+  },
+  {
+   "id": "VID-000152",
+   "sha256": "1297f43e79f047ec26cf7b8cab3bcd281e881e06a77ab300b9b2f73b4954ec0e",
+   "titulo": "Denuncia del disparo israelí a un niño palestino de 14 años",
+   "platform": "X",
+   "estado": "OK"
+  },
+  {
+   "id": "VID-000153",
+   "sha256": "d0a5f2f6e7b8745341d9fbf43a7bb2fbdb27c08f044ef8e99fa03b7d86a9676c",
+   "titulo": "Análisis sobre el objetivo de la guerra en Afganistán",
+   "platform": "X",
+   "estado": "OK"
+  },
+  {
+   "id": "VID-000154",
+   "sha256": "44f5628f612ba37b4e195254d6ed35edf31eaadb7314e2efe9accbc60113acf8",
+   "titulo": "Discurso religioso hebreo sobre el dominio de Judea y Samaria",
+   "platform": "X",
+   "estado": "OK"
+  },
+  {
+   "id": "VID-000155",
+   "sha256": "6bee59594a10eb6f55073cca76c88738a7b4bc003ee4ba4a337db4ce3366e88b",
+   "titulo": "Sobre la compra de 200.000 hectáreas en La Rioja por un rabino",
+   "platform": "X",
+   "estado": "OK"
+  },
+  {
+   "id": "VID-000156",
+   "sha256": "dae8f9d4abf0fa55b461ad967178a36acbd0966102b9dc17d63b158c8f45ff91",
+   "titulo": "Cuestionamientos sobre la ayuda de EE.UU. a Israel",
+   "platform": "X",
+   "estado": "OK"
+  },
+  {
+   "id": "VID-000157",
+   "sha256": "e20ebbfe1539c4153f5bd60cb3713f0a0a3bf0e91ce0f2ec58b71c5639c6abb1",
+   "titulo": "Tucker Carlson: 'Ese es el enemigo de la civilización' (Gaza)",
+   "platform": "YouTube",
+   "estado": "OK"
+  }
+ ]
+}

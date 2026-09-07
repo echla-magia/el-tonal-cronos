@@ -1,0 +1,854 @@
+// ============================================================================
+// ARCHIVO DOCUMENTAL — FASE 2: Base de datos semilla
+// Datos reales del expediente Israel/Palestina. Cada entidad lleva su
+// prefixed_id, metadata, estatus de certeza y fuentes.
+// La IA PROPONE; el humano valida. Nada aquí es "hecho consumado".
+// ============================================================================
+
+const DB = { persons: [], orgs: [], videos: [], claims: [], events: [], sources: [], rels: [], conflicts: [] };
+
+// ----------------------------------------------------------------------------
+// CONFLICTOS
+// ----------------------------------------------------------------------------
+DB.conflicts.push({
+  id: "CNF-000001", name: "Conflicto Israel-Palestina",
+  period: "1848–presente (fase moderna: 1948–actualidad)",
+  background: "Conflicto entre el Estado de Israel, el pueblo palestino y actores regionales/internacionales, atravesado por tensiones territoriales, religiosas, políticas y geopolíticas.",
+  actors: ["Estado de Israel", "Hamás", "Autoridad Nacional Palestina", "colonos", "población civil palestina"],
+  status: "documentado",
+  refs: ["SRC-000001"]
+});
+
+// ----------------------------------------------------------------------------
+// FUENTES
+// ----------------------------------------------------------------------------
+DB.sources.push({
+  id: "SRC-000001", name: "Expediente Sombras de Israel 2026", type: "archivo de investigación",
+  url: "C:\\Users\\USUARIO\\Downloads\\expediente_sombras_israel_2026-08-29\\",
+  accessed: "2026-09-03", note: "Fuente de verdad local del archivo documental."
+});
+DB.sources.push({
+  id: "SRC-000002", name: "Caso FARA 7649 Clock Tower X LLC", type: "documento oficial (DOJ FARA)",
+  url: "expediente/evidence/fara_7649_clock_tower_x_israel/", accessed: "2026-09-03",
+  note: "Registro de agente extranjero. No prueba por sí solo contrato directo con OpenAI."
+});
+DB.sources.push({
+  id: "SRC-000003", name: "X / Twitter", type: "red social", accessed: "2026-09-03",
+  note: "Plataforma de publicación de los videos; los videos son pistas hasta conectarse con fuentes primarias."
+});
+
+// ----------------------------------------------------------------------------
+// PERSONAS
+// ----------------------------------------------------------------------------
+DB.persons.push({
+  id: "PER-000001", name: "Benjamin Netanyahu", original: "בִּניָמִין נְתַנְיָהוּ",
+  roles: ["Primer Ministro de Israel", "líder Likud"], nationality: "Israelí",
+  bio: "Primer ministro de Israel en varios periodos. Figura central de la política israelí y de las relaciones con Estados Unidos.",
+  img: "img/netanyahu.jpg", certainty: "DOCUMENTADO", review: "REVISADO", refs: ["SRC-000001","SRC-000003"]
+});
+DB.persons.push({
+  id: "PER-000002", name: "Donald Trump", roles: ["expresidente de EUA"], nationality: "Estadounidense",
+  bio: "Presidente de Estados Unidos (2017-2021). Relaciones políticas y económicas documentadas con figuras israelíes y pro-Israel.",
+  img: "img/trump.jpg", certainty: "DOCUMENTADO", review: "REVISADO", refs: ["SRC-000001"]
+});
+DB.persons.push({
+  id: "PER-000003", name: "Moshe Feiglin", roles: ["ex-MK (Parlamento israelí)"], nationality: "Israelí",
+  bio: "Exlegislador israelí de línea dura. En video viral: 'no podemos vivir si queda un palestino'.",
+  img: "img/feiglin.jpg", certainty: "CORROBORADO (cita audiovisual)", review: "PENDIENTE", refs: ["SRC-000003"]
+});
+DB.persons.push({
+  id: "PER-000004", name: "Amit Halevi", roles: ["diputado israelí"], nationality: "Israelí",
+  bio: "Diputado israelí que vinculó nacimientos en una maternidad con supuestos 'terroristas'.",
+  img: "img/halevi.jpg", certainty: "REPORTADO", review: "PENDIENTE", refs: ["SRC-000003"]
+});
+DB.persons.push({
+  id: "PER-000005", name: "Norman Finkelstein", roles: ["profesor, autor"], nationality: "Estadounidense",
+  bio: "Autor judío crítico de la política israelí. Sobre el 'Estado del pueblo judío' y el respaldo del mundo.",
+  img: "img/finkelstein.jpg", certainty: "DOCUMENTADO", review: "REVISADO", refs: ["SRC-000001","SRC-000003"]
+});
+DB.persons.push({
+  id: "PER-000006", name: "Tucker Carlson", roles: ["presentador, comentarista"], nationality: "Estadounidense",
+  bio: "Figura mediática. Tema de declaraciones de Ted Cruz y del debate sobre antisemitismo.",
+  img: "img/carlson.jpg", certainty: "REPORTADO", review: "PENDIENTE", refs: ["SRC-000003"]
+});
+DB.persons.push({
+  id: "PER-000007", name: "Ted Cruz", roles: ["senador de EUA"], nationality: "Estadounidense",
+  bio: "Senador republicano. Según clip: 'panicking'; llama a Tucker Carlson 'el mayor antisemita'.",
+  img: "img/cruz.jpg", certainty: "REPORTADO", review: "PENDIENTE", refs: ["SRC-000003"]
+});
+DB.persons.push({
+  id: "PER-000008", name: "Jared Kushner", roles: ["empresario, exasesor de la Casa Blanca"], nationality: "Estadounidense",
+  bio: "Yerno de Trump. Sobre Gaza como 'waterfront teardown' y torres de lujo sobre escombros.",
+  img: "img/kushner.jpg", certainty: "CORROBORADO (cita audiovisual)", review: "PENDIENTE", refs: ["SRC-000003"]
+});
+DB.persons.push({
+  id: "PER-000009", name: "Haitham Abdelhadi", roles: ["analista"], nationality: "Palestino-británico",
+  bio: "Afirma: 'criticar el sionismo no es antisemitismo'.",
+  img: "#", certainty: "REPORTADO", review: "PENDIENTE", refs: ["SRC-000003"]
+});
+DB.persons.push({
+  id: "PER-000010", name: "May Golan", roles: ["ministra (Gabinete de Israel)"], nationality: "Israelí",
+  bio: "Ministra. Video la muestra orgullosa de la destrucción en Gaza.",
+  img: "img/golan.jpg", certainty: "CORROBORADO (cita audiovisual)", review: "PENDIENTE", refs: ["SRC-000003"]
+});
+
+DB.persons.push({
+  id: "PER-000011", name: "Eran Efrati",
+  roles: [["Veterano israelí/testimonio en video ('I was the terrorist')"]],
+  nationality: "?",
+  bio: "Figura relevante en el conflicto/geopolítica. Testimonio de veterano; rótulo 'I was the terrorist'. Observado en video.",
+  img: "#", certainty: "REPORTADO", review: "PENDIENTE", refs: ["SRC-000003"]
+});
+
+DB.persons.push({
+  id: "PER-000012", name: "John Hagee",
+  roles: [["Líder religioso, vinculado a CUFI / sionismo cristiano"]],
+  nationality: "?",
+  bio: "Figura relevante en el conflicto/geopolítica. Asociado visual/temáticamente a CUFI en video.",
+  img: "img/john_hagee.jpg", certainty: "REPORTADO", review: "PENDIENTE", refs: ["SRC-000003"]
+});
+
+DB.persons.push({
+  id: "PER-000013", name: "Kenneth Copeland",
+  roles: [["Televangelista pro-Israel"]],
+  nationality: "?",
+  bio: "Figura relevante en el conflicto/geopolítica. Mencionado en video sobre televangelismo/pro-Israel.",
+  img: "img/kenneth_copeland.jpg", certainty: "REPORTADO", review: "PENDIENTE", refs: ["SRC-000003"]
+});
+
+DB.persons.push({
+  id: "PER-000014", name: "Paula White",
+  roles: [["Líder religioso-político, sionismo cristiano"]],
+  nationality: "?",
+  bio: "Figura relevante en el conflicto/geopolítica. Mencionada en video sobre 'Zionism hijacking Christianity'.",
+  img: "img/paula_white.jpg", certainty: "REPORTADO", review: "PENDIENTE", refs: ["SRC-000003"]
+});
+
+DB.persons.push({
+  id: "PER-000015", name: "Mike Huckabee",
+  roles: [["Político/religioso pro-Israel"]],
+  nationality: "?",
+  bio: "Figura relevante en el conflicto/geopolítica. Figura política/religiosa pro-Israel. Observado en video.",
+  img: "img/mike_huckabee.jpg", certainty: "REPORTADO", review: "PENDIENTE", refs: ["SRC-000003"]
+});
+
+DB.persons.push({
+  id: "PER-000016", name: "Lawrence Wilkerson",
+  roles: [["Exfuncionario/comentarista (Judging Freedom)"]],
+  nationality: "?",
+  bio: "Figura relevante en el conflicto/geopolítica. Entrevista/podcast Judging Freedom. Observado en video.",
+  img: "img/lawrence_wilkerson.jpg", certainty: "REPORTADO", review: "PENDIENTE", refs: ["SRC-000003"]
+});
+
+DB.persons.push({
+  id: "PER-000017", name: "Gustavo Petro",
+  roles: [["Presidente de Colombia / autor de post"]],
+  nationality: "?",
+  bio: "Figura relevante en el conflicto/geopolítica. Autor/post observado sobre Cerimedo y Casa Rosada.",
+  img: "img/gustavo_petro.jpg", certainty: "REPORTADO", review: "PENDIENTE", refs: ["SRC-000003"]
+});
+
+DB.persons.push({
+  id: "PER-000018", name: "Fernando Cerimedo",
+  roles: [["Operador de propaganda política y estratega digital (La Derecha Diario)"]],
+  nationality: "?",
+  bio: "Figura relevante en el conflicto/geopolítica. Nadia Beller confirma que Cerimedo trabajó en campaña pinochetista del rechazo y campaña de Kast.",
+  img: "img/fernando_cerimedo.jpg", certainty: "REPORTADO", review: "PENDIENTE", refs: ["SRC-000003"]
+});
+
+DB.persons.push({
+  id: "PER-000019", name: "Wesley Clark",
+  roles: [["General retirado de EEUU, citado"]],
+  nationality: "?",
+  bio: "Figura relevante en el conflicto/geopolítica. Citado sobre invasión de 7 países en 5 años (clip Kamelia/Irán).",
+  img: "img/wesley_clark.jpg", certainty: "REPORTADO", review: "PENDIENTE", refs: ["SRC-000003"]
+});
+
+DB.persons.push({
+  id: "PER-000020", name: "Richard Nixon",
+  roles: [["Expresidente de EEUU"]],
+  nationality: "?",
+  bio: "Figura relevante en el conflicto/geopolítica. Cita atribuida sobre el lobby judío/pro-Israel.",
+  img: "img/richard_nixon.jpg", certainty: "REPORTADO", review: "PENDIENTE", refs: ["SRC-000003"]
+});
+
+DB.persons.push({
+  id: "PER-000021", name: "Jeffrey Epstein",
+  roles: [["Financista, caso penal/reorganización"]],
+  nationality: "?",
+  bio: "Figura relevante en el conflicto/geopolítica. Caso criminal/red de abuso; mencionado como eje de montajes sobre élite.",
+  img: "img/jeffrey_epstein.jpg", certainty: "REPORTADO", review: "PENDIENTE", refs: ["SRC-000003"]
+});
+
+DB.persons.push({
+  id: "PER-000022", name: "Alan Dershowitz",
+  roles: [["Abogado ligado a Epstein"]],
+  nationality: "?",
+  bio: "Figura relevante en el conflicto/geopolítica. Clip: 'Epstein's Jewish lawyer'. Tema Epstein/Dershowitz.",
+  img: "img/alan_dershowitz.jpg", certainty: "REPORTADO", review: "PENDIENTE", refs: ["SRC-000003"]
+});
+
+DB.persons.push({
+  id: "PER-000023", name: "John Fetterman",
+  roles: [["Senador de EEUU (clip GBC)"]],
+  nationality: "?",
+  bio: "Figura relevante en el conflicto/geopolítica. Clip: Fetterman: 'Is Israel committing genocide?'",
+  img: "img/john_fetterman.jpg", certainty: "REPORTADO", review: "PENDIENTE", refs: ["SRC-000003"]
+});
+
+DB.persons.push({
+  id: "PER-000024", name: "Jon Stewart",
+  roles: [["Presentador de TV (respuesta)"]],
+  nationality: "?",
+  bio: "Figura relevante en el conflicto/geopolítica. Clip con Fetterman/Stewart sobre Epstein/Hamás.",
+  img: "img/jon_stewart.jpg", certainty: "REPORTADO", review: "PENDIENTE", refs: ["SRC-000003"]
+});
+
+DB.persons.push({
+  id: "PER-000025", name: "Marco Rubio",
+  roles: [["Secretario de Estado (2025)"]],
+  nationality: "?",
+  bio: "Figura relevante en el conflicto/geopolítica. Clip Praxedes: respuesta del secretario de Estado Marco Rubio.",
+  img: "img/marco_rubio.jpg", certainty: "REPORTADO", review: "PENDIENTE", refs: ["SRC-000003"]
+});
+
+DB.persons.push({
+  id: "PER-000026", name: "Meilich Cohen",
+  roles: [["Rabino antisionista (Voice of Rabbis)"]],
+  nationality: "?",
+  bio: "Figura relevante en el conflicto/geopolítica. 'A firm clear statement by Rabbi Meilich Cohen'. Judíos estadounidenses sin conexión con Israel.",
+  img: "#", certainty: "REPORTADO", review: "PENDIENTE", refs: ["SRC-000003"]
+});
+
+DB.persons.push({
+  id: "PER-000027", name: "Hind Rajab",
+  roles: [["Víctima civil (caso mencionado)"]],
+  nationality: "?",
+  bio: "Figura relevante en el conflicto/geopolítica. Caso de niña/familia/ambulancia mencionado en entrevista.",
+  img: "img/hind_rajab.jpg", certainty: "REPORTADO", review: "PENDIENTE", refs: ["SRC-000003"]
+});
+
+DB.persons.push({
+  id: "PER-000028", name: "Rodrigo Paz",
+  roles: [["Político boliviano (clip Julián Macías)"]],
+  nationality: "?",
+  bio: "Figura relevante en el conflicto/geopolítica. Clip sobre Cerimedo y asesoría política; '¿no decía Rodrigo Paz...?'",
+  img: "img/rodrigo_paz.jpg", certainty: "REPORTADO", review: "PENDIENTE", refs: ["SRC-000003"]
+});
+
+DB.persons.push({
+  id: "PER-000029", name: "Nadia Beller",
+  roles: [["Investigadora/periodista mencionada"]],
+  nationality: "?",
+  bio: "Figura relevante en el conflicto/geopolítica. Confirma datos sobre Cerimedo y bots.",
+  img: "img/nadia_beller.jpg", certainty: "REPORTADO", review: "PENDIENTE", refs: ["SRC-000003"]
+});
+
+DB.persons.push({
+  id: "PER-000030", name: "Theodor Herzl",
+  roles: [["Fundador del sionismo político"]],
+  nationality: "?",
+  bio: "Figura relevante en el conflicto/geopolítica. Cita atribuida: 'Argentina tendría el mayor interés en cedernos un pedazo de territorio para construir el estado sionista'.",
+  img: "img/theodor_herzl.jpg", certainty: "REPORTADO", review: "PENDIENTE", refs: ["SRC-000003"]
+});
+
+DB.persons.push({
+  id: "PER-000031", name: "Sergio Bergman",
+  roles: [["Rabino sionista argentino, exfuncionario"]],
+  nationality: "?",
+  bio: "Figura relevante en el conflicto/geopolítica. Cita: 'Argentina como tierra prometida del sionismo, debe ser partida y repartida como en Palestina'.",
+  img: "img/sergio_bergman.jpg", certainty: "REPORTADO", review: "PENDIENTE", refs: ["SRC-000003"]
+});
+
+DB.persons.push({
+  id: "PER-000032", name: "David Roet",
+  roles: [["Embajador de Israel en Austria"]],
+  nationality: "?",
+  bio: "Figura relevante en el conflicto/geopolítica. Filmado en reunión en Innsbruck hablando de palestinos y Gaza.",
+  img: "#", certainty: "REPORTADO", review: "PENDIENTE", refs: ["SRC-000003"]
+});
+
+DB.persons.push({
+  id: "PER-000033", name: "Javier Negre",
+  roles: [["Periodista/fundador de La Derecha Diario"]],
+  nationality: "?",
+  bio: "Figura relevante en el conflicto/geopolítica. Testimonio Jean Carlo Portillo: Negre y Cerimedo tenían 'el secreto para reventar el algoritmo (granjas de bots)'.",
+  img: "#", certainty: "REPORTADO", review: "PENDIENTE", refs: ["SRC-000003"]
+});
+
+DB.persons.push({
+  id: "PER-000034", name: "Ricardo Salinas Pliego",
+  roles: [["Empresario mexicano"]],
+  nationality: "?",
+  bio: "Figura relevante en el conflicto/geopolítica. Clip Catrina Norteña: exhibe a La Derecha Diario de Negre, Cerimedo y Salinas Pliego por granjas de bots.",
+  img: "img/ricardo_salinas_pliego.jpg", certainty: "REPORTADO", review: "PENDIENTE", refs: ["SRC-000003"]
+});
+
+DB.persons.push({
+  id: "PER-000035", name: "Diego Ruzzarin",
+  roles: [["Comentarista/creador de contenido"]],
+  nationality: "?",
+  bio: "Figura relevante en el conflicto/geopolítica. Clip Catrina Norteña: 'EXHIBE @DiegoRuzzarin los crímenes de La Derecha Diario'.",
+  img: "#", certainty: "REPORTADO", review: "PENDIENTE", refs: ["SRC-000003"]
+});
+
+DB.persons.push({
+  id: "PER-000036", name: "Mosab Hassan Yousef",
+  roles: [["Exmiembro de inteligencia israelí"]],
+  nationality: "?",
+  bio: "Figura relevante en el conflicto/geopolítica. Clip Parody Jeff: 'Former Israeli intelligence member Mosab Hassan claims Israel has secret advanced weapons'.",
+  img: "img/mosab_hassan_yousef.jpg", certainty: "REPORTADO", review: "PENDIENTE", refs: ["SRC-000003"]
+});
+
+DB.persons.push({
+  id: "PER-000037", name: "Philip Tourney",
+  roles: [["Veterano estadounidense, sobreviviente USS Liberty"]],
+  nationality: "?",
+  bio: "Figura relevante en el conflicto/geopolítica. 'Israel nos controla. Controlan el Congreso, el Senado, nuestro dinero.'",
+  img: "#", certainty: "REPORTADO", review: "PENDIENTE", refs: ["SRC-000003"]
+});
+
+DB.persons.push({
+  id: "PER-000038", name: "Julian Assange",
+  roles: [["Fundador de WikiLeaks"]],
+  nationality: "?",
+  bio: "Figura relevante en el conflicto/geopolítica. Cita atribuida: 'El objetivo es tener una guerra interminable, no una guerra exitosa'.",
+  img: "img/julian_assange.jpg", certainty: "REPORTADO", review: "PENDIENTE", refs: ["SRC-000003"]
+});
+
+DB.persons.push({
+  id: "PER-000039", name: "Rabbi Kohn",
+  roles: [["Rabino antisionista"]],
+  nationality: "?",
+  bio: "Figura relevante en el conflicto/geopolítica. 'Zionists stole the Jewish name and now use it as a shield.'",
+  img: "#", certainty: "REPORTADO", review: "PENDIENTE", refs: ["SRC-000003"]
+});
+
+DB.persons.push({
+  id: "PER-000040", name: "Bezalel Smotrich",
+  roles: [["Ministro de Finanzas de Israel"]],
+  nationality: "?",
+  bio: "Figura relevante en el conflicto/geopolítica. 'Israel will expand into Lebanon, Syria, and Gaza. To the Litani. Mount Hermon.'",
+  img: "img/bezalel_smotrich.jpg", certainty: "REPORTADO", review: "PENDIENTE", refs: ["SRC-000003"]
+});
+
+DB.persons.push({
+  id: "PER-000041", name: "Javier Milei",
+  roles: [["Presidente de Argentina"]],
+  nationality: "?",
+  bio: "Figura relevante en el conflicto/geopolítica. Anunció que extranjeros (incluidos sionistas) pueden comprar tierras argentinas tras incendios.",
+  img: "img/javier_milei.jpg", certainty: "REPORTADO", review: "PENDIENTE", refs: ["SRC-000003"]
+});
+
+DB.persons.push({
+  id: "PER-000042", name: "Charlie Kirk",
+  roles: [["Activista conservador, fundador de Turning Point USA"]],
+  nationality: "?",
+  bio: "Figura relevante en el conflicto/geopolítica. Figura del movimiento MAGA; tema en fuentes del expediente sobre adoctrinamiento político-religioso.",
+  img: "img/charlie_kirk.jpg", certainty: "REPORTADO", review: "PENDIENTE", refs: ["SRC-000003"]
+});
+
+DB.persons.push({
+  id: "PER-000043", name: "Candace Owens",
+  roles: [["Comentarista política conservadora"]],
+  nationality: "?",
+  bio: "Figura relevante en el conflicto/geopolítica. Figura mediática conservadora; tema en fuentes del expediente.",
+  img: "img/candace_owens.jpg", certainty: "REPORTADO", review: "PENDIENTE", refs: ["SRC-000003"]
+});
+
+DB.persons.push({
+  id: "PER-000044", name: "John Mearsheimer",
+  roles: [["Politólogo, coautor 'The Israel Lobby'"]],
+  nationality: "?",
+  bio: "Figura relevante en el conflicto/geopolítica. Autores del lobby israelí en EUA; citados en fuentes del expediente.",
+  img: "img/john_mearsheimer.jpg", certainty: "REPORTADO", review: "PENDIENTE", refs: ["SRC-000003"]
+});
+
+DB.persons.push({
+  id: "PER-000045", name: "Stephen Walt",
+  roles: [["Politólogo, coautor 'The Israel Lobby'"]],
+  nationality: "?",
+  bio: "Figura relevante en el conflicto/geopolítica. Coautor de 'The Israel Lobby and U.S. Foreign Policy'.",
+  img: "img/stephen_walt.jpg", certainty: "REPORTADO", review: "PENDIENTE", refs: ["SRC-000003"]
+});
+
+DB.persons.push({
+  id: "PER-000046", name: "JD Vance",
+  roles: [["Vicepresidente de EEUU (2025)"]],
+  nationality: "?",
+  bio: "Figura relevante en el conflicto/geopolítica. Figura política estadounidense mencionada en fuentes del expediente.",
+  img: "img/jd_vance.jpg", certainty: "REPORTADO", review: "PENDIENTE", refs: ["SRC-000003"]
+});
+
+DB.persons.push({
+  id: "PER-000047", name: "Itamar Ben-Gvir",
+  roles: [["Ministro de Seguridad Nacional de Israel"]],
+  nationality: "?",
+  bio: "Figura relevante en el conflicto/geopolítica. Israeli National Security Minister Itamar Ben-Gvir faced an embarrassing confrontation at the US Capitol... 'You're a racist war criminal!'",
+  img: "img/itamar_ben_gvir.jpg", certainty: "REPORTADO", review: "PENDIENTE", refs: ["SRC-000003"]
+});
+
+DB.persons.push({
+  id: "PER-000048", name: "Joe Kent",
+  roles: [["Congresista estadounidense (R-WA), ex Navy SEAL"]],
+  nationality: "?",
+  bio: "Figura relevante en el conflicto/geopolítica. I saw Israeli lobby groups dictate terms inside the White House under Trump... manipulating those around President Trump to put us into this war",
+  img: "img/joe_kent.jpg", certainty: "REPORTADO", review: "PENDIENTE", refs: ["SRC-000003"]
+});
+
+DB.persons.push({
+  id: "PER-000049", name: "Jeffrey Sachs",
+  roles: [["Economista estadounidense"]],
+  nationality: "?",
+  bio: "Figura relevante en el conflicto/geopolítica. Jeffrey Sachs names the driver of the wars: Washington and Europe still believe they run the world... hegemonic mindset at work in Ukraine, Gaza, Iran and Venezuela",
+  img: "img/jeffrey_sachs.jpg", certainty: "REPORTADO", review: "PENDIENTE", refs: ["SRC-000003"]
+});
+
+DB.persons.push({
+  id: "PER-000050", name: "Gabriel Rockhill",
+  roles: [["Profesor/filósofo"]],
+  nationality: "?",
+  bio: "Figura relevante en el conflicto/geopolítica. La CIA tiene 2 ramas... de 1947 a 1987 mataron a 6 millones y derribaron 50 gobiernos democráticos... Gabriel Rockhill, profesor",
+  img: "img/gabriel_rockhill.png", certainty: "REPORTADO", review: "PENDIENTE", refs: ["SRC-000003"]
+});
+
+DB.persons.push({
+  id: "PER-000051", name: "David Icke",
+  roles: [["Autor/conferenciante (teorías conspirativas)"]],
+  nationality: "?",
+  bio: "Figura relevante en el conflicto/geopolítica. David Icke speaks about the dancing Israelis: 'Five Israelis, two confirmed as Mossad agents, had prior knowledge of 9/11'",
+  img: "img/david_icke.jpg", certainty: "REPORTADO", review: "PENDIENTE", refs: ["SRC-000003"]
+});
+
+DB.persons.push({
+  id: "PER-000052", name: "George Lincoln Rockwell",
+  roles: [["Histórico; fundador del American Nazi Party"]],
+  nationality: "?",
+  bio: "Figura relevante en el conflicto/geopolítica. George Lincoln Rockwell speaks his mind on the 6,000,000 figure. Fun fact: the figure was achieved by the torture of Rudolph Höss",
+  img: "img/george_lincoln_rockwell.jpg", certainty: "REPORTADO", review: "PENDIENTE", refs: ["SRC-000003"]
+});
+
+DB.persons.push({
+  id: "PER-000053", name: "Mark Weber",
+  roles: [["Figura revisionista; director del Institute for Historical Review"]],
+  nationality: "?",
+  bio: "Figura relevante en el conflicto/geopolítica. Mark Weber explains that the photos taken at the concentration camps were the result of starvation and disease... there was no extermination policy",
+  img: "#", certainty: "REPORTADO", review: "PENDIENTE", refs: ["SRC-000003"]
+});
+
+DB.persons.push({
+  id: "PER-000054", name: "Rudolph Höss",
+  roles: [["Histórico; comandante de Auschwitz (mencionado)"]],
+  nationality: "?",
+  bio: "Figura relevante en el conflicto/geopolítica. the 6,000,000 figure was achieved by the torture of Rudolph Höss (commandant to Auschwitz) by the British",
+  img: "img/rudolph_hoss.jpg", certainty: "REPORTADO", review: "PENDIENTE", refs: ["SRC-000003"]
+});
+
+DB.persons.push({
+  id: "PER-000055", name: "Riccardo Bosi",
+  roles: [["Excomandante de fuerzas especiales australianas"]],
+  nationality: "?",
+  bio: "Figura relevante en el conflicto/geopolítica. Riccardo Bosi, der ehemaliger australische Kommandeur der Spezialkräfte, über die Ukraine: 'Die Ukraine ist das Zentrum des tiefen...'",
+  img: "img/riccardo_bosi.png", certainty: "REPORTADO", review: "PENDIENTE", refs: ["SRC-000003"]
+});
+
+DB.persons.push({
+  id: "PER-000056", name: "Robert David Steele",
+  roles: [["Exanalista de inteligencia de EEUU (exCIA)"]],
+  nationality: "?",
+  bio: "Figura relevante en el conflicto/geopolítica. Robert D. Steele, exCIA: 'Tenemos 1000 bases militares para contrabandear oro, armas, drogas, efectivo y niños pequeños para las élites de EEUU'",
+  img: "img/robert_david_steele.jpg", certainty: "REPORTADO", review: "PENDIENTE", refs: ["SRC-000003"]
+});
+
+DB.persons.push({
+  id: "PER-000057", name: "Jussi Saramo",
+  roles: [["Eurodiputado finlandés (MEP)"]],
+  nationality: "?",
+  bio: "Figura relevante en el conflicto/geopolítica. MEP Jussi Saramo speaking in the European Parliament: 'tieto kuinka monta palestiinalaista Israel tappoi joka vuosi ennen Hamasin iskua'",
+  img: "img/jussi_saramo.jpg", certainty: "REPORTADO", review: "PENDIENTE", refs: ["SRC-000003"]
+});
+
+DB.persons.push({
+  id: "PER-000058", name: "Enrique Peña Nieto",
+  roles: [["Expresidente de México"]],
+  nationality: "?",
+  bio: "Figura relevante en el conflicto/geopolítica. El expresidente de México Enrique Peña Nieto fue captado en una boda en Italia junto a Avishay Neriah, comercializador del software espía Pegasus",
+  img: "img/enrique_pena_nieto.jpg", certainty: "REPORTADO", review: "PENDIENTE", refs: ["SRC-000003"]
+});
+
+DB.persons.push({
+  id: "PER-000059", name: "Avishay Neriah",
+  roles: [["Empresario israelí, comercializador de Pegasus"]],
+  nationality: "?",
+  bio: "Figura relevante en el conflicto/geopolítica. Neriah y su socio Uri Ansbacher habrían pagado a Peña Nieto 25 millones de dólares para asegurar contratos de ciberseguridad con NSO Group",
+  img: "#", certainty: "REPORTADO", review: "PENDIENTE", refs: ["SRC-000003"]
+});
+
+DB.persons.push({
+  id: "PER-000060", name: "Uri Ansbacher",
+  roles: [["Socio de Avishay Neriah (empresario israelí)"]],
+  nationality: "?",
+  bio: "Figura relevante en el conflicto/geopolítica. Neriah y su socio Uri Ansbacher habrían pagado a Peña Nieto 25 millones de dólares",
+  img: "#", certainty: "REPORTADO", review: "PENDIENTE", refs: ["SRC-000003"]
+});
+
+DB.persons.push({
+  id: "PER-000061", name: "Saddam Hussein",
+  roles: [["Dictador de Irak (mencionado en archivo 2002)"]],
+  nationality: "?",
+  bio: "Figura relevante en el conflicto/geopolítica. 2002: 'If you take out Saddam, I guarantee you it will have enormously positive impact in the region'. A million people died in a War based on a complete lie",
+  img: "img/saddam_hussein.jpg", certainty: "REPORTADO", review: "PENDIENTE", refs: ["SRC-000003"]
+});
+
+DB.persons.push({
+  id: "PER-000062", name: "Yitzchak Breitowitz",
+  roles: [["Rabino influyente"]],
+  nationality: "?",
+  bio: "Figura relevante en el conflicto/geopolítica. L'influent rabbin Yitzchak Breitowitz: 'La Torah dit que nous prenons cette nation appelée Amalek et que nous l'exterminons. Hommes, femmes, enfants, bébés...'",
+  img: "img/yitzchak_breitowitz.jpg", certainty: "REPORTADO", review: "PENDIENTE", refs: ["SRC-000003"]
+});
+
+DB.persons.push({
+  id: "PER-000063", name: "Chay Bowes",
+  roles: [["Comentarista (autor del clip con archivo de 2002)"]],
+  nationality: "?",
+  bio: "Figura relevante en el conflicto/geopolítica. If you take out Saddam... I guarantee you that it will have enormous positive reverberations on the region",
+  img: "img/chay_bowes.jpg", certainty: "REPORTADO", review: "PENDIENTE", refs: ["SRC-000003"]
+});
+
+DB.persons.push({
+  id: "PER-000064", name: "Jesse Lyons",
+  roles: [["Comentarista (EEUU First)"]],
+  nationality: "?",
+  bio: "Figura relevante en el conflicto/geopolítica. The Auschwitz liberation photos were staged and perhaps even years later... 'There are many pictures about the Russians liberating Auschwitz and there's never any snow'",
+  img: "#", certainty: "REPORTADO", review: "PENDIENTE", refs: ["SRC-000003"]
+});
+
+DB.persons.push({
+  id: "PER-000065", name: "Ibrahim Al-Matari (د ابراهيم المطري)",
+  roles: [["Médico/activista palestino (autor del clip)"]],
+  nationality: "?",
+  bio: "Figura relevante en el conflicto/geopolítica. UN institutions are attacked. The ICC is punished. ICJ orders are ignored... We are watching International system destruction",
+  img: "#", certainty: "REPORTADO", review: "PENDIENTE", refs: ["SRC-000003"]
+});
+
+DB.persons.push({
+  id: "PER-000066", name: "César Vidal",
+  roles: [["Historiador, escritor y presentador español"]],
+  nationality: "?",
+  bio: "Figura relevante en el conflicto/geopolítica. Cuantas horas de televisión se emplearían para difundir declaraciones como estas si las pronunciaran iraníes, alemanes o incluso españoles",
+  img: "img/cesar_vidal.jpg", certainty: "REPORTADO", review: "PENDIENTE", refs: ["SRC-000003"]
+});
+
+DB.persons.push({
+  id: "PER-000067", name: "Diego Vélez (Gar)",
+  roles: [["Comunicador/analista"]],
+  nationality: "?",
+  bio: "Figura relevante en el conflicto/geopolítica. La agencia estatal francesa de control digital... campaña masiva de desinformación contra políticos críticos con Israel, principalmente de Francia Insumisa",
+  img: "#", certainty: "REPORTADO", review: "PENDIENTE", refs: ["SRC-000003"]
+});
+
+DB.persons.push({
+  id: "PER-000068", name: "Yakov Rabkin",
+  roles: [["Profesor e historiador de la Universidad de Montreal, entrevistado sobre sionismo"]],
+  nationality: "?",
+  bio: "Figura relevante en el conflicto/geopolítica. Para que los judíos fueran a Israel, los sionistas se disfrazaron de musulmanes y atacaron a mujeres judías, hicieron atentados terroristas contra judíos en sinagogas de Irak, Egipto, Marruecos",
+  img: "img/yakov_rabkin.jpg", certainty: "REPORTADO", review: "PENDIENTE", refs: ["SRC-000003"]
+});
+
+DB.persons.push({
+  id: "PER-000069", name: "Jean Carlo Portillo",
+  roles: [["Denunciante/presentador que expone a La Derecha Diario"]],
+  nationality: "?",
+  bio: "Figura relevante en el conflicto/geopolítica. El actual dueño de la derecha diario me buscó para conseguirle yo 25 mil dólares para crear la derecha diario México antes de que se creara, y yo dije que no",
+  img: "#", certainty: "REPORTADO", review: "PENDIENTE", refs: ["SRC-000003"]
+});
+
+DB.persons.push({
+  id: "PER-000070", name: "Ignacio González",
+  roles: [["Creador de contenido/denunciante (cuenta Ignaciogjv)"]],
+  nationality: "?",
+  bio: "Figura relevante en el conflicto/geopolítica. ¡Los monstruos sí existen! Así de fácil el gobierno Israel le dispara a un niño palestino de 14 años que estaba en un centro de refugiados en Tizjordánea",
+  img: "#", certainty: "REPORTADO", review: "PENDIENTE", refs: ["SRC-000003"]
+});
+
+DB.persons.push({
+  id: "PER-000071", name: "Greta Thunberg",
+  roles: [["Activista ambiental"]],
+  nationality: "?",
+  bio: "Figura relevante en el conflicto/geopolítica. Greta Thunberg is facing arrests, investigations, and a media blackout for showing solidarity with the Palestinian and Sahrawi peoples",
+  img: "img/greta_thunberg.jpg", certainty: "REPORTADO", review: "PENDIENTE", refs: ["SRC-000003"]
+});
+
+DB.persons.push({
+  id: "PER-000072", name: "Sebastián Salgado",
+  roles: [["Reportero (HispanTV / Nexo Latino)"]],
+  nationality: "?",
+  bio: "Figura relevante en el conflicto/geopolítica. Sebastián Salgado reporta desde Buenos Aires sobre incendios intencionales en la Patagonia y encubrimiento del gobierno de Milei",
+  img: "#", certainty: "REPORTADO", review: "PENDIENTE", refs: ["SRC-000003"]
+});
+
+DB.persons.push({
+  id: "PER-000073", name: "Ben-Gurion",
+  roles: [["Primer primer ministro de Israel"]],
+  nationality: "?",
+  bio: "Figura relevante en el conflicto/geopolítica. Famosa o infamemente, Ben-Gurion es citado diciendo que preferiría salvar a la mitad de los niños judíos",
+  img: "img/ben_gurion.jpg", certainty: "REPORTADO", review: "PENDIENTE", refs: ["SRC-000003"]
+});
+
+DB.persons.push({
+  id: "PER-000074", name: "Yosef Basri",
+  roles: [["Abogado judío iraquí del subterráneo sionista"]],
+  nationality: "?",
+  bio: "Figura relevante en el conflicto/geopolítica. Basri, un abogado judío muy inteligente, y su ayudante Shalom Salah fueron responsables de tres de las cinco bombas",
+  img: "#", certainty: "REPORTADO", review: "PENDIENTE", refs: ["SRC-000003"]
+});
+
+DB.persons.push({
+  id: "PER-000075", name: "Max Binet",
+  roles: [["Oficial de inteligencia israelí en Teherán"]],
+  nationality: "?",
+  bio: "Figura relevante en el conflicto/geopolítica. El controlador de Basri era un oficial de inteligencia israelí llamado Max Binet, con base en Teherán",
+  img: "#", certainty: "REPORTADO", review: "PENDIENTE", refs: ["SRC-000003"]
+});
+
+DB.persons.push({
+  id: "PER-000076", name: "Shalom Salah Shalom",
+  roles: [["Ayudante de Yosef Basri"]],
+  nationality: "?",
+  bio: "Figura relevante en el conflicto/geopolítica. su asistente Shalom Salah Shalom fueron responsables de tres de las cinco bombas",
+  img: "#", certainty: "REPORTADO", review: "PENDIENTE", refs: ["SRC-000003"]
+});
+
+DB.persons.push({
+  id: "PER-000077", name: "Rupert Butler",
+  roles: [["Autor del libro 'Legions of Death'"]],
+  nationality: "?",
+  bio: "Figura relevante en el conflicto/geopolítica. This is confirmed in the book 'legions of death' by Rupert Butler",
+  img: "#", certainty: "REPORTADO", review: "PENDIENTE", refs: ["SRC-000003"]
+});
+
+DB.persons.push({
+  id: "PER-000078", name: "Henry H. Klein",
+  roles: [["Autor del panfleto de 1946 sobre conspiración judía mundial"]],
+  nationality: "?",
+  bio: "Figura relevante en el conflicto/geopolítica. 1946 - A Jew Exposes the Jewish World Conspiracy - Henry H. Klein",
+  img: "#", certainty: "REPORTADO", review: "PENDIENTE", refs: ["SRC-000003"]
+});
+
+DB.persons.push({
+  id: "PER-000079", name: "José Antonio Kast",
+  roles: [["Político chileno, candidato presidencial"]],
+  nationality: "?",
+  bio: "Figura relevante en el conflicto/geopolítica. trabajó en la campaña electoral de Kast",
+  img: "img/jose_antonio_kast.jpg", certainty: "REPORTADO", review: "PENDIENTE", refs: ["SRC-000003"]
+});
+
+DB.persons.push({
+  id: "PER-000080", name: "Flavio Bolsonaro",
+  roles: [["Diputado brasileño, hijo de Jair Bolsonaro"]],
+  nationality: "?",
+  bio: "Figura relevante en el conflicto/geopolítica. tienen un vínculo directo con Flavio Bolsonaro, el hijo de Jair Mesías Bolsonaro",
+  img: "img/flavio_bolsonaro.jpg", certainty: "REPORTADO", review: "PENDIENTE", refs: ["SRC-000003"]
+});
+
+DB.persons.push({
+  id: "PER-000081", name: "Jair Bolsonaro",
+  roles: [["Ex presidente de Brasil"]],
+  nationality: "?",
+  bio: "Figura relevante en el conflicto/geopolítica. el hijo de Jair Mesías Bolsonaro",
+  img: "img/jair_bolsonaro.jpg", certainty: "REPORTADO", review: "PENDIENTE", refs: ["SRC-000003"]
+});
+
+DB.persons.push({
+  id: "PER-000082", name: "Daniel Noboa",
+  roles: [["Presidente de Ecuador"]],
+  nationality: "?",
+  bio: "Figura relevante en el conflicto/geopolítica. lo vemos en Ecuador, después de la victoria de Noboa, caminando muy orgulloso hacia la Asamblea Nacional",
+  img: "img/daniel_noboa.jpg", certainty: "REPORTADO", review: "PENDIENTE", refs: ["SRC-000003"]
+});
+
+DB.persons.push({
+  id: "PER-000083", name: "Myron Gaines",
+  roles: [["Comentarista/participante en debate sobre el Holocausto"]],
+  nationality: "?",
+  bio: "Figura relevante en el conflicto/geopolítica. A jew debates Myron Gaines on the casualties sustained in the Holocaust",
+  img: "img/myron_gaines.jpg", certainty: "REPORTADO", review: "PENDIENTE", refs: ["SRC-000003"]
+});
+
+DB.persons.push({
+  id: "PER-000084", name: "Steve Cohen",
+  roles: [["Supuesto agente de Mossad (señalado en Washington Square Park)"]],
+  nationality: "?",
+  bio: "Figura relevante en el conflicto/geopolítica. That's steve Cohen and Addy... Steve is a Mossad agent. This is insane",
+  img: "#", certainty: "REPORTADO", review: "PENDIENTE", refs: ["SRC-000003"]
+});
+
+DB.persons.push({
+  id: "PER-000085", name: "Leonardo Roca",
+  roles: [["Investigador que rastreó la billetera cripto de Cerimedo"]],
+  nationality: "?",
+  bio: "Figura relevante en el conflicto/geopolítica. Lo que descubrió Leonardo Roca a través de la billetera fría es que se movieron miles de dólares hacia cuentas que contienen millones",
+  img: "#", certainty: "REPORTADO", review: "PENDIENTE", refs: ["SRC-000003"]
+});
+
+DB.persons.push({
+  id: "PER-000086", name: "Amichai Chikli (Ami Khailahu)",
+  roles: [["Ministro de Patrimonio/Diáspora de Israel"]],
+  nationality: "?",
+  bio: "Figura relevante en el conflicto/geopolítica. tu heritage minister, Ami Khailahu, dijo que Nuking Gaza era una opción y pedía métodos más dolorosos que la muerte para los palestinos",
+  img: "img/amichai_chikli.jpg", certainty: "REPORTADO", review: "PENDIENTE", refs: ["SRC-000003"]
+});
+
+DB.persons.push({
+  id: "PER-000087", name: "alextopol",
+  roles: [["Periodista internacional que documenta el control de IDs en Jerusalén"]],
+  nationality: "?",
+  bio: "Figura relevante en el conflicto/geopolítica. This is a bus full of Palestinians with Israeli ID's in the middle of Jerusalem that they just decided to raid... tell me again how Israel is not an apartheid state",
+  img: "#", certainty: "REPORTADO", review: "PENDIENTE", refs: ["SRC-000003"]
+});
+
+DB.persons.push({
+  id: "PER-000088", name: "Julián Macías Tovar",
+  roles: [["Investigador/denunciante de la red de bots de Cerimedo"]],
+  nationality: "?",
+  bio: "Figura relevante en el conflicto/geopolítica. Julán Macías Tovar: 'Nadia Beller confirma que Cerimedo trabajó en la campaña pinochetista del rechazo y en la campaña electoral de Kast'",
+  img: "#", certainty: "REPORTADO", review: "PENDIENTE", refs: ["SRC-000003"]
+});
+
+// ----------------------------------------------------------------------------
+// ORGANIZACIONES
+// ----------------------------------------------------------------------------
+DB.orgs.push({
+  id: "ORG-000001", name: "AIPAC", full: "American Israel Public Affairs Committee",
+  type: "grupo de presión (lobby)", country: "EUA",
+  bio: "Principal lobby pro-Israel en Estados Unidos.",
+  img: "img/aipac.jpg",
+  certainty: "DOCUMENTADO", review: "REVISADO", refs: ["SRC-000001"]
+});
+DB.orgs.push({
+  id: "ORG-000002", name: "IDF", full: "Fuerzas de Defensa de Israel", type: "fuerza militar", country: "Israel",
+  bio: "Ejército del Estado de Israel.",
+  img: "img/idf.svg", certainty: "DOCUMENTADO", review: "REVISADO", refs: ["SRC-000001"]
+});
+DB.orgs.push({
+  id: "ORG-000003", name: "CUFI", full: "Christians United for Israel", type: "organización religioso-política", country: "EUA",
+  bio: "Movimiento cristiano sionista estadounidense.",
+  img: "img/cufi.png", certainty: "DOCUMENTADO", review: "REVISADO", refs: ["SRC-000001"]
+});
+DB.orgs.push({
+  id: "ORG-000004", name: "Clock Tower X LLC", type: "empresa (registrante FARA)", country: "EUA",
+  bio: "Registrante del caso FARA 7649; relación con Havas Media y State of Israel.",
+  certainty: "CORROBORADO", review: "VERIFICADO", refs: ["SRC-000002"]
+});
+DB.orgs.push({
+  id: "ORG-000005", name: "NSO Group", type: "empresa de ciberseguridad", country: "Israel",
+  bio: "Desarrolladora de Pegasus (software de espionaje).Tema en clips de México.",
+  img: "img/nso.svg",
+  certainty: "CORROBORADO", review: "REVISADO", refs: ["SRC-000003"]
+});
+
+// ----------------------------------------------------------------------------
+// VIDEOS  (los 21 que Christo ha ido pasando + algunos representativos)
+// ----------------------------------------------------------------------------
+DB.videos.push({
+  id: "VID-000001", title: "Feiglin: exterminio implícito", url: "https://x.com/GBC_Press/status/2094438857618174386",
+  platform: "X", channel: "GBC_Press", published: "2026-09", dur: "00:00:45",
+  lang: "he/en", manipulation: "B", by: "PER-000003", subject: "clima de exterminio",
+  desc: "Ex-MK Moshe Feiglin: 'no podemos vivir si queda un palestino'.", certainty: "CORROBORADO", review: "PENDIENTE",
+  refs: ["PER-000003","ORG-000002"], src: "SRC-000003"
+});
+DB.videos.push({
+  id: "VID-000002", title: "Amit Halevi: '300 terroristas'", url: "https://x.com/GBC_Press/status/2094786200934764993",
+  platform: "X", channel: "GBC_Press", published: "2026-09", dur: "00:00:38", lang: "he/en",
+  manipulation: "C", by: "PER-000004", desc: "Diputado sobre maternidad y supuestos terroristas.",
+  certainty: "REPORTADO", review: "PENDIENTE", refs: ["PER-000004"], src: "SRC-000003"
+});
+DB.videos.push({
+  id: "VID-000003", title: "Ted Cruz vs Tucker Carlson", url: "https://x.com/GBC_Press/status/2094502293953708473",
+  platform: "X", channel: "GBC_Press", published: "2026-09", dur: "00:00:52", lang: "en",
+  manipulation: "B", by: "PER-000007", desc: "Cruz 'panicking'; llama a Carlson 'mayor antisemita'.",
+  certainty: "REPORTADO", review: "PENDIENTE", refs: ["PER-000007","PER-000006"], src: "SRC-000003"
+});
+DB.videos.push({
+  id: "VID-000004", title: "Kushner: Gaza teardown", url: "https://x.com/DaniMayakovski/status/2094661570869469242",
+  platform: "X", channel: "DaniMayakovski", published: "2026-09", dur: "00:00:41", lang: "en",
+  manipulation: "B", by: "PER-000008", desc: "Kushner sobre Gaza como 'waterfront teardown' y torres de lujo.",
+  certainty: "CORROBORADO", review: "PENDIENTE", refs: ["PER-000008"], src: "SRC-000003"
+});
+DB.videos.push({
+  id: "VID-000005", title: "Haitham: crítica al sionismo", url: "https://youtube.com/shorts/yb76gKV8fJQ",
+  platform: "YouTube", channel: "Shorts", published: "2026-09", dur: "00:00:33", lang: "en",
+  manipulation: "A", by: "PER-000009", desc: "Criticar el sionismo no es antisemitismo.",
+  certainty: "REPORTADO", review: "PENDIENTE", refs: ["PER-000009"], src: "SRC-000003"
+});
+DB.videos.push({
+  id: "VID-000006", title: "May Golan: destrucción Gaza", url: "https://x.com/GBC_Press/status/2094795333297672625",
+  platform: "X", channel: "GBC_Press", published: "2026-09", dur: "00:00:29", lang: "en",
+  manipulation: "A", by: "PER-000010", desc: "Ministra orgullosa de la devastación.",
+  certainty: "CORROBORADO", review: "PENDIENTE", refs: ["PER-000010"], src: "SRC-000003"
+});
+
+DB.videos.push({ id: "VID-000007", title: "GBC: denuncias de Gaza (Golan/IDF)", url: "https://x.com/GBC_Press/status/2094474126778065211", platform: "X", channel: "GBC_Press", published: "2026-09", dur: "00:00:40", lang: "en", manipulation: "B", desc: "GBC Press sobre May Golan e IDF en Gaza.", certainty: "REPORTADO", review: "PENDIENTE", src: "SRC-000003" });
+DB.videos.push({ id: "VID-000008", title: "Dr. Hossam: escenario Gaza", url: "https://x.com/drhossamsamy65/status/2094597567405273525", platform: "X", channel: "drhossamsamy65", published: "2026-09", dur: "00:01:00", lang: "ar/en", manipulation: "A", desc: "Profesional médico sobre la situación en Gaza.", certainty: "REPORTADO", review: "PENDIENTE", src: "SRC-000003" });
+DB.videos.push({ id: "VID-000009", title: "GBC: presas/política israelí", url: "https://x.com/GBC_Press/status/2094799910637822418", platform: "X", channel: "GBC_Press", published: "2026-09", dur: "00:00:35", lang: "en", manipulation: "B", desc: "GBC Press sobre presa palestina y política israelí.", certainty: "REPORTADO", review: "PENDIENTE", src: "SRC-000003" });
+DB.videos.push({ id: "VID-000010", title: "MrsRoyKeaneo: testimonio", url: "https://x.com/MrsRoyKeaneo/status/2094768446235979902", platform: "X", channel: "MrsRoyKeaneo", published: "2026-09", dur: "00:00:47", lang: "en", manipulation: "A", desc: "Testimonio sobre conflicto en Gaza.", certainty: "REPORTADO", review: "PENDIENTE", src: "SRC-000003" });
+DB.videos.push({ id: "VID-000011", title: "DavidVargasA18: análisis", url: "https://x.com/DavidVargasA18/status/2094546241728225442", platform: "X", channel: "DavidVargasA18", published: "2026-09", dur: "00:00:55", lang: "es", manipulation: "B", desc: "Análisis sobre Israel/Palestina y geopolítica.", certainty: "REPORTADO", review: "PENDIENTE", src: "SRC-000003" });
+DB.videos.push({ id: "VID-000012", title: "GBC: otro clip Gaza", url: "https://x.com/GBC_Press/status/2094795601871569283", platform: "X", channel: "GBC_Press", published: "2026-09", dur: "00:00:33", lang: "en", manipulation: "B", desc: "GBC Press, material adicional sobre Gaza.", certainty: "REPORTADO", review: "PENDIENTE", src: "SRC-000003" });
+DB.videos.push({ id: "VID-000013", title: "RealTheForce: narrativa", url: "https://x.com/RealTheForce/status/2094599404221042791", platform: "X", channel: "RealTheForce", published: "2026-09", dur: "00:00:50", lang: "en", manipulation: "B", desc: "Narrativa sobre Israel/poder. Tratar con cautela (riesgo alto).", certainty: "NO_VERIFICADO", review: "PENDIENTE", src: "SRC-000003" });
+DB.videos.push({ id: "VID-000014", title: "DaniMayakovski: colonos", url: "https://x.com/DaniMayakovski/status/2094630062720958801", platform: "X", channel: "DaniMayakovski", published: "2026-09", dur: "00:00:44", lang: "en", manipulation: "B", desc: "Testimonio sobre colonos y palestinos.", certainty: "REPORTADO", review: "PENDIENTE", src: "SRC-000003" });
+DB.videos.push({ id: "VID-000015", title: "hippyygoat: análisis", url: "https://x.com/hippyygoat/status/2094668608924201406", platform: "X", channel: "hippyygoat", published: "2026-09", dur: "00:00:48", lang: "en", manipulation: "B", desc: "Análisis sobre ocupación/geopolítica.", certainty: "REPORTADO", review: "PENDIENTE", src: "SRC-000003" });
+DB.videos.push({ id: "VID-000016", title: "GBC: otro clip (16)", url: "https://x.com/GBC_Press/status/2094786359764599265", platform: "X", channel: "GBC_Press", published: "2026-09", dur: "00:00:36", lang: "en", manipulation: "B", desc: "GBC Press, material adicional.", certainty: "REPORTADO", review: "PENDIENTE", src: "SRC-000003" });
+DB.videos.push({ id: "VID-000017", title: "DaniMayakovski: (17)", url: "https://x.com/DaniMayakovski/status/2095535765392343311", platform: "X", channel: "DaniMayakovski", published: "2026-09", dur: "00:00:52", lang: "en", manipulation: "B", desc: "DaniMayakovski, material sobre el conflicto.", certainty: "REPORTADO", review: "PENDIENTE", src: "SRC-000003" });
+DB.videos.push({ id: "VID-000018", title: "Bry: testimonio", url: "https://x.com/Bry___l/status/2095472658477392283", platform: "X", channel: "Bry___l", published: "2026-09", dur: "00:00:40", lang: "en", manipulation: "A", desc: "Testimonio sobre el terreno del conflicto.", certainty: "REPORTADO", review: "PENDIENTE", src: "SRC-000003" });
+DB.videos.push({ id: "VID-000019", title: "daniel153177: análisis", url: "https://x.com/daniel153177/status/2095244120507773067", platform: "X", channel: "daniel153177", published: "2026-09", dur: "00:01:05", lang: "en/es", manipulation: "B", desc: "Análisis sobre evolución de la narrativa.", certainty: "REPORTADO", review: "PENDIENTE", src: "SRC-000003" });
+DB.videos.push({ id: "VID-000020", title: "Ginnysaidso: (20)", url: "https://x.com/Ginnysaidso/status/2094486341627097559", platform: "X", channel: "Ginnysaidso", published: "2026-09", dur: "00:00:38", lang: "en", manipulation: "B", desc: "Comentario sobre el conflicto/geopolítica.", certainty: "REPORTADO", review: "PENDIENTE", src: "SRC-000003" });
+DB.videos.push({ id: "VID-000021", title: "YouTube Short: Gaza (21)", url: "https://youtube.com/shorts/nfE1C8H70ws", platform: "YouTube", channel: "Shorts", published: "2026-09", dur: "00:00:30", lang: "en", manipulation: "A", desc: "Video corto de YouTube sobre Gaza.", certainty: "REPORTADO", review: "PENDIENTE", src: "SRC-000003" });
+
+// ----------------------------------------------------------------------------
+// EVENTOS
+// ----------------------------------------------------------------------------
+DB.events.push({
+  id: "EVT-000001", name: "Ofensiva en Gaza (cruce de declaraciones)",
+  date: "2025-2026", place: "Gaza / Israel", conflict: "CNF-000001",
+  desc: "Declaraciones de ministros y diputados israelíes durante la ofensiva, recogidas por GBC_Press.",
+  certainty: "REPORTADO", review: "PENDIENTE", refs: ["SRC-000003"]
+});
+DB.events.push({
+  id: "EVT-000002", name: "Debate sobre antisemitismo y cristianismo sionista",
+  date: "2026", place: "EUA", conflict: "CNF-000001",
+  desc: "Cruz vs Carlson; sionismo, judaísmo y crítica a Israel.",
+  certainty: "REPORTADO", review: "PENDIENTE", refs: ["SRC-000003"]
+});
+
+// ----------------------------------------------------------------------------
+// AFIRMACIONES (CLAIMS)
+// ----------------------------------------------------------------------------
+DB.claims.push({
+  id: "CLM-000001", author: "PER-000003", text: "'No podemos vivir si queda un palestino'",
+  video: "VID-000001", status: "CORROBORADA (cita)", confidence: 60, reviewed: "2026-09-03",
+  srcs: ["SRC-000003"]
+});
+DB.claims.push({
+  id: "CLM-000002", author: "PER-000009", text: "'Criticar el sionismo no es antisemitismo'",
+  video: "VID-000005", status: "PARCIALMENTE_CORROBORADA", confidence: 55, reviewed: "2026-09-03",
+  srcs: ["SRC-000003"]
+});
+DB.claims.push({
+  id: "CLM-000003", author: "PER-000008", text: "'Gaza como waterfront teardown, torres de lujo sobre escombros'",
+  video: "VID-000004", status: "CORROBORADA (cita)", confidence: 63, reviewed: "2026-09-03",
+  srcs: ["SRC-000003"]
+});
+
+// ----------------------------------------------------------------------------
+// RELACIONES  (sujeto → predicado → objeto, con fuente obligatoria)
+// ----------------------------------------------------------------------------
+DB.rels.push({ subject: "PER-000001", predicate: "lidera", object: "ORG-000002", type: "INSTITUCIONAL", src: "SRC-000001" });
+DB.rels.push({ subject: "PER-000002", predicate: "recibió_lobby_de", object: "ORG-000001", type: "LOBBYING", src: "SRC-000001" });
+DB.rels.push({ subject: "PER-000001", predicate: "se_reunió_con", object: "PER-000002", type: "REUNION", src: "SRC-000001" });
+DB.rels.push({ subject: "ORG-000004", predicate: "registrada_bajo_FARA_de", object: "ORG-000002", type: "CONTRATO", src: "SRC-000002" });
+DB.rels.push({ subject: "PER-000008", predicate: "relacionado_con", object: "PER-000002", type: "LABORAL", src: "SRC-000001" });
+DB.rels.push({ subject: "ORG-000003", predicate: "apoya_a", object: "ORG-000002", type: "ALIANZA", src: "SRC-000001" });
+
+// Lugares
+DB.events.length; // placeholder

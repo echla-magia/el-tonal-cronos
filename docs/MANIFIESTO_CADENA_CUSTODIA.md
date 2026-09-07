@@ -1,0 +1,172 @@
+# 📌 CRONOS — Manifiesto de Cadena de Custodia de Video
+**Generado:** 2026-09-05 | **Archivo maestro:** `data/db_seed_v01.js` | **Plataforma:** OSINT Israel-Palestina
+
+## Resumen
+- **Videos registrados:** 157
+- **Videos con archivo local (resguardados):** 143
+- **Videos sin archivo (fichas de muestra):** 14
+- **Plataforma:** {'X': 137, 'YouTube': 6}
+- **Certeza:** {'CORROBORADO': 51, 'REPORTADO': 4, 'DOCUMENTADO': 59, 'NO_VERIFICADO': 29}
+
+## 📦 Inventario completo (ID | Estado | Plataforma | Título | SHA256)
+
+- ✅ `VID-000001` | X        | Feiglin: exterminio implícito | `c0710ede597fb3f7fd22…`
+- ✅ `VID-000002` | X        | Amit Halevi: '300 terroristas' | `5ed7791552331ed58bcd…`
+- ✅ `VID-000003` | X        | Ted Cruz vs Tucker Carlson | `7e8e0f09ea58448817e2…`
+- ✅ `VID-000004` | X        | Kushner: Gaza teardown | `8609bd66a0b7fb33761c…`
+- ✅ `VID-000005` | YouTube  | Haitham: crítica al sionismo | `062902a64145786e2337…`
+- ✅ `VID-000006` | X        | May Golan: destrucción Gaza | `48797708308e95b7f479…`
+- ✅ `VID-000007` | X        | GBC: denuncias de Gaza (Golan/IDF) | `b34c9cb7644c05d7b8c4…`
+- ⚠️ `VID-000008` | X        | Dr. Hossam: escenario Gaza | `-`
+- ⚠️ `VID-000009` | X        | GBC: presas/política israelí | `-`
+- ⚠️ `VID-000010` | X        | MrsRoyKeaneo: testimonio | `-`
+- ⚠️ `VID-000011` | X        | DavidVargasA18: análisis | `-`
+- ⚠️ `VID-000012` | X        | GBC: otro clip Gaza | `-`
+- ⚠️ `VID-000013` | X        | RealTheForce: narrativa | `-`
+- ⚠️ `VID-000014` | X        | DaniMayakovski: colonos | `-`
+- ⚠️ `VID-000015` | X        | hippyygoat: análisis | `-`
+- ⚠️ `VID-000016` | X        | GBC: otro clip (16) | `-`
+- ⚠️ `VID-000017` | X        | DaniMayakovski: (17) | `-`
+- ⚠️ `VID-000018` | X        | Bry: testimonio | `-`
+- ⚠️ `VID-000019` | X        | daniel153177: análisis | `-`
+- ⚠️ `VID-000020` | X        | Ginnysaidso: (20) | `-`
+- ⚠️ `VID-000021` | YouTube  | YouTube Short: Gaza (21) | `-`
+- ✅ `VID-000022` | X        | Soldado israelí grabado antes de entrar en un | `5114f28100277d154093…`
+- ✅ `VID-000023` | X        | Recitado en árabe de una oración con frases a | `0413036570f227525648…`
+- ✅ `VID-000024` | X        | Voz pro-israelí equipara a Israel con EE.UU.  | `73055254e02bac23407d…`
+- ✅ `VID-000025` | X        | Portavoz del Ministerio de Exteriores ruso cr | `a7fd4adf958ae26a5900…`
+- ✅ `VID-000026` | X        | Reportaje sobre rescate de 163 menores desapa | `eda5a02b2b2548a43a3b…`
+- ✅ `VID-000027` | X        | Análisis en francés sobre 11-S, bancos centra | `ad93ed9c1abb0b720bc1…`
+- ✅ `VID-000028` | X        | Dershowitz defiende publicación de los expedi | `294be6789b08fc850c8c…`
+- ✅ `VID-000029` | X        | Intercambio Fetterman–Stewart sobre si Israel | `cdcb63c7f10d6e248b33…`
+- ✅ `VID-000030` | X        | Noticiero por una declaración conjunta entre  | `e4d7683586b194b1f657…`
+- ✅ `VID-000031` | X        | Entrevista a un jefe de Estado sobre amenaza  | `3d7d2d5d3d1e20cb6e7f…`
+- ✅ `VID-000032` | X        | Debate en árabe sobre Turquía, Hamás y los ga | `ea0542da721beddf43b6…`
+- ✅ `VID-000033` | X        | Agente de la Policía Metropolitana del Reino  | `2716a9c3b825e20bcf99…`
+- ✅ `VID-000034` | X        | Miembro del servicio estadounidense presume d | `f37670f4925834c8caa4…`
+- ✅ `VID-000035` | X        | Acto de supuesta detención de un activista in | `406993e6f80ba0694cb3…`
+- ✅ `VID-000036` | X        | EE.UU. congela activos de la presidenta de la | `6b43b2e749b398a11dc5…`
+- ✅ `VID-000037` | X        | Audio atribuido a Richard Nixon sobre el lobb | `b1672755a996df687c73…`
+- ✅ `VID-000038` | X        | Rabino critica al primer ministro israelí y s | `96e13aab1256c5fb1ca8…`
+- ✅ `VID-000039` | X        | Soldado israelí describe el sistema como 'apa | `30b3e39cbcdaae796f8b…`
+- ✅ `VID-000040` | X        | (Sin transcripción) | `eac0d118741b09425acf…`
+- ✅ `VID-000041` | X        | Testimonios de una mujer sobre un consultor p | `39516f73fb49e40e5bf1…`
+- ✅ `VID-000042` | X        | Diálogo en hebreo/árabe de baja calidad sobre | `c506edb1fd4ccf5bd6ec…`
+- ✅ `VID-000043` | X        | Voz que cuestiona la cifra de seis millones y | `01d0e52f74f2bc2c6fee…`
+- ✅ `VID-000044` | X        | Entrevista sobre el caso de Hind Rajab y los  | `8b892f243be081683877…`
+- ✅ `VID-000045` | X        | Enfrentamiento por compra de propiedad en Cis | `76daf26051dbd66dbcda…`
+- ✅ `VID-000046` | X        | Análisis de por qué se resiste la publicación | `8e1f6171ec0f87a996a0…`
+- ✅ `VID-000047` | X        | Discurso hebreo extremista sobre la tierra y  | `a50ca984e7e2176e9caf…`
+- ✅ `VID-000048` | X        | Crítica a Trump, Mossad, CIA y MI6 por la sit | `749466bee57cd633c544…`
+- ✅ `VID-000049` | X        | Crítica a que EE.UU. financie a Israel y a lo | `95898c844970b10de8d9…`
+- ✅ `VID-000050` | X        | Cuestionamiento de la cifra de seis millones  | `1a185d36030d63941e5f…`
+- ✅ `VID-000051` | X        | Soldado israelí relata que se ordenó suspende | `2cb7d10563f51a4b9992…`
+- ✅ `VID-000052` | X        | Escena breve de gritos en francés | `b1fbd9037bb564bc0d5b…`
+- ✅ `VID-000053` | X        | Voz discute vaciar y reconstruir Gaza 'limpiá | `12cd8e23e2dc1ee8b28e…`
+- ✅ `VID-000054` | X        | Rant acusatorio contra Israel por muertes de  | `5ff575508f9f69dcfdd5…`
+- ✅ `VID-000055` | X        | Frase repetida 'hasta aquí' en hebreo | `aec020dfb85e0afcb183…`
+- ✅ `VID-000056` | X        | Voz que pide dejar morir de hambre a los pale | `c97af7fd303d491f07d2…`
+- ✅ `VID-000057` | X        | Diálogo sobre muertes en el Hospital Al-Shifa | `1f09ddfea76006ea7ff3…`
+- ✅ `VID-000058` | X        | Análisis de la declaración 'todos saben que E | `acbb75738bd7d97be49f…`
+- ✅ `VID-000059` | X        | Líder evangélico pro-Israel denuncia antisemi | `392a4eecd665562307c1…`
+- ✅ `VID-000060` | X        | Argumento sobre la responsabilidad de los jud | `3a7adb6ec399d0f21316…`
+- ✅ `VID-000061` | X        | (Sin transcripción) | `a3e26b1ff675ca727dc7…`
+- ✅ `VID-000062` | X        | Narrativa sobre la 'teoría jázara', los Roths | `cb5277ab6da7a62ba3f0…`
+- ✅ `VID-000063` | X        | Frase en árabe de baja calidad | `25f44507f60360849eec…`
+- ✅ `VID-000064` | X        | Intercambio sobre tropas estadounidenses desp | `384f8a12fb4de02b2296…`
+- ✅ `VID-000065` | X        | Reacción en árabe a un bombardeo | `eb873f79855fc9bd12a1…`
+- ✅ `VID-000066` | X        | Voz israelí propone 'eliminaciones selectivas | `e17a0c51e9c6bb46c403…`
+- ✅ `VID-000067` | X        | Saludo breve en árabe | `643d329372b76bbdc65d…`
+- ✅ `VID-000068` | X        | Frase en hebreo pidiendo que los niños de Gaz | `b04770a7e37f56f139e1…`
+- ✅ `VID-000069` | X        | 'Mickey', mayor de la reserva del IDF, admite | `f297f1dbbe55b923ac09…`
+- ✅ `VID-000070` | X        | Crítica a pastores 'sionistas cristianos' que | `8e751ebf412cb1d7c2f4…`
+- ✅ `VID-000071` | X        | May Golan defiende la moralidad del ejército  | `22fbaeb7665c0a3c8b70…`
+- ✅ `VID-000072` | X        | Discurso de una israelí criada en familia de  | `24c99f573bb7a32e6eb1…`
+- ✅ `VID-000073` | X        | Tucker Carlson responde a preguntas sobre el  | `bd007126ce420af5d8ae…`
+- ✅ `VID-000074` | X        | Participante católico sostiene en una comisió | `a8d1ce9b15ae8eeae7b1…`
+- ✅ `VID-000075` | X        | Denuncia de una supuesta operación israelí gl | `cce4a2527241a2b6cb51…`
+- ✅ `VID-000076` | X        | Negacionismo del Holocausto atribuido a un ra | `d2c1503f35f5a6e5d4c5…`
+- ✅ `VID-000077` | X        | Eran Efrati, exsoldado israelí, relata su pas | `b3754f9dc63ffa1f1a77…`
+- ✅ `VID-000078` | X        | Presentación de la base de datos 'whofundedge | `d6922026ad3060ea74d2…`
+- ✅ `VID-000079` | X        | Mark Weber ofrece una explicación revisionist | `c5de03b5210535c23d13…`
+- ✅ `VID-000080` | X        | Un maestro/rabino afirma que miles de millone | `02f4d932824c043ad5cf…`
+- ✅ `VID-000081` | X        | Jeffrey Sachs atribuye las guerras actuales a | `57d47421b5a997791426…`
+- ✅ `VID-000082` | X        | Publicación sobre el demonio japonés Tengu (' | `ef98bf4dcbd7de20f131…`
+- ✅ `VID-000083` | X        | Discurso en hebreo con lenguaje deshumanizant | `07c953c1eed0ff07a9ec…`
+- ✅ `VID-000084` | X        | Cámara oculta a un promotor de un centro de d | `0aaf5d83a91dac2540f1…`
+- ✅ `VID-000085` | X        | Discurso mesiánico sobre superioridad judía,  | `7aba5d655e2c38239063…`
+- ✅ `VID-000086` | X        | Declaración sobre que el petróleo venezolano  | `b3104f1f9b1308a4a401…`
+- ✅ `VID-000087` | X        | Joe Kent afirma que el lobby israelí 'dictaba | `bfddd5bb65518142c9e2…`
+- ✅ `VID-000088` | X        | Conferencia: la CIA como organización con 'ra | `0d0e6f42d2f5a7719942…`
+- ✅ `VID-000089` | X        | Itamar Ben-Gvir se enfrenta y altera ante crí | `0f3a79e8cd2b9764ad81…`
+- ✅ `VID-000090` | X        | Publicación sobre supuesto uso por Israel de  | `30357a610af907d6267e…`
+- ✅ `VID-000091` | X        | Conversación en hebreo sobre donaciones y man | `84ba0aead262494ddd95…`
+- ✅ `VID-000092` | X        | Robert D. Steele: las 1.000 bases militares d | `7dfbaa685e9234ae74c4…`
+- ✅ `VID-000093` | X        | Soldados del IDF se filman prendiendo fuego a | `35a7cb0ae5d6bdb43302…`
+- ✅ `VID-000094` | X        | Dick Cheney (2002) defiende ante la prensa la | `0c77d2f3ab203bb21919…`
+- ✅ `VID-000095` | X        | George Lincoln Rockwell cuestiona la cifra de | `ca446f9cb9ce7c1d5348…`
+- ✅ `VID-000096` | X        | Un orador con padres supervivientes de Auschw | `1164a49ab729b156a941…`
+- ✅ `VID-000097` | X        | El eurodiputado Jussi Saramo pregunta en el P | `4867a0f9840a8ef9ea72…`
+- ✅ `VID-000098` | X        | Enfrentamiento verbal entre un portavoz israe | `1381301366f0c0cf89e2…`
+- ✅ `VID-000099` | X        | El embajador israelí ante la ONU suspende su  | `be7edc866540f976abc1…`
+- ✅ `VID-000100` | X        | Riccardo Bosi sostiene que Ucrania 'no es un  | `1bf7977b29c21375b09b…`
+- ✅ `VID-000101` | X        | Afirmación de que las fotos de la 'liberación | `424af24d8cd34bde0eb3…`
+- ✅ `VID-000102` | X        | Informe de The Guardian: la guerra de Trump c | `85e5d3b527b359abe0ec…`
+- ✅ `VID-000103` | X        | Discurso en hebreo sobre la UNRWA en el marco | `2babae30222e1837862d…`
+- ✅ `VID-000104` | X        | Llamada a aislar a Israel como 'estado aparth | `756461000c8f6af98c62…`
+- ✅ `VID-000105` | X        | DW reporta a Ben Gvir frente a una presa pale | `5e746668c99a43036844…`
+- ✅ `VID-000106` | X        | Gustavo Petro difunde una investigación sobre | `0560ed91dc36d3fc8b63…`
+- ✅ `VID-000107` | X        | David Icke relata la teoría de los 'israelíes | `c74aaecd9ea0af4be8b9…`
+- ✅ `VID-000108` | X        | Video sobre la afirmación de que los sionista | `d408b9186c1aaff66b2f…`
+- ✅ `VID-000109` | X        | Relato de que Israel bloqueó cientos de alime | `7e9caa159bf11a969094…`
+- ✅ `VID-000110` | X        | Un hombre israelí es retenido en la aduana au | `c5634f0e0a49ecff8dec…`
+- ✅ `VID-000111` | X        | AJ+ denuncia una supuesta operación israelí c | `21ac09815b050f8bad2f…`
+- ✅ `VID-000112` | X        | El rabino Yitzchak Breitowitz es citado pidie | `a9f905eb45ecd898be8e…`
+- ✅ `VID-000113` | YouTube  | Clip que defiende el 'aplanamiento' de Gaza c | `a730208578903fe39434…`
+- ✅ `VID-000114` | X        | La iglesia de San Porfirio en Gaza, una de la | `bf1f1b227d1d66247b24…`
+- ✅ `VID-000115` | YouTube  | Réplica: 'la guerra contra los palestinos lle | `d49a7322bf0282c41a9f…`
+- ✅ `VID-000116` | YouTube  | Peña Nieto, captado en una boda judía en Ital | `bbe1dabfc1e9f963dbbd…`
+- ✅ `VID-000117` | X        | Narración documental: expulsión de judíos de  | `be44fd1b74a3d61c2d0c…`
+- ✅ `VID-000118` | X        | Documental: bombas en sitios judíos de Irak t | `c73f4324ceff027e7f1a…`
+- ✅ `VID-000119` | X        | NA_twitter_58HKN58H | `fb35819adbd6ba8d6722…`
+- ✅ `VID-000120` | X        | Testimonio: control de identidad en un bus de | `1ce3eb81f39acab4ca77…`
+- ✅ `VID-000121` | X        | Narración: Israel como protector de los crist | `55e8df9987f65fcb6ed5…`
+- ✅ `VID-000122` | X        | Discurso religioso interpretando las guerras  | `352b5a32418cbb39929e…`
+- ✅ `VID-000123` | X        | Reportaje: detención administrativa de palest | `1d120aaea0bbb34d69de…`
+- ✅ `VID-000124` | X        | Discurso antisemita sobre la cifra de seis mi | `a996e084b99ce4fac80c…`
+- ✅ `VID-000125` | X        | Conferencia en hebreo sobre la formación de l | `1c13838a18f6cc76b181…`
+- ✅ `VID-000126` | X        | Comentario sobre Jeffrey Epstein y la corrupc | `d8131eff9b283fd279d3…`
+- ✅ `VID-000127` | X        | Legislador de EE.UU. introduce resolución 502 | `e66d19dd3863250aa79c…`
+- ✅ `VID-000128` | X        | Testimonio: un operador político vinculado a  | `017e6ca45952327c5039…`
+- ✅ `VID-000129` | X        | Acusación: supuestos soldados del IDF actuand | `eac1df11c05709da1f25…`
+- ✅ `VID-000130` | X        | Reportaje de TRT World sobre turistas israelí | `d01ae84a63f5349859a7…`
+- ✅ `VID-000131` | X        | Convocatoria a la Cumbre de Solidaridad Sahar | `ddc966139c8682a3bd9d…`
+- ✅ `VID-000132` | YouTube  | Entrevista: críticas al tratamiento israelí d | `f54cdf08d2600b97845f…`
+- ✅ `VID-000133` | X        | Monólogo contra la corrupción de EE.UU. con a | `212a03af123d0f32e6b7…`
+- ✅ `VID-000134` | X        | Crítica a la desregulación de tierras rurales | `4a88aa2f88557d618b11…`
+- ✅ `VID-000135` | X        | Teoría del 'Plan Andinia' y la anexión de la  | `231d90ae6b48fbbc278e…`
+- ✅ `VID-000136` | X        | Cita de Sergio Bergman sobre Argentina como t | `80facdfbc3c3933efa54…`
+- ✅ `VID-000137` | X        | Acusaciones sobre incendios intencionales en  | `882666b45a2f3e69f722…`
+- ✅ `VID-000138` | X        | Análisis sobre incendios en la Patagonia y co | `2eb0cbb84c9e8c70e236…`
+- ✅ `VID-000139` | X        | Monólogo: acusación de que Israel controla EE | `b089e483e75f026317d8…`
+- ✅ `VID-000140` | X        | Transcripción fragmentada y de baja confianza | `13309feb8c119582bf21…`
+- ✅ `VID-000141` | X        | Conferencia en hebreo sobre el servicio milit | `dba6a29ab0a956c4da26…`
+- ✅ `VID-000142` | X        | Crítica de los sionistas por vincular a todos | `064d8c9df1eedac589d8…`
+- ✅ `VID-000143` | X        | Advertencia sobre la capacidad militar de Isr | `0b0605ba60f7e2561fe4…`
+- ✅ `VID-000144` | X        | Acusaciones contra la 'derecha' digital latin | `116fc89f5ba6c5c48dbd…`
+- ✅ `VID-000145` | X        | Intervención de un representante israelí sobr | `63028a182013b8536cfe…`
+- ✅ `VID-000146` | X        | Altercado doméstico con llamada a la policía  | `b551d1e3819613312f8c…`
+- ✅ `VID-000147` | X        | Explicación sobre el significado legal del té | `36e6e62b79f24426c7d8…`
+- ✅ `VID-000148` | X        | Testimonio: le ofrecieron crear un medio de ' | `c4ff2a82b59a9b031934…`
+- ✅ `VID-000149` | X        | Análisis del caso Fernando Cerimedo y su bill | `ec00f2cb6b45d06a151c…`
+- ✅ `VID-000150` | X        | Entrevista callejera sobre la cifra del Holoc | `106cf502e353fa0d479b…`
+- ✅ `VID-000151` | X        | Cruza entre 'Tucker' y una congresista sobre  | `15ed2b94a5609c9b1596…`
+- ✅ `VID-000152` | X        | Denuncia del disparo israelí a un niño palest | `1297f43e79f047ec26cf…`
+- ✅ `VID-000153` | X        | Análisis sobre el objetivo de la guerra en Af | `d0a5f2f6e7b8745341d9…`
+- ✅ `VID-000154` | X        | Discurso religioso hebreo sobre el dominio de | `44f5628f612ba37b4e19…`
+- ✅ `VID-000155` | X        | Sobre la compra de 200.000 hectáreas en La Ri | `6bee59594a10eb6f5507…`
+- ✅ `VID-000156` | X        | Cuestionamientos sobre la ayuda de EE.UU. a I | `dae8f9d4abf0fa55b461…`
+- ✅ `VID-000157` | YouTube  | Tucker Carlson: 'Ese es el enemigo de la civi | `e20ebbfe1539c4153f5b…`
+
+---
+*La IA propone; Christo valida. El hash SHA256 es el sello de cadena de custodia de cada archivo maestro.*

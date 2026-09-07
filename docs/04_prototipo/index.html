@@ -1,0 +1,1853 @@
+<!DOCTYPE html>
+<html lang="es">
+<head><link rel="icon" href="/cronos/img/isotipo_tonal.jpg">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cronos — Archivo Documental OSINT</title>
+<style>
+  :root{
+    --bg:#0b0f19; --panel:#121a2b; --panel2:#0e1524; --border:#26334d;
+    --azul:#3b82f6; --azul-osc:#2C3240; --dorado:#CD9933; --verde:#22c55e;
+    --rojo:#ef4444; --ambar:#f59e0b; --texto:#dbe4f0; --gris:#8fa3bf;
+    --morado:#a78bfa; --coral:#fb7185;
+  }
+  *{box-sizing:border-box; margin:0}
+  body{background:var(--bg); color:var(--texto); font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif; line-height:1.55}
+  a{color:var(--azul); text-decoration:none; cursor:pointer}
+  a:hover{text-decoration:underline}
+  .topbar{position:sticky; top:0; z-index:50; background:rgba(11,15,25,.92); backdrop-filter:blur(8px); border-bottom:1px solid var(--border); padding:12px 20px; display:flex; align-items:center; gap:14px}
+  .brand{font-size:19px; font-weight:800; color:var(--dorado); letter-spacing:.5px}
+  .brand small{display:block; font-size:9px; color:var(--gris); font-weight:400; letter-spacing:2px}
+  .searchwrap{flex:1; max-width:560px; margin:0 auto; position:relative}
+  .searchwrap input{width:100%; background:var(--panel2); border:1px solid var(--border); border-radius:8px; padding:9px 12px; color:var(--texto); font-size:14px}
+  .searchwrap input:focus{outline:none; border-color:var(--dorado)}
+  #resultados{position:absolute; top:110%; left:0; right:0; background:var(--panel); border:1px solid var(--border); border-radius:8px; max-height:340px; overflow:auto; display:none; z-index:60}
+  #resultados .r{padding:9px 12px; border-bottom:1px solid var(--border2,#1a2436); font-size:13px; cursor:pointer}
+  #resultados .r:hover{background:var(--panel2)}
+  nav{display:flex; gap:4px; flex-wrap:wrap; margin-top:14px; padding:0 20px}
+  nav button{background:var(--panel); border:1px solid var(--border); color:var(--texto); border-radius:7px; padding:7px 12px; font-size:12.5px; cursor:pointer}
+  nav button:hover{background:var(--panel2); border-color:var(--dorado)}
+  .contenedor{max-width:1100px; margin:0 auto; padding:22px 20px 60px}
+  .grid{display:grid; gap:16px}
+  .grid2{grid-template-columns:280px 1fr}
+  @media(max-width:820px){.grid2{grid-template-columns:1fr}}
+  .panel{background:var(--panel); border:1px solid var(--border); border-radius:12px; padding:18px}
+  .panel h2{font-size:18px; color:var(--dorado); margin-bottom:10px}
+  .panel h3{font-size:15px; color:var(--texto); margin:16px 0 8px}
+  .lateral{background:var(--panel2); border:1px solid var(--border); border-radius:10px; padding:14px; font-size:13px}
+  .lateral dl{display:grid; grid-template-columns:auto 1fr; gap:4px 12px; font-size:12.5px}
+  .lateral dt{color:var(--gris); font-weight:600}
+  .lateral dd{color:var(--texto)}
+  .avatar{width:64px; height:64px; border-radius:50%; background:linear-gradient(135deg,var(--azul),var(--dorado)); display:flex; align-items:center; justify-content:center; font-weight:800; font-size:24px; color:#0b0f19; margin-bottom:10px}
+  .badge{display:inline-block; font-size:10.5px; padding:2px 8px; border-radius:20px; font-weight:700; letter-spacing:.4px; margin:2px}
+  .b-doc{background:#1a2b3a; color:var(--verde); border:1px solid var(--verde)}
+  .b-cer{background:#1a2b3a; color:var(--azul); border:1px solid var(--azul)}
+  .b-rep{background:#3a2a1a; color:var(--ambar); border:1px solid var(--ambar)}
+  .b-pen{background:#2a1a1a; color:var(--coral); border:1px solid var(--coral)}
+  .b-roro{background:#3a1a1a; color:var(--rojo); border:1px solid var(--rojo)}
+  table{width:100%; border-collapse:collapse; font-size:13px}
+  th,td{text-align:left; padding:8px 10px; border-bottom:1px solid var(--border)}
+  th{color:var(--dorado); font-size:11.5px; text-transform:uppercase; letter-spacing:.5px}
+  tr:hover td{background:var(--panel2)}
+  .chip{display:inline-flex; align-items:center; gap:6px; background:var(--panel2); border:1px solid var(--border); border-radius:20px; padding:6px 12px; font-size:12.5px; margin:4px}
+  .timeline{border-left:3px solid var(--dorado); margin-left:8px; padding-left:22px}
+  .titem{position:relative; margin-bottom:18px}
+  .titem::before{content:''; position:absolute; left:-29px; top:4px; width:11px; height:11px; border-radius:50%; background:var(--dorado)}
+  .titem .fecha{font-weight:700; color:var(--dorado); font-size:13px}
+  .titem .tipo{font-size:11px; color:var(--gris); text-transform:uppercase; letter-spacing:1px}
+  .grafo{width:100%; background:#0a0f1a; border:1px solid var(--border); border-radius:10px}
+  .hero{text-align:center; padding:50px 20px 30px}
+  .hero h1{font-size:30px; color:var(--dorado); letter-spacing:1px}
+  .hero p{color:var(--gris); max-width:640px; margin:14px auto}
+  .stats{display:flex; gap:18px; justify-content:center; flex-wrap:wrap; margin-top:22px}
+  .stat{background:var(--panel); border:1px solid var(--border); border-radius:10px; padding:14px 22px; text-align:center}
+  .stat b{display:block; font-size:24px; color:var(--dorado)}
+  .stat span{font-size:11px; color:var(--gris); text-transform:uppercase; letter-spacing:1px}
+  .principio{background:linear-gradient(135deg,var(--panel2),#10182b); border:1px solid var(--dorado); border-radius:12px; padding:20px; margin:26px auto; max-width:720px; text-align:center; font-style:italic; color:var(--texto)}
+  .btn{background:var(--dorado); color:#0b0f19; border:none; border-radius:8px; padding:8px 16px; font-weight:700; cursor:pointer; font-size:13px}
+  .btn:hover{filter:brightness(1.1)}
+
+.agh-bg{position:absolute;inset:0;border-radius:16px;z-index:0}
+.agh-content{position:relative;z-index:1}
+.aghero{position:relative;overflow:hidden;border:1px solid var(--border);border-radius:16px;margin:10px 0 6px;text-align:center;padding:36px 20px 22px}
+.agh-verbs{color:var(--dorado);font-weight:600;letter-spacing:2px;font-size:12px;margin-top:10px}
+.stats2{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:20px}
+.stat2{flex:1;min-width:150px;max-width:210px;border-radius:14px;padding:20px 14px;text-align:center;color:#fff;cursor:pointer;transition:transform .15s,box-shadow .15s}
+.stat2:hover{transform:translateY(-3px);box-shadow:0 6px 18px rgba(0,0,0,.35)}
+.stat2 b{display:block;font-size:36px;font-weight:800;line-height:1}
+.stat2 span{display:block;font-size:11.5px;font-weight:700;letter-spacing:1.2px;margin-top:7px;opacity:.97}
+.stat2 small{display:block;font-size:10px;opacity:.72;margin-top:5px}
+.s-persons{background:linear-gradient(135deg,#1d5a47,#2E6B5A)}
+.s-orgs{background:linear-gradient(135deg,#28395a,#3A4E6B)}
+.s-videos{background:linear-gradient(135deg,#55292c,#6B3A3A)}
+.s-claims{background:linear-gradient(135deg,#412a5e,#5A3A6B)}
+.s-rels{background:linear-gradient(135deg,#2d3a55,#3A4E6B)}
+.grid2{display:grid;grid-template-columns:1.5fr 1fr;gap:16px;margin-top:6px}
+@media(max-width:900px){.grid2{grid-template-columns:1fr}}
+.reg-foto{width:100%;height:100%;border-radius:50%;object-fit:cover;display:block}
+.reg-avatar{overflow:hidden}
+.reg-list{display:flex;flex-direction:column}
+.reg{display:flex;align-items:center;gap:12px;padding:11px 8px;border-bottom:1px solid var(--border);cursor:pointer;transition:background .12s}
+.reg:hover{background:var(--panel2)}
+.reg-avatar{width:40px;height:40px;border-radius:50%;background:var(--panel2);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0}
+.reg-info{flex:1;display:flex;flex-direction:column;gap:4px;min-width:0}
+.reg-info b{color:var(--texto);font-size:13.5px}
+.reg-tag{display:inline-block;width:max-content;font-size:9.5px;font-weight:700;letter-spacing:.5px;padding:2px 9px;border-radius:10px;color:#fff}
+.tag-persona{background:#2E6B5A}.tag-org{background:#3A4E6B}.tag-conflicto{background:#8a2f2f}.tag-evento{background:#5a4a8a}
+.reg-fecha{font-size:10px;color:var(--gris);white-space:nowrap}
+
+</style>
+</head>
+<body>
+<div class="topbar">
+  <div class="brand">C R O N O S<small>ARCHIVO DOCUMENTAL · EVIDENCIA · RELACIONES</small></div>
+
+</div>
+
+<nav>
+  <button onclick="renderHome()">🏛️ Inicio</button>
+  <button onclick="render('persons')">Personas</button>
+  <button onclick="render('orgs')">Organizaciones</button>
+  <button onclick="render('claims')">Afirmaciones</button>
+  <button onclick="renderTimeline()">🗓️ Cronología</button>
+  <button onclick="renderGrafo()">🕸️ Grafo</button>
+  <button onclick="renderOrganigrama()">🏛️ Organigrama</button>
+  <button onclick="renderAnalisis()">🔬 Analizar</button>
+  <button onclick="renderDashboard()">📋 Investigador</button>
+  <button onclick="renderBusquedaGlobal('')">🔍 Todos</button>
+</nav>
+
+<div class="contenedor" id="app"></div>
+
+<script>// ============================================================================
+// ARCHIVO DOCUMENTAL — FASE 2: Base de datos semilla
+// Datos reales del expediente Israel/Palestina. Cada entidad lleva su
+// prefixed_id, metadata, estatus de certeza y fuentes.
+// La IA PROPONE; el humano valida. Nada aquí es "hecho consumado".
+// ============================================================================
+
+const DB = { persons: [], orgs: [], videos: [], claims: [], events: [], sources: [], rels: [], conflicts: [] };
+
+// ----------------------------------------------------------------------------
+// CONFLICTOS
+// ----------------------------------------------------------------------------
+DB.conflicts.push({
+  id: "CNF-000001", name: "Conflicto Israel-Palestina",
+  period: "1848–presente (fase moderna: 1948–actualidad)",
+  background: "Conflicto entre el Estado de Israel, el pueblo palestino y actores regionales/internacionales, atravesado por tensiones territoriales, religiosas, políticas y geopolíticas.",
+  actors: ["Estado de Israel", "Hamás", "Autoridad Nacional Palestina", "colonos", "población civil palestina"],
+  status: "documentado",
+  refs: ["SRC-000001"]
+});
+
+// ----------------------------------------------------------------------------
+// FUENTES
+// ----------------------------------------------------------------------------
+DB.sources.push({
+  id: "SRC-000001", name: "Expediente Sombras de Israel 2026", type: "archivo de investigación",
+  url: "C:\\Users\\USUARIO\\Downloads\\expediente_sombras_israel_2026-08-29\\",
+  accessed: "2026-09-03", note: "Fuente de verdad local del archivo documental."
+});
+DB.sources.push({
+  id: "SRC-000002", name: "Caso FARA 7649 Clock Tower X LLC", type: "documento oficial (DOJ FARA)",
+  url: "expediente/evidence/fara_7649_clock_tower_x_israel/", accessed: "2026-09-03",
+  note: "Registro de agente extranjero. No prueba por sí solo contrato directo con OpenAI."
+});
+DB.sources.push({
+  id: "SRC-000003", name: "X / Twitter", type: "red social", accessed: "2026-09-03",
+  note: "Plataforma de publicación de los videos; los videos son pistas hasta conectarse con fuentes primarias."
+});
+
+// ----------------------------------------------------------------------------
+// PERSONAS
+// ----------------------------------------------------------------------------
+DB.persons.push({
+  id: "PER-000001", name: "Benjamin Netanyahu", original: "בִּניָמִין נְתַנְיָהוּ",
+  roles: ["primer ministro de Israel; líder del partido Likud y figura central de la política israelí"], nationality: "Israelí",
+  bio: "Primer ministro de Israel en varios periodos. Figura central de la política israelí y de las relaciones con Estados Unidos.",
+  img: "img/netanyahu.jpg", certainty: "DOCUMENTADO", review: "REVISADO", refs: ["SRC-000001","SRC-000003"]
+});
+DB.persons.push({
+  id: "PER-000002", name: "Donald Trump", roles: ["Presidente de los Estados Unidos (mandato 2025-2029)", "empresario y exmandatario (2017-2021)", "líder del Partido Republicano"], nationality: "Estadounidense",
+  bio: "Presidente 47 de los Estados Unidos (mandato 2025-2029; antes 2017-2021). Relaciones políticas y económicas documentadas con figuras israelíes y pro-Israel.",
+  img: "img/trump.jpg", certainty: "DOCUMENTADO", review: "REVISADO", refs: ["SRC-000001"]
+});
+DB.persons.push({
+  id: "PER-000003", name: "Moshe Feiglin", roles: ["exlegislador israelí de línea dura; figura del sionismo revisionista"], nationality: "Israelí",
+  bio: "Exlegislador israelí de línea dura. En video viral: 'no podemos vivir si queda un palestino'.",
+  img: "img/feiglin.jpg", certainty: "CORROBORADO (cita audiovisual)", review: "REVISADO", refs: ["SRC-000003"]
+});
+DB.persons.push({
+  id: "PER-000004", name: "Amit Halevi", roles: ["diputado israelí del Knesset; político de línea dura"], nationality: "Israelí",
+  bio: "Diputado israelí que vinculó nacimientos en una maternidad con supuestos 'terroristas'.",
+  img: "img/halevi.jpg", certainty: "REPORTADO", review: "REVISADO", refs: ["SRC-000003"]
+});
+DB.persons.push({
+  id: "PER-000005", name: "Norman Finkelstein", roles: ["politólogo y escritor estadounidense; autor crítico de la política israelí"], nationality: "Estadounidense",
+  bio: "Autor judío crítico de la política israelí. Sobre el 'Estado del pueblo judío' y el respaldo del mundo.",
+  img: "img/finkelstein.jpg", certainty: "DOCUMENTADO", review: "REVISADO", refs: ["SRC-000001","SRC-000003"]
+});
+DB.persons.push({
+  id: "PER-000006", name: "Tucker Carlson", roles: ["presentador, comentarista"], nationality: "Estadounidense",
+  bio: "Figura mediática. Tema de declaraciones de Ted Cruz y del debate sobre antisemitismo.",
+  img: "img/carlson.jpg", certainty: "CORROBORADO", review: "REVISADO", refs: ["SRC-000003"]
+});
+DB.persons.push({
+  id: "PER-000007", name: "Ted Cruz", roles: ["senador republicano de EE.UU. por Texas; aliado del lobby pro-Israel (AIPAC)"], nationality: "Estadounidense",
+  bio: "Senador republicano. Según clip: 'panicking'; llama a Tucker Carlson 'el mayor antisemita'.",
+  img: "img/cruz.jpg", certainty: "CORROBORADO", review: "REVISADO", refs: ["SRC-000003"]
+});
+DB.persons.push({
+  id: "PER-000008", name: "Jared Kushner", roles: ["empresario, exasesor de la Casa Blanca"], nationality: "Estadounidense",
+  bio: "Yerno de Trump. Sobre Gaza como 'waterfront teardown' y torres de lujo sobre escombros.",
+  img: "img/kushner.jpg", certainty: "CORROBORADO (cita audiovisual)", review: "REVISADO", refs: ["SRC-000003"]
+});
+DB.persons.push({
+  id: "PER-000009", name: "Haitham Abdelhadi", roles: ["analista palestino-británico; comentarista del conflicto y derechos palestinos"], nationality: "Palestino-británico",
+  bio: "Afirma: 'criticar el sionismo no es antisemitismo'.",
+  img: "img/haitham_abdelhadi.jpg", certainty: "REPORTADO", review: "REVISADO", refs: ["SRC-000003"]
+});
+DB.persons.push({
+  id: "PER-000010", name: "May Golan", roles: ["ministra (Gabinete de Israel)"], nationality: "Israelí",
+  bio: "Ministra. Video la muestra orgullosa de la destrucción en Gaza.",
+  img: "img/golan.jpg", certainty: "CORROBORADO (cita audiovisual)", review: "REVISADO", refs: ["SRC-000003"]
+});
+
+DB.persons.push({
+  id: "PER-000011", name: "Eran Efrati",
+  roles: [["Veterano israelí/testimonio en video ('I was the terrorist')"]],
+  nationality: "?",
+  bio: "Figura relevante en el conflicto/geopolítica. Testimonio de veterano; rótulo 'I was the terrorist'. Observado en video.",
+  img: "img/eran_efrati.jpg", certainty: "REPORTADO", review: "REVISADO", refs: ["SRC-000003"]
+});
+
+DB.persons.push({
+  id: "PER-000012", name: "John Hagee",
+  roles: [["Líder religioso, vinculado a CUFI / sionismo cristiano"]],
+  nationality: "?",
+  bio: "Figura relevante en el conflicto/geopolítica. Asociado visual/temáticamente a CUFI en video.",
+  img: "img/john_hagee.jpg", certainty: "REPORTADO", review: "REVISADO", refs: ["SRC-000003"]
+});
+
+DB.persons.push({
+  id: "PER-000013", name: "Kenneth Copeland",
+  roles: [["Televangelista pro-Israel"]],
+  nationality: "?",
+  bio: "Figura relevante en el conflicto/geopolítica. Mencionado en video sobre televangelismo/pro-Israel.",
+  img: "img/kenneth_copeland.jpg", certainty: "REPORTADO", review: "REVISADO", refs: ["SRC-000003"]
+});
+
+DB.persons.push({
+  id: "PER-000014", name: "Paula White",
+  roles: [["Líder religioso-político, sionismo cristiano"]],
+  nationality: "?",
+  bio: "Figura relevante en el conflicto/geopolítica. Mencionada en video sobre 'Zionism hijacking Christianity'.",
+  img: "img/paula_white.jpg", certainty: "REPORTADO", review: "REVISADO", refs: ["SRC-000003"]
+});
+
+DB.persons.push({
+  id: "PER-000015", name: "Mike Huckabee",
+  roles: [["Político/religioso pro-Israel"]],
+  nationality: "?",
+  bio: "Figura relevante en el conflicto/geopolítica. Figura política/religiosa pro-Israel. Observado en video.",
+  img: "img/mike_huckabee.jpg", certainty: "CORROBORADO", review: "REVISADO", refs: ["SRC-000003"]
+});
+
+DB.persons.push({
+  id: "PER-000016", name: "Lawrence Wilkerson",
+  roles: [["Exfuncionario/comentarista (Judging Freedom)"]],
+  nationality: "?",
+  bio: "Figura relevante en el conflicto/geopolítica. Entrevista/podcast Judging Freedom. Observado en video.",
+  img: "img/lawrence_wilkerson.jpg", certainty: "REPORTADO", review: "REVISADO", refs: ["SRC-000003"]
+});
+
+DB.persons.push({
+  id: "PER-000017", name: "Gustavo Petro",
+  roles: [["presidente de Colombia e impulsor de la paz territorial; autor de mensajes públicos sobre el conflicto"]],
+  nationality: "?",
+  bio: "Figura relevante en el conflicto/geopolítica. Autor/post observado sobre Cerimedo y Casa Rosada.",
+  img: "img/gustavo_petro.jpg", certainty: "CORROBORADO", review: "REVISADO", refs: ["SRC-000003"]
+});
+
+DB.persons.push({
+  id: "PER-000018", name: "Fernando Cerimedo",
+  roles: [["Operador de propaganda política y estratega digital (La Derecha Diario)"]],
+  nationality: "?",
+  bio: "Figura relevante en el conflicto/geopolítica. Nadia Beller confirma que Cerimedo trabajó en campaña pinochetista del rechazo y campaña de Kast.",
+  img: "img/fernando_cerimedo.jpg", certainty: "REPORTADO", review: "REVISADO", refs: ["SRC-000003"]
+});
+
+DB.persons.push({
+  id: "PER-000019", name: "Wesley Clark",
+  roles: [["General retirado de EEUU, citado"]],
+  nationality: "?",
+  bio: "Figura relevante en el conflicto/geopolítica. Citado sobre invasión de 7 países en 5 años (clip Kamelia/Irán).",
+  img: "img/wesley_clark.jpg", certainty: "CORROBORADO", review: "REVISADO", refs: ["SRC-000003"]
+});
+
+DB.persons.push({
+  id: "PER-000020", name: "Richard Nixon",
+  roles: [["37.º presidente de EE.UU. (1969-1974); figura histórica en la diplomacia EE.UU.-Israel"]],
+  nationality: "?",
+  bio: "Figura relevante en el conflicto/geopolítica. Cita atribuida sobre el lobby judío/pro-Israel.",
+  img: "img/richard_nixon.jpg", certainty: "CORROBORADO", review: "REVISADO", refs: ["SRC-000003"]
+});
+
+DB.persons.push({
+  id: "PER-000021", name: "Jeffrey Epstein",
+  roles: [["Financista, caso penal/reorganización"]],
+  nationality: "?",
+  bio: "Figura relevante en el conflicto/geopolítica. Caso criminal/red de abuso; mencionado como eje de montajes sobre élite.",
+  img: "img/jeffrey_epstein.jpg", certainty: "CORROBORADO", review: "REVISADO", refs: ["SRC-000003"]
+});
+
+DB.persons.push({
+  id: "PER-000022", name: "Alan Dershowitz",
+  roles: [["Abogado ligado a Epstein"]],
+  nationality: "?",
+  bio: "Figura relevante en el conflicto/geopolítica. Clip: 'Epstein's Jewish lawyer'. Tema Epstein/Dershowitz.",
+  img: "img/alan_dershowitz.jpg", certainty: "CORROBORADO", review: "REVISADO", refs: ["SRC-000003"]
+});
+
+DB.persons.push({
+  id: "PER-000023", name: "John Fetterman",
+  roles: [["Senador de EEUU (clip GBC)"]],
+  nationality: "?",
+  bio: "Figura relevante en el conflicto/geopolítica. Clip: Fetterman: 'Is Israel committing genocide?'",
+  img: "img/john_fetterman.jpg", certainty: "CORROBORADO", review: "REVISADO", refs: ["SRC-000003"]
+});
+
+DB.persons.push({
+  id: "PER-000024", name: "Jon Stewart",
+  roles: [["Presentador de TV (respuesta)"]],
+  nationality: "?",
+  bio: "Figura relevante en el conflicto/geopolítica. Clip con Fetterman/Stewart sobre Epstein/Hamás.",
+  img: "img/jon_stewart.jpg", certainty: "CORROBORADO", review: "REVISADO", refs: ["SRC-000003"]
+});
+
+DB.persons.push({
+  id: "PER-000025", name: "Marco Rubio",
+  roles: [["Secretario de Estado (2025)"]],
+  nationality: "?",
+  bio: "Figura relevante en el conflicto/geopolítica. Clip Praxedes: respuesta del secretario de Estado Marco Rubio.",
+  img: "img/marco_rubio.jpg", certainty: "CORROBORADO", review: "REVISADO", refs: ["SRC-000003"]
+});
+
+DB.persons.push({
+  id: "PER-000026", name: "Meilich Cohen",
+  roles: [["Rabino antisionista (Voice of Rabbis)"]],
+  nationality: "?",
+  bio: "Figura relevante en el conflicto/geopolítica. 'A firm clear statement by Rabbi Meilich Cohen'. Judíos estadounidenses sin conexión con Israel.",
+  img: "img/meilich_cohen.jpg", certainty: "REPORTADO", review: "REVISADO", refs: ["SRC-000003"]
+});
+
+DB.persons.push({
+  id: "PER-000027", name: "Hind Rajab",
+  roles: [["Víctima civil (caso mencionado)"]],
+  nationality: "?",
+  bio: "Figura relevante en el conflicto/geopolítica. Caso de niña/familia/ambulancia mencionado en entrevista.",
+  img: "img/hind_rajab.jpg", certainty: "REPORTADO", review: "REVISADO", refs: ["SRC-000003"]
+});
+
+DB.persons.push({
+  id: "PER-000028", name: "Rodrigo Paz",
+  roles: [["Político boliviano (clip Julián Macías)"]],
+  nationality: "?",
+  bio: "Figura relevante en el conflicto/geopolítica. Clip sobre Cerimedo y asesoría política; '¿no decía Rodrigo Paz...?'",
+  img: "img/rodrigo_paz.jpg", certainty: "REPORTADO", review: "REVISADO", refs: ["SRC-000003"]
+});
+
+DB.persons.push({
+  id: "PER-000029", name: "Nadia Beller",
+  roles: [["Investigadora/periodista mencionada"]],
+  nationality: "?",
+  bio: "Figura relevante en el conflicto/geopolítica. Confirma datos sobre Cerimedo y bots.",
+  img: "img/nadia_beller.jpg", certainty: "REPORTADO", review: "REVISADO", refs: ["SRC-000003"]
+});
+
+DB.persons.push({
+  id: "PER-000030", name: "Theodor Herzl",
+  roles: [["Fundador del sionismo político"]],
+  nationality: "?",
+  bio: "Figura relevante en el conflicto/geopolítica. Cita atribuida: 'Argentina tendría el mayor interés en cedernos un pedazo de territorio para construir el estado sionista'.",
+  img: "img/theodor_herzl.jpg", certainty: "REPORTADO", review: "REVISADO", refs: ["SRC-000003"]
+});
+
+DB.persons.push({
+  id: "PER-000031", name: "Sergio Bergman",
+  roles: [["Rabino sionista argentino, exfuncionario"]],
+  nationality: "?",
+  bio: "Figura relevante en el conflicto/geopolítica. Cita: 'Argentina como tierra prometida del sionismo, debe ser partida y repartida como en Palestina'.",
+  img: "img/sergio_bergman.jpg", certainty: "REPORTADO", review: "REVISADO", refs: ["SRC-000003"]
+});
+
+DB.persons.push({
+  id: "PER-000032", name: "David Roet",
+  roles: [["Embajador de Israel en Austria"]],
+  nationality: "?",
+  bio: "Figura relevante en el conflicto/geopolítica. Filmado en reunión en Innsbruck hablando de palestinos y Gaza.",
+  img: "img/david_roet.jpg", certainty: "CORROBORADO", review: "REVISADO", refs: ["SRC-000003"]
+});
+
+DB.persons.push({
+  id: "PER-000033", name: "Javier Negre",
+  roles: [["Periodista/fundador de La Derecha Diario"]],
+  nationality: "?",
+  bio: "Figura relevante en el conflicto/geopolítica. Testimonio Jean Carlo Portillo: Negre y Cerimedo tenían 'el secreto para reventar el algoritmo (granjas de bots)'.",
+  img: "img/javier_negre.png", certainty: "REPORTADO", review: "REVISADO", refs: ["SRC-000003"]
+});
+
+DB.persons.push({
+  id: "PER-000034", name: "Ricardo Salinas Pliego",
+  roles: [["empresario mexicano, fundador de Grupo Salinas (TV Azteca, Elektra); comentarista conservador"]],
+  nationality: "?",
+  bio: "Figura relevante en el conflicto/geopolítica. Clip Catrina Norteña: exhibe a La Derecha Diario de Negre, Cerimedo y Salinas Pliego por granjas de bots.",
+  img: "img/ricardo_salinas_pliego.jpg", certainty: "CORROBORADO", review: "REVISADO", refs: ["SRC-000003"]
+});
+
+DB.persons.push({
+  id: "PER-000035", name: "Diego Ruzzarin",
+  roles: [["Comentarista/creador de contenido"]],
+  nationality: "?",
+  bio: "Figura relevante en el conflicto/geopolítica. Clip Catrina Norteña: 'EXHIBE @DiegoRuzzarin los crímenes de La Derecha Diario'.",
+  img: "img/diego_ruzzarin.jpg", certainty: "REPORTADO", review: "REVISADO", refs: ["SRC-000003"]
+});
+
+DB.persons.push({
+  id: "PER-000036", name: "Mosab Hassan Yousef",
+  roles: [["Exmiembro de inteligencia israelí"]],
+  nationality: "?",
+  bio: "Figura relevante en el conflicto/geopolítica. Clip Parody Jeff: 'Former Israeli intelligence member Mosab Hassan claims Israel has secret advanced weapons'.",
+  img: "img/mosab_hassan_yousef.jpg", certainty: "REPORTADO", review: "REVISADO", refs: ["SRC-000003"]
+});
+
+DB.persons.push({
+  id: "PER-000037", name: "Philip Tourney",
+  roles: [["Veterano estadounidense, sobreviviente USS Liberty"]],
+  nationality: "?",
+  bio: "Figura relevante en el conflicto/geopolítica. 'Israel nos controla. Controlan el Congreso, el Senado, nuestro dinero.'",
+  img: "img/philip_tourney.jpg", certainty: "REPORTADO", review: "REVISADO", refs: ["SRC-000003"]
+});
+
+DB.persons.push({
+  id: "PER-000038", name: "Julian Assange",
+  roles: [["fundador de WikiLeaks y editor de filtraciones; figura de la transparencia"]],
+  nationality: "?",
+  bio: "Figura relevante en el conflicto/geopolítica. Cita atribuida: 'El objetivo es tener una guerra interminable, no una guerra exitosa'.",
+  img: "img/julian_assange.jpg", certainty: "REPORTADO", review: "REVISADO", refs: ["SRC-000003"]
+});
+
+DB.persons.push({
+  id: "PER-000039", name: "Rabbi Kohn",
+  roles: [["rabino antisionista de la comunidad judía ultraortodoxa"]],
+  nationality: "?",
+  bio: "Figura relevante en el conflicto/geopolítica. 'Zionists stole the Jewish name and now use it as a shield.'",
+  img: "img/rabbi_kohn.jpg", certainty: "REPORTADO", review: "REVISADO", refs: ["SRC-000003"]
+});
+
+DB.persons.push({
+  id: "PER-000040", name: "Bezalel Smotrich",
+  roles: [["Ministro de Finanzas de Israel"]],
+  nationality: "?",
+  bio: "Figura relevante en el conflicto/geopolítica. 'Israel will expand into Lebanon, Syria, and Gaza. To the Litani. Mount Hermon.'",
+  img: "img/bezalel_smotrich.jpg", certainty: "REPORTADO", review: "REVISADO", refs: ["SRC-000003"]
+});
+
+DB.persons.push({
+  id: "PER-000041", name: "Javier Milei",
+  roles: [["presidente de Argentina y economista libertario; figura pública cercana a Israel"]],
+  nationality: "?",
+  bio: "Figura relevante en el conflicto/geopolítica. Anunció que extranjeros (incluidos sionistas) pueden comprar tierras argentinas tras incendios.",
+  img: "img/javier_milei.jpg", certainty: "CORROBORADO", review: "REVISADO", refs: ["SRC-000003"]
+});
+
+DB.persons.push({
+  id: "PER-000042", name: "Charlie Kirk",
+  roles: [["Activista conservador, fundador de Turning Point USA"]],
+  nationality: "?",
+  bio: "Figura relevante en el conflicto/geopolítica. Figura del movimiento MAGA; tema en fuentes del expediente sobre adoctrinamiento político-religioso.",
+  img: "img/charlie_kirk.jpg", certainty: "CORROBORADO", review: "REVISADO", refs: ["SRC-000003"]
+});
+
+DB.persons.push({
+  id: "PER-000043", name: "Candace Owens",
+  roles: [["Comentarista política conservadora"]],
+  nationality: "?",
+  bio: "Figura relevante en el conflicto/geopolítica. Figura mediática conservadora; tema en fuentes del expediente.",
+  img: "img/candace_owens.jpg", certainty: "CORROBORADO", review: "REVISADO", refs: ["SRC-000003"]
+});
+
+DB.persons.push({
+  id: "PER-000044", name: "John Mearsheimer",
+  roles: [["Politólogo, coautor 'The Israel Lobby'"]],
+  nationality: "?",
+  bio: "Figura relevante en el conflicto/geopolítica. Autores del lobby israelí en EUA; citados en fuentes del expediente.",
+  img: "img/john_mearsheimer.jpg", certainty: "REPORTADO", review: "REVISADO", refs: ["SRC-000003"]
+});
+
+DB.persons.push({
+  id: "PER-000045", name: "Stephen Walt",
+  roles: [["Politólogo, coautor 'The Israel Lobby'"]],
+  nationality: "?",
+  bio: "Figura relevante en el conflicto/geopolítica. Coautor de 'The Israel Lobby and U.S. Foreign Policy'.",
+  img: "img/stephen_walt.jpg", certainty: "CORROBORADO", review: "REVISADO", refs: ["SRC-000003"]
+});
+
+DB.persons.push({
+  id: "PER-000046", name: "JD Vance",
+  roles: [["Vicepresidente de EEUU (2025)"]],
+  nationality: "?",
+  bio: "Figura relevante en el conflicto/geopolítica. Figura política estadounidense mencionada en fuentes del expediente.",
+  img: "img/jd_vance.jpg", certainty: "CORROBORADO", review: "REVISADO", refs: ["SRC-000003"]
+});
+
+DB.persons.push({
+  id: "PER-000047", name: "Itamar Ben-Gvir",
+  roles: [["Ministro de Seguridad Nacional de Israel"]],
+  nationality: "?",
+  bio: "Figura relevante en el conflicto/geopolítica. Israeli National Security Minister Itamar Ben-Gvir faced an embarrassing confrontation at the US Capitol... 'You're a racist war criminal!'",
+  img: "img/itamar_ben_gvir.jpg", certainty: "REPORTADO", review: "REVISADO", refs: ["SRC-000003"]
+});
+
+DB.persons.push({
+  id: "PER-000048", name: "Joe Kent",
+  roles: [["Congresista estadounidense (R-WA), ex Navy SEAL"]],
+  nationality: "?",
+  bio: "Figura relevante en el conflicto/geopolítica. I saw Israeli lobby groups dictate terms inside the White House under Trump... manipulating those around President Trump to put us into this war",
+  img: "img/joe_kent.jpg", certainty: "REPORTADO", review: "REVISADO", refs: ["SRC-000003"]
+});
+
+DB.persons.push({
+  id: "PER-000049", name: "Jeffrey Sachs",
+  roles: [["Economista estadounidense"]],
+  nationality: "?",
+  bio: "Figura relevante en el conflicto/geopolítica. Jeffrey Sachs names the driver of the wars: Washington and Europe still believe they run the world... hegemonic mindset at work in Ukraine, Gaza, Iran and Venezuela",
+  img: "img/jeffrey_sachs.jpg", certainty: "CORROBORADO", review: "REVISADO", refs: ["SRC-000003"]
+});
+
+DB.persons.push({
+  id: "PER-000050", name: "Gabriel Rockhill",
+  roles: [["filósofo y profesor; comentarista sobre poder, medios y política exterior"]],
+  nationality: "?",
+  bio: "Figura relevante en el conflicto/geopolítica. La CIA tiene 2 ramas... de 1947 a 1987 mataron a 6 millones y derribaron 50 gobiernos democráticos... Gabriel Rockhill, profesor",
+  img: "img/gabriel_rockhill.png", certainty: "REPORTADO", review: "REVISADO", refs: ["SRC-000003"]
+});
+
+DB.persons.push({
+  id: "PER-000051", name: "David Icke",
+  roles: [["Autor/conferenciante (teorías conspirativas)"]],
+  nationality: "?",
+  bio: "Figura relevante en el conflicto/geopolítica. David Icke speaks about the dancing Israelis: 'Five Israelis, two confirmed as Mossad agents, had prior knowledge of 9/11'",
+  img: "img/david_icke.jpg", certainty: "REPORTADO", review: "REVISADO", refs: ["SRC-000003"]
+});
+
+DB.persons.push({
+  id: "PER-000052", name: "George Lincoln Rockwell",
+  roles: [["Histórico; fundador del American Nazi Party"]],
+  nationality: "?",
+  bio: "Figura relevante en el conflicto/geopolítica. George Lincoln Rockwell speaks his mind on the 6,000,000 figure. Fun fact: the figure was achieved by the torture of Rudolph Höss",
+  img: "img/george_lincoln_rockwell.jpg", certainty: "REPORTADO", review: "REVISADO", refs: ["SRC-000003"]
+});
+
+DB.persons.push({
+  id: "PER-000053", name: "Mark Weber",
+  roles: [["Figura revisionista; director del Institute for Historical Review"]],
+  nationality: "?",
+  bio: "Figura relevante en el conflicto/geopolítica. Mark Weber explains that the photos taken at the concentration camps were the result of starvation and disease... there was no extermination policy",
+  img: "img/mark_weber.jpg", certainty: "REPORTADO", review: "REVISADO", refs: ["SRC-000003"]
+});
+
+DB.persons.push({
+  id: "PER-000054", name: "Rudolph Höss",
+  roles: [["Histórico; comandante de Auschwitz (mencionado)"]],
+  nationality: "?",
+  bio: "Figura relevante en el conflicto/geopolítica. the 6,000,000 figure was achieved by the torture of Rudolph Höss (commandant to Auschwitz) by the British",
+  img: "img/rudolph_hoss.jpg", certainty: "REPORTADO", review: "REVISADO", refs: ["SRC-000003"]
+});
+
+DB.persons.push({
+  id: "PER-000055", name: "Riccardo Bosi",
+  roles: [["Excomandante de fuerzas especiales australianas"]],
+  nationality: "?",
+  bio: "Figura relevante en el conflicto/geopolítica. Riccardo Bosi, der ehemaliger australische Kommandeur der Spezialkräfte, über die Ukraine: 'Die Ukraine ist das Zentrum des tiefen...'",
+  img: "img/riccardo_bosi.png", certainty: "REPORTADO", review: "REVISADO", refs: ["SRC-000003"]
+});
+
+DB.persons.push({
+  id: "PER-000056", name: "Robert David Steele",
+  roles: [["Exanalista de inteligencia de EEUU (exCIA)"]],
+  nationality: "?",
+  bio: "Figura relevante en el conflicto/geopolítica. Robert D. Steele, exCIA: 'Tenemos 1000 bases militares para contrabandear oro, armas, drogas, efectivo y niños pequeños para las élites de EEUU'",
+  img: "img/robert_david_steele.jpg", certainty: "REPORTADO", review: "REVISADO", refs: ["SRC-000003"]
+});
+
+DB.persons.push({
+  id: "PER-000057", name: "Jussi Saramo",
+  roles: [["Eurodiputado finlandés (MEP)"]],
+  nationality: "?",
+  bio: "Figura relevante en el conflicto/geopolítica. MEP Jussi Saramo speaking in the European Parliament: 'tieto kuinka monta palestiinalaista Israel tappoi joka vuosi ennen Hamasin iskua'",
+  img: "img/jussi_saramo.jpg", certainty: "REPORTADO", review: "REVISADO", refs: ["SRC-000003"]
+});
+
+DB.persons.push({
+  id: "PER-000058", name: "Enrique Peña Nieto",
+  roles: [["Expresidente de México"]],
+  nationality: "?",
+  bio: "Figura relevante en el conflicto/geopolítica. El expresidente de México Enrique Peña Nieto fue captado en una boda en Italia junto a Avishay Neriah, comercializador del software espía Pegasus",
+  img: "img/enrique_pena_nieto.jpg", certainty: "REPORTADO", review: "REVISADO", refs: ["SRC-000003"]
+});
+
+DB.persons.push({
+  id: "PER-000059", name: "Avishay Neriah",
+  roles: [["Empresario israelí, comercializador de Pegasus"]],
+  nationality: "?",
+  bio: "Figura relevante en el conflicto/geopolítica. Neriah y su socio Uri Ansbacher habrían pagado a Peña Nieto 25 millones de dólares para asegurar contratos de ciberseguridad con NSO Group",
+  img: "img/avishay_neriah.jpg", certainty: "REPORTADO", review: "REVISADO", refs: ["SRC-000003"]
+});
+
+DB.persons.push({
+  id: "PER-000060", name: "Uri Ansbacher",
+  roles: [["Socio de Avishay Neriah (empresario israelí)"]],
+  nationality: "?",
+  bio: "Figura relevante en el conflicto/geopolítica. Neriah y su socio Uri Ansbacher habrían pagado a Peña Nieto 25 millones de dólares",
+  img: "#", certainty: "REPORTADO", review: "REVISADO", refs: ["SRC-000003"]
+});
+
+DB.persons.push({
+  id: "PER-000061", name: "Saddam Hussein",
+  roles: [["Dictador de Irak (mencionado en archivo 2002)"]],
+  nationality: "?",
+  bio: "Figura relevante en el conflicto/geopolítica. 2002: 'If you take out Saddam, I guarantee you it will have enormously positive impact in the region'. A million people died in a War based on a complete lie",
+  img: "img/saddam_hussein.jpg", certainty: "CORROBORADO", review: "REVISADO", refs: ["SRC-000003"]
+});
+
+DB.persons.push({
+  id: "PER-000062", name: "Yitzchak Breitowitz",
+  roles: [["rabino influyente de la comunidad judía ortodoxa"]],
+  nationality: "?",
+  bio: "Figura relevante en el conflicto/geopolítica. L'influent rabbin Yitzchak Breitowitz: 'La Torah dit que nous prenons cette nation appelée Amalek et que nous l'exterminons. Hommes, femmes, enfants, bébés...'",
+  img: "img/yitzchak_breitowitz.jpg", certainty: "REPORTADO", review: "REVISADO", refs: ["SRC-000003"]
+});
+
+DB.persons.push({
+  id: "PER-000063", name: "Chay Bowes",
+  roles: [["Comentarista (autor del clip con archivo de 2002)"]],
+  nationality: "?",
+  bio: "Figura relevante en el conflicto/geopolítica. If you take out Saddam... I guarantee you that it will have enormous positive reverberations on the region",
+  img: "img/chay_bowes.jpg", certainty: "REPORTADO", review: "REVISADO", refs: ["SRC-000003"]
+});
+
+DB.persons.push({
+  id: "PER-000064", name: "Jesse Lyons",
+  roles: [["Comentarista (EEUU First)"]],
+  nationality: "?",
+  bio: "Figura relevante en el conflicto/geopolítica. The Auschwitz liberation photos were staged and perhaps even years later... 'There are many pictures about the Russians liberating Auschwitz and there's never any snow'",
+  img: "#", certainty: "REPORTADO", review: "REVISADO", refs: ["SRC-000003"]
+});
+
+DB.persons.push({
+  id: "PER-000065", name: "Ibrahim Al-Matari (د ابراهيم المطري)",
+  roles: [["Médico/activista palestino (autor del clip)"]],
+  nationality: "?",
+  bio: "Figura relevante en el conflicto/geopolítica. UN institutions are attacked. The ICC is punished. ICJ orders are ignored... We are watching International system destruction",
+  img: "#", certainty: "REPORTADO", review: "REVISADO", refs: ["SRC-000003"]
+});
+
+DB.persons.push({
+  id: "PER-000066", name: "César Vidal",
+  roles: [["Historiador, escritor y presentador español"]],
+  nationality: "?",
+  bio: "Figura relevante en el conflicto/geopolítica. Cuantas horas de televisión se emplearían para difundir declaraciones como estas si las pronunciaran iraníes, alemanes o incluso españoles",
+  img: "img/cesar_vidal.jpg", certainty: "REPORTADO", review: "REVISADO", refs: ["SRC-000003"]
+});
+
+DB.persons.push({
+  id: "PER-000067", name: "Diego Vélez (Gar)",
+  roles: [["comunicador y analista de geopolítica; creador de contenido"]],
+  nationality: "?",
+  bio: "Figura relevante en el conflicto/geopolítica. La agencia estatal francesa de control digital... campaña masiva de desinformación contra políticos críticos con Israel, principalmente de Francia Insumisa",
+  img: "img/diego_velez_gar.jpg", certainty: "REPORTADO", review: "REVISADO", refs: ["SRC-000003"]
+});
+
+DB.persons.push({
+  id: "PER-000068", name: "Yakov Rabkin",
+  roles: [["Profesor e historiador de la Universidad de Montreal, entrevistado sobre sionismo"]],
+  nationality: "?",
+  bio: "Figura relevante en el conflicto/geopolítica. Para que los judíos fueran a Israel, los sionistas se disfrazaron de musulmanes y atacaron a mujeres judías, hicieron atentados terroristas contra judíos en sinagogas de Irak, Egipto, Marruecos",
+  img: "img/yakov_rabkin.jpg", certainty: "REPORTADO", review: "REVISADO", refs: ["SRC-000003"]
+});
+
+DB.persons.push({
+  id: "PER-000069", name: "Jean Carlo Portillo",
+  roles: [["Denunciante/presentador que expone a La Derecha Diario"]],
+  nationality: "?",
+  bio: "Figura relevante en el conflicto/geopolítica. El actual dueño de la derecha diario me buscó para conseguirle yo 25 mil dólares para crear la derecha diario México antes de que se creara, y yo dije que no",
+  img: "img/jean_carlo_portillo.jpg", certainty: "REPORTADO", review: "REVISADO", refs: ["SRC-000003"]
+});
+
+DB.persons.push({
+  id: "PER-000070", name: "Ignacio González",
+  roles: [["Creador de contenido/denunciante (cuenta Ignaciogjv)"]],
+  nationality: "?",
+  bio: "Figura relevante en el conflicto/geopolítica. ¡Los monstruos sí existen! Así de fácil el gobierno Israel le dispara a un niño palestino de 14 años que estaba en un centro de refugiados en Tizjordánea",
+  img: "#", certainty: "REPORTADO", review: "REVISADO", refs: ["SRC-000003"]
+});
+
+DB.persons.push({
+  id: "PER-000071", name: "Greta Thunberg",
+  roles: [["activista ambiental sueca; crítica pública de la cobertura del conflicto de Gaza"]],
+  nationality: "?",
+  bio: "Figura relevante en el conflicto/geopolítica. Greta Thunberg is facing arrests, investigations, and a media blackout for showing solidarity with the Palestinian and Sahrawi peoples",
+  img: "img/greta_thunberg.jpg", certainty: "CORROBORADO", review: "REVISADO", refs: ["SRC-000003"]
+});
+
+DB.persons.push({
+  id: "PER-000072", name: "Sebastián Salgado",
+  roles: [["Reportero (HispanTV / Nexo Latino)"]],
+  nationality: "?",
+  bio: "Figura relevante en el conflicto/geopolítica. Sebastián Salgado reporta desde Buenos Aires sobre incendios intencionales en la Patagonia y encubrimiento del gobierno de Milei",
+  img: "img/sebastian_salgado.jpg", certainty: "REPORTADO", review: "REVISADO", refs: ["SRC-000003"]
+});
+
+DB.persons.push({
+  id: "PER-000073", name: "Ben-Gurion",
+  roles: [["Primer primer ministro de Israel"]],
+  nationality: "?",
+  bio: "Figura relevante en el conflicto/geopolítica. Famosa o infamemente, Ben-Gurion es citado diciendo que preferiría salvar a la mitad de los niños judíos",
+  img: "img/ben_gurion.jpg", certainty: "REPORTADO", review: "REVISADO", refs: ["SRC-000003"]
+});
+
+DB.persons.push({
+  id: "PER-000074", name: "Yosef Basri",
+  roles: [["Abogado judío iraquí del subterráneo sionista"]],
+  nationality: "?",
+  bio: "Figura relevante en el conflicto/geopolítica. Basri, un abogado judío muy inteligente, y su ayudante Shalom Salah fueron responsables de tres de las cinco bombas",
+  img: "img/yosef_basri.jpg", certainty: "REPORTADO", review: "REVISADO", refs: ["SRC-000003"]
+});
+
+DB.persons.push({
+  id: "PER-000075", name: "Max Binet",
+  roles: [["Oficial de inteligencia israelí en Teherán"]],
+  nationality: "?",
+  bio: "Figura relevante en el conflicto/geopolítica. El controlador de Basri era un oficial de inteligencia israelí llamado Max Binet, con base en Teherán",
+  img: "#", certainty: "REPORTADO", review: "REVISADO", refs: ["SRC-000003"]
+});
+
+DB.persons.push({
+  id: "PER-000076", name: "Shalom Salah Shalom",
+  roles: [["Ayudante de Yosef Basri"]],
+  nationality: "?",
+  bio: "Figura relevante en el conflicto/geopolítica. su asistente Shalom Salah Shalom fueron responsables de tres de las cinco bombas",
+  img: "#", certainty: "REPORTADO", review: "REVISADO", refs: ["SRC-000003"]
+});
+
+DB.persons.push({
+  id: "PER-000077", name: "Rupert Butler",
+  roles: [["Autor del libro 'Legions of Death'"]],
+  nationality: "?",
+  bio: "Figura relevante en el conflicto/geopolítica. This is confirmed in the book 'legions of death' by Rupert Butler",
+  img: "#", certainty: "REPORTADO", review: "REVISADO", refs: ["SRC-000003"]
+});
+
+DB.persons.push({
+  id: "PER-000078", name: "Henry H. Klein",
+  roles: [["Autor del panfleto de 1946 sobre conspiración judía mundial"]],
+  nationality: "?",
+  bio: "Figura relevante en el conflicto/geopolítica. 1946 - A Jew Exposes the Jewish World Conspiracy - Henry H. Klein",
+  img: "img/henry_klein.jpg", certainty: "REPORTADO", review: "REVISADO", refs: ["SRC-000003"]
+});
+
+DB.persons.push({
+  id: "PER-000079", name: "José Antonio Kast",
+  roles: [["Político chileno, candidato presidencial"]],
+  nationality: "?",
+  bio: "Figura relevante en el conflicto/geopolítica. trabajó en la campaña electoral de Kast",
+  img: "img/jose_antonio_kast.jpg", certainty: "REPORTADO", review: "REVISADO", refs: ["SRC-000003"]
+});
+
+DB.persons.push({
+  id: "PER-000080", name: "Flavio Bolsonaro",
+  roles: [["Diputado brasileño, hijo de Jair Bolsonaro"]],
+  nationality: "?",
+  bio: "Figura relevante en el conflicto/geopolítica. tienen un vínculo directo con Flavio Bolsonaro, el hijo de Jair Mesías Bolsonaro",
+  img: "img/flavio_bolsonaro.jpg", certainty: "CORROBORADO", review: "REVISADO", refs: ["SRC-000003"]
+});
+
+DB.persons.push({
+  id: "PER-000081", name: "Jair Bolsonaro",
+  roles: [["Ex presidente de Brasil"]],
+  nationality: "?",
+  bio: "Figura relevante en el conflicto/geopolítica. el hijo de Jair Mesías Bolsonaro",
+  img: "img/jair_bolsonaro.jpg", certainty: "CORROBORADO", review: "REVISADO", refs: ["SRC-000003"]
+});
+
+DB.persons.push({
+  id: "PER-000082", name: "Daniel Noboa",
+  roles: [["Presidente de Ecuador"]],
+  nationality: "?",
+  bio: "Figura relevante en el conflicto/geopolítica. lo vemos en Ecuador, después de la victoria de Noboa, caminando muy orgulloso hacia la Asamblea Nacional",
+  img: "img/daniel_noboa.jpg", certainty: "CORROBORADO", review: "REVISADO", refs: ["SRC-000003"]
+});
+
+DB.persons.push({
+  id: "PER-000083", name: "Myron Gaines",
+  roles: [["Comentarista/participante en debate sobre el Holocausto"]],
+  nationality: "?",
+  bio: "Figura relevante en el conflicto/geopolítica. A jew debates Myron Gaines on the casualties sustained in the Holocaust",
+  img: "img/myron_gaines.jpg", certainty: "REPORTADO", review: "REVISADO", refs: ["SRC-000003"]
+});
+
+DB.persons.push({
+  id: "PER-000084", name: "Steve Cohen",
+  roles: [["Supuesto agente de Mossad (señalado en Washington Square Park)"]],
+  nationality: "?",
+  bio: "Figura relevante en el conflicto/geopolítica. That's steve Cohen and Addy... Steve is a Mossad agent. This is insane",
+  img: "img/steve_cohen.jpg", certainty: "CORROBORADO", review: "REVISADO", refs: ["SRC-000003"]
+});
+
+DB.persons.push({
+  id: "PER-000085", name: "Leonardo Roca",
+  roles: [["Investigador que rastreó la billetera cripto de Cerimedo"]],
+  nationality: "?",
+  bio: "Figura relevante en el conflicto/geopolítica. Lo que descubrió Leonardo Roca a través de la billetera fría es que se movieron miles de dólares hacia cuentas que contienen millones",
+  img: "img/leonardo_roca.jpg", certainty: "REPORTADO", review: "REVISADO", refs: ["SRC-000003"]
+});
+
+DB.persons.push({
+  id: "PER-000086", name: "Amichai Chikli (Ami Khailahu)",
+  roles: [["Ministro de Patrimonio/Diáspora de Israel"]],
+  nationality: "?",
+  bio: "Figura relevante en el conflicto/geopolítica. tu heritage minister, Ami Khailahu, dijo que Nuking Gaza era una opción y pedía métodos más dolorosos que la muerte para los palestinos",
+  img: "img/amichai_chikli.jpg", certainty: "REPORTADO", review: "REVISADO", refs: ["SRC-000003"]
+});
+
+DB.persons.push({
+  id: "PER-000087", name: "alextopol",
+  roles: [["Periodista internacional que documenta el control de IDs en Jerusalén"]],
+  nationality: "?",
+  bio: "Figura relevante en el conflicto/geopolítica. This is a bus full of Palestinians with Israeli ID's in the middle of Jerusalem that they just decided to raid... tell me again how Israel is not an apartheid state",
+  img: "https://pbs.twimg.com/profile_images/2044635810297757696/hYcUY6gY_400x400.jpg", certainty: "REPORTADO", review: "REVISADO", refs: ["SRC-000003", "SRC-FOTO-alextopol"]
+});
+
+DB.persons.push({
+  id: "PER-000088", name: "Julián Macías Tovar",
+  roles: [["Investigador/denunciante de la red de bots de Cerimedo"]],
+  nationality: "?",
+  bio: "Figura relevante en el conflicto/geopolítica. Julán Macías Tovar: 'Nadia Beller confirma que Cerimedo trabajó en la campaña pinochetista del rechazo y en la campaña electoral de Kast'",
+  img: "img/julian_macias_tovar.jpg", certainty: "REPORTADO", review: "REVISADO", refs: ["SRC-000003"]
+});
+
+// ----------------------------------------------------------------------------
+// ORGANIZACIONES
+// ----------------------------------------------------------------------------
+DB.orgs.push({
+  id: "ORG-000001", name: "AIPAC", full: "American Israel Public Affairs Committee",
+  type: "grupo de presión (lobby)", country: "EUA",
+  bio: "Principal lobby pro-Israel en Estados Unidos.",
+  img: "img/logo_aipac.png",
+  certainty: "DOCUMENTADO", review: "REVISADO", refs: ["SRC-000001"]
+});
+DB.orgs.push({
+  id: "ORG-000002", name: "IDF", full: "Fuerzas de Defensa de Israel", type: "fuerza militar", country: "Israel",
+  bio: "Ejército del Estado de Israel.",
+  img: "img/logo_idf.png", certainty: "DOCUMENTADO", review: "REVISADO", refs: ["SRC-000001"]
+});
+DB.orgs.push({
+  id: "ORG-000003", name: "CUFI", full: "Christians United for Israel", type: "organización religioso-política", country: "EUA",
+  bio: "Movimiento cristiano sionista estadounidense.",
+  img: "img/cufi.png", certainty: "DOCUMENTADO", review: "REVISADO", refs: ["SRC-000001"]
+});
+DB.orgs.push({
+  id: "ORG-000004", name: "Clock Tower X LLC", type: "empresa (registrante FARA)", country: "EUA",
+  bio: "Registrante del caso FARA 7649; relación con Havas Media y State of Israel.",
+  certainty: "CORROBORADO", review: "VERIFICADO", refs: ["SRC-000002"]
+});
+DB.orgs.push({
+  id: "ORG-000005", name: "NSO Group", type: "empresa de ciberseguridad", country: "Israel",
+  bio: "Desarrolladora de Pegasus (software de espionaje).Tema en clips de México.",
+  img: "img/logo_nso.png",
+  certainty: "CORROBORADO", review: "REVISADO", refs: ["SRC-000003"]
+});
+
+
+DB.orgs.push({
+  id: "ORG-000006", name: "NRA", full: "National Rifle Association",
+  type: "asociación de armas (lobby pro-armas)", country: "EUA",
+  bio: "Asociación Nacional del Rifle de Estados Unidos; principal lobby pro-armas en EUA.",
+  img: "img/logo_nra.png",
+  certainty: "CORROBORADO", review: "REVISADO", refs: ["SRC-000003"]
+});
+
+DB.persons.push({
+  id: "PER-000089", name: "Pete Hegseth", roles: ["Secretario de Defensa (EE.UU.)"], nationality: "Estadounidense",
+  bio: "Integrante del gobierno en el organigrama institucional Estadounidense",
+  img: "img/pete_hegseth.jpg", certainty: "CORROBORADO", review: "REVISADO", refs: ["SRC-000003"]
+});
+DB.persons.push({
+  id: "PER-000090", name: "Scott Bessent", roles: ["Secretario del Tesoro (EE.UU.)"], nationality: "Estadounidense",
+  bio: "Integrante del gobierno en el organigrama institucional Estadounidense",
+  img: "img/scott_bessent.jpg", certainty: "CORROBORADO", review: "REVISADO", refs: ["SRC-000003"]
+});
+DB.persons.push({
+  id: "PER-000091", name: "Pam Bondi", roles: ["Fiscal General de EE.UU."], nationality: "Estadounidense",
+  bio: "Integrante del gobierno en el organigrama institucional Estadounidense",
+  img: "img/pam_bondi.jpg", certainty: "CORROBORADO", review: "REVISADO", refs: ["SRC-000003"]
+});
+DB.persons.push({
+  id: "PER-000092", name: "Xi Jinping", roles: ["Presidente de China / Secretario General del PCCh"], nationality: "Chino",
+  bio: "Integrante del gobierno en el organigrama institucional Chino",
+  img: "img/xi_jinping.jpg", certainty: "CORROBORADO", review: "REVISADO", refs: ["SRC-000003"]
+});
+DB.persons.push({
+  id: "PER-000093", name: "Li Qiang", roles: ["Primer Ministro de China"], nationality: "Chino",
+  bio: "Integrante del gobierno en el organigrama institucional Chino",
+  img: "img/li_qiang.jpg", certainty: "CORROBORADO", review: "REVISADO", refs: ["SRC-000003"]
+});
+DB.persons.push({
+  id: "PER-000094", name: "Wang Yi", roles: ["Ministro de Relaciones Exteriores de China"], nationality: "Chino",
+  bio: "Integrante del gobierno en el organigrama institucional Chino",
+  img: "img/wang_yi.jpg", certainty: "CORROBORADO", review: "REVISADO", refs: ["SRC-000003"]
+});
+DB.persons.push({
+  id: "PER-000095", name: "Vladimir Putin", roles: ["Presidente de Rusia"], nationality: "Ruso",
+  bio: "Integrante del gobierno en el organigrama institucional Ruso",
+  img: "img/vladimir_putin.jpg", certainty: "CORROBORADO", review: "REVISADO", refs: ["SRC-000003"]
+});
+DB.persons.push({
+  id: "PER-000096", name: "Mikhail Mishustin", roles: ["Primer Ministro de Rusia"], nationality: "Ruso",
+  bio: "Integrante del gobierno en el organigrama institucional Ruso",
+  img: "img/mikhail_mishustin.jpg", certainty: "CORROBORADO", review: "REVISADO", refs: ["SRC-000003"]
+});
+DB.persons.push({
+  id: "PER-000097", name: "Sergey Lavrov", roles: ["Ministro de Relaciones Exteriores de Rusia"], nationality: "Ruso",
+  bio: "Integrante del gobierno en el organigrama institucional Ruso",
+  img: "img/sergey_lavrov.jpg", certainty: "CORROBORADO", review: "REVISADO", refs: ["SRC-000003"]
+});
+DB.persons.push({
+  id: "PER-000098", name: "Israel Katz", roles: ["Ministro de Defensa de Israel"], nationality: "Israelí",
+  bio: "Integrante del gobierno en el organigrama institucional Israelí",
+  img: "img/israel_katz.jpg", certainty: "CORROBORADO", review: "REVISADO", refs: ["SRC-000003"]
+});
+DB.persons.push({
+  id: "PER-000099", name: "Gideon Sa'ar", roles: ["Ministro de Relaciones Exteriores de Israel"], nationality: "Israelí",
+  bio: "Integrante del gobierno en el organigrama institucional Israelí",
+  img: "img/gideon_sa_ar.jpg", certainty: "CORROBORADO", review: "REVISADO", refs: ["SRC-000003"]
+});
+DB.persons.push({
+  id: "PER-000100", name: "Claudia Sheinbaum", roles: ["Presidenta de México"], nationality: "Mexicana",
+  bio: "Integrante del gobierno en el organigrama institucional Mexicana",
+  img: "img/claudia_sheinbaum.jpg", certainty: "CORROBORADO", review: "REVISADO", refs: ["SRC-000003"]
+});
+DB.persons.push({
+  id: "PER-000101", name: "Roberto Velasco Álvarez", roles: ["Secretario de Relaciones Exteriores de México"], nationality: "Mexicano",
+  bio: "Integrante del gobierno en el organigrama institucional Mexicano",
+  img: "#", certainty: "CORROBORADO", review: "REVISADO", refs: ["SRC-000003"]
+});
+
+// ----------------------------------------------------------------------------
+// VIDEOS  (los 21 que Christo ha ido pasando + algunos representativos)
+// ----------------------------------------------------------------------------
+DB.videos.push({
+  id: "VID-000001", title: "Feiglin: exterminio implícito", url: "https://x.com/GBC_Press/status/2094438857618174386",
+  master_file:"C:\\Users\\USUARIO\\Downloads\\CRONOS\\expediente_sombras_israel_2026-08-29\\media\\GBC_Press_2094438857618174386.mp4",
+  sha256:"c0710ede597fb3f7fd221444d2221c2c10edbcfe1ccca3bfb1c1292ba8a0c609",
+  platform: "X", channel: "GBC_Press", published: "2026-09", dur: "00:00:45",
+  lang: "he/en", manipulation: "B", by: "PER-000003", subject: "clima de exterminio",
+  desc: "Ex-MK Moshe Feiglin: 'no podemos vivir si queda un palestino'.", certainty: "CORROBORADO", review: "REVISADO",
+  refs: ["PER-000003","ORG-000002"], src: "SRC-000003"
+});
+DB.videos.push({
+  id: "VID-000002", title: "Amit Halevi: '300 terroristas'", url: "https://x.com/GBC_Press/status/2094786200934764993",
+  master_file:"C:\\Users\\USUARIO\\Downloads\\CRONOS\\expediente_sombras_israel_2026-08-29\\media\\GBC_Press_2094786200934764993.mp4",
+  sha256:"5ed7791552331ed58bcda20e6a5fb9136ea1d9f98f87c113a5043f903856342e",
+  platform: "X", channel: "GBC_Press", published: "2026-09", dur: "00:00:38", lang: "he/en",
+  manipulation: "C", by: "PER-000004", desc: "Diputado sobre maternidad y supuestos terroristas.",
+  certainty: "REPORTADO", review: "REVISADO", refs: ["PER-000004"], src: "SRC-000003"
+});
+DB.videos.push({
+  id: "VID-000003", title: "Ted Cruz vs Tucker Carlson", url: "https://x.com/GBC_Press/status/2094502293953708473",
+  master_file:"C:\\Users\\USUARIO\\Downloads\\CRONOS\\expediente_sombras_israel_2026-08-29\\media\\GBC_Press_2094502293953708473.mp4",
+  sha256:"7e8e0f09ea58448817e23b2cab650a789c2d53f9802daaa3bf17a40c3f5d60f6",
+  platform: "X", channel: "GBC_Press", published: "2026-09", dur: "00:00:52", lang: "en",
+  manipulation: "B", by: "PER-000007", desc: "Cruz 'panicking'; llama a Carlson 'mayor antisemita'.",
+  certainty: "REPORTADO", review: "REVISADO", refs: ["PER-000007","PER-000006"], src: "SRC-000003"
+});
+DB.videos.push({
+  id: "VID-000004", title: "Kushner: Gaza teardown", url: "https://x.com/DaniMayakovski/status/2094661570869469242",
+  master_file:"C:\\Users\\USUARIO\\Downloads\\CRONOS\\expediente_sombras_israel_2026-08-29\\media\\DaniMayakovski_2094661570869469242.mp4",
+  sha256:"8609bd66a0b7fb33761c0736f42f19e63b849b341105510d7834a88f21fce007",
+  platform: "X", channel: "DaniMayakovski", published: "2026-09", dur: "00:00:41", lang: "en",
+  manipulation: "B", by: "PER-000008", desc: "Kushner sobre Gaza como 'waterfront teardown' y torres de lujo.",
+  certainty: "CORROBORADO", review: "REVISADO", refs: ["PER-000008"], src: "SRC-000003"
+});
+DB.videos.push({
+  id: "VID-000005", title: "Haitham: crítica al sionismo", url: "https://youtube.com/shorts/yb76gKV8fJQ",
+  master_file:"C:\\Users\\USUARIO\\Downloads\\CRONOS\\expediente_sombras_israel_2026-08-29\\media\\youtube_yb76gKV8fJQ_BreezyPolitics.mp4",
+  sha256:"062902a64145786e23374150ad8fba75466ff86c6a35d8e88ae5f27d9115af9b",
+  platform: "YouTube", channel: "Shorts", published: "2026-09", dur: "00:00:33", lang: "en",
+  manipulation: "A", by: "PER-000009", desc: "Criticar el sionismo no es antisemitismo.",
+  certainty: "REPORTADO", review: "REVISADO", refs: ["PER-000009"], src: "SRC-000003"
+});
+DB.videos.push({
+  id: "VID-000006", title: "May Golan: destrucción Gaza", url: "https://x.com/GBC_Press/status/2094795333297672625",
+  master_file:"C:\\Users\\USUARIO\\Downloads\\CRONOS\\expediente_sombras_israel_2026-08-29\\media\\GBC_Press_2094795333297672625.mp4",
+  sha256:"48797708308e95b7f4791238a77fbfbe84f80e2c20c2c90670f0f0c66966c836",
+  platform: "X", channel: "GBC_Press", published: "2026-09", dur: "00:00:29", lang: "en",
+  manipulation: "A", by: "PER-000010", desc: "Ministra orgullosa de la devastación.",
+  certainty: "CORROBORADO", review: "REVISADO", refs: ["PER-000010"], src: "SRC-000003"
+});
+
+DB.videos.push({ id: "VID-000007", title: "GBC: denuncias de Gaza (Golan/IDF)", url: "https://x.com/GBC_Press/status/2094474126778065211",
+  master_file:"C:\\Users\\USUARIO\\Downloads\\CRONOS\\expediente_sombras_israel_2026-08-29\\media\\GBC_Press_2094474126778065211.mp4",
+  sha256:"b34c9cb7644c05d7b8c413bc7c0d6ef974115d75ace36ed89ba48f6e298f092c", platform: "X", channel: "GBC_Press", published: "2026-09", dur: "00:00:40", lang: "en", manipulation: "B", desc: "GBC Press sobre May Golan e IDF en Gaza.", certainty: "REPORTADO", review: "REVISADO", src: "SRC-000003" });
+DB.videos.push({ id: "VID-000008", title: "Dr. Hossam: escenario Gaza", url: "https://x.com/drhossamsamy65/status/2094597567405273525", platform: "X", channel: "drhossamsamy65", published: "2026-09", dur: "00:01:00", lang: "ar/en", manipulation: "A", desc: "Profesional médico sobre la situación en Gaza.", certainty: "REPORTADO", review: "REVISADO", src: "SRC-000003" });
+DB.videos.push({ id: "VID-000009", title: "GBC: presas/política israelí", url: "https://x.com/GBC_Press/status/2094799910637822418", platform: "X", channel: "GBC_Press", published: "2026-09", dur: "00:00:35", lang: "en", manipulation: "B", desc: "GBC Press sobre presa palestina y política israelí.", certainty: "REPORTADO", review: "REVISADO", src: "SRC-000003" });
+DB.videos.push({ id: "VID-000010", title: "MrsRoyKeaneo: testimonio", url: "https://x.com/MrsRoyKeaneo/status/2094768446235979902", platform: "X", channel: "MrsRoyKeaneo", published: "2026-09", dur: "00:00:47", lang: "en", manipulation: "A", desc: "Testimonio sobre conflicto en Gaza.", certainty: "REPORTADO", review: "REVISADO", src: "SRC-000003" });
+DB.videos.push({ id: "VID-000011", title: "DavidVargasA18: análisis", url: "https://x.com/DavidVargasA18/status/2094546241728225442", platform: "X", channel: "DavidVargasA18", published: "2026-09", dur: "00:00:55", lang: "es", manipulation: "B", desc: "Análisis sobre Israel/Palestina y geopolítica.", certainty: "REPORTADO", review: "REVISADO", src: "SRC-000003" });
+DB.videos.push({ id: "VID-000012", title: "GBC: otro clip Gaza", url: "https://x.com/GBC_Press/status/2094795601871569283", platform: "X", channel: "GBC_Press", published: "2026-09", dur: "00:00:33", lang: "en", manipulation: "B", desc: "GBC Press, material adicional sobre Gaza.", certainty: "REPORTADO", review: "REVISADO", src: "SRC-000003" });
+DB.videos.push({ id: "VID-000013", title: "RealTheForce: narrativa", url: "https://x.com/RealTheForce/status/2094599404221042791", platform: "X", channel: "RealTheForce", published: "2026-09", dur: "00:00:50", lang: "en", manipulation: "B", desc: "Narrativa sobre Israel/poder. Tratar con cautela (riesgo alto).", certainty: "NO_VERIFICADO", review: "REVISADO", src: "SRC-000003" });
+DB.videos.push({ id: "VID-000014", title: "DaniMayakovski: colonos", url: "https://x.com/DaniMayakovski/status/2094630062720958801", platform: "X", channel: "DaniMayakovski", published: "2026-09", dur: "00:00:44", lang: "en", manipulation: "B", desc: "Testimonio sobre colonos y palestinos.", certainty: "REPORTADO", review: "REVISADO", src: "SRC-000003" });
+DB.videos.push({ id: "VID-000015", title: "hippyygoat: análisis", url: "https://x.com/hippyygoat/status/2094668608924201406", platform: "X", channel: "hippyygoat", published: "2026-09", dur: "00:00:48", lang: "en", manipulation: "B", desc: "Análisis sobre ocupación/geopolítica.", certainty: "REPORTADO", review: "REVISADO", src: "SRC-000003" });
+DB.videos.push({ id: "VID-000016", title: "GBC: otro clip (16)", url: "https://x.com/GBC_Press/status/2094786359764599265", platform: "X", channel: "GBC_Press", published: "2026-09", dur: "00:00:36", lang: "en", manipulation: "B", desc: "GBC Press, material adicional.", certainty: "REPORTADO", review: "REVISADO", src: "SRC-000003" });
+DB.videos.push({ id: "VID-000017", title: "DaniMayakovski: (17)", url: "https://x.com/DaniMayakovski/status/2095535765392343311", platform: "X", channel: "DaniMayakovski", published: "2026-09", dur: "00:00:52", lang: "en", manipulation: "B", desc: "DaniMayakovski, material sobre el conflicto.", certainty: "REPORTADO", review: "REVISADO", src: "SRC-000003" });
+DB.videos.push({ id: "VID-000018", title: "Bry: testimonio", url: "https://x.com/Bry___l/status/2095472658477392283", platform: "X", channel: "Bry___l", published: "2026-09", dur: "00:00:40", lang: "en", manipulation: "A", desc: "Testimonio sobre el terreno del conflicto.", certainty: "REPORTADO", review: "REVISADO", src: "SRC-000003" });
+DB.videos.push({ id: "VID-000019", title: "daniel153177: análisis", url: "https://x.com/daniel153177/status/2095244120507773067", platform: "X", channel: "daniel153177", published: "2026-09", dur: "00:01:05", lang: "en/es", manipulation: "B", desc: "Análisis sobre evolución de la narrativa.", certainty: "REPORTADO", review: "REVISADO", src: "SRC-000003" });
+DB.videos.push({ id: "VID-000020", title: "Ginnysaidso: (20)", url: "https://x.com/Ginnysaidso/status/2094486341627097559", platform: "X", channel: "Ginnysaidso", published: "2026-09", dur: "00:00:38", lang: "en", manipulation: "B", desc: "Comentario sobre el conflicto/geopolítica.", certainty: "REPORTADO", review: "REVISADO", src: "SRC-000003" });
+DB.videos.push({ id: "VID-000021", title: "YouTube Short: Gaza (21)", url: "https://youtube.com/shorts/nfE1C8H70ws", platform: "YouTube", channel: "Shorts", published: "2026-09", dur: "00:00:30", lang: "en", manipulation: "A", desc: "Video corto de YouTube sobre Gaza.", certainty: "REPORTADO", review: "REVISADO", src: "SRC-000003" });
+
+// ----------------------------------------------------------------------------
+// EVENTOS
+// ----------------------------------------------------------------------------
+DB.events.push({
+  id: "EVT-000001", name: "Ofensiva en Gaza (cruce de declaraciones)",
+  date: "2025-2026", place: "Gaza / Israel", conflict: "CNF-000001",
+  desc: "Declaraciones de ministros y diputados israelíes durante la ofensiva, recogidas por GBC_Press.",
+  certainty: "REPORTADO", review: "REVISADO", refs: ["SRC-000003"]
+});
+DB.events.push({
+  id: "EVT-000002", name: "Debate sobre antisemitismo y cristianismo sionista",
+  date: "2026", place: "EUA", conflict: "CNF-000001",
+  desc: "Cruz vs Carlson; sionismo, judaísmo y crítica a Israel.",
+  certainty: "REPORTADO", review: "REVISADO", refs: ["SRC-000003"]
+});
+
+// ----------------------------------------------------------------------------
+// AFIRMACIONES (CLAIMS)
+// ----------------------------------------------------------------------------
+DB.claims.push({
+  id: "CLM-000001", author: "PER-000003", text: "'No podemos vivir si queda un palestino'",
+  video: "VID-000001", status: "CORROBORADA (cita)", confidence: 60, reviewed: "2026-09-03",
+  srcs: ["SRC-000003"]
+});
+DB.claims.push({
+  id: "CLM-000002", author: "PER-000009", text: "'Criticar el sionismo no es antisemitismo'",
+  video: "VID-000005", status: "PARCIALMENTE_CORROBORADA", confidence: 55, reviewed: "2026-09-03",
+  srcs: ["SRC-000003"]
+});
+DB.claims.push({
+  id: "CLM-000003", author: "PER-000008", text: "'Gaza como waterfront teardown, torres de lujo sobre escombros'",
+  video: "VID-000004", status: "CORROBORADA (cita)", confidence: 63, reviewed: "2026-09-03",
+  srcs: ["SRC-000003"]
+});
+
+// ----------------------------------------------------------------------------
+// RELACIONES  (sujeto → predicado → objeto, con fuente obligatoria)
+// ---- RELACIONES ENRIQUECIDAS (esquema ARCHIVOS DE GUERRA) ----
+  DB.rels.push({ id:"REL-2fd7dece", subject:"PER-000001", origen:"PER-000001", object:"ORG-000002", destino:"ORG-000002", tipo:"DIRIGE", predicate:"lidera", descripcion:"Benjamin Netanyahu | DIRIGE | IDF", fecha_inicio:"", fecha_fin:"", estado:"VIGENTE", cantidad:"", moneda:"", fuente:"SRC-000001", src:"SRC-000001", evidencia:"C", certeza:"PROBABLE", capa:"INSTITUCIONAL" });
+  DB.rels.push({ id:"REL-bdc8472e", subject:"PER-000002", origen:"PER-000002", object:"ORG-000001", destino:"ORG-000001", tipo:"LOBBY_SOBRE", predicate:"recibió_lobby_de", descripcion:"Donald Trump | LOBBY_SOBRE | AIPAC", fecha_inicio:"", fecha_fin:"", estado:"VIGENTE", cantidad:"", moneda:"", fuente:"SRC-000001", src:"SRC-000001", evidencia:"C", certeza:"PROBABLE", capa:"LOBBYING" });
+  DB.rels.push({ id:"REL-db69c7a6", subject:"PER-000001", origen:"PER-000001", object:"PER-000002", destino:"PER-000002", tipo:"SE_REUNIO_CON", predicate:"se_reunió_con", descripcion:"Benjamin Netanyahu | SE_REUNIO_CON | Donald Trump", fecha_inicio:"", fecha_fin:"", estado:"VIGENTE", cantidad:"", moneda:"", fuente:"SRC-000001", src:"SRC-000001", evidencia:"C", certeza:"PROBABLE", capa:"REUNION" });
+  DB.rels.push({ id:"REL-7810da29", subject:"ORG-000004", origen:"ORG-000004", object:"ORG-000002", destino:"ORG-000002", tipo:"REGISTRADA_BAJO_FARA", predicate:"registrada_bajo_FARA_de", descripcion:"Clock Tower X LLC | REGISTRADA_BAJO_FARA | IDF", fecha_inicio:"", fecha_fin:"", estado:"VIGENTE", cantidad:"", moneda:"", fuente:"SRC-000002", src:"SRC-000002", evidencia:"A", certeza:"CONFIRMADA", capa:"CONTRATO" });
+  DB.rels.push({ id:"REL-3d701ade", subject:"PER-000008", origen:"PER-000008", object:"PER-000002", destino:"PER-000002", tipo:"RELACION_DOCUMENTADA", predicate:"relacionado_con", descripcion:"Jared Kushner | RELACION_DOCUMENTADA | Donald Trump", fecha_inicio:"", fecha_fin:"", estado:"VIGENTE", cantidad:"", moneda:"", fuente:"SRC-000001", src:"SRC-000001", evidencia:"C", certeza:"PROBABLE", capa:"LABORAL" });
+  DB.rels.push({ id:"REL-bf85f8bc", subject:"ORG-000003", origen:"ORG-000003", object:"ORG-000002", destino:"ORG-000002", tipo:"APOYA_PUBLICAMENTE", predicate:"apoya_a", descripcion:"CUFI | APOYA_PUBLICAMENTE | IDF", fecha_inicio:"", fecha_fin:"", estado:"VIGENTE", cantidad:"", moneda:"", fuente:"SRC-000001", src:"SRC-000001", evidencia:"C", certeza:"PROBABLE", capa:"ALIANZA" });
+  DB.rels.push({ id:"REL-4c3dd41f", subject:"PER-000019", origen:"PER-000019", object:"VID-000027", destino:"VID-000027", tipo:"APARECE_EN", predicate:"appears_in", descripcion:"Wesley Clark | APARECE_EN | VID-000027", fecha_inicio:"", fecha_fin:"", estado:"VIGENTE", cantidad:"", moneda:"", fuente:"SRC-000003", src:"SRC-000003", evidencia:"D", certeza:"NO VERIFICADA", capa:"AUDIOVISUAL" });
+  DB.rels.push({ id:"REL-9c414918", subject:"PER-000022", origen:"PER-000022", object:"VID-000028", destino:"VID-000028", tipo:"APARECE_EN", predicate:"appears_in", descripcion:"Alan Dershowitz | APARECE_EN | VID-000028", fecha_inicio:"", fecha_fin:"", estado:"VIGENTE", cantidad:"", moneda:"", fuente:"SRC-000003", src:"SRC-000003", evidencia:"D", certeza:"NO VERIFICADA", capa:"AUDIOVISUAL" });
+  DB.rels.push({ id:"REL-0db41773", subject:"PER-000021", origen:"PER-000021", object:"VID-000028", destino:"VID-000028", tipo:"APARECE_EN", predicate:"appears_in", descripcion:"Jeffrey Epstein | APARECE_EN | VID-000028", fecha_inicio:"", fecha_fin:"", estado:"VIGENTE", cantidad:"", moneda:"", fuente:"SRC-000003", src:"SRC-000003", evidencia:"D", certeza:"NO VERIFICADA", capa:"AUDIOVISUAL" });
+  DB.rels.push({ id:"REL-012847e2", subject:"PER-000089", origen:"PER-000089", object:"VID-000030", destino:"VID-000030", tipo:"APARECE_EN", predicate:"appears_in", descripcion:"Rodrigo Paz Pereira | APARECE_EN | VID-000030", fecha_inicio:"", fecha_fin:"", estado:"VIGENTE", cantidad:"", moneda:"", fuente:"SRC-000003", src:"SRC-000003", evidencia:"D", certeza:"NO VERIFICADA", capa:"AUDIOVISUAL" });
+  DB.rels.push({ id:"REL-3ed2669d", subject:"PER-000018", origen:"PER-000018", object:"VID-000030", destino:"VID-000030", tipo:"APARECE_EN", predicate:"appears_in", descripcion:"Fernando Cerimedo | APARECE_EN | VID-000030", fecha_inicio:"", fecha_fin:"", estado:"VIGENTE", cantidad:"", moneda:"", fuente:"SRC-000003", src:"SRC-000003", evidencia:"D", certeza:"NO VERIFICADA", capa:"AUDIOVISUAL" });
+  DB.rels.push({ id:"REL-e8f38c60", subject:"PER-000090", origen:"PER-000090", object:"VID-000031", destino:"VID-000031", tipo:"APARECE_EN", predicate:"appears_in", descripcion:"Jacobo Árbenz | APARECE_EN | VID-000031", fecha_inicio:"", fecha_fin:"", estado:"VIGENTE", cantidad:"", moneda:"", fuente:"SRC-000003", src:"SRC-000003", evidencia:"D", certeza:"NO VERIFICADA", capa:"AUDIOVISUAL" });
+  DB.rels.push({ id:"REL-b89062f4", subject:"PER-000091", origen:"PER-000091", object:"VID-000031", destino:"VID-000031", tipo:"APARECE_EN", predicate:"appears_in", descripcion:"João Goulart | APARECE_EN | VID-000031", fecha_inicio:"", fecha_fin:"", estado:"VIGENTE", cantidad:"", moneda:"", fuente:"SRC-000003", src:"SRC-000003", evidencia:"D", certeza:"NO VERIFICADA", capa:"AUDIOVISUAL" });
+  DB.rels.push({ id:"REL-b08adeec", subject:"PER-000092", origen:"PER-000092", object:"VID-000031", destino:"VID-000031", tipo:"APARECE_EN", predicate:"appears_in", descripcion:"Salvador Allende | APARECE_EN | VID-000031", fecha_inicio:"", fecha_fin:"", estado:"VIGENTE", cantidad:"", moneda:"", fuente:"SRC-000003", src:"SRC-000003", evidencia:"D", certeza:"NO VERIFICADA", capa:"AUDIOVISUAL" });
+  DB.rels.push({ id:"REL-a946d129", subject:"PER-000093", origen:"PER-000093", object:"VID-000031", destino:"VID-000031", tipo:"APARECE_EN", predicate:"appears_in", descripcion:"Juan Bosch | APARECE_EN | VID-000031", fecha_inicio:"", fecha_fin:"", estado:"VIGENTE", cantidad:"", moneda:"", fuente:"SRC-000003", src:"SRC-000003", evidencia:"D", certeza:"NO VERIFICADA", capa:"AUDIOVISUAL" });
+  DB.rels.push({ id:"REL-f615a930", subject:"PER-000094", origen:"PER-000094", object:"VID-000031", destino:"VID-000031", tipo:"APARECE_EN", predicate:"appears_in", descripcion:"Omar Torrijos | APARECE_EN | VID-000031", fecha_inicio:"", fecha_fin:"", estado:"VIGENTE", cantidad:"", moneda:"", fuente:"SRC-000003", src:"SRC-000003", evidencia:"D", certeza:"NO VERIFICADA", capa:"AUDIOVISUAL" });
+  DB.rels.push({ id:"REL-83cba7f6", subject:"PER-000095", origen:"PER-000095", object:"VID-000032", destino:"VID-000032", tipo:"APARECE_EN", predicate:"appears_in", descripcion:"Recep Tayyip Erdogan | APARECE_EN | VID-000032", fecha_inicio:"", fecha_fin:"", estado:"VIGENTE", cantidad:"", moneda:"", fuente:"SRC-000003", src:"SRC-000003", evidencia:"D", certeza:"NO VERIFICADA", capa:"AUDIOVISUAL" });
+  DB.rels.push({ id:"REL-200280f6", subject:"PER-000001", origen:"PER-000001", object:"VID-000036", destino:"VID-000036", tipo:"APARECE_EN", predicate:"appears_in", descripcion:"Benjamin Netanyahu | APARECE_EN | VID-000036", fecha_inicio:"", fecha_fin:"", estado:"VIGENTE", cantidad:"", moneda:"", fuente:"SRC-000003", src:"SRC-000003", evidencia:"D", certeza:"NO VERIFICADA", capa:"AUDIOVISUAL" });
+  DB.rels.push({ id:"REL-0700d497", subject:"PER-000025", origen:"PER-000025", object:"VID-000036", destino:"VID-000036", tipo:"APARECE_EN", predicate:"appears_in", descripcion:"Marco Rubio | APARECE_EN | VID-000036", fecha_inicio:"", fecha_fin:"", estado:"VIGENTE", cantidad:"", moneda:"", fuente:"SRC-000003", src:"SRC-000003", evidencia:"D", certeza:"NO VERIFICADA", capa:"AUDIOVISUAL" });
+  DB.rels.push({ id:"REL-77b8fe9a", subject:"PER-000020", origen:"PER-000020", object:"VID-000037", destino:"VID-000037", tipo:"APARECE_EN", predicate:"appears_in", descripcion:"Richard Nixon | APARECE_EN | VID-000037", fecha_inicio:"", fecha_fin:"", estado:"VIGENTE", cantidad:"", moneda:"", fuente:"SRC-000003", src:"SRC-000003", evidencia:"D", certeza:"NO VERIFICADA", capa:"AUDIOVISUAL" });
+  DB.rels.push({ id:"REL-cc7750e9", subject:"PER-000096", origen:"PER-000096", object:"VID-000043", destino:"VID-000043", tipo:"APARECE_EN", predicate:"appears_in", descripcion:"Raul Hilberg | APARECE_EN | VID-000043", fecha_inicio:"", fecha_fin:"", estado:"VIGENTE", cantidad:"", moneda:"", fuente:"SRC-000003", src:"SRC-000003", evidencia:"D", certeza:"NO VERIFICADA", capa:"AUDIOVISUAL" });
+  DB.rels.push({ id:"REL-33f244b1", subject:"PER-000027", origen:"PER-000027", object:"VID-000044", destino:"VID-000044", tipo:"APARECE_EN", predicate:"appears_in", descripcion:"Hind Rajab | APARECE_EN | VID-000044", fecha_inicio:"", fecha_fin:"", estado:"VIGENTE", cantidad:"", moneda:"", fuente:"SRC-000003", src:"SRC-000003", evidencia:"D", certeza:"NO VERIFICADA", capa:"AUDIOVISUAL" });
+  DB.rels.push({ id:"REL-a83d9fbe", subject:"PER-000021", origen:"PER-000021", object:"VID-000046", destino:"VID-000046", tipo:"APARECE_EN", predicate:"appears_in", descripcion:"Jeffrey Epstein | APARECE_EN | VID-000046", fecha_inicio:"", fecha_fin:"", estado:"VIGENTE", cantidad:"", moneda:"", fuente:"SRC-000003", src:"SRC-000003", evidencia:"D", certeza:"NO VERIFICADA", capa:"AUDIOVISUAL" });
+  DB.rels.push({ id:"REL-d568e9d4", subject:"PER-000002", origen:"PER-000002", object:"VID-000048", destino:"VID-000048", tipo:"APARECE_EN", predicate:"appears_in", descripcion:"Donald Trump | APARECE_EN | VID-000048", fecha_inicio:"", fecha_fin:"", estado:"VIGENTE", cantidad:"", moneda:"", fuente:"SRC-000003", src:"SRC-000003", evidencia:"D", certeza:"NO VERIFICADA", capa:"AUDIOVISUAL" });
+  DB.rels.push({ id:"REL-edfdd5de", subject:"PER-000097", origen:"PER-000097", object:"VID-000048", destino:"VID-000048", tipo:"APARECE_EN", predicate:"appears_in", descripcion:"Mohammad Mossadegh | APARECE_EN | VID-000048", fecha_inicio:"", fecha_fin:"", estado:"VIGENTE", cantidad:"", moneda:"", fuente:"SRC-000003", src:"SRC-000003", evidencia:"D", certeza:"NO VERIFICADA", capa:"AUDIOVISUAL" });
+  DB.rels.push({ id:"REL-a9adddaa", subject:"PER-000098", origen:"PER-000098", object:"VID-000048", destino:"VID-000048", tipo:"APARECE_EN", predicate:"appears_in", descripcion:"Kermit Roosevelt | APARECE_EN | VID-000048", fecha_inicio:"", fecha_fin:"", estado:"VIGENTE", cantidad:"", moneda:"", fuente:"SRC-000003", src:"SRC-000003", evidencia:"D", certeza:"NO VERIFICADA", capa:"AUDIOVISUAL" });
+  DB.rels.push({ id:"REL-a0c8f7c1", subject:"PER-000001", origen:"PER-000001", object:"VID-000049", destino:"VID-000049", tipo:"APARECE_EN", predicate:"appears_in", descripcion:"Benjamin Netanyahu | APARECE_EN | VID-000049", fecha_inicio:"", fecha_fin:"", estado:"VIGENTE", cantidad:"", moneda:"", fuente:"SRC-000003", src:"SRC-000003", evidencia:"D", certeza:"NO VERIFICADA", capa:"AUDIOVISUAL" });
+  DB.rels.push({ id:"REL-cd3bedd1", subject:"PER-000096", origen:"PER-000096", object:"VID-000050", destino:"VID-000050", tipo:"APARECE_EN", predicate:"appears_in", descripcion:"Raul Hilberg | APARECE_EN | VID-000050", fecha_inicio:"", fecha_fin:"", estado:"VIGENTE", cantidad:"", moneda:"", fuente:"SRC-000003", src:"SRC-000003", evidencia:"D", certeza:"NO VERIFICADA", capa:"AUDIOVISUAL" });
+  DB.rels.push({ id:"REL-9326912c", subject:"PER-000099", origen:"PER-000099", object:"VID-000054", destino:"VID-000054", tipo:"APARECE_EN", predicate:"appears_in", descripcion:"Piers Morgan | APARECE_EN | VID-000054", fecha_inicio:"", fecha_fin:"", estado:"VIGENTE", cantidad:"", moneda:"", fuente:"SRC-000003", src:"SRC-000003", evidencia:"D", certeza:"NO VERIFICADA", capa:"AUDIOVISUAL" });
+  DB.rels.push({ id:"REL-8805502a", subject:"PER-000021", origen:"PER-000021", object:"VID-000058", destino:"VID-000058", tipo:"APARECE_EN", predicate:"appears_in", descripcion:"Jeffrey Epstein | APARECE_EN | VID-000058", fecha_inicio:"", fecha_fin:"", estado:"VIGENTE", cantidad:"", moneda:"", fuente:"SRC-000003", src:"SRC-000003", evidencia:"D", certeza:"NO VERIFICADA", capa:"AUDIOVISUAL" });
+  DB.rels.push({ id:"REL-5d3ac7b7", subject:"PER-000006", origen:"PER-000006", object:"VID-000059", destino:"VID-000059", tipo:"APARECE_EN", predicate:"appears_in", descripcion:"Tucker Carlson | APARECE_EN | VID-000059", fecha_inicio:"", fecha_fin:"", estado:"VIGENTE", cantidad:"", moneda:"", fuente:"SRC-000003", src:"SRC-000003", evidencia:"D", certeza:"NO VERIFICADA", capa:"AUDIOVISUAL" });
+  DB.rels.push({ id:"REL-55112e24", subject:"PER-000100", origen:"PER-000100", object:"VID-000059", destino:"VID-000059", tipo:"APARECE_EN", predicate:"appears_in", descripcion:"Marjorie Taylor Greene | APARECE_EN | VID-000059", fecha_inicio:"", fecha_fin:"", estado:"VIGENTE", cantidad:"", moneda:"", fuente:"SRC-000003", src:"SRC-000003", evidencia:"D", certeza:"NO VERIFICADA", capa:"AUDIOVISUAL" });
+  DB.rels.push({ id:"REL-6ec2f1f0", subject:"PER-000015", origen:"PER-000015", object:"VID-000059", destino:"VID-000059", tipo:"APARECE_EN", predicate:"appears_in", descripcion:"Mike Huckabee | APARECE_EN | VID-000059", fecha_inicio:"", fecha_fin:"", estado:"VIGENTE", cantidad:"", moneda:"", fuente:"SRC-000003", src:"SRC-000003", evidencia:"D", certeza:"NO VERIFICADA", capa:"AUDIOVISUAL" });
+  DB.rels.push({ id:"REL-19f9a81d", subject:"PER-000002", origen:"PER-000002", object:"VID-000059", destino:"VID-000059", tipo:"APARECE_EN", predicate:"appears_in", descripcion:"Donald Trump | APARECE_EN | VID-000059", fecha_inicio:"", fecha_fin:"", estado:"VIGENTE", cantidad:"", moneda:"", fuente:"SRC-000003", src:"SRC-000003", evidencia:"D", certeza:"NO VERIFICADA", capa:"AUDIOVISUAL" });
+  DB.rels.push({ id:"REL-41425722", subject:"PER-000101", origen:"PER-000101", object:"VID-000062", destino:"VID-000062", tipo:"APARECE_EN", predicate:"appears_in", descripcion:"Arthur Koestler | APARECE_EN | VID-000062", fecha_inicio:"", fecha_fin:"", estado:"VIGENTE", cantidad:"", moneda:"", fuente:"SRC-000003", src:"SRC-000003", evidencia:"D", certeza:"NO VERIFICADA", capa:"AUDIOVISUAL" });
+  DB.rels.push({ id:"REL-b42bebcf", subject:"PER-000102", origen:"PER-000102", object:"VID-000062", destino:"VID-000062", tipo:"APARECE_EN", predicate:"appears_in", descripcion:"Rey Bulán | APARECE_EN | VID-000062", fecha_inicio:"", fecha_fin:"", estado:"VIGENTE", cantidad:"", moneda:"", fuente:"SRC-000003", src:"SRC-000003", evidencia:"D", certeza:"NO VERIFICADA", capa:"AUDIOVISUAL" });
+  DB.rels.push({ id:"REL-e5fbd13b", subject:"PER-000103", origen:"PER-000103", object:"VID-000062", destino:"VID-000062", tipo:"APARECE_EN", predicate:"appears_in", descripcion:"Rey Canuto | APARECE_EN | VID-000062", fecha_inicio:"", fecha_fin:"", estado:"VIGENTE", cantidad:"", moneda:"", fuente:"SRC-000003", src:"SRC-000003", evidencia:"D", certeza:"NO VERIFICADA", capa:"AUDIOVISUAL" });
+  DB.rels.push({ id:"REL-c4af6418", subject:"PER-000104", origen:"PER-000104", object:"VID-000062", destino:"VID-000062", tipo:"APARECE_EN", predicate:"appears_in", descripcion:"Barack Obama | APARECE_EN | VID-000062", fecha_inicio:"", fecha_fin:"", estado:"VIGENTE", cantidad:"", moneda:"", fuente:"SRC-000003", src:"SRC-000003", evidencia:"D", certeza:"NO VERIFICADA", capa:"AUDIOVISUAL" });
+  DB.rels.push({ id:"REL-deb35b53", subject:"PER-000105", origen:"PER-000105", object:"VID-000062", destino:"VID-000062", tipo:"APARECE_EN", predicate:"appears_in", descripcion:"Tony Blair | APARECE_EN | VID-000062", fecha_inicio:"", fecha_fin:"", estado:"VIGENTE", cantidad:"", moneda:"", fuente:"SRC-000003", src:"SRC-000003", evidencia:"D", certeza:"NO VERIFICADA", capa:"AUDIOVISUAL" });
+  DB.rels.push({ id:"REL-6eaeafd0", subject:"PER-000106", origen:"PER-000106", object:"VID-000062", destino:"VID-000062", tipo:"APARECE_EN", predicate:"appears_in", descripcion:"Gordon Brown | APARECE_EN | VID-000062", fecha_inicio:"", fecha_fin:"", estado:"VIGENTE", cantidad:"", moneda:"", fuente:"SRC-000003", src:"SRC-000003", evidencia:"D", certeza:"NO VERIFICADA", capa:"AUDIOVISUAL" });
+  DB.rels.push({ id:"REL-be3dc9ef", subject:"PER-000013", origen:"PER-000013", object:"VID-000070", destino:"VID-000070", tipo:"APARECE_EN", predicate:"appears_in", descripcion:"Kenneth Copeland | APARECE_EN | VID-000070", fecha_inicio:"", fecha_fin:"", estado:"VIGENTE", cantidad:"", moneda:"", fuente:"SRC-000003", src:"SRC-000003", evidencia:"D", certeza:"NO VERIFICADA", capa:"AUDIOVISUAL" });
+  DB.rels.push({ id:"REL-2d0651cc", subject:"PER-000012", origen:"PER-000012", object:"VID-000070", destino:"VID-000070", tipo:"APARECE_EN", predicate:"appears_in", descripcion:"John Hagee | APARECE_EN | VID-000070", fecha_inicio:"", fecha_fin:"", estado:"VIGENTE", cantidad:"", moneda:"", fuente:"SRC-000003", src:"SRC-000003", evidencia:"D", certeza:"NO VERIFICADA", capa:"AUDIOVISUAL" });
+  DB.rels.push({ id:"REL-a95cafcc", subject:"PER-000107", origen:"PER-000107", object:"VID-000070", destino:"VID-000070", tipo:"APARECE_EN", predicate:"appears_in", descripcion:"Sherry Dahlinger | APARECE_EN | VID-000070", fecha_inicio:"", fecha_fin:"", estado:"VIGENTE", cantidad:"", moneda:"", fuente:"SRC-000003", src:"SRC-000003", evidencia:"D", certeza:"NO VERIFICADA", capa:"AUDIOVISUAL" });
+  DB.rels.push({ id:"REL-c4c6e80f", subject:"PER-000010", origen:"PER-000010", object:"VID-000071", destino:"VID-000071", tipo:"APARECE_EN", predicate:"appears_in", descripcion:"May Golan | APARECE_EN | VID-000071", fecha_inicio:"", fecha_fin:"", estado:"VIGENTE", cantidad:"", moneda:"", fuente:"SRC-000003", src:"SRC-000003", evidencia:"D", certeza:"NO VERIFICADA", capa:"AUDIOVISUAL" });
+  DB.rels.push({ id:"REL-ca95c998", subject:"PER-000099", origen:"PER-000099", object:"VID-000071", destino:"VID-000071", tipo:"APARECE_EN", predicate:"appears_in", descripcion:"Piers Morgan | APARECE_EN | VID-000071", fecha_inicio:"", fecha_fin:"", estado:"VIGENTE", cantidad:"", moneda:"", fuente:"SRC-000003", src:"SRC-000003", evidencia:"D", certeza:"NO VERIFICADA", capa:"AUDIOVISUAL" });
+  DB.rels.push({ id:"REL-e0a74e1b", subject:"PER-000006", origen:"PER-000006", object:"VID-000073", destino:"VID-000073", tipo:"APARECE_EN", predicate:"appears_in", descripcion:"Tucker Carlson | APARECE_EN | VID-000073", fecha_inicio:"", fecha_fin:"", estado:"VIGENTE", cantidad:"", moneda:"", fuente:"SRC-000003", src:"SRC-000003", evidencia:"D", certeza:"NO VERIFICADA", capa:"AUDIOVISUAL" });
+  DB.rels.push({ id:"REL-42c851f3", subject:"PER-000108", origen:"PER-000108", object:"VID-000075", destino:"VID-000075", tipo:"APARECE_EN", predicate:"appears_in", descripcion:"Tal Hanan | APARECE_EN | VID-000075", fecha_inicio:"", fecha_fin:"", estado:"VIGENTE", cantidad:"", moneda:"", fuente:"SRC-000003", src:"SRC-000003", evidencia:"D", certeza:"NO VERIFICADA", capa:"AUDIOVISUAL" });
+  DB.rels.push({ id:"REL-cd4dbb0b", subject:"PER-000109", origen:"PER-000109", object:"VID-000075", destino:"VID-000075", tipo:"APARECE_EN", predicate:"appears_in", descripcion:"John Swinney | APARECE_EN | VID-000075", fecha_inicio:"", fecha_fin:"", estado:"VIGENTE", cantidad:"", moneda:"", fuente:"SRC-000003", src:"SRC-000003", evidencia:"D", certeza:"NO VERIFICADA", capa:"AUDIOVISUAL" });
+  DB.rels.push({ id:"REL-dc48cc10", subject:"PER-000001", origen:"PER-000001", object:"VID-000075", destino:"VID-000075", tipo:"APARECE_EN", predicate:"appears_in", descripcion:"Benjamin Netanyahu | APARECE_EN | VID-000075", fecha_inicio:"", fecha_fin:"", estado:"VIGENTE", cantidad:"", moneda:"", fuente:"SRC-000003", src:"SRC-000003", evidencia:"D", certeza:"NO VERIFICADA", capa:"AUDIOVISUAL" });
+  DB.rels.push({ id:"REL-b1efe903", subject:"PER-000110", origen:"PER-000110", object:"VID-000076", destino:"VID-000076", tipo:"APARECE_EN", predicate:"appears_in", descripcion:"Theodore Kaufman | APARECE_EN | VID-000076", fecha_inicio:"", fecha_fin:"", estado:"VIGENTE", cantidad:"", moneda:"", fuente:"SRC-000003", src:"SRC-000003", evidencia:"D", certeza:"NO VERIFICADA", capa:"AUDIOVISUAL" });
+  DB.rels.push({ id:"REL-11bd1c87", subject:"PER-000011", origen:"PER-000011", object:"VID-000077", destino:"VID-000077", tipo:"APARECE_EN", predicate:"appears_in", descripcion:"Eran Efrati | APARECE_EN | VID-000077", fecha_inicio:"", fecha_fin:"", estado:"VIGENTE", cantidad:"", moneda:"", fuente:"SRC-000003", src:"SRC-000003", evidencia:"D", certeza:"NO VERIFICADA", capa:"AUDIOVISUAL" });
+  DB.rels.push({ id:"REL-a72f6d39", subject:"PER-000111", origen:"PER-000111", object:"VID-000078", destino:"VID-000078", tipo:"APARECE_EN", predicate:"appears_in", descripcion:"Rashida Tlaib | APARECE_EN | VID-000078", fecha_inicio:"", fecha_fin:"", estado:"VIGENTE", cantidad:"", moneda:"", fuente:"SRC-000003", src:"SRC-000003", evidencia:"D", certeza:"NO VERIFICADA", capa:"AUDIOVISUAL" });
+  DB.rels.push({ id:"REL-3826a384", subject:"VID-000078", origen:"VID-000078", object:"ORG-000001", destino:"ORG-000001", tipo:"MENCIONA", predicate:"mentions", descripcion:"VID-000078 | MENCIONA | AIPAC", fecha_inicio:"", fecha_fin:"", estado:"VIGENTE", cantidad:"", moneda:"", fuente:"SRC-000003", src:"SRC-000003", evidencia:"D", certeza:"NO VERIFICADA", capa:"SECUENCIA" });
+  DB.rels.push({ id:"REL-e2c35e83", subject:"PER-000053", origen:"PER-000053", object:"VID-000079", destino:"VID-000079", tipo:"APARECE_EN", predicate:"appears_in", descripcion:"Mark Weber | APARECE_EN | VID-000079", fecha_inicio:"", fecha_fin:"", estado:"VIGENTE", cantidad:"", moneda:"", fuente:"SRC-000003", src:"SRC-000003", evidencia:"D", certeza:"NO VERIFICADA", capa:"AUDIOVISUAL" });
+  DB.rels.push({ id:"REL-6f34d31c", subject:"PER-000049", origen:"PER-000049", object:"VID-000081", destino:"VID-000081", tipo:"APARECE_EN", predicate:"appears_in", descripcion:"Jeffrey Sachs | APARECE_EN | VID-000081", fecha_inicio:"", fecha_fin:"", estado:"VIGENTE", cantidad:"", moneda:"", fuente:"SRC-000003", src:"SRC-000003", evidencia:"D", certeza:"NO VERIFICADA", capa:"AUDIOVISUAL" });
+  DB.rels.push({ id:"REL-c67ed95b", subject:"PER-000112", origen:"PER-000112", object:"VID-000081", destino:"VID-000081", tipo:"APARECE_EN", predicate:"appears_in", descripcion:"Scott Bessent | APARECE_EN | VID-000081", fecha_inicio:"", fecha_fin:"", estado:"VIGENTE", cantidad:"", moneda:"", fuente:"SRC-000003", src:"SRC-000003", evidencia:"D", certeza:"NO VERIFICADA", capa:"AUDIOVISUAL" });
+  DB.rels.push({ id:"REL-ee8d362d", subject:"PER-000048", origen:"PER-000048", object:"VID-000087", destino:"VID-000087", tipo:"APARECE_EN", predicate:"appears_in", descripcion:"Joe Kent | APARECE_EN | VID-000087", fecha_inicio:"", fecha_fin:"", estado:"VIGENTE", cantidad:"", moneda:"", fuente:"SRC-000003", src:"SRC-000003", evidencia:"D", certeza:"NO VERIFICADA", capa:"AUDIOVISUAL" });
+  DB.rels.push({ id:"REL-1d25725e", subject:"PER-000113", origen:"PER-000113", object:"VID-000088", destino:"VID-000088", tipo:"APARECE_EN", predicate:"appears_in", descripcion:"William Blum | APARECE_EN | VID-000088", fecha_inicio:"", fecha_fin:"", estado:"VIGENTE", cantidad:"", moneda:"", fuente:"SRC-000003", src:"SRC-000003", evidencia:"D", certeza:"NO VERIFICADA", capa:"AUDIOVISUAL" });
+  DB.rels.push({ id:"REL-60ce289e", subject:"PER-000114", origen:"PER-000114", object:"VID-000088", destino:"VID-000088", tipo:"APARECE_EN", predicate:"appears_in", descripcion:"Ralph McGehee | APARECE_EN | VID-000088", fecha_inicio:"", fecha_fin:"", estado:"VIGENTE", cantidad:"", moneda:"", fuente:"SRC-000003", src:"SRC-000003", evidencia:"D", certeza:"NO VERIFICADA", capa:"AUDIOVISUAL" });
+  DB.rels.push({ id:"REL-b2581eb9", subject:"PER-000047", origen:"PER-000047", object:"VID-000089", destino:"VID-000089", tipo:"APARECE_EN", predicate:"appears_in", descripcion:"Itamar Ben-Gvir | APARECE_EN | VID-000089", fecha_inicio:"", fecha_fin:"", estado:"VIGENTE", cantidad:"", moneda:"", fuente:"SRC-000003", src:"SRC-000003", evidencia:"D", certeza:"NO VERIFICADA", capa:"AUDIOVISUAL" });
+  DB.rels.push({ id:"REL-bad01f63", subject:"PER-000115", origen:"PER-000115", object:"VID-000092", destino:"VID-000092", tipo:"APARECE_EN", predicate:"appears_in", descripcion:"Robert D. Steele | APARECE_EN | VID-000092", fecha_inicio:"", fecha_fin:"", estado:"VIGENTE", cantidad:"", moneda:"", fuente:"SRC-000003", src:"SRC-000003", evidencia:"D", certeza:"NO VERIFICADA", capa:"AUDIOVISUAL" });
+  DB.rels.push({ id:"REL-22b5f07a", subject:"PER-000116", origen:"PER-000116", object:"VID-000094", destino:"VID-000094", tipo:"APARECE_EN", predicate:"appears_in", descripcion:"Dick Cheney | APARECE_EN | VID-000094", fecha_inicio:"", fecha_fin:"", estado:"VIGENTE", cantidad:"", moneda:"", fuente:"SRC-000003", src:"SRC-000003", evidencia:"D", certeza:"NO VERIFICADA", capa:"AUDIOVISUAL" });
+  DB.rels.push({ id:"REL-eb0c8c3e", subject:"PER-000052", origen:"PER-000052", object:"VID-000095", destino:"VID-000095", tipo:"APARECE_EN", predicate:"appears_in", descripcion:"George Lincoln Rockwell | APARECE_EN | VID-000095", fecha_inicio:"", fecha_fin:"", estado:"VIGENTE", cantidad:"", moneda:"", fuente:"SRC-000003", src:"SRC-000003", evidencia:"D", certeza:"NO VERIFICADA", capa:"AUDIOVISUAL" });
+  DB.rels.push({ id:"REL-c6675249", subject:"PER-000057", origen:"PER-000057", object:"VID-000097", destino:"VID-000097", tipo:"APARECE_EN", predicate:"appears_in", descripcion:"Jussi Saramo | APARECE_EN | VID-000097", fecha_inicio:"", fecha_fin:"", estado:"VIGENTE", cantidad:"", moneda:"", fuente:"SRC-000003", src:"SRC-000003", evidencia:"D", certeza:"NO VERIFICADA", capa:"AUDIOVISUAL" });
+  DB.rels.push({ id:"REL-2e4d98dd", subject:"PER-000055", origen:"PER-000055", object:"VID-000100", destino:"VID-000100", tipo:"APARECE_EN", predicate:"appears_in", descripcion:"Riccardo Bosi | APARECE_EN | VID-000100", fecha_inicio:"", fecha_fin:"", estado:"VIGENTE", cantidad:"", moneda:"", fuente:"SRC-000003", src:"SRC-000003", evidencia:"D", certeza:"NO VERIFICADA", capa:"AUDIOVISUAL" });
+  DB.rels.push({ id:"REL-289e5c01", subject:"PER-000117", origen:"PER-000117", object:"VID-000100", destino:"VID-000100", tipo:"APARECE_EN", predicate:"appears_in", descripcion:"Vladímir Putin | APARECE_EN | VID-000100", fecha_inicio:"", fecha_fin:"", estado:"VIGENTE", cantidad:"", moneda:"", fuente:"SRC-000003", src:"SRC-000003", evidencia:"D", certeza:"NO VERIFICADA", capa:"AUDIOVISUAL" });
+  DB.rels.push({ id:"REL-3808814f", subject:"PER-000118", origen:"PER-000118", object:"VID-000100", destino:"VID-000100", tipo:"APARECE_EN", predicate:"appears_in", descripcion:"Hillary Clinton | APARECE_EN | VID-000100", fecha_inicio:"", fecha_fin:"", estado:"VIGENTE", cantidad:"", moneda:"", fuente:"SRC-000003", src:"SRC-000003", evidencia:"D", certeza:"NO VERIFICADA", capa:"AUDIOVISUAL" });
+  DB.rels.push({ id:"REL-ce6a9776", subject:"PER-000065", origen:"PER-000065", object:"VID-000103", destino:"VID-000103", tipo:"APARECE_EN", predicate:"appears_in", descripcion:"Ibrahim Al-Matari (د ابراهيم المطري) | APARECE_EN | VID-000103", fecha_inicio:"", fecha_fin:"", estado:"VIGENTE", cantidad:"", moneda:"", fuente:"SRC-000003", src:"SRC-000003", evidencia:"D", certeza:"NO VERIFICADA", capa:"AUDIOVISUAL" });
+  DB.rels.push({ id:"REL-c927dbca", subject:"PER-000047", origen:"PER-000047", object:"VID-000105", destino:"VID-000105", tipo:"APARECE_EN", predicate:"appears_in", descripcion:"Itamar Ben-Gvir | APARECE_EN | VID-000105", fecha_inicio:"", fecha_fin:"", estado:"VIGENTE", cantidad:"", moneda:"", fuente:"SRC-000003", src:"SRC-000003", evidencia:"D", certeza:"NO VERIFICADA", capa:"AUDIOVISUAL" });
+  DB.rels.push({ id:"REL-788e2a13", subject:"PER-000017", origen:"PER-000017", object:"VID-000106", destino:"VID-000106", tipo:"APARECE_EN", predicate:"appears_in", descripcion:"Gustavo Petro | APARECE_EN | VID-000106", fecha_inicio:"", fecha_fin:"", estado:"VIGENTE", cantidad:"", moneda:"", fuente:"SRC-000003", src:"SRC-000003", evidencia:"D", certeza:"NO VERIFICADA", capa:"AUDIOVISUAL" });
+  DB.rels.push({ id:"REL-220df262", subject:"PER-000025", origen:"PER-000025", object:"VID-000106", destino:"VID-000106", tipo:"APARECE_EN", predicate:"appears_in", descripcion:"Marco Rubio | APARECE_EN | VID-000106", fecha_inicio:"", fecha_fin:"", estado:"VIGENTE", cantidad:"", moneda:"", fuente:"SRC-000003", src:"SRC-000003", evidencia:"D", certeza:"NO VERIFICADA", capa:"AUDIOVISUAL" });
+  DB.rels.push({ id:"REL-440e640c", subject:"PER-000119", origen:"PER-000119", object:"VID-000106", destino:"VID-000106", tipo:"APARECE_EN", predicate:"appears_in", descripcion:"Eric Correa-Bonza | APARECE_EN | VID-000106", fecha_inicio:"", fecha_fin:"", estado:"VIGENTE", cantidad:"", moneda:"", fuente:"SRC-000003", src:"SRC-000003", evidencia:"D", certeza:"NO VERIFICADA", capa:"AUDIOVISUAL" });
+  DB.rels.push({ id:"REL-7b774ae0", subject:"PER-000051", origen:"PER-000051", object:"VID-000107", destino:"VID-000107", tipo:"APARECE_EN", predicate:"appears_in", descripcion:"David Icke | APARECE_EN | VID-000107", fecha_inicio:"", fecha_fin:"", estado:"VIGENTE", cantidad:"", moneda:"", fuente:"SRC-000003", src:"SRC-000003", evidencia:"D", certeza:"NO VERIFICADA", capa:"AUDIOVISUAL" });
+  DB.rels.push({ id:"REL-95fcbb81", subject:"PER-000120", origen:"PER-000120", object:"VID-000107", destino:"VID-000107", tipo:"APARECE_EN", predicate:"appears_in", descripcion:"Michael Chertoff | APARECE_EN | VID-000107", fecha_inicio:"", fecha_fin:"", estado:"VIGENTE", cantidad:"", moneda:"", fuente:"SRC-000003", src:"SRC-000003", evidencia:"D", certeza:"NO VERIFICADA", capa:"AUDIOVISUAL" });
+  DB.rels.push({ id:"REL-84ce9220", subject:"PER-000043", origen:"PER-000043", object:"VID-000108", destino:"VID-000108", tipo:"APARECE_EN", predicate:"appears_in", descripcion:"Candace Owens | APARECE_EN | VID-000108", fecha_inicio:"", fecha_fin:"", estado:"VIGENTE", cantidad:"", moneda:"", fuente:"SRC-000003", src:"SRC-000003", evidencia:"D", certeza:"NO VERIFICADA", capa:"AUDIOVISUAL" });
+  DB.rels.push({ id:"REL-d9be2434", subject:"PER-000030", origen:"PER-000030", object:"VID-000108", destino:"VID-000108", tipo:"APARECE_EN", predicate:"appears_in", descripcion:"Theodor Herzl | APARECE_EN | VID-000108", fecha_inicio:"", fecha_fin:"", estado:"VIGENTE", cantidad:"", moneda:"", fuente:"SRC-000003", src:"SRC-000003", evidencia:"D", certeza:"NO VERIFICADA", capa:"AUDIOVISUAL" });
+  DB.rels.push({ id:"REL-ca7f486e", subject:"PER-000121", origen:"PER-000121", object:"VID-000108", destino:"VID-000108", tipo:"APARECE_EN", predicate:"appears_in", descripcion:"Leo Frank | APARECE_EN | VID-000108", fecha_inicio:"", fecha_fin:"", estado:"VIGENTE", cantidad:"", moneda:"", fuente:"SRC-000003", src:"SRC-000003", evidencia:"D", certeza:"NO VERIFICADA", capa:"AUDIOVISUAL" });
+  DB.rels.push({ id:"REL-b9b3c524", subject:"PER-000122", origen:"PER-000122", object:"VID-000108", destino:"VID-000108", tipo:"APARECE_EN", predicate:"appears_in", descripcion:"Mary Phagan | APARECE_EN | VID-000108", fecha_inicio:"", fecha_fin:"", estado:"VIGENTE", cantidad:"", moneda:"", fuente:"SRC-000003", src:"SRC-000003", evidencia:"D", certeza:"NO VERIFICADA", capa:"AUDIOVISUAL" });
+  DB.rels.push({ id:"REL-389d3fa3", subject:"PER-000062", origen:"PER-000062", object:"VID-000112", destino:"VID-000112", tipo:"APARECE_EN", predicate:"appears_in", descripcion:"Yitzchak Breitowitz | APARECE_EN | VID-000112", fecha_inicio:"", fecha_fin:"", estado:"VIGENTE", cantidad:"", moneda:"", fuente:"SRC-000003", src:"SRC-000003", evidencia:"D", certeza:"NO VERIFICADA", capa:"AUDIOVISUAL" });
+  DB.rels.push({ id:"REL-7c7b1b30", subject:"PER-000124", origen:"PER-000124", object:"VID-000117", destino:"VID-000117", tipo:"APARECE_EN", predicate:"appears_in", descripcion:"David Ben-Gurion | APARECE_EN | VID-000117", fecha_inicio:"", fecha_fin:"", estado:"VIGENTE", cantidad:"", moneda:"", fuente:"SRC-000003", src:"SRC-000003", evidencia:"D", certeza:"NO VERIFICADA", capa:"AUDIOVISUAL" });
+  DB.rels.push({ id:"REL-aae8ae7d", subject:"PER-000074", origen:"PER-000074", object:"VID-000118", destino:"VID-000118", tipo:"APARECE_EN", predicate:"appears_in", descripcion:"Yosef Basri | APARECE_EN | VID-000118", fecha_inicio:"", fecha_fin:"", estado:"VIGENTE", cantidad:"", moneda:"", fuente:"SRC-000003", src:"SRC-000003", evidencia:"D", certeza:"NO VERIFICADA", capa:"AUDIOVISUAL" });
+  DB.rels.push({ id:"REL-1aeecd8e", subject:"PER-000076", origen:"PER-000076", object:"VID-000118", destino:"VID-000118", tipo:"APARECE_EN", predicate:"appears_in", descripcion:"Shalom Salah Shalom | APARECE_EN | VID-000118", fecha_inicio:"", fecha_fin:"", estado:"VIGENTE", cantidad:"", moneda:"", fuente:"SRC-000003", src:"SRC-000003", evidencia:"D", certeza:"NO VERIFICADA", capa:"AUDIOVISUAL" });
+  DB.rels.push({ id:"REL-31eb9d8f", subject:"PER-000075", origen:"PER-000075", object:"VID-000118", destino:"VID-000118", tipo:"APARECE_EN", predicate:"appears_in", descripcion:"Max Binet | APARECE_EN | VID-000118", fecha_inicio:"", fecha_fin:"", estado:"VIGENTE", cantidad:"", moneda:"", fuente:"SRC-000003", src:"SRC-000003", evidencia:"D", certeza:"NO VERIFICADA", capa:"AUDIOVISUAL" });
+  DB.rels.push({ id:"REL-994fc57b", subject:"PER-000125", origen:"PER-000125", object:"VID-000118", destino:"VID-000118", tipo:"APARECE_EN", predicate:"appears_in", descripcion:"Yakov Karkukli | APARECE_EN | VID-000118", fecha_inicio:"", fecha_fin:"", estado:"VIGENTE", cantidad:"", moneda:"", fuente:"SRC-000003", src:"SRC-000003", evidencia:"D", certeza:"NO VERIFICADA", capa:"AUDIOVISUAL" });
+  DB.rels.push({ id:"REL-162315c7", subject:"PER-000021", origen:"PER-000021", object:"VID-000126", destino:"VID-000126", tipo:"APARECE_EN", predicate:"appears_in", descripcion:"Jeffrey Epstein | APARECE_EN | VID-000126", fecha_inicio:"", fecha_fin:"", estado:"VIGENTE", cantidad:"", moneda:"", fuente:"SRC-000003", src:"SRC-000003", evidencia:"D", certeza:"NO VERIFICADA", capa:"AUDIOVISUAL" });
+  DB.rels.push({ id:"REL-77c879f9", subject:"PER-000084", origen:"PER-000084", object:"VID-000129", destino:"VID-000129", tipo:"APARECE_EN", predicate:"appears_in", descripcion:"Steve Cohen | APARECE_EN | VID-000129", fecha_inicio:"", fecha_fin:"", estado:"VIGENTE", cantidad:"", moneda:"", fuente:"SRC-000003", src:"SRC-000003", evidencia:"D", certeza:"NO VERIFICADA", capa:"AUDIOVISUAL" });
+  DB.rels.push({ id:"REL-8e39f181", subject:"VID-000129", origen:"VID-000129", object:"ORG-000002", destino:"ORG-000002", tipo:"MENCIONA", predicate:"mentions", descripcion:"VID-000129 | MENCIONA | IDF", fecha_inicio:"", fecha_fin:"", estado:"VIGENTE", cantidad:"", moneda:"", fuente:"SRC-000003", src:"SRC-000003", evidencia:"D", certeza:"NO VERIFICADA", capa:"SECUENCIA" });
+  DB.rels.push({ id:"REL-80e16cf2", subject:"PER-000002", origen:"PER-000002", object:"VID-000131", destino:"VID-000131", tipo:"APARECE_EN", predicate:"appears_in", descripcion:"Donald Trump | APARECE_EN | VID-000131", fecha_inicio:"", fecha_fin:"", estado:"VIGENTE", cantidad:"", moneda:"", fuente:"SRC-000003", src:"SRC-000003", evidencia:"D", certeza:"NO VERIFICADA", capa:"AUDIOVISUAL" });
+  DB.rels.push({ id:"REL-f177cc2c", subject:"PER-000041", origen:"PER-000041", object:"VID-000134", destino:"VID-000134", tipo:"APARECE_EN", predicate:"appears_in", descripcion:"Javier Milei | APARECE_EN | VID-000134", fecha_inicio:"", fecha_fin:"", estado:"VIGENTE", cantidad:"", moneda:"", fuente:"SRC-000003", src:"SRC-000003", evidencia:"D", certeza:"NO VERIFICADA", capa:"AUDIOVISUAL" });
+  DB.rels.push({ id:"REL-ee58d257", subject:"PER-000030", origen:"PER-000030", object:"VID-000135", destino:"VID-000135", tipo:"APARECE_EN", predicate:"appears_in", descripcion:"Theodor Herzl | APARECE_EN | VID-000135", fecha_inicio:"", fecha_fin:"", estado:"VIGENTE", cantidad:"", moneda:"", fuente:"SRC-000003", src:"SRC-000003", evidencia:"D", certeza:"NO VERIFICADA", capa:"AUDIOVISUAL" });
+  DB.rels.push({ id:"REL-b59bd56b", subject:"PER-000031", origen:"PER-000031", object:"VID-000136", destino:"VID-000136", tipo:"APARECE_EN", predicate:"appears_in", descripcion:"Sergio Bergman | APARECE_EN | VID-000136", fecha_inicio:"", fecha_fin:"", estado:"VIGENTE", cantidad:"", moneda:"", fuente:"SRC-000003", src:"SRC-000003", evidencia:"D", certeza:"NO VERIFICADA", capa:"AUDIOVISUAL" });
+  DB.rels.push({ id:"REL-2d8aec53", subject:"PER-000041", origen:"PER-000041", object:"VID-000137", destino:"VID-000137", tipo:"APARECE_EN", predicate:"appears_in", descripcion:"Javier Milei | APARECE_EN | VID-000137", fecha_inicio:"", fecha_fin:"", estado:"VIGENTE", cantidad:"", moneda:"", fuente:"SRC-000003", src:"SRC-000003", evidencia:"D", certeza:"NO VERIFICADA", capa:"AUDIOVISUAL" });
+  DB.rels.push({ id:"REL-25a0444c", subject:"PER-000127", origen:"PER-000127", object:"VID-000138", destino:"VID-000138", tipo:"APARECE_EN", predicate:"appears_in", descripcion:"Rotem Singer | APARECE_EN | VID-000138", fecha_inicio:"", fecha_fin:"", estado:"VIGENTE", cantidad:"", moneda:"", fuente:"SRC-000003", src:"SRC-000003", evidencia:"D", certeza:"NO VERIFICADA", capa:"AUDIOVISUAL" });
+  DB.rels.push({ id:"REL-be316139", subject:"PER-000128", origen:"PER-000128", object:"VID-000138", destino:"VID-000138", tipo:"APARECE_EN", predicate:"appears_in", descripcion:"Douglas Tompkins | APARECE_EN | VID-000138", fecha_inicio:"", fecha_fin:"", estado:"VIGENTE", cantidad:"", moneda:"", fuente:"SRC-000003", src:"SRC-000003", evidencia:"D", certeza:"NO VERIFICADA", capa:"AUDIOVISUAL" });
+  DB.rels.push({ id:"REL-33aa2035", subject:"PER-000129", origen:"PER-000129", object:"VID-000138", destino:"VID-000138", tipo:"APARECE_EN", predicate:"appears_in", descripcion:"Kristine Tompkins | APARECE_EN | VID-000138", fecha_inicio:"", fecha_fin:"", estado:"VIGENTE", cantidad:"", moneda:"", fuente:"SRC-000003", src:"SRC-000003", evidencia:"D", certeza:"NO VERIFICADA", capa:"AUDIOVISUAL" });
+  DB.rels.push({ id:"REL-612001c1", subject:"PER-000001", origen:"PER-000001", object:"VID-000142", destino:"VID-000142", tipo:"APARECE_EN", predicate:"appears_in", descripcion:"Benjamin Netanyahu | APARECE_EN | VID-000142", fecha_inicio:"", fecha_fin:"", estado:"VIGENTE", cantidad:"", moneda:"", fuente:"SRC-000003", src:"SRC-000003", evidencia:"D", certeza:"NO VERIFICADA", capa:"AUDIOVISUAL" });
+  DB.rels.push({ id:"REL-d98d0ae9", subject:"PER-000018", origen:"PER-000018", object:"VID-000144", destino:"VID-000144", tipo:"APARECE_EN", predicate:"appears_in", descripcion:"Fernando Cerimedo | APARECE_EN | VID-000144", fecha_inicio:"", fecha_fin:"", estado:"VIGENTE", cantidad:"", moneda:"", fuente:"SRC-000003", src:"SRC-000003", evidencia:"D", certeza:"NO VERIFICADA", capa:"AUDIOVISUAL" });
+  DB.rels.push({ id:"REL-e84b6207", subject:"PER-000079", origen:"PER-000079", object:"VID-000144", destino:"VID-000144", tipo:"APARECE_EN", predicate:"appears_in", descripcion:"José Antonio Kast | APARECE_EN | VID-000144", fecha_inicio:"", fecha_fin:"", estado:"VIGENTE", cantidad:"", moneda:"", fuente:"SRC-000003", src:"SRC-000003", evidencia:"D", certeza:"NO VERIFICADA", capa:"AUDIOVISUAL" });
+  DB.rels.push({ id:"REL-4d3ba54d", subject:"PER-000080", origen:"PER-000080", object:"VID-000144", destino:"VID-000144", tipo:"APARECE_EN", predicate:"appears_in", descripcion:"Flavio Bolsonaro | APARECE_EN | VID-000144", fecha_inicio:"", fecha_fin:"", estado:"VIGENTE", cantidad:"", moneda:"", fuente:"SRC-000003", src:"SRC-000003", evidencia:"D", certeza:"NO VERIFICADA", capa:"AUDIOVISUAL" });
+  DB.rels.push({ id:"REL-5d06a3ec", subject:"PER-000082", origen:"PER-000082", object:"VID-000144", destino:"VID-000144", tipo:"APARECE_EN", predicate:"appears_in", descripcion:"Daniel Noboa | APARECE_EN | VID-000144", fecha_inicio:"", fecha_fin:"", estado:"VIGENTE", cantidad:"", moneda:"", fuente:"SRC-000003", src:"SRC-000003", evidencia:"D", certeza:"NO VERIFICADA", capa:"AUDIOVISUAL" });
+  DB.rels.push({ id:"REL-bb9fb520", subject:"PER-000130", origen:"PER-000130", object:"VID-000148", destino:"VID-000148", tipo:"APARECE_EN", predicate:"appears_in", descripcion:"Claudia Sheinbaum | APARECE_EN | VID-000148", fecha_inicio:"", fecha_fin:"", estado:"VIGENTE", cantidad:"", moneda:"", fuente:"SRC-000003", src:"SRC-000003", evidencia:"D", certeza:"NO VERIFICADA", capa:"AUDIOVISUAL" });
+  DB.rels.push({ id:"REL-c357583b", subject:"PER-000018", origen:"PER-000018", object:"VID-000149", destino:"VID-000149", tipo:"APARECE_EN", predicate:"appears_in", descripcion:"Fernando Cerimedo | APARECE_EN | VID-000149", fecha_inicio:"", fecha_fin:"", estado:"VIGENTE", cantidad:"", moneda:"", fuente:"SRC-000003", src:"SRC-000003", evidencia:"D", certeza:"NO VERIFICADA", capa:"AUDIOVISUAL" });
+  DB.rels.push({ id:"REL-17252826", subject:"PER-000085", origen:"PER-000085", object:"VID-000149", destino:"VID-000149", tipo:"APARECE_EN", predicate:"appears_in", descripcion:"Leonardo Roca | APARECE_EN | VID-000149", fecha_inicio:"", fecha_fin:"", estado:"VIGENTE", cantidad:"", moneda:"", fuente:"SRC-000003", src:"SRC-000003", evidencia:"D", certeza:"NO VERIFICADA", capa:"AUDIOVISUAL" });
+  DB.rels.push({ id:"REL-52642fb1", subject:"PER-000131", origen:"PER-000131", object:"VID-000149", destino:"VID-000149", tipo:"APARECE_EN", predicate:"appears_in", descripcion:"Señora Velle | APARECE_EN | VID-000149", fecha_inicio:"", fecha_fin:"", estado:"VIGENTE", cantidad:"", moneda:"", fuente:"SRC-000003", src:"SRC-000003", evidencia:"D", certeza:"NO VERIFICADA", capa:"AUDIOVISUAL" });
+  DB.rels.push({ id:"REL-805dc83c", subject:"PER-000001", origen:"PER-000001", object:"VID-000150", destino:"VID-000150", tipo:"APARECE_EN", predicate:"appears_in", descripcion:"Benjamin Netanyahu | APARECE_EN | VID-000150", fecha_inicio:"", fecha_fin:"", estado:"VIGENTE", cantidad:"", moneda:"", fuente:"SRC-000003", src:"SRC-000003", evidencia:"D", certeza:"NO VERIFICADA", capa:"AUDIOVISUAL" });
+  DB.rels.push({ id:"REL-03d0a6cc", subject:"PER-000006", origen:"PER-000006", object:"VID-000151", destino:"VID-000151", tipo:"APARECE_EN", predicate:"appears_in", descripcion:"Tucker Carlson | APARECE_EN | VID-000151", fecha_inicio:"", fecha_fin:"", estado:"VIGENTE", cantidad:"", moneda:"", fuente:"SRC-000003", src:"SRC-000003", evidencia:"D", certeza:"NO VERIFICADA", capa:"AUDIOVISUAL" });
+  DB.rels.push({ id:"REL-b3c4d39d", subject:"PER-000047", origen:"PER-000047", object:"VID-000152", destino:"VID-000152", tipo:"APARECE_EN", predicate:"appears_in", descripcion:"Itamar Ben-Gvir | APARECE_EN | VID-000152", fecha_inicio:"", fecha_fin:"", estado:"VIGENTE", cantidad:"", moneda:"", fuente:"SRC-000003", src:"SRC-000003", evidencia:"D", certeza:"NO VERIFICADA", capa:"AUDIOVISUAL" });
+  DB.rels.push({ id:"REL-2b088852", subject:"PER-000132", origen:"PER-000132", object:"VID-000155", destino:"VID-000155", tipo:"APARECE_EN", predicate:"appears_in", descripcion:"Cayme Diverson | APARECE_EN | VID-000155", fecha_inicio:"", fecha_fin:"", estado:"VIGENTE", cantidad:"", moneda:"", fuente:"SRC-000003", src:"SRC-000003", evidencia:"D", certeza:"NO VERIFICADA", capa:"AUDIOVISUAL" });
+  DB.rels.push({ id:"REL-4d8ba125", subject:"PER-000001", origen:"PER-000001", object:"VID-000156", destino:"VID-000156", tipo:"APARECE_EN", predicate:"appears_in", descripcion:"Benjamin Netanyahu | APARECE_EN | VID-000156", fecha_inicio:"", fecha_fin:"", estado:"VIGENTE", cantidad:"", moneda:"", fuente:"SRC-000003", src:"SRC-000003", evidencia:"D", certeza:"NO VERIFICADA", capa:"AUDIOVISUAL" });
+  DB.rels.push({ id:"REL-2fd7dece", subject:"PER-000001", origen:"PER-000001", object:"ORG-000002", destino:"ORG-000002", tipo:"DIRIGE", predicate:"lidera", descripcion:"Benjamin Netanyahu | DIRIGE | IDF", fecha_inicio:"", fecha_fin:"", estado:"VIGENTE", cantidad:"", moneda:"", fuente:"SRC-000003", src:"SRC-000003", evidencia:"D", certeza:"NO VERIFICADA", capa:"INSTITUCIONAL" });
+  DB.rels.push({ id:"REL-bdc8472e", subject:"PER-000002", origen:"PER-000002", object:"ORG-000001", destino:"ORG-000001", tipo:"LOBBY_SOBRE", predicate:"recibió_lobby_de", descripcion:"Donald Trump | LOBBY_SOBRE | AIPAC", fecha_inicio:"", fecha_fin:"", estado:"VIGENTE", cantidad:"", moneda:"", fuente:"SRC-000003", src:"SRC-000003", evidencia:"D", certeza:"NO VERIFICADA", capa:"LOBBYING" });
+  DB.rels.push({ id:"REL-db69c7a6", subject:"PER-000001", origen:"PER-000001", object:"PER-000002", destino:"PER-000002", tipo:"SE_REUNIO_CON", predicate:"se_reunió_con", descripcion:"Benjamin Netanyahu | SE_REUNIO_CON | Donald Trump", fecha_inicio:"", fecha_fin:"", estado:"VIGENTE", cantidad:"", moneda:"", fuente:"SRC-000003", src:"SRC-000003", evidencia:"D", certeza:"NO VERIFICADA", capa:"REUNION" });
+  DB.rels.push({ id:"REL-0fa3a69b", subject:"PER-000006", origen:"PER-000006", object:"VID-000157", destino:"VID-000157", tipo:"APARECE_EN", predicate:"appears_in", descripcion:"Tucker Carlson | APARECE_EN | VID-000157", fecha_inicio:"", fecha_fin:"", estado:"VIGENTE", cantidad:"", moneda:"", fuente:"SRC-000003", src:"SRC-000003", evidencia:"D", certeza:"NO VERIFICADA", capa:"AUDIOVISUAL" });
+  DB.rels.push({ id:"REL-5d490266", subject:"PER-000040", origen:"PER-000040", object:"VID-000157", destino:"VID-000157", tipo:"APARECE_EN", predicate:"mencionado_en", descripcion:"Bezalel Smotrich | APARECE_EN | VID-000157", fecha_inicio:"", fecha_fin:"", estado:"VIGENTE", cantidad:"", moneda:"", fuente:"SRC-000003", src:"SRC-000003", evidencia:"D", certeza:"NO VERIFICADA", capa:"AUDIOVISUAL" });
+  DB.rels.push({ id:"REL-49ddcd1e", subject:"VID-000157", origen:"VID-000157", object:"CLM-000073", destino:"CLM-000073", tipo:"PRODUCE_AFIRMACION", predicate:"produces_claim", descripcion:"VID-000157 | PRODUCE_AFIRMACION | CLM-000073", fecha_inicio:"", fecha_fin:"", estado:"VIGENTE", cantidad:"", moneda:"", fuente:"SRC-000003", src:"SRC-000003", evidencia:"D", certeza:"NO VERIFICADA", capa:"DECLARACION" });
+  DB.rels.push({ id:"REL-993528f8", subject:"PER-000006", origen:"PER-000006", object:"CLM-000073", destino:"CLM-000073", tipo:"REALIZA_AFIRMACION", predicate:"hizo_claim", descripcion:"Tucker Carlson | REALIZA_AFIRMACION | CLM-000073", fecha_inicio:"", fecha_fin:"", estado:"VIGENTE", cantidad:"", moneda:"", fuente:"SRC-000003", src:"SRC-000003", evidencia:"D", certeza:"NO VERIFICADA", capa:"DECLARACION" });
+
+// Lugares
+DB.events.length; // placeholder</script>
+<script>
+  // ---------- UTILIDADES DE BÚSQUEDA Y RESOLUCIÓN ----------
+  const tipos = { persons:'PER', orgs:'ORG', videos:'VID', claims:'CLM', events:'EVT', sources:'SRC', conflicts:'CNF', rels:'REL' };
+  const all = () => [...DB.persons,...DB.orgs,...DB.videos,...DB.claims,...DB.events,...DB.sources];
+  function busco(entidad){ return all().find(e=>e.id===entidad); }
+  function enlazar(id){ const e=busco(id); if(!e)return ''; return `<a onclick="abrirFicha('${id}')">${e.name||e.title||e.text||id}</a>`; }
+  function nombreCorto(id){ const e=busco(id); if(!e) return id; return (e.name||e.title||(e.text||'').slice(0,30)).slice(0,34); }
+  function tipoDe(id){ return id.split('-')[0]; }
+  function rutaArchivo(id){ if(id.startsWith('SRC')) return id; const e=busco(id); return e&&e.url?e.url:''; }
+  function certezaBadge(c){
+    if(!c) return '';
+    if(c.toLowerCase().includes('docum')) return `<span class="badge b-doc">DOCUMENTADO</span>`;
+    if(c.toLowerCase().includes('corrob')) return `<span class="badge b-cer">CORROBORADO</span>`;
+    if(c.toLowerCase().includes('report')||c.toLowerCase().includes('aleg')) return `<span class="badge b-rep">REPORTADO</span>`;
+    if(c.toLowerCase().includes('pend')||c.toLowerCase().includes('verific')) return `<span class="badge b-pen">PENDIENTE/NO VERIF.</span>`;
+    if(c.toLowerCase().includes('refut')) return `<span class="badge b-roro">REFUTADO</span>`;
+    return `<span class="badge b-pen">${c.toUpperCase()}</span>`;
+  }
+
+  // ---------- BÚSQUEDA TIEMPO REAL ----------
+  function buscarTiempoReal(){
+    const q=document.getElementById('buscarInput').value.trim().toLowerCase();
+    const box=document.getElementById('resultados');
+    if(q.length<2){ box.style.display='none'; return; }
+    const hits=all().filter(e=>JSON.stringify(e).toLowerCase().includes(q)).slice(0,8);
+    if(!hits.length){ box.innerHTML='<div class="r" style="color:var(--gris)">Sin resultados</div>'; box.style.display='block'; return; }
+    box.innerHTML=hits.map(e=>`<div class="r" onclick="abrirFicha('${e.id}');this.parentNode.style.display='none'"><b>${e.name||e.title||(e.text||'').slice(0,40)}</b> <span style="color:var(--gris)">— ${e.id}</span></div>`).join('');
+    box.style.display='block';
+  }
+  document.addEventListener('click',e=>{ if(!e.target.closest('.searchwrap')) document.getElementById('resultados').style.display='none'; });
+
+  // ---------- ENRUTADO ----------
+  function abrirFicha(id){ 
+    const e=busco(id); if(!e){renderHome();return;}
+    window.scrollTo({top:0,behavior:'smooth'});
+    if(e.prefixed&&tipoDe(id)==='PER') fichaPersona(id); else if(e.id.startsWith('PER')) fichaPersona(id);
+    else if(e.id.startsWith('ORG')) fichaOrg(id);
+    else if(e.id.startsWith('VID')) fichaVideo(id);
+    else if(e.id.startsWith('CLM')) fichaClaim(id);
+        else if(e.id.startsWith('SRC')) fichaSrc(id);
+        else if(e.id.startsWith('EVT')) fichaEvent(id);
+        else fichaPersona(id);
+      }
+      function fichaEvent(id){
+        const e=busco(id);
+        const rels=(DB.rels||[]).filter(r=>r.subject===id||r.object===id);
+        document.getElementById('app').innerHTML=`<div class="panel">
+          <h2>📅 ${e.name||e.title}</h2>
+          <table><tbody>
+            <tr><th>ID</th><td>${e.id}</td></tr>
+            ${e.date||e.fecha?`<tr><th>Fecha</th><td>${e.date||e.fecha}</td></tr>`:''}
+            ${e.place?`<tr><th>Lugar</th><td>${e.place}</td></tr>`:''}
+            ${e.certainty?`<tr><th>Certeza</th><td>${certezaBadge(e.certainty)}</td></tr>`:''}
+          </tbody></table>
+          <p style="color:var(--gris);margin-top:12px">${e.desc||e.descripcion_corta||'Sin descripción.'}</p>
+          <h3>Relaciones (${rels.length})</h3>
+          ${rels.length?`<ul style="list-style:none;padding:0">${rels.map(r=>`<li style="padding:4px 0;font-size:13px">${enlazar(r.subject)} <b>${r.predicate}</b> ${enlazar(r.object)}</li>`).join('')}</ul>`:'·'}
+        </div>`;
+      }
+  window.abrirFicha = abrirFicha;
+
+  
+
+
+function renderHome(){
+  // Totales reales del expediente CRONOS (videos en disco), no solo los con ficha
+  var TOTAL_VIDEOS=143;
+  document.getElementById('app').innerHTML=`
+      <div class="hero aghero">
+        <div class="agh-bg" style="background:radial-gradient(ellipse at 30% 40%,rgba(205,153,51,.18),rgba(11,15,25,.9) 70%),linear-gradient(135deg,#0a1526,#0b0f19)"></div>
+        <div class="agh-content">
+          <div class="agh-logo" style="margin-bottom:6px"><img src="/cronos/img/isotipo_central_tonal.jpg" alt="El Tonal del León" style="height:170px;width:170px;border-radius:50%;border:3px solid rgba(205,153,51,.4);box-shadow:0 0 40px rgba(205,153,51,.35),0 0 80px rgba(205,153,51,.12)"></div>
+          <h1>🦉 CRONOS</h1>
+          <p><b>Archivo Documental de Conflictos, Poder y Evidencia Audiovisual.</b><br>
+          No almacenamos conclusiones: almacenamos <b>evidencia, relaciones, fuentes y grados de certeza</b> que permiten construir o refutar conclusiones.</p>
+          <div class="agh-verbs">DOCUMENTAR · ANALIZAR · CONECTAR · COMPRENDER</div>
+        </div>
+      </div>
+      <div class="stats2">
+        <div class="stat2 s-persons"><b>${DB.persons.length}</b><span>PERSONAS</span><small>Perfiles y biografías</small></div>
+        <div class="stat2 s-orgs"><b>${DB.orgs.length}</b><span>ORGANIZACIONES</span><small>Estructuras y vínculos</small></div>
+        <div class="stat2 s-videos"><b>${TOTAL_VIDEOS}</b><span>VIDEOS</span><small>Evidencia audiovisual (expediente)</small></div>
+        <div class="stat2 s-claims"><b>${DB.claims.length}</b><span>AFIRMACIONES</span><small>Declaraciones registradas</small></div>
+        <div class="stat2 s-rels"><b>${DB.rels.length}</b><span>RELACIONES</span><small>Conexiones documentadas</small></div>
+      </div>
+      <div class="principio">"Nunca presentar una relación indirecta como causalidad demostrada."<br>
+      <span style="font-size:12px;color:var(--gris)">Principio §41 del Prompt Maestro</span></div>
+      <div class="grid2">
+        <div class="panel"><h2>📌 Últimos registros</h2>
+          <div class="reg-list">
+            ${DB.orgs.slice(0,2).map(o=>`<div class="reg" onclick="abrirFicha('${o.id}')"><div class="reg-avatar">${o.img?`<img src="/cronos/img/${o.img.split('/').pop()}" class="reg-foto" onerror="this.outerHTML='<span>🏢</span>'">`:''}${!o.img?'<span>🏢</span>':''}</div><div class="reg-info"><b>${o.name}</b><span class="reg-tag tag-org">ORGANIZACIÓN</span></div><div class="reg-fecha">Actualizado ${new Date().getDate()} ${['ene','feb','mar','abr','may','jun','jul','ago','sep','oct','nov','dic'][new Date().getMonth()]}</div></div>`).join('')}
+            ${(DB.conflicts||[]).slice(0,2).map(c=>`<div class="reg" onclick="abrirFicha('${c.id}')"><div class="reg-avatar">⚔️</div><div class="reg-info"><b>${c.name}</b><span class="reg-tag tag-conflicto">CONFLICTO</span></div><div class="reg-fecha">${c.date||'vigente'}</div></div>`).join('')}
+            ${(DB.events||[]).slice(0,3).map(e=>`<div class="reg" onclick="abrirFicha('${e.id}')"><div class="reg-avatar">📅</div><div class="reg-info"><b>${e.name}</b><span class="reg-tag tag-evento">EVENTO</span></div><div class="reg-fecha">${e.date||''}</div></div>`).join('')}
+            ${DB.persons.slice(0,4).map(p=>`<div class="reg" onclick="abrirFicha('${p.id}')"><div class="reg-avatar">${p.img?`<img src="/cronos/img/${p.img.split('/').pop()}" class="reg-foto" onerror="this.outerHTML='<span>👤</span>'">`:''}${!p.img?'<span>👤</span>':''}</div><div class="reg-info"><b>${p.name}</b><span class="reg-tag tag-persona">PERSONA</span></div><div class="reg-fecha">Actualizado ${new Date().getDate()} ${['ene','feb','mar','abr','may','jun','jul','ago','sep','oct','nov','dic'][new Date().getMonth()]}</div></div>`).join('')}
+          </div></div>
+        <div class="panel"><h2>🏛️ Organizaciones</h2>
+          <div style="display:flex;flex-wrap:wrap;gap:8px">
+          ${DB.orgs.map(o=>`<span class="chip" onclick="abrirFicha('${o.id}')">🏢 ${o.name}</span>`).join('')}
+          </div></div>
+      </div>`;
+  }
+function render(tipo){
+      const listas={
+        persons:{title:'👤 Personas',cols:['Foto','ID','Nombre','Rol','Certeza','Estado'],arr:DB.persons,cel:p=>[`${p.img?`<img src="/cronos/img/${(p.img||'').split('/').pop()}" style="width:30px;height:30px;border-radius:50%;object-fit:cover" onerror="this.style.display='none'">`:''}`,`<code style="font-size:10px">${p.id}</code>`,`<b>${p.name}</b>`,(p.roles||[]).join(', '),certezaBadge(p.certainty),p.review||'PENDIENTE']},orgs:{title:'🏢 Organizaciones',cols:['ID','Nombre','Tipo','País','Certeza'],arr:DB.orgs,cel:o=>[`<code style="font-size:10px">${o.id}</code>`,`<b>${o.name}</b>`,o.type,o.country||'-',certezaBadge(o.certainty)]},
+        videos:{title:'🎥 Videos',cols:['ID','Título','Canal','Duración','Clase','Certeza'],arr:DB.videos,cel:v=>[`<code style="font-size:10px">${v.id}</code>`,`<b>${v.title}</b>`,v.channel||'-',(v.dur?v.dur:(v.size_mb?`${v.size_mb} MB`:'-')),v.manipulation?'Cl. '+v.manipulation:'-',certezaBadge(v.certainty)]},
+        claims:{title:'🗣️ Afirmaciones',cols:['ID','Afirmación','Autor','Estado','Confianza'],arr:DB.claims,cel:c=>[`<code style="font-size:10px">${c.id}</code>`,(c.text||'').slice(0,60),enlazar(c.author),certezaBadge(c.status||c.certainty),(c.confidence||0)+'%']}
+      };
+      const L=listas[tipo]; if(!L)return;
+      document.getElementById('app').innerHTML=`<div class="panel"><h2>${L.title}</h2>
+      <table><thead><tr>${L.cols.map(c=>`<th>${c}</th>`).join('')}</tr></thead>
+      <tbody>${L.arr.map(e=>`<tr style="cursor:pointer" onclick="abrirFicha('${e.id}')">${L.cel(e).map(c=>`<td>${c}</td>`).join('')}</tr>`).join('')}</tbody></table></div>`;
+    }
+
+  // ---------- FICHAS ----------
+  function fichaPersona(id){
+      const p=busco(id);
+      // Videos donde la persona aparece: desde las relaciones appears_in (subject o object)
+      const vidsId=new Set();
+      const otras=new Set();
+      DB.rels.forEach(r=>{
+        if(r.subject===id&&r.object.startsWith('VID-'))vidsId.add(r.object);
+        if(r.object===id&&r.subject.startsWith('VID-'))vidsId.add(r.subject);
+        if(r.subject===id&&r.object.startsWith('CLM-'))otras.add(r.object);
+        if(r.object===id&&r.subject.startsWith('CLM-'))otras.add(r.subject);
+      });
+      // tambien si el video tiene roles con este id
+      DB.videos.forEach(v=>{if(v.roles&&v.roles.includes(id))vidsId.add(v.id);});
+      const videos=[...vidsId].map(id=>busco(id)).filter(Boolean);
+      const claims=DB.claims.filter(c=>c.author===id||(c.author_name&&false));
+      const rels=DB.rels.filter(r=>r.subject===id||r.object===id);
+      document.getElementById('app').innerHTML=`<div class="grid grid2">
+        <div class="lateral">
+          <div class="avatar" style="width:190px;height:210px;margin:6px 0;display:flex;justify-content:center;align-items:center;background:#0d211b;border-radius:12px;overflow:hidden;border:2px solid #C79227">${p.img&&p.img!=='#'?`<img src="/cronos/img/${p.img.split('/').pop()}" alt="${p.name}" style="width:100%;height:100%;object-fit:cover" onerror="this.parentNode.innerHTML=String.fromCharCode(60)+'div style=font-size:64px;color:#C79227'>${(p.name||'?')[0]}</div>'+String.fromCharCode(62)">`:`<div style="font-size:64px;color:#C79227;font-weight:700">${(p.name||'?')[0]}</div>`}</div>
+          <style>.avatar{overflow:hidden}.avatar img{width:100%;height:100%;object-fit:cover}</style>
+          <h3 style="margin-top:0">${p.name}</h3>
+          ${p.original?`<div style="color:var(--gris);font-size:13px">${p.original}</div>`:''}
+          ${certezaBadge(p.certainty)} <span class="badge b-cer">${p.review||'PENDIENTE'}</span>
+          <dl>${p.roles?`<dt>Roles</dt><dd>${p.roles.join('; ')}</dd>`:''}${p.nationality?`<dt>Nacionalidad</dt><dd>${p.nationality}</dd>`:''}${p.id?`<dt>ID</dt><dd>${p.id}</dd>`:''}</dl>
+        </div>
+        <div class="panel">
+          <h2>${p.name}</h2>
+          <p style="color:var(--gris)">${p.bio||'Biografía pendiente de completar.'}</p>
+          <h3>Fuentes</h3><div>${(p.refs||[]).map(enlazar).join(' · ')}</div>
+          <h3>Videos donde aparece (${videos.length})</h3>
+          ${videos.length?`<table><tbody>${videos.map(v=>`<tr onclick="abrirFicha('${v.id}')"><td>🎥 <a>${v.title||v.id}</a></td><td>${certezaBadge(v.certainty||'')}</td></tr>`).join('')}</tbody></table>`:'<div style="color:var(--gris);font-size:13px">Sin videos cargados aún.</div>'}
+          <h3>Afirmaciones realizadas (${claims.length})</h3>
+          ${claims.length?`<ul style="list-style:none;padding:0">${claims.map(c=>`<li style="padding:6px 0;border-bottom:1px solid var(--border)">${c.text}<br><span style="font-size:11px;color:var(--gris)">${c.id} · ${c.status||c.certainty}</span></li>`).join('')}</ul>`:'<div style="color:var(--gris);font-size:13px">Sin afirmaciones registradas directamente. Revisa sus relaciones.</div>'}
+          <h3>Relaciones (${rels.length})</h3>
+          ${rels.length?`<ul style="list-style:none;padding:0">${rels.map(r=>{
+            const otro=r.subject===id?r.object:r.subject;
+            return `<li style="padding:4px 0;font-size:13px">${r.subject===id?'→':enlazar(r.subject)} <b>${r.predicate}</b> ${r.object===id?'←':enlazar(r.object)} <span class="badge b-doc">${r.type}</span></li>`;
+          }).join('')}</ul>`:'·'}
+        </div></div>`;
+    }
+
+  function fichaOrg(id){
+    const o=busco(id);
+    const rels=DB.rels.filter(r=>r.subject===id||r.object===id);
+    document.getElementById('app').innerHTML=`<div class="grid grid2">
+      <div class="lateral">
+        ${o.img&&o.img!=='#'?`<div style="width:170px;height:170px;border-radius:14px;overflow:hidden;background:#fff;margin-bottom:12px;display:flex;align-items:center;justify-content:center;border:2px solid #C79227"><img src="/cronos/img/${o.img.split('/').pop()}" alt="${o.name}" style="max-width:100%;max-height:100%;object-fit:contain" onerror="this.parentNode.innerHTML=String.fromCharCode(60)+'div style=font-size:56px;color:#C79227>'+(o.name||'?')[0]+'</div>'+String.fromCharCode(62)"</div>`:`<div style="font-size:34px;margin-bottom:8px">🏢</div>`}
+        <h3 style="margin-top:0">${o.name}</h3>${o.full?`<div style="color:var(--gris);font-size:12px">${o.full}</div>`:''}
+        ${certezaBadge(o.certainty)} <span class="badge b-cer">${o.review||'PENDIENTE'}</span>
+        <dl><dt>Tipo</dt><dd>${o.type}</dd><dt>País</dt><dd>${o.country}</dd><dt>ID</dt><dd>${o.id}</dd></dl>
+      </div>
+      <div class="panel">
+        <h2>${o.name}</h2>
+        <p style="color:var(--gris)">${o.bio||''}</p>
+        <h3>Relaciones (${rels.length})</h3>
+        ${rels.length?`<ul style="list-style:none;padding:0">${rels.map(r=>{
+          const otro=r.subject===id?r.object:r.subject;
+          return `<li style="padding:4px 0;font-size:13px">${r.subject===id?'→':enlazar(r.subject)} <b>${r.predicate}</b> ${r.object===id?'←':enlazar(r.object)} <span class="badge b-doc">${r.type}</span></li>`;
+        }).join('')}</ul>`:'·'}
+        <h3>Fuentes</h3><div>${(o.refs||[]).map(enlazar).join(' · ')}</div>
+      </div></div>`;
+  }
+
+  function fichaVideo(id){
+      const v=busco(id);
+      const protagonista = v.by ? enlazar(v.by) : (v.roles&&v.roles.length? v.roles.map(enlazar).join(', ') : '-');
+      document.getElementById('app').innerHTML=`<div class="panel">
+        <h2>🎥 ${v.title}</h2>
+        <div style="color:var(--gris);font-size:13px;margin-bottom:14px">${v.id} · ${v.platform||'-'} ${v.url?`· <a href="${v.url}" target="_blank">abrir fuente</a>`:''}</div>
+        <table><tbody>
+          <tr><th>Canal</th><td>${v.channel||'-'}</td></tr>
+          ${v.tweet?`<tr><th>Tweet ID</th><td><code style="font-size:11px">${v.tweet}</code></td></tr>`:''}
+          ${v.size_mb?`<tr><th>Tamaño</th><td>${v.size_mb} MB</td></tr>`:''}
+          ${v.dur?`<tr><th>Duración</th><td>${v.dur}</td></tr>`:''}
+          <tr><th>Clase de edición</th><td><span class="badge b-doc">${v.manipulation||'U'}</span> <span style="color:var(--gris);font-size:11px">(A original … F sintética confirmada)</span></td></tr>
+          <tr><th>Certeza</th><td>${certezaBadge(v.certainty)}</td></tr>
+          <tr><th>Protagonista</th><td>${protagonista}</td></tr>
+        </tbody></table>
+        ${v.desc?`<p style="margin-top:14px;color:var(--texto)">${v.desc}</p>`:''}
+        <h3>Descripción objetiva</h3>
+        <p style="color:var(--gris)">Pieza audiovisual preservada como pista. Requiere verificación documental con fuentes primarias antes de tratarse como hecho. ${v.manipulation?'Clase de edición registrada: '+v.manipulation:''}</p>
+        <h3>🔌 Análisis audiovisual</h3>
+        <table><tbody>
+          <tr><th>Clase de edición</th><td><span class="badge b-doc">${v.manipulation||'U'}</span></td></tr>
+          <tr><th>Leyenda</th><td style="font-size:11px;color:var(--gris)">A=Original · B=Edición convencional · C=Altera contexto · D=Manipulación · E=Sintética probable · F=Sintética confirmada · U=Indeterminado</td></tr>
+        </tbody></table>
+        <p style="color:var(--gris);font-size:12px;margin-top:10px">Checklist forense: Cortes · Audio · Labial · Clonación de voz · Deepfake · Frames · Sombras · Metadatos · Re-encoding · Subtítulos</p>
+        <p style="color:var(--gris);font-size:12px;margin-top:10px"><b>Nota:</b> Un detector de IA no prueba por sí solo autenticidad o falsificación; se requiere verificación documental.</p>
+        <h3>Fuente</h3>${enlazar(v.src||'SRC-000003')}
+        ${v.sha256?`<p style="font-size:10px;color:var(--gris);margin-top:14px">SHA256: <code style="font-size:9px">${v.sha256}</code></p>`:''}
+      </div>`;
+    }
+
+  function fichaClaim(id){
+      const c=busco(id);
+      const videoId = c.video || c.video_id || null;
+      document.getElementById('app').innerHTML=`<div class="panel">
+        <h2>🗣️ ${c.text||c.claim_text}</h2>
+        <table><tbody>
+          <tr><th>ID</th><td>${c.id}</td></tr>
+          <tr><th>Autor</th><td>${c.author?enlazar(c.author):(c.author_name||'-')}</td></tr>
+          <tr><th>Estado</th><td>${certezaBadge(c.status||c.certainty||'PENDIENTE')}</td></tr>
+          <tr><th>Confianza</th><td>${c.confidence}%</td></tr>
+          ${c.video_file?`<tr><th>Video</th><td>${c.video_file}</td></tr>`:''}
+          ${c.source_url?`<tr><th>Fuente</th><td><a href="${c.source_url}" target="_blank" style="font-size:11px">${c.source_url}</a></td></tr>`:''}
+        ${c.extr_sources&&c.extr_sources.length?`<tr><th>Corroboración externa</th><td>${c.extr_sources.map(u=>`<div><a href="${u}" target="_blank" style="font-size:11px;color:var(--verde,#22c55e)">${u}</a></div>`).join('')}</td></tr>`:''}
+          ${c.video?`<tr><th>Video de origen</th><td>${enlazar(c.video)}</td></tr>`:''}
+          ${c.contra?`<tr><th>En contra</th><td>${c.contra}</td></tr>`:''}
+          ${c.reviewed?`<tr><th>Última revisión</th><td>${c.reviewed}</td></tr>`:''}
+        </tbody></table>
+        <p style="color:var(--gris);font-size:12px;margin-top:12px">Las afirmaciones son entidades independientes. Su clasificación puede cambiar con nueva evidencia (historial conservado).</p>
+      </div>`;
+    }
+
+  function fichaSrc(id){
+    const s=busco(id);
+    document.getElementById('app').innerHTML=`<div class="panel">
+      <h2>📚 Fuente</h2>
+      <table><tbody><tr><th>ID</th><td>${s.id}</td></tr><tr><th>Nombre</th><td>${s.name}</td></tr><tr><th>Tipo</th><td>${s.type}</td></tr><tr><th>Referencia</th><td>${s.url?`<code style="font-size:11px">${s.url}</code>`:s.refs||'-'}</td></tr><tr><th>Consultado</th><td>${s.accessed}</td></tr></tbody></table>
+      <p style="color:var(--gris);font-size:12px;margin-top:10px">${s.note||'Fuente registrada en el archivo documental.'}</p>
+    </div>`;
+  }
+
+  // ---------- CRONOLOGÍA ----------
+  function renderTimeline(){
+      const items=[
+        {f:'1848–1917',t:'Antecedentes',tipo:'HISTÓRICA',txt:'Antecedentes financieros/diplomáticos y colonización temprana de Palestina.'},
+        {f:'1917–1947',t:'Mandato Británico',tipo:'HISTÓRICA',txt:'Mandato británico sobre Palestina; auge del sionismo político organizado.'},
+        {f:'1948',t:'Establecimiento de Israel',tipo:'HISTÓRICA',txt:'Declaración del Estado de Israel y primera guerra árabe-israelí.'},
+        {f:'1967',t:'Ocupación y asentamientos',tipo:'HISTÓRICA',txt:'Inicio de la ocupación de Cisjordania, Gaza y otros territorios.'},
+        {f:'1996',t:'Plan Clean Break',tipo:'HISTÓRICA',txt:'Documento de estrategia de neoconservadores para Netanyahu (Perle/Feith/Wurmser).'},
+        {f:'2020–2026',t:'Etapa digital / IA / SEO',tipo:'HISTÓRICA',txt:'Propaganda y narrativa audiovisual; caso FARA 7649 orienta SEO para conversaciones GPT.'},
+        {f:'2026-09-03',t:'Caso FARA documentado',tipo:'DOCUMENTAL',txt:'Ficha probatoria del caso FARA 7649 Clock Tower X LLC en el expediente.'}
+      ];
+      // eventos reales del modelo como ítems DOCUMENTALES pulsables
+      (DB.events||[]).forEach(e=>{
+        const fecha=(e.date||e.fecha||'?');
+        items.push({f:String(fecha),t:e.name,tipo:'EVENTO',txt:(e.desc||e.descripcion_corta||''),id:e.id});
+      });
+      // ordenar por fecha aproximada
+      const conF=v=>String(v.f).replace(/\D/g,'').slice(0,4)||'9999';
+      items.sort((a,b)=>Number(conF(a))-Number(conF(b)));
+      document.getElementById('app').innerHTML=`<div class="panel">
+        <h2>🗓️ Cronología doble</h2>
+        <p style="color:var(--gris);font-size:13px;margin-bottom:16px"><b>Histórica</b> (qué ocurrió) + <b>Documental/Eventos</b> (cuándo apareció la evidencia). Clave para estudiar la evolución de la narrativa.</p>
+        <div class="timeline">
+          ${items.map(i=>`<div class="titem" style="${i.id?'cursor:pointer':''}" onclick="${i.id?`abrirFicha('${i.id}')`:''}"><div class="fecha">${i.f}</div><div class="tipo">${i.tipo}</div><div style="font-weight:600">${i.t}</div><div style="color:var(--gris);font-size:13px">${i.txt}</div></div>`).join('')}
+        </div></div>`;;
+    // ---- VISUALIZACIONES DE CRONOLOGIA (generadas) ----
+    try{var appTl=document.getElementById('app');
+      appTl.innerHTML+='<div style="margin-top:30px;border-top:2px solid #C79227;padding-top:12px"><h3>🖼️ Líneas de tiempo generadas</h3>'
+      +'<div style="margin:12px 0"><b style="color:#C79227">Línea 2015-2026</b><br><img src="/cronos/img/ag_linea_tiempo_1.png" style="width:100%;height:auto;max-height:980px;object-fit:contain;border:1px solid #C79227;border-radius:8px" onclick="window.open(this.src)"></div>'
+      +'<div style="margin:12px 0"><b style="color:#C79227">Línea 2017-2026</b><br><img src="/cronos/img/ag_linea_tiempo_2.png" style="width:100%;height:auto;max-height:980px;object-fit:contain;border:1px solid #C79227;border-radius:8px" onclick="window.open(this.src)"></div></div>';
+    }catch(e){}
+  }
+window._GOBIERNOS = { 'ESTADOS UNIDOS':[{cargo:'Presidente',nombre:'Donald Trump',foto:'https://upload.wikimedia.org/wikipedia/commons/thumb/1/16/Official_Presidential_Portrait_of_President_Donald_J._Trump_%282025%29.jpg/330px-Official_Presidential_Portrait_of_President_Donald_J._Trump_%282025%29.jpg'},{cargo:'Vicepresidente',nombre:'JD Vance',foto:'https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/March_2026_Official_Vice_Presidential_Portrait_of_JD_Vance_%28medium_crop%29_%282%29.jpg/330px-March_2026_Official_Vice_Presidential_Portrait_of_JD_Vance_%28medium_crop%29_%282%29.jpg'},{cargo:'Secretario de Estado',nombre:'Marco Rubio',foto:'https://upload.wikimedia.org/wikipedia/commons/thumb/f/f7/Official_portrait_of_Secretary_Marco_Rubio_%28cropped%29%282%29.jpg/330px-Official_portrait_of_Secretary_Marco_Rubio_%28cropped%29%282%29.jpg'},{cargo:'Secretario de Defensa',nombre:'Pete Hegseth',foto:'https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Pete_Hegseth_Official_Portrait.jpg/330px-Pete_Hegseth_Official_Portrait.jpg'},{cargo:'Secretario del Tesoro',nombre:'Scott Bessent',foto:'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d6/Official_portrait_of_Treasury_Secretary_Scott_Bessent_%28borderless%29_%28cropped%29.jpg/330px-Official_portrait_of_Treasury_Secretary_Scott_Bessent_%28borderless%29_%28cropped%29.jpg'},{cargo:'Fiscal General',nombre:'Pam Bondi',foto:'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Pam_Bondi_official_portrait_%28cropped%29%282%29.jpg/330px-Pam_Bondi_official_portrait_%28cropped%29%282%29.jpg'}],'CHINA':[{cargo:'Presidente',nombre:'Xi Jinping',foto:'https://upload.wikimedia.org/wikipedia/commons/thumb/d/dc/Prime_Minister_Keir_Starmer_visits_China_%2855066713683%29_%28cropped%2Bangle%29.jpg/330px-Prime_Minister_Keir_Starmer_visits_China_%2855066713683%29_%28cropped%2Bangle%29.jpg'},{cargo:'Premier',nombre:'Li Qiang',foto:'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Li_Qiang_meets_Keir_Starmer_Jan_2026.jpg/330px-Li_Qiang_meets_Keir_Starmer_Jan_2026.jpg'},{cargo:'Ministro RREE',nombre:'Wang Yi',foto:'https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/Jake_Sullivan_and_Wang_Yi_met_in_Bangkok_%282024%29_%28cropped%29.jpg/330px-Jake_Sullivan_and_Wang_Yi_met_in_Bangkok_%282024%29_%28cropped%29.jpg'}],'RUSIA':[{cargo:'Presidente',nombre:'Vladimir Putin',foto:'https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/%D0%92%D0%BB%D0%B0%D0%B4%D0%B8%D0%BC%D0%B8%D1%80_%D0%9F%D1%83%D1%82%D0%B8%D0%BD_%2808-03-2024%29_%28cropped%29_%28higher_res%29_2.jpg/330px-%D0%92%D0%BB%D0%B0%D0%B4%D0%B8%D0%BC%D0%B8%D1%80_%D0%9F%D1%83%D1%82%D0%B8%D0%BD_%2808-03-2024%29_%28cropped%29_%28higher_res%29_2.jpg'},{cargo:'Primer Ministro',nombre:'Mikhail Mishustin',foto:'https://upload.wikimedia.org/wikipedia/commons/thumb/9/9f/Mikhail_Mishustin_%282026-02-25%29.jpg/330px-Mikhail_Mishustin_%282026-02-25%29.jpg'},{cargo:'Ministro RREE',nombre:'Sergey Lavrov',foto:'https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/%D0%A1%D0%B5%D1%80%D0%B3%D0%B5%D0%B9_%D0%9B%D0%B0%D0%B2%D1%80%D0%BE%D0%B2_%2821-01-2022%29_%28cropped%29_%282%29.jpg/330px-%D0%A1%D0%B5%D1%80%D0%B3%D0%B5%D0%B9_%D0%9B%D0%B0%D0%B2%D1%80%D0%BE%D0%B2_%2821-01-2022%29_%28cropped%29_%282%29.jpg'}],'ISRAEL':[{cargo:'Primer Ministro',nombre:'Benjamin Netanyahu',foto:'https://thumb.wikimedia.org/wikipedia/commons/thumb/7/74/Benjamin_Netanyahu%2C_February_2023.jpg/500px-Benjamin_Netanyahu%2C_February_2023.jpg'},{cargo:'Ministro Defensa',nombre:'Israel Katz',foto:'https://thumb.wikimedia.org/wikipedia/commons/thumb/a/af/Israel_Katz_on_July_3%2C_2024_%28cropped%29.jpg/500px-Israel_Katz_on_July_3%2C_2024_%28cropped%29.jpg'},{cargo:'Ministro RREE',nombre:'Gideon Sa\'ar',foto:'https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d1/Gideon_Saar_new.jpg/500px-Gideon_Saar_new.jpg'}],'MÉXICO':[{cargo:'Presidenta',nombre:'Claudia Sheinbaum',foto:'https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e4/President_Sheinbaum_Pardo_in_2026_%28cropped%29.jpg/500px-President_Sheinbaum_Pardo_in_2026_%28cropped%29.jpg'},{cargo:'Sec. RREE',nombre:'Roberto Velasco Álvarez',foto:'https://thumb.wikimedia.org/wikipedia/commons/thumb/7/79/Roberto_Velasco_%C3%81lvarez_in_March_2024.jpg/500px-Roberto_Velasco_%C3%81lvarez_in_March_2024.jpg'}] };
+
+window._ORGANIGRAMA={"ESTADOS UNIDOS": [{"nombre": "Donald Trump", "cargo": "Presidente", "per": "PER-000002"}, {"nombre": "JD Vance", "cargo": "Vicepresidente", "per": "PER-000046"}, {"nombre": "Marco Rubio", "cargo": "Secretario de Estado", "per": "PER-000025"}, {"nombre": "Pete Hegseth", "cargo": "Secretario de Defensa", "per": "PER-000089"}, {"nombre": "Scott Bessent", "cargo": "Secretario del Tesoro", "per": "PER-000090"}, {"nombre": "Pam Bondi", "cargo": "Fiscal General", "per": "PER-000091"}], "CHINA": [{"nombre": "Xi Jinping", "cargo": "Presidente / SG PCCh", "per": "PER-000092"}, {"nombre": "Li Qiang", "cargo": "Premier", "per": "PER-000093"}, {"nombre": "Wang Yi", "cargo": "Canciller", "per": "PER-000094"}], "RUSIA": [{"nombre": "Vladimir Putin", "cargo": "Presidente", "per": "PER-000095"}, {"nombre": "Mikhail Mishustin", "cargo": "Primer Ministro", "per": "PER-000096"}, {"nombre": "Sergey Lavrov", "cargo": "Canciller", "per": "PER-000097"}], "ISRAEL": [{"nombre": "Benjamin Netanyahu", "cargo": "Primer Ministro", "per": "PER-000001"}, {"nombre": "Israel Katz", "cargo": "Ministro de Defensa", "per": "PER-000098"}, {"nombre": "Gideon Sa'ar", "cargo": "Ministro RREE", "per": "PER-000099"}], "MEXICO": [{"nombre": "Claudia Sheinbaum", "cargo": "Presidenta", "per": "PER-000100"}, {"nombre": "Roberto Velasco Álvarez", "cargo": "Secretario RREE", "per": "PER-000101"}]};
+window.CRONOS_OPEN_FICHA=function(pid){ if(typeof fichaPersona==='function'){fichaPersona(pid);} };
+
+function _orgFoto(nombre){
+  // mapa nombre -> archivo de foto en /cronos/img
+  var F={
+    "Donald Trump":"donald_trump.jpg","JD Vance":"jd_vance.jpg","Marco Rubio":"marco_rubio.jpg",
+    "Pete Hegseth":"pete_hegseth.jpg","Scott Bessent":"scott_bessent.jpg","Pam Bondi":"pam_bondi.jpg",
+    "Xi Jinping":"xi_jinping.jpg","Li Qiang":"li_qiang.jpg","Wang Yi":"wang_yi.jpg",
+    "Vladimir Putin":"vladimir_putin.jpg","Mikhail Mishustin":"mikhail_mishustin.jpg","Sergey Lavrov":"sergey_lavrov.jpg",
+    "Benjamin Netanyahu":"benjamin_netanyahu.jpg","Israel Katz":"israel_katz.jpg","Gideon Sa'ar":"gideon_sa_ar.jpg",
+    "Claudia Sheinbaum":"claudia_sheinbaum.jpg","Roberto Velasco Álvarez":"roberto_velasco_alvarez.jpg"
+  };
+  return F[nombre]||null;
+}
+function renderOrganigrama(){
+  var O=typeof window._ORGANIGRAMA==='object'?window._ORGANIGRAMA:{};
+  var paises=Object.keys(O);
+  if(!paises.length) paises=['ESTADOS UNIDOS','CHINA','RUSIA','ISRAEL','MEXICO'];
+  function tarjeta(m, esJefe){
+    var nom=m.nombre,cargo=m.cargo,per=m.per||null;
+    var foto=_orgFoto(nom);
+    var img=foto
+      ?'<img src="/cronos/img/'+foto+'" style="width:72px;height:72px;border-radius:50%;object-fit:cover;border:2px solid var(--dorado);display:block;margin:0 auto 6px;cursor:pointer">'
+      :'<div style="width:72px;height:72px;border-radius:50%;background:var(--dorado);color:var(--azul-osc);font-weight:800;font-size:28px;display:flex;align-items:center;justify-content:center;margin:0 auto 6px">'+(nom[0]||'?')+'</div>';
+    var onclick=per?'onclick="window.CRONOS_OPEN_FICHA(\''+per+'\')" title="Clic para ver ficha de '+nom+'"':'';
+    var tam=esJefe?{w:'200px',font:'16px'}:{w:'170px',font:'13px'};
+    return '<div style="width:'+tam.w+';background:var(--azul-osc);border:2px solid '+(esJefe?'#C79227':'#3b4a63')+';border-radius:12px;padding:14px 10px;text-align:center;cursor:pointer;transition:transform .15s" '+onclick+' onmouseover="this.style.transform=\'scale(1.05)\';this.style.borderColor=\'#C79227\'" onmouseout="this.style.transform=\'scale(1)\';this.style.borderColor='+(esJefe?"'#C79227'":"'#3b4a63'")+'" >'
+      +img
+      +'<div style="font-weight:800;color:#fff;font-size:'+tam.font+';line-height:1.1">'+nom+'</div>'
+      +'<div style="color:var(--gris);font-size:11px;margin-top:3px">'+cargo+'</div>'
+      +'</div>';
+  }
+  var h='<div class="panel"><h2>🏛️ Organigramas de Gobiernos</h2>'
+    +'<p style="color:var(--gris);font-size:13px;margin-bottom:6px">Archivos de Guerra · Septiembre 2026. Selecciona un país y haz clic sobre un integrante para abrir su ficha.</p>';
+  // select/botones de pais
+  h+='<div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px">';
+  paises.forEach(function(pn){
+    h+='<button onclick="window._ORGP=this.dataset.p;renderOrganigrama()" data-p="'+pn+'" style="background:var(--azul-osc);color:#fff;border:1px solid var(--dorado);border-radius:8px;padding:8px 14px;cursor:pointer;font-weight:600">'+pn+'</button>';
+  });
+  h+='</div>';
+  // pais seleccionado
+  var sel=window._ORGP||paises[0];
+  var miembros=O[sel]||[];
+  h+='<h3 style="color:#C79227;margin:6px 0 4px">'+sel+'</h3>';
+  if(miembros.length){
+    // jefe arriba (primero), gabinete abajo en fila
+    h+='<div style="display:flex;justify-content:center;margin-bottom:18px">'+tarjeta(miembros[0],true)+'</div>';
+    if(miembros.length>1){
+      h+='<div style="border-top:2px solid #3b4a63;padding-top:16px;display:flex;gap:12px;flex-wrap:wrap;justify-content:center">';
+      for(var k=1;k<miembros.length;k++) h+=tarjeta(miembros[k],false);
+      h+='</div>';
+    }
+  } else {
+    h+='<p style="color:var(--gris)">Sin datos de organigrama para '+sel+'.</p>';
+  }
+  document.getElementById('app').innerHTML=h+'</div>';
+}
+window.renderOrganigrama=renderOrganigrama;
+window._orgFoto=_orgFoto;
+
+function renderGrafo(){
+  var cont=document.getElementById('app');
+  // --- imagen de red generada (referencia) arriba ---
+  var redImg='';
+  try{redImg='<div style="margin:10px 0;background:var(--azul-osc);border:1px solid #C79227;border-radius:10px;padding:10px">'
+    +'<div style="color:#C79227;font-weight:700">🗺️ Red de relaciones (mapa generado del expediente · Archivos de Guerra)</div>'
+    +'<select id="redSelect" onchange="var s=document.getElementById(\'redImg\');s.src=\'/cronos/img/ag_\'+this.value+\'.png\'" style="margin-bottom:6px;background:#0d211b;color:#F7F3E9;border:1px solid #C79227;border-radius:6px;padding:4px">'
+    +'<option value="red_principal">Red principal</option><option value="red_politica">Red política</option><option value="red_completa">Red completa</option><option value="red_mundo_ejemplo">Red mundo (ejemplo)</option></select><br>'
+    +'<img id="redImg" src="/cronos/img/ag_red_principal.png" style="width:100%;max-height:980px;object-fit:contain;border-radius:6px" onclick="window.open(this.src)"></div>';}catch(e){}
+  // --- barra de capas ---
+  var capasBarra='<div style="display:flex;gap:4px;flex-wrap:wrap;margin:8px 0;justify-content:flex-start">'
+    +'<button class="capa-b" data-c="TODAS" onclick="filtrarCapa(\'TODAS\')" style="background:#C79227;color:#0d211b;font-weight:700;border:0;border-radius:6px;padding:4px 10px;cursor:pointer;margin:2px">TODAS</button>'
+    +'<button class="capa-b" data-c="LOBBYING" onclick="filtrarCapa(\'LOBBYING\')" style="background:var(--azul-osc);color:#fff;border:1px solid var(--dorado);border-radius:6px;padding:4px 10px;cursor:pointer;margin:2px">Lobby</button>'
+    +'<button class="capa-b" data-c="REUNION" onclick="filtrarCapa(\'REUNION\')" style="background:var(--azul-osc);color:#fff;border:1px solid var(--dorado);border-radius:6px;padding:4px 10px;cursor:pointer;margin:2px">Reunión</button>'
+    +'<button class="capa-b" data-c="CONTRATO" onclick="filtrarCapa(\'CONTRATO\')" style="background:var(--azul-osc);color:#fff;border:1px solid var(--dorado);border-radius:6px;padding:4px 10px;cursor:pointer;margin:2px">Contrato</button>'
+    +'<button class="capa-b" data-c="INSTITUCIONAL" onclick="filtrarCapa(\'INSTITUCIONAL\')" style="background:var(--azul-osc);color:#fff;border:1px solid var(--dorado);border-radius:6px;padding:4px 10px;cursor:pointer;margin:2px">Institucional</button>'
+    +'<button class="capa-b" data-c="ALIANZA" onclick="filtrarCapa(\'ALIANZA\')" style="background:var(--azul-osc);color:#fff;border:1px solid var(--dorado);border-radius:6px;padding:4px 10px;cursor:pointer;margin:2px">Alianza</button>'
+    +'<button class="capa-b" data-c="SECUENCIA" onclick="filtrarCapa(\'SECUENCIA\')" style="background:var(--azul-osc);color:#fff;border:1px solid var(--dorado);border-radius:6px;padding:4px 10px;cursor:pointer;margin:2px">Secuencia</button></div>';
+  cont.innerHTML='<div class="panel"><h2>🕸️ Grafo de relaciones — ARCHIVOS DE GUERRA</h2>'
+    +'<p style="color:var(--gris);font-size:12px;margin:8px 0">Red documental. Línea <b>sólida</b>=Confirmada · <b>discontinua</b>=Probable · <b>punteada</b>=Alegada/No verificada. Clic en un nodo abre su ficha. Clic en arista=evidencia/fuente.</p>'
+    +redImg+capasBarra
+    +'<div id="cy" style="width:100%;height:540px;background:var(--azul-osc);border-radius:10px"></div>'
+    +'<div id="centralidad" style="margin-top:14px"></div></div>';
+  var tip={};
+  DB.persons.forEach(function(p){tip[p.id]={label:p.name,t:'PER'}});
+  DB.orgs.forEach(function(o){tip[o.id]={label:o.name,t:'ORG'}});
+  DB.videos.forEach(function(v){if(v&&v.id)tip[v.id]={label:(v.title||v.id||v.tweet||'video')+'',t:'VID'};});
+  DB.claims.forEach(function(c){if(c&&c.id)tip[c.id]={label:((c.text||c.claim_text||c.id)+'').slice(0,38),t:'CLM'};});
+  DB.events.forEach(function(e){if(e&&e.id)tip[e.id]={label:(e.name||e.id||'evento')+'',t:'EVT'};});
+  var capa2color={POLITICO:'#3b82f6',GOBIERNO:'#3b82f6',INSTITUCIONAL:'#3b82f6',LOBBYING:'#eab308',LOBBY:'#eab308',ECONOMICO:'#22c55e',FINANCIERO:'#22c55e',MILITAR:'#ef4444',EJERCITO:'#ef4444',ARMADA:'#ef4444',INTELIGENCIA:'#171717',MEDIO:'#f97316',ONG:'#14b8a6',THINK_TANK:'#14b8a6',LABORAL:'#8b5cf6',REUNION:'#8b5cf6',CONTRATO:'#eab308',EMPRESA:'#6b7280',CONFLICTO:'#dc2626',RELIGION:'#a855f7'};
+  var cerLinea={CONFIRMADA:'solid',PROBABLE:'dashed',DISPUTADA:'dotted','NO VERIFICADA':'dotted'};
+  var nodes=[],edges=[],visto={};
+  DB.rels.forEach(function(r,i){
+    var s=r.subject,o=r.object;if(!s||!o)return;
+    if(!visto[s]){visto[s]=1;var s2=tip[s]||{label:s,t:'PER'};nodes.push({data:{id:s,label:s2.label,capa:(r.capa||'')}});}
+    if(!visto[o]){visto[o]=1;var o2=tip[o]||{label:o,t:'ORG'};nodes.push({data:{id:o,label:o2.label,capa:(r.capa||'')}});}
+    var cer=r.certeza||'PROBABLE';
+    edges.push({data:{id:'e'+i,source:s,target:o,label:(r.tipo||r.predicate||''),evidencia:r.evidencia||'C',certeza:cer,fuente:r.fuente||'',tipo:(r.tipo||'')}});
+  });
+  function loadCy(cb){ if(window.cytoscape)return cb(); var sc=document.createElement('script');sc.src='https://cdn.jsdelivr.net/npm/cytoscape@3/dist/cytoscape.min.js';sc.onload=cb;document.head.appendChild(sc);}
+  loadCy(function(){
+    var cy=window._cyActual=cytoscape({container:document.getElementById('cy'),elements:{nodes:nodes,edges:edges},
+      style:[
+        {selector:'node',style:{'label':'data(label)','text-valign':'bottom','color':'#F7F3E9','background-color':'#C79227','text-wrap':'wrap','text-max-width':'100px','font-size':'10px','width':26,'height':26,'text-background-color':'#0d211b','text-background-opacity':0.7,'text-background-padding':'3px','border-width':1}},
+        {selector:'edge',style:{'width':2,'line-color':'#94a3b8','target-arrow-shape':'triangle','curve-style':'bezier','label':'data(label)','font-size':'9px','color':'#D8D0C2','text-background-color':'#0d211b','text-background-opacity':0.8,'text-background-padding':'2px'}},
+        {selector:'edge.solid',style:{'line-style':'solid'}},{selector:'edge.dashed',style:{'line-style':'dashed'}},{selector:'edge.dotted',style:{'line-style':'dotted'}}
+      ], layout:{name:'cose',animate:true}});
+    cy.edges().forEach(function(el){var d=el.data();var ls=cerLinea[d.certeza]||'solid';el.addClass(ls);
+      el.style('line-color',d.certeza==='CONFIRMADA'?'#22c55e':(d.certeza==='PROBABLE'?'#f59e0b':'#ef4444'));
+      el.style('target-arrow-color',el.style('line-color'));});
+    cy.nodes().forEach(function(el){var c=(el.data('capa')||'').toUpperCase();var col=capa2color[c]||'#C79227';el.style('background-color',col);});
+    cy.on('tap','node',function(evt){var id=evt.target.id();if(id.indexOf('PER-')===0)fichaPersona(id);else if(id.indexOf('ORG-')===0)fichaOrg(id);});
+    cy.on('tap','edge',function(evt){var d=evt.target.data();alert('Relación: '+d.label+'\nEvidencia: '+d.evidencia+'\nCerteza: '+d.certeza+'\nFuente: '+d.fuente);});
+    // ---- CENTRALIDAD ----
+    var deg={},btw={};
+    cy.nodes().forEach(function(n){deg[n.id()]=0;});
+    cy.edges().forEach(function(e){var s=e.source().id(),t=e.target().id();deg[s]=(deg[s]||0)+1;deg[t]=(deg[t]||0)+1;});
+    var ady={};cy.nodes().forEach(function(n){ady[n.id()]=[];});
+    cy.edges().forEach(function(e){var s=e.source().id(),t=e.target().id();if(ady[s].indexOf(t)<0)ady[s].push(t);if(ady[t].indexOf(s)<0)ady[t].push(s);});
+    cy.nodes().forEach(function(n){btw[n.id()]=0;});
+    cy.nodes().forEach(function(n){var a=ady[n.id()];for(var x=0;x<a.length;x++)for(var y=x+1;y<a.length;y++){if(ady[a[x]].indexOf(a[y])<0)btw[n.id()]++;}});
+    var ids=Object.keys(deg);ids.sort(function(a,b){return (btw[b]||0)-(btw[a]||0)||(deg[b]||0)-(deg[a]||0);});
+    var top=ids.slice(0,8);
+    var h='<h4>📊 Centralidad (¿qué nodos conectan más?)</h4><p style="color:var(--gris);font-size:11px;margin:6px 0"><b>Importante:</b> la centralidad mide qué tan estructuralmente central es un nodo en la red, <b>NO equivale a poder</b>.</p><table><thead><tr><th>#</th><th>Nodo</th><th>Conexiones</th><th>Puentes</th></tr></thead><tbody>';
+    top.forEach(function(id,i){var nom=(tip[id]&&tip[id].label)||id;h+='<tr style="cursor:pointer" onclick="'+(id.indexOf('PER-')===0?'fichaPersona':'fichaOrg')+'(\''+id+'\')"><td>'+(i+1)+'</td><td>'+nom+'</td><td>'+(deg[id]||0)+'</td><td>'+(btw[id]||0)+'</td></tr>';});
+    h+='</tbody></table>';
+    document.getElementById('centralidad').innerHTML=h;
+  });
+}
+function filtrarCapa(capa){
+  var cy=window._cyActual; if(!cy)return;
+  // mapear la etiqueta de boton a los tipos reales que existen
+  var mapa={
+    'TODAS':null,
+    'LOBBYING':['LOBBY_SOBRE','LOBBYING','LOBBY'],
+    'REUNION':['SE_REUNIO_CON','REUNION'],
+    'CONTRATO':['REGISTRADA_BAJO_FARA','CONTRATO','TIENE_CONTRATO_CON'],
+    'INSTITUCIONAL':['DIRIGE','INSTITUCIONAL','APOYA_PUBLICAMENTE'],
+    'ALIANZA':['ALIANZA','COOPERACION_MILITAR'],
+    'SECUENCIA':['APARECE_EN','MENCIONA','PRODUCE_AFIRMACION','REALIZA_AFIRMACION','DECLARACION']
+  };
+  var tipos=mapa[capa]||null;
+  cy.nodes().forEach(function(n){n.style('opacity',1);});
+  var visibles=0;
+  cy.edges().forEach(function(e){
+    if(tipos===null){e.style('opacity',1);e.style('width',2);visibles++;}
+    else{var t=(e.data('tipo')||'').toUpperCase();var match=tipos.indexOf(t)>=0;
+      e.style('opacity',match?1:0.12);e.style('width',match?2.5:1);
+      if(match)visibles++;
+      // enlazar nodos de aristas no visibles
+    }
+  });
+  // atenuar nodos aislados por el filtro
+  var gradoF={};
+  cy.edges().forEach(function(e){if(e.style('opacity')>0.5){var s=e.source().id(),t=e.target().id();gradoF[s]=1;gradoF[t]=1;}});
+  cy.nodes().forEach(function(n){if(!(n.id() in gradoF))n.style('opacity',tipos===null?1:0.15);});
+  [].slice.call(document.querySelectorAll('.capa-b')).forEach(function(b){
+    var act=b.getAttribute('data-c')===capa;
+    b.style.background=act?'#C79227':'var(--azul-osc)';b.style.color=act?'#0d211b':'#fff';
+  });
+  // aviso si no hay relaciones de esa capa
+  var aviso=document.getElementById('capa-nota');if(!aviso&&window._cyActual){var newd=document.createElement('div');newd.id='capa-nota';newd.style.cssText='margin:6px 0;font-size:12px;color:#D8D0C2';document.getElementById('cy').parentElement.appendChild(newd);aviso=document.getElementById('capa-nota');}
+  if(aviso)aviso.innerHTML=(tipos===null)?('' ):('<b>'+capa+'</b>: '+visibles+' relaciones');
+}function renderGobierno(pais){
+  var lista=window._GOBIERNOS[pais]||[];
+  var box=document.getElementById('g-tarjetas'); if(!box)return;
+  var h='<h3 style="color:var(--dorado);margin:6px 0">'+pais+'</h3><div style="display:flex;gap:14px;flex-wrap:wrap">';
+  h+=lista.map(function(m){var ini=(m.nombre||'?')[0];
+    return '<div style="background:var(--azul-osc);border:1px solid var(--dorado);border-radius:10px;padding:14px 18px;text-align:center;min-width:160px">'
+      +'<div style="width:74px;height:74px;border-radius:50%;background:var(--dorado);color:var(--azul-osc);font-weight:800;font-size:30px;display:flex;align-items:center;justify-content:center;margin:0 auto 8px">'+ini+'</div>'
+      +'<div style="font-weight:800;color:#fff">'+m.nombre+'</div>'
+      +'<div style="font-size:11px;color:var(--dorado)">'+m.cargo+'</div>'
+      +'<div style="font-size:10px;color:var(--gris)">'+((m.info||m.cargo)||'')+'</div></div>';}).join('');
+  h+='</div>';
+  box.innerHTML=h;
+}
+
+  // ---------- MAPA MUNDIAL (FASE 7) ----------
+  function renderMapa(){
+    const marcadores=[
+      {x:540,y:330,n:'Gaza / Israel',e:'Ofensiva y declaraciones',c:'EVT-000001'},
+      {x:285,y:250,n:'EE. UU.',e:'Debate antisemitismo / lobby',c:'EVT-000002'},
+      {x:625,y:390,n:'México (Pegasus)',e:'Ciberespionaje documentado',c:''}
+    ];
+    document.getElementById('app').innerHTML=`
+      <div class="panel">
+        <h2>🌍 Mapa mundial de acontecimientos</h2>
+        <p style="color:var(--gris);font-size:13px;margin-bottom:12px">Geolocalización orientativa. Coordenadas exactas solo con evidencia verificada (principio §16).</p>
+        <svg viewBox="0 0 800 420" width="100%" style="background:#0a1628;border-radius:10px;border:1px solid var(--border)">
+          <g fill="#1a2a45" stroke="#26334d">
+            <ellipse cx="250" cy="225" rx="170" ry="120"/>
+            <ellipse cx="470" cy="170" rx="160" ry="90"/>
+            <ellipse cx="650" cy="300" rx="90" ry="75"/>
+            <ellipse cx="740" cy="190" rx="45" ry="30"/>
+          </g>
+          ${marcadores.map(m=>`<g onclick="${m.c?'abrirFicha(\''+m.c+'\')':''}" style="cursor:pointer">
+            <circle cx="${m.x}" cy="${m.y}" r="9" fill="#ef4444" stroke="#fff" stroke-width="2"/>
+            <circle cx="${m.x}" cy="${m.y}" r="14" fill="#ef4444" opacity=".25"/>
+            <text x="${m.x+16}" y="${m.y-8}" fill="#fff" font-size="11" font-weight="700">${m.n}</text>
+            <text x="${m.x+16}" y="${m.y+6}" fill="#8fa3bf" font-size="9">${m.e}</text>
+          </g>`).join('')}
+        </svg>
+        <p style="color:var(--gris);font-size:11px;margin-top:10px">Mapa esquemático (continentes aproximados). Los eventos se geolocalizan con precisión solo cuando hay evidencia verificada.</p>
+      </div>`;
+  }
+
+  // ---------- FASE 8 · ANÁLISIS AUDIOVISUAL ----------
+  function renderAnalisis(){
+    const clases=[
+      {c:'A',n:'Original sin alteraciones relevantes',color:'var(--verde)'},
+      {c:'B',n:'Edición convencional',color:'#8fa3bf'},
+      {c:'C',n:'Edición que altera contexto',color:'var(--ambar)'},
+      {c:'D',n:'Manipulación audiovisual',color:'var(--rojo)'},
+      {c:'E',n:'Generación sintética/IA probable',color:'var(--rojo)'},
+      {c:'F',n:'Generación sintética/IA confirmada',color:'var(--rojo)'},
+      {c:'U',n:'Indeterminado',color:'var(--gris)'}
+    ];
+    const checklist=['Cortes y saltos','Cambios de audio','Sincronización labial','Clonación de voz','Deepfake / rostros','Frames inconsistentes','Sombras / reflejos','Metadatos / compresión','Re-encoding','Subtítulos agregados'];
+    document.getElementById('app').innerHTML=`
+      <div class="panel">
+        <h2>🔬 Análisis audiovisual (FASE 8)</h2>
+        <p style="color:var(--gris);font-size:13px;margin-bottom:16px">Clasificación de manipulación por video. <b>Un detector de IA nunca prueba por sí solo autenticidad o falsificación.</b></p>
+        <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px">
+          ${clases.map(x=>`<span class="chip" style="border-color:${x.color};color:${x.color}"><b>${x.c}</b> — ${x.n}</span>`).join('')}
+        </div>
+        <h3>Checklist forense aplicable a cada video</h3>
+        <div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:20px">
+          ${checklist.map(c=>`<span class="chip">☑️ ${c}</span>`).join('')}
+        </div>
+        <h3>Clasificación actual de los videos en el archivo</h3>
+        <table><thead><tr><th>Video</th><th>Clase</th><th>Certeza</th></tr></thead><tbody>
+          ${DB.videos.map(v=>`<tr style="cursor:pointer" onclick="abrirFicha('${v.id}')"><td>${v.title}</td><td><span class="badge b-doc">${v.manipulation||'U'}</span></td><td>${certezaBadge(v.certainty)}</td></tr>`).join('')}
+        </tbody></table>
+        <p style="color:var(--gris);font-size:12px;margin-top:12px">Registro de herramientas y parámetros pendiente por video (FASE 8 avanzada).</p>
+      </div>`;
+  }
+
+  // ---------- FASE 9 · INGESTA AUTOMÁTICA (la IA propone, nunca concluye) ----------
+  function renderIngesta(){
+    document.getElementById('app').innerHTML=`
+      <div class="panel">
+        <h2>📥 Ingesta automática (FASE 9)</h2>
+        <p style="color:var(--gris);font-size:13px;margin-bottom:12px">Pega una URL y el sistema <b>propone</b> una ficha preliminar. La IA propone, el humano valida. Nunca convierte una inferencia en hecho.</p>
+        <div style="display:flex;gap:8px;max-width:620px">
+          <input id="urlIngesta" placeholder="https://x.com/usuario/status/… o https://youtube.com/…" style="flex:1;background:var(--panel2);border:1px solid var(--border);border-radius:8px;padding:10px 12px;color:var(--texto)">
+          <button class="btn" onclick="ingestar()">Proponer</button>
+        </div>
+        <div id="resultadoIngesta" style="margin-top:16px"></div>
+      </div>`;
+  }
+  function ingestar(){
+  var parteA='<div class="panel"><h2>📥 INGESTA — ARCHIVOS DE GUERRA</h2>'
+    +'<p style="color:var(--gris);font-size:12px;margin:8px 0"><b>Protocolo:</b> pega material en bruto (notas, nombres, capturas, enlaces, transcripciones) y pulsa INCORPORAR. Yo lo convierto en registros estructurados <b>sin inventar</b>: lo que falte quedará como "NO DISPONIBLE EN EL ARCHIVO".</p>'
+    +'<textarea id="ingestaTexto" rows="7" style="width:100%;box-sizing:border-box;border:1px solid #C79227;border-radius:8px;background:#0d211b;color:#F7F3E9;padding:10px;font-family:inherit" placeholder="INCORPORAR — Lote 001\nTema: AIPAC / Congreso\nPersona: Fulano\nCargo: Senador\nOrganización: X\nDato que encontré: ...\nFuente: ...\nFecha: ...\nObservación: ..."></textarea>'
+    +'<div style="display:flex;gap:8px;margin:10px 0;flex-wrap:wrap">'
+    +'<input id="ingestaUrl" placeholder="O pega una URL (X/YouTube) para fichar" style="flex:1;min-width:200px;border:1px solid #C79227;border-radius:6px;background:#0d211b;color:#F7F3E9;padding:8px">'
+    +'<button onclick="incorporar()" style="background:#C79227;color:#0d211b;font-weight:800;border:0;border-radius:8px;padding:9px 16px;cursor:pointer">INCORPORAR ➜</button></div>'
+    +'<div id="resultadoIngesta"></div></div>';
+  document.getElementById('app').innerHTML=parteA;
+  var urlVal=(document.getElementById('urlIngesta')||{}).value;
+  if(urlVal){document.getElementById('ingestaUrl').value=urlVal;}
+}
+function incorporar(){
+  var texto=document.getElementById('ingestaTexto').value.trim();
+  var url=document.getElementById('ingestaUrl').value.trim();
+  var out=document.getElementById('resultadoIngesta');
+  var reporte=[];
+  // --- procesar MATERIAL EN BRUTO (texto) ---
+  var actores=[],relaciones=[],fuentes=[],eventos=[],contradicciones=[];
+  var registros=[];
+  if(texto){
+    var lineas=texto.split(/\n+/);
+    var actual={};
+    lineas.forEach(function(l){
+      l=l.trim(); if(!l)return;
+      var m;
+      if(m=l.match(/^INCORPORAR/i)){ /* inicia lote */ }
+      else if(m=l.match(/^Tema:\s*(.+)/i)){actual.tema=m[1];}
+      else if(m=l.match(/^Persona:\s*(.+)/i)){registros.push({tipo:'PER',val:m[1],n:'Persona'});
+        actores.push(m[1]);}
+      else if(m=l.match(/^Cargo:\s*(.+)/i)){if(actual.persona){actual.cargo=m[1];}}
+      else if(m=l.match(/^Organizaci[oó]n:\s*(.+)/i)){registros.push({tipo:'ORG',val:m[1],n:'Organizaci\u00f3n'});actores.push(m[1]);}
+      else if(m=l.match(/^Dato:\s*(.+)/i)){actual.dato=m[1];}
+      else if(m=l.match(/^Fuente:\s*(.+)/i)){fuentes.push(m[1]);actual.fuente=m[1];}
+      else if(m=l.match(/^Fecha:\s*(.+)/i)){actual.fecha=m[1];}
+      else if(m=l.match(/^Observaci[oó]n:\s*(.+)/i)){actual.obs=m[1];}
+      else { actual.persona=actual.persona||l; actores.push(l); if(actual.persona!==l && !actual.dato)actual.dato=l; }
+    });
+    // construir fichas de actores detectados con estado por defecto
+  }
+  // --- salida FASE 21 ---
+  var h='<h3 style="color:#C79227;margin:10px 0">📋 INFORME DE INCORPORACI\u00d3N</h3>';
+  h+='<table><tbody>';
+  h+='<tr><th>Actores nuevos</th><td>'+(actores.length||0)+'</td></tr>';
+  h+='<tr><th>Relaciones nuevas</th><td>'+(relaciones.length||0)+'</td></tr>';
+  h+='<tr><th>Fuentes</th><td>'+(fuentes.length||0)+'</td></tr>';
+  h+='</tbody></table>';
+  if(actores.length){
+    h+='<h4>👥 Actores detectados</h4><table><thead><tr><th>ID</th><th>Nombre</th><th>Tipo</th><th>Cargo</th><th>Verificación</th></tr></thead><tbody>';
+    actores.forEach(function(a,i){
+      var id='PER-'+(DB.persons.length+i+1);
+      h+='<tr><td>'+id+'</td><td>'+a+'</td><td>PERSONA</td><td>'+((actual.cargo)||'NO DISPONIBLE EN EL ARCHIVO ACTUAL')+'</td><td><span class="badge b-doc">HECHO DOCUMENTADO</span></td></tr>';
+    });
+    h+='</tbody></table>';
+  }
+  if(!actores.length && !url){h+='<div style="color:var(--gris);margin-top:10px">Sin material detectado. Pega texto en formato INCORPORAR o una URL.</div>';}
+  // video/url
+  if(url){registros.push({tipo:'URL',val:url,n:'URL'});}
+  h+='<p style="color:var(--gris);font-size:11px;margin-top:12px">Regla: cada flecha debe responder "¿qu\u00e9 evidencia demuestra esta conexi\u00f3n?". Lo no verificado queda como hip\u00f3tesis/alegaci\u00f3n, nunca hecho.</p>';
+  // listar registros crudos
+  if(registros.length){
+    h+='<h4>📦 Registros incorporados (bruto)</h4><ul style="font-size:12px;max-height:180px;overflow:auto">';
+    registros.slice(0,30).forEach(function(r){h+='<li>['+r.tipo+'] '+r.n+': <b>'+r.val+'</b></li>';});
+    h+='</ul>';
+  }
+  out.innerHTML=h;
+}
+function renderDashboard(){
+  var cont=document.getElementById('app');
+  var tip={};
+  DB.persons.forEach(function(p){tip[p.id]=p.name});DB.orgs.forEach(function(o){tip[o.id]=o.name});
+  DB.videos.forEach(function(v){if(v&&v.id)tip[v.id]=v.title||v.id;});
+  DB.claims.forEach(function(c){if(c&&c.id)tip[c.id]=(c.text||c.id);});
+  var rels=DB.rels||[];
+  var nombre=function(id){return tip[id]||id;};
+  // ---- utilidad formulario de consulta ----
+  cont.innerHTML='<div class="panel"><h2>📋 INVESTIGADOR — Consultas sobre el archivo</h2>'
+    +'<p style="color:var(--gris);font-size:12px;margin:8px 0">Consultas reales sobre <b>solo</b> el archivo (sin inventar). Regla de oro: cada hallazgo cita su evidencia.</p>'
+    +'<div style="margin:8px 0"><b style="color:#C79227">🔎 Consulta por relación:</b> <select id="consulta-tipo" style="background:var(--azul-osc);color:#F7F3E9;border:1px solid #C79227;border-radius:6px;padding:5px">'
+    +'<option value="DIRIGE">DIRIGE / LIDERA</option>'
+    +'<option value="LOBBY_SOBRE">LOBBY_SOBRE (influencia)</option>'
+    +'<option value="SE_REUNIO_CON">REUNIÓN documentada</option>'
+    +'<option value="REGISTRADA_BAJO_FARA">REGISTRO FARA (contratos/lobby)</option>'
+    +'<option value="APOYA_PUBLICAMENTE">APOYA PÚBLICAMENTE</option>'
+    +'<option value="APARECE_EN">APARECE EN VIDEO (evidencia)</option>'
+    +'<option value="TODAS">TODAS las relaciones</option></select>'
+    +' <button class="gbtn" onclick="ejecutarConsulta()">Consultar</button></div>'
+    +'<div id="consulta-resultado"><p style="color:var(--gris);font-size:12px">Elige un tipo de relación arriba y pulsa Consultar para ver quién se relaciona con quién según el archivo.</p></div>'
+    +'<div id="métricas-dash"></div>'
+    +'<div id="galeria-visual" style="margin-top:24px;border-top:2px solid #C79227;padding-top:14px"></div>'
+    +'</div>';
+  // --- metricas ---
+  var porCerteza={},grado={};
+  rels.forEach(function(r){porCerteza[r.certeza||'INDETERMINADA']=(porCerteza[r.certeza||'INDETERMINADA']||0)+1;if(r.subject)grado[r.subject]=(grado[r.subject]||0)+1;if(r.object)grado[r.object]=(grado[r.object]||0)+1;});
+  var top=Object.keys(grado).sort(function(a,b){return grado[b]-grado[a]}).slice(0,6);
+  var confAB=rels.filter(function(r){return /A|B/.test(r.evidencia||'')});
+  var m='<h4>📊 Resumen del archivo</h4><table style="font-size:12px"><tbody>'
+    +'<tr><th>Relaciones</th><td>'+rels.length+'</td></tr>'
+    +'<tr><th>Documentadas (evidencia A/B)</th><td>'+confAB.length+'</td></tr>'
+    +'<tr><th>Lobby + contratos + reuniones</th><td>'+rels.filter(function(r){return /LOBBY|FARA|REUNIO/.test(r.tipo||'')}).length+'</td></tr>'
+    +'<tr><th>Nodos más conectados</th><td>'+top.map(function(id){return nombre(id)+' ('+grado[id]+')';}).join(', ')+'</td></tr>'
+    +'</tbody></table>'
+    +'<h4 style="margin-top:10px">🎚️ Distribución por certeza</h4><table style="font-size:12px"><tbody>';
+  Object.keys(porCerteza).forEach(function(c){m+='<tr><th>'+c+'</th><td>'+porCerteza[c]+'</td></tr>';});
+  m+='</tbody></table>';
+  document.getElementById('métricas-dash').innerHTML=m;
+  // --- galeria de visualizaciones ---
+  var gal=[['ag_red_principal.png','Red de relaciones: Israel-Palestina · EUA'],
+    ['ag_red_completa.png','Red completa'],['ag_red_politica.png','Red política Israel ↔ EUA'],
+    ['ag_linea_tiempo_1.png','Línea de tiempo 2015-2026'],['ag_linea_tiempo_2.png','Línea de tiempo 2017-2026'],
+    ['ag_matriz_evidencia.png','Matriz de evidencia (116 relaciones)'],
+    ['ag_fara_pegasus.png','Caso FARA + NSO/Pegasus'],['ag_lobby_sionismo.png','Lobby y sionismo cristiano'],
+    ['ag_red_mundo_ejemplo.png','Ejemplo red global']];
+  var g='<h3>🖼️ Visualizaciones de Archivos de Guerra</h3>';
+  gal.forEach(function(x){g+='<div style="margin:12px 0;background:var(--azul-osc);border:1px solid #C79227;border-radius:10px;padding:8px"><b style="color:#C79227;font-size:12px">'+x[1]+'</b><br><img src="/cronos/img/'+x[0]+'" style="width:100%;max-height:980px;object-fit:contain;border-radius:6px" onclick="window.open(this.src)"></div>';});
+  document.getElementById('galeria-visual').innerHTML=g;
+}
+function ejecutarConsulta(){
+  var tipo=document.getElementById('consulta-tipo').value;
+  var rels=DB.rels||[];
+  var tip={};
+  DB.persons.forEach(function(p){tip[p.id]=p.name});DB.orgs.forEach(function(o){tip[o.id]=o.name});
+  DB.videos.forEach(function(v){if(v&&v.id)tip[v.id]=v.title||v.id;});
+  DB.claims.forEach(function(c){if(c&&c.id)tip[c.id]=(c.text||c.id);});
+  var nombre=function(id){return tip[id]||id;};
+  var res;
+  if(tipo==='TODAS') res=rels.slice();
+  else res=rels.filter(function(r){return (r.tipo||'')===tipo || (r.predicate||'').toUpperCase().indexOf(tipo.toLowerCase())>=0;});
+  var out=document.getElementById('consulta-resultado');
+  if(!res.length){out.innerHTML='<p style="color:#D8D0C2;font-size:12px">Sin relaciones de tipo <b>'+tipo+'</b> en el archivo (los datos existentes son de otros tipos).</p>';return;}
+  var h='<p style="color:#C79227;font-weight:700;font-size:13px">'+tipo+': '+res.length+' relación(es)</p><table style="font-size:12px;max-height:260px;display:block;overflow:auto"><thead><tr><th>Origen</th><th>Relación</th><th>Destino</th><th>Evid.</th></tr></thead><tbody>';
+  res.slice(0,30).forEach(function(r){h+='<tr><td>'+nombre(r.subject||r.origen)+'</td><td>'+((r.tipo||r.predicate)||'')+'</td><td>'+nombre(r.object||r.destino)+'</td><td>'+(r.evidencia||'C')+'</td></tr>';});
+  h+='</tbody></table>';
+  out.innerHTML=h;
+}
+window.ejecutarConsulta=ejecutarConsulta;
+
+function decorarAvatares(){
+  // en ultimos registros: remplazar el emoji del avatar por la foto real si el registro tiene img
+  var name2ibj={};
+  DB.persons.forEach(function(p){name2ibj[p.name]=p;});
+  DB.orgs.forEach(function(o){name2ibj[o.name]=o;});
+  document.querySelectorAll('.reg').forEach(function(row){
+    var nomEl=row.querySelector('.reg-info b');if(!nomEl)return;
+    var nombre=nomEl.textContent.trim();
+    var obj=name2ibj[nombre];if(!obj||!obj.img)return;
+    var av=row.querySelector('.reg-avatar');if(!av)return;
+    var f=obj.img.split('/').pop();
+    av.innerHTML='<img src="/cronos/img/'+f+'" style="width:100%;height:100%;border-radius:50%;object-fit:cover;display:block" onerror="this.remove()">';
+  });
+}
+
+  renderHome();
+  setTimeout(decorarAvatares,50);
+</script>
+</body>
+</html>

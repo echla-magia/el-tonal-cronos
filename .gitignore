@@ -1,0 +1,48 @@
+# CRONOS - Archivos de Guerra (repo de código y expediente)
+# ==== Binarios grandes / media ====
+*.mp4
+*.webm
+*.mkv
+*.avi
+*.mov
+**/media/
+**/transcripts/
+videos_doblados/
+videos_traducidos/
+voces_personajes/
+voz/
+
+# Audio
+*.ogg
+*.wav
+*.mp3
+
+# Respaldos y temporales del CRONOS (cientos de index_bak_*.html)
+index_bak_*.html
+index_BAK*.html
+index_backup_*.html
+index_CRONOS_original.html
+index_ROTO*.html
+index_roto*.html
+index_BAKK*.html
+*.bak
+
+# Entornos/cache
+venv*/
+__pycache__/
+.pyc
+.pytest_cache/
+_cascades/
+_pyopencv/
+buscar_fotos.py
+*_test*.*
+_calibra*
+
+# Plantillas descargadas del logo (no esenciales)
+Logo El tonal del Leon 16x9_files/
+
+# Work temporales
+*.log
+*.tmp
+_*.js
+_.*_*

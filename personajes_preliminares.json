@@ -1,0 +1,309 @@
+{
+ "personajes": [
+  {
+   "name": "Eran Efrati",
+   "role": "Veterano israelí/testimonio en video ('I was the terrorist')",
+   "mentions": 1,
+   "evidence": "Testimonio de veterano; rótulo 'I was the terrorist'. Observado en video.",
+   "links": []
+  },
+  {
+   "name": "John Hagee",
+   "role": "Líder religioso, vinculado a CUFI / sionismo cristiano",
+   "mentions": 1,
+   "evidence": "Asociado visual/temáticamente a CUFI en video.",
+   "links": []
+  },
+  {
+   "name": "Kenneth Copeland",
+   "role": "Televangelista pro-Israel",
+   "mentions": 1,
+   "evidence": "Mencionado en video sobre televangelismo/pro-Israel.",
+   "links": []
+  },
+  {
+   "name": "Paula White",
+   "role": "Líder religioso-político, sionismo cristiano",
+   "mentions": 1,
+   "evidence": "Mencionada en video sobre 'Zionism hijacking Christianity'.",
+   "links": []
+  },
+  {
+   "name": "Mike Huckabee",
+   "role": "Político/religioso pro-Israel",
+   "mentions": 1,
+   "evidence": "Figura política/religiosa pro-Israel. Observado en video.",
+   "links": []
+  },
+  {
+   "name": "Lawrence Wilkerson",
+   "role": "Exfuncionario/comentarista (Judging Freedom)",
+   "mentions": 1,
+   "evidence": "Entrevista/podcast Judging Freedom. Observado en video.",
+   "links": []
+  },
+  {
+   "name": "Gustavo Petro",
+   "role": "Presidente de Colombia / autor de post",
+   "mentions": 1,
+   "evidence": "Autor/post observado sobre Cerimedo y Casa Rosada.",
+   "links": []
+  },
+  {
+   "name": "Fernando Cerimedo",
+   "role": "Operador de propaganda política y estratega digital (La Derecha Diario)",
+   "mentions": 8,
+   "evidence": "Nadia Beller confirma que Cerimedo trabajó en campaña pinochetista del rechazo y campaña de Kast.",
+   "links": [
+    "https://x.com/JulianMaciasT/..."
+   ]
+  },
+  {
+   "name": "Wesley Clark",
+   "role": "General retirado de EEUU, citado",
+   "mentions": 1,
+   "evidence": "Citado sobre invasión de 7 países en 5 años (clip Kamelia/Irán).",
+   "links": [
+    "https://x.com/Elissamaiss/status/2093417324107956233"
+   ]
+  },
+  {
+   "name": "Richard Nixon",
+   "role": "Expresidente de EEUU",
+   "mentions": 1,
+   "evidence": "Cita atribuida sobre el lobby judío/pro-Israel.",
+   "links": [
+    "https://x.com/PRO_X_313/status/2093708959765193074"
+   ]
+  },
+  {
+   "name": "Jeffrey Epstein",
+   "role": "Financista, caso penal/reorganización",
+   "mentions": 5,
+   "evidence": "Caso criminal/red de abuso; mencionado como eje de montajes sobre élite.",
+   "links": []
+  },
+  {
+   "name": "Alan Dershowitz",
+   "role": "Abogado ligado a Epstein",
+   "mentions": 2,
+   "evidence": "Clip: 'Epstein's Jewish lawyer'. Tema Epstein/Dershowitz.",
+   "links": [
+    "https://x.com/GBC_Press/status/2093759909674500391"
+   ]
+  },
+  {
+   "name": "John Fetterman",
+   "role": "Senador de EEUU (clip GBC)",
+   "mentions": 1,
+   "evidence": "Clip: Fetterman: 'Is Israel committing genocide?'",
+   "links": [
+    "https://x.com/GBC_Press/status/2093696495640031290"
+   ]
+  },
+  {
+   "name": "Jon Stewart",
+   "role": "Presentador de TV (respuesta)",
+   "mentions": 1,
+   "evidence": "Clip con Fetterman/Stewart sobre Epstein/Hamás.",
+   "links": [
+    "https://x.com/GBC_Press/status/2093696495640031290"
+   ]
+  },
+  {
+   "name": "Marco Rubio",
+   "role": "Secretario de Estado (2025)",
+   "mentions": 1,
+   "evidence": "Clip Praxedes: respuesta del secretario de Estado Marco Rubio.",
+   "links": [
+    "https://x.com/praxedes416/status/2093674867535089733"
+   ]
+  },
+  {
+   "name": "Meilich Cohen",
+   "role": "Rabino antisionista (Voice of Rabbis)",
+   "mentions": 1,
+   "evidence": "'A firm clear statement by Rabbi Meilich Cohen'. Judíos estadounidenses sin conexión con Israel.",
+   "links": [
+    "https://x.com/voiceofrabbis/status/2093458612823666888"
+   ]
+  },
+  {
+   "name": "Hind Rajab",
+   "role": "Víctima civil (caso mencionado)",
+   "mentions": 1,
+   "evidence": "Caso de niña/familia/ambulancia mencionado en entrevista.",
+   "links": []
+  },
+  {
+   "name": "Rodrigo Paz",
+   "role": "Político boliviano (clip Julián Macías)",
+   "mentions": 1,
+   "evidence": "Clip sobre Cerimedo y asesoría política; '¿no decía Rodrigo Paz...?'",
+   "links": [
+    "https://x.com/JulianMaciasT/status/2093760324763594984"
+   ]
+  },
+  {
+   "name": "Nadia Beller",
+   "role": "Investigadora/periodista mencionada",
+   "mentions": 1,
+   "evidence": "Confirma datos sobre Cerimedo y bots.",
+   "links": []
+  },
+  {
+   "name": "Haitham Abdelhadi",
+   "role": "Analista palestino-británico",
+   "mentions": 1,
+   "evidence": "'Criticar el sionismo no es antisemitismo'.",
+   "links": [
+    "https://youtube.com/shorts/yb76gKV8fJQ"
+   ]
+  },
+  {
+   "name": "Theodor Herzl",
+   "role": "Fundador del sionismo político",
+   "mentions": 1,
+   "evidence": "Cita atribuida: 'Argentina tendría el mayor interés en cedernos un pedazo de territorio para construir el estado sionista'.",
+   "links": [
+    "https://x.com/DaniMayakovski/status/2010271151763652664"
+   ]
+  },
+  {
+   "name": "Sergio Bergman",
+   "role": "Rabino sionista argentino, exfuncionario",
+   "mentions": 1,
+   "evidence": "Cita: 'Argentina como tierra prometida del sionismo, debe ser partida y repartida como en Palestina'.",
+   "links": [
+    "https://x.com/DaniMayakovski/status/2010272061831455053"
+   ]
+  },
+  {
+   "name": "David Roet",
+   "role": "Embajador de Israel en Austria",
+   "mentions": 1,
+   "evidence": "Filmado en reunión en Innsbruck hablando de palestinos y Gaza.",
+   "links": [
+    "https://x.com/GBC_Press/status/2091896222504415248"
+   ]
+  },
+  {
+   "name": "Javier Negre",
+   "role": "Periodista/fundador de La Derecha Diario",
+   "mentions": 1,
+   "evidence": "Testimonio Jean Carlo Portillo: Negre y Cerimedo tenían 'el secreto para reventar el algoritmo (granjas de bots)'.",
+   "links": [
+    "https://x.com/jeancarlopmag/status/2092284738757185683"
+   ]
+  },
+  {
+   "name": "Ricardo Salinas Pliego",
+   "role": "Empresario mexicano",
+   "mentions": 1,
+   "evidence": "Clip Catrina Norteña: exhibe a La Derecha Diario de Negre, Cerimedo y Salinas Pliego por granjas de bots.",
+   "links": [
+    "https://x.com/catrina_nortena/status/2092958955769122885"
+   ]
+  },
+  {
+   "name": "Diego Ruzzarin",
+   "role": "Comentarista/creador de contenido",
+   "mentions": 1,
+   "evidence": "Clip Catrina Norteña: 'EXHIBE @DiegoRuzzarin los crímenes de La Derecha Diario'.",
+   "links": [
+    "https://x.com/catrina_nortena/status/2092958955769122885"
+   ]
+  },
+  {
+   "name": "Mosab Hassan Yousef",
+   "role": "Exmiembro de inteligencia israelí",
+   "mentions": 1,
+   "evidence": "Clip Parody Jeff: 'Former Israeli intelligence member Mosab Hassan claims Israel has secret advanced weapons'.",
+   "links": [
+    "https://x.com/Parodyjeffx/status/2092839147958374504"
+   ]
+  },
+  {
+   "name": "Philip Tourney",
+   "role": "Veterano estadounidense, sobreviviente USS Liberty",
+   "mentions": 1,
+   "evidence": "'Israel nos controla. Controlan el Congreso, el Senado, nuestro dinero.'",
+   "links": [
+    "https://x.com/liderfiscal/status/2092854045354471444"
+   ]
+  },
+  {
+   "name": "Julian Assange",
+   "role": "Fundador de WikiLeaks",
+   "mentions": 1,
+   "evidence": "Cita atribuida: 'El objetivo es tener una guerra interminable, no una guerra exitosa'.",
+   "links": [
+    "https://x.com/liderfiscal/status/2093139152669982886"
+   ]
+  },
+  {
+   "name": "Rabbi Kohn",
+   "role": "Rabino antisionista",
+   "mentions": 1,
+   "evidence": "'Zionists stole the Jewish name and now use it as a shield.'",
+   "links": [
+    "https://x.com/voiceofrabbis/status/2093008993006575789"
+   ]
+  },
+  {
+   "name": "Bezalel Smotrich",
+   "role": "Ministro de Finanzas de Israel",
+   "mentions": 1,
+   "evidence": "'Israel will expand into Lebanon, Syria, and Gaza. To the Litani. Mount Hermon.'",
+   "links": [
+    "https://x.com/voiceofrabbis/status/2042580378255245553"
+   ]
+  },
+  {
+   "name": "Javier Milei",
+   "role": "Presidente de Argentina",
+   "mentions": 1,
+   "evidence": "Anunció que extranjeros (incluidos sionistas) pueden comprar tierras argentinas tras incendios.",
+   "links": [
+    "https://x.com/DaniMayakovski/status/2010270228379292089"
+   ]
+  },
+  {
+   "name": "Charlie Kirk",
+   "role": "Activista conservador, fundador de Turning Point USA",
+   "mentions": 24,
+   "evidence": "Figura del movimiento MAGA; tema en fuentes del expediente sobre adoctrinamiento político-religioso.",
+   "links": [
+    "https://x.com/xIsraelExposedx/..."
+   ]
+  },
+  {
+   "name": "Candace Owens",
+   "role": "Comentarista política conservadora",
+   "mentions": 19,
+   "evidence": "Figura mediática conservadora; tema en fuentes del expediente.",
+   "links": []
+  },
+  {
+   "name": "John Mearsheimer",
+   "role": "Politólogo, coautor 'The Israel Lobby'",
+   "mentions": 12,
+   "evidence": "Autores del lobby israelí en EUA; citados en fuentes del expediente.",
+   "links": []
+  },
+  {
+   "name": "Stephen Walt",
+   "role": "Politólogo, coautor 'The Israel Lobby'",
+   "mentions": 12,
+   "evidence": "Coautor de 'The Israel Lobby and U.S. Foreign Policy'.",
+   "links": []
+  },
+  {
+   "name": "JD Vance",
+   "role": "Vicepresidente de EEUU (2025)",
+   "mentions": 13,
+   "evidence": "Figura política estadounidense mencionada en fuentes del expediente.",
+   "links": []
+  }
+ ]
+}
