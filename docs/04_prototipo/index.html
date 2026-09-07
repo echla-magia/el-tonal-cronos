@@ -845,17 +845,20 @@ DB.orgs.push({
   type: "grupo de presión (lobby)", country: "EUA",
   bio: "Principal lobby pro-Israel en Estados Unidos.",
   img: "img/logo_aipac.png",
+  guia: "ag_lobby_thinktanks.png",
   certainty: "DOCUMENTADO", review: "REVISADO", refs: ["SRC-000001"]
 });
 DB.orgs.push({
   id: "ORG-000002", name: "IDF", full: "Fuerzas de Defensa de Israel", type: "fuerza militar", country: "Israel",
   bio: "Ejército del Estado de Israel.",
-  img: "img/logo_idf.png", certainty: "DOCUMENTADO", review: "REVISADO", refs: ["SRC-000001"]
+  img: "img/logo_idf.png",
+  guia: "ag_mil_industrial.png", certainty: "DOCUMENTADO", review: "REVISADO", refs: ["SRC-000001"]
 });
 DB.orgs.push({
   id: "ORG-000003", name: "CUFI", full: "Christians United for Israel", type: "organización religioso-política", country: "EUA",
   bio: "Movimiento cristiano sionista estadounidense.",
-  img: "img/cufi.png", certainty: "DOCUMENTADO", review: "REVISADO", refs: ["SRC-000001"]
+  img: "img/cufi.png",
+  guia: "ag_lobby_sionismo.png", certainty: "DOCUMENTADO", review: "REVISADO", refs: ["SRC-000001"]
 });
 DB.orgs.push({
   id: "ORG-000004", name: "Clock Tower X LLC", type: "empresa (registrante FARA)", country: "EUA",
@@ -866,6 +869,7 @@ DB.orgs.push({
   id: "ORG-000005", name: "NSO Group", type: "empresa de ciberseguridad", country: "Israel",
   bio: "Desarrolladora de Pegasus (software de espionaje).Tema en clips de México.",
   img: "img/logo_nso.png",
+  guia: "ag_nso_group.png",
   certainty: "CORROBORADO", review: "REVISADO", refs: ["SRC-000003"]
 });
 
@@ -875,6 +879,7 @@ DB.orgs.push({
   type: "asociación de armas (lobby pro-armas)", country: "EUA",
   bio: "Asociación Nacional del Rifle de Estados Unidos; principal lobby pro-armas en EUA.",
   img: "img/logo_nra.png",
+  guia: "ag_lobby_sionismo.png",
   certainty: "CORROBORADO", review: "REVISADO", refs: ["SRC-000003"]
 });
 
@@ -945,6 +950,35 @@ DB.persons.push({
 });
 
 // ----------------------------------------------------------------------------
+DB.orgs.push({
+  id: "ORG-000007", name: "CIA", full: "Central Intelligence Agency",
+  type: "agencia de inteligencia", country: "EUA",
+  bio: "Servicio de inteligencia exterior de Estados Unidos; recolección y análisis de información de seguridad nacional (Archivos de Guerra AG-INT-USA-002).",
+  img: "img/logo_cia.png", guia: "ag_cia.png",
+  certainty: "CORROBORADO", review: "REVISADO", refs: ["SRC-000001"]
+});
+DB.orgs.push({
+  id: "ORG-000008", name: "FBI", full: "Federal Bureau of Investigation",
+  type: "agencia federal", country: "EUA",
+  bio: "Oficina Federal de Investigación de EE.UU.; contrainteligencia, ciberseguridad y contraterrorismo (Archivos de Guerra AG-INT-USA-003).",
+  img: "img/logo_fbi.png", guia: "ag_fbi.png",
+  certainty: "CORROBORADO", review: "REVISADO", refs: ["SRC-000001"]
+});
+DB.orgs.push({
+  id: "ORG-000009", name: "Mossad", full: "Instituto de Inteligencia y Operaciones Especiales",
+  type: "servicio de inteligencia", country: "Israel",
+  bio: "Servicio de inteligencia de Israel; inteligencia exterior y operaciones especiales (Archivos de Guerra AG-INT-ISR-002).",
+  img: "img/logo_mossad.png", guia: "ag_mossad.png",
+  certainty: "CORROBORADO", review: "REVISADO", refs: ["SRC-000001"]
+});
+DB.orgs.push({
+  id: "ORG-000010", name: "Palantir", full: "Palantir Technologies",
+  type: "empresa de análisis de datos", country: "EUA",
+  bio: "Compañía de software de análisis de datos e inteligencia operacional (Gotham, Foundry, AIP); proveedor de gobierno y defensa (Archivos de Guerra AG-TEC-014).",
+  img: "img/logo_palantir.png", guia: "ag_palantir.png",
+  certainty: "CORROBORADO", review: "REVISADO", refs: ["SRC-000001"]
+});
+
 // VIDEOS  (los 21 que Christo ha ido pasando + algunos representativos)
 // ----------------------------------------------------------------------------
 DB.videos.push({
@@ -1340,6 +1374,7 @@ function render(tipo){
       <div class="panel">
         <h2>${o.name}</h2>
         <p style="color:var(--gris)">${o.bio||''}</p>
+        ${o.guia?`<div class="panel" style="margin-top:8px;background:rgba(11,15,25,.4)"><h3 style="color:#C79227">📊 Guía documental</h3><img src="/cronos/img/${o.guia}" alt="Guía ${o.name}" style="width:100%;height:auto;object-fit:contain;border:1px solid var(--dorado);border-radius:8px;margin-top:6px"></div>`:''}
         <h3>Relaciones (${rels.length})</h3>
         ${rels.length?`<ul style="list-style:none;padding:0">${rels.map(r=>{
           const otro=r.subject===id?r.object:r.subject;
