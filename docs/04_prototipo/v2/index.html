@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CRONOS V2 — Archivo Documental OSINT</title>
+<link rel="icon" href="../img/isotipo_tonal.jpg">
+<style>
+:root{
+  --bg:#0a0e18; --panel:#111827; --panel2:#0d1420; --border:#2a3650;
+  --azul:#4f8cff; --dorado:#e8b34b; --verde:#34d399; --rojo:#f87171;
+  --ambar:#fbbf24; --texto:#e5eaf3; --gris:#94a3b8; --morado:#a78bfa; --coral:#fb7185;
+  --fondo-acento:linear-gradient(135deg,#0c1224,#101a30);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--texto);font-family:system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;line-height:1.6;min-height:100vh}
+a{color:var(--azul);text-decoration:none}
+.topbar{position:sticky;top:0;z-index:60;background:rgba(10,14,24,.93);backdrop-filter:blur(10px);border-bottom:2px solid var(--dorado);padding:14px 22px;display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+.brand{font-size:22px;font-weight:800;color:var(--dorado);letter-spacing:1px}
+.brand small{display:block;font-size:9px;color:var(--gris);font-weight:400;letter-spacing:2.5px}
+.meta-chip{font-size:11px;color:var(--gris);background:var(--panel2);border:1px solid var(--border);padding:3px 10px;border-radius:14px}
+nav{display:flex;gap:5px;flex-wrap:wrap}
+nav button{background:var(--panel);color:var(--texto);border:1px solid var(--border);border-radius:9px;padding:9px 15px;cursor:pointer;font-size:13px;transition:.18s;font-weight:500}
+nav button:hover{background:var(--panel2);border-color:var(--dorado);transform:translateY(-1px)}
+nav button.activo{background:linear-gradient(135deg,#1a2a4a,#23345c);border-color:var(--dorado);color:#fff;font-weight:700;box-shadow:0 2px 12px rgba(232,179,75,.25)}
+.wrap{max-width:1220px;margin:0 auto;padding:26px 22px 70px}
+.vista{display:none;animation:fade .3s ease}
+.vista.activo{display:block}
+@keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+h1.seccion{color:var(--dorado);font-size:1.55rem;margin-bottom:6px;display:flex;align-items:center;gap:10px}
+.sub{color:var(--gris);font-size:.9rem;margin-bottom:22px}
+.hero{text-align:center;padding:44px 20px 28px;background:var(--fondo-acento);border:1px solid var(--border);border-radius:18px;margin-bottom:26px}
+.hero h1{font-size:34px;color:var(--dorado);letter-spacing:1px}
+.hero p{color:var(--gris);max-width:760px;margin:12px auto 0;font-size:.95rem}
+.hero .verbs{margin-top:14px;color:var(--verde);font-weight:700;letter-spacing:2px;font-size:.85rem}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:12px;margin:22px 0}
+.stat{background:var(--panel);border:1px solid var(--border);border-radius:14px;padding:18px;text-align:center}
+.stat .num{font-size:1.7rem;font-weight:800;color:var(--dorado)}
+.stat .lab{font-size:.78rem;color:var(--gris);text-transform:uppercase;letter-spacing:.6px;margin-top:2px}
+.grid{display:grid;gap:16px}
+.grid-cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px}
+.card{background:var(--panel);border:1px solid var(--border);border-radius:13px;padding:16px;display:flex;flex-direction:column;gap:8px;transition:.18s}
+.card:hover{border-color:var(--dorado);transform:translateY(-2px)}
+.card h3{color:var(--dorado);font-size:.98rem;display:flex;justify-content:space-between;gap:8px;align-items:flex-start;font-weight:700}
+.card .cuerpo{font-size:.84rem;color:var(--texto)}
+.card .pie{font-size:.72rem;color:var(--gris);margin-top:auto}
+.badge{font-size:.68rem;padding:.24rem .6rem;border-radius:12px;font-weight:700;white-space:nowrap}
+.b-conf{background:var(--verde);color:#06281c}
+.b-prob{background:var(--ambar);color:#2b1c02}
+.b-hip{background:var(--rojo);color:#fff}
+.b-nver{background:#6b7280;color:#fff}
+.b-rep{background:var(--morado);color:#1c1030}
+.chip{display:inline-flex;align-items:center;gap:6px;background:var(--panel2);border:1px solid var(--border);border-radius:20px;padding:6px 13px;font-size:12.5px;margin:4px;cursor:pointer}
+.chip:hover{border-color:var(--dorado)}
+table{width:100%;border-collapse:collapse;font-size:13px;background:var(--panel);border-radius:12px;overflow:hidden}
+th,td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top}
+th{color:var(--dorado);font-size:11px;text-transform:uppercase;letter-spacing:.5px;background:var(--panel2)}
+tr:hover td{background:var(--panel2)}
+.foto{width:40px;height:40px;border-radius:50%;object-fit:cover;border:2px solid var(--dorado)}
+.foto-org{width:42px;height:42px;border-radius:9px;object-fit:contain;background:#fff}
+.grafo-wrap{background:var(--panel);border:1px solid var(--border);border-radius:16px;padding:16px;position:relative}
+svg{width:100%;height:auto;display:block;border-radius:10px;background:#070b14}
+.edge{cursor:pointer}
+.e-solid{stroke:#4f8cff;stroke-width:2.6}
+.e-conf{stroke:#34d399;stroke-width:2.2}
+.e-hip{stroke:#f87171;stroke-width:1.7;stroke-dasharray:5,4}
+.node-label{font-size:11px;fill:#cfd8ea;font-weight:600}
+.info-panel{position:sticky;bottom:14px;background:rgba(13,20,32,.96);border:1px solid var(--dorado);border-radius:12px;padding:14px 18px;margin-top:12px;font-size:.88rem;display:none}
+.info-panel b{color:var(--dorado)}
+blockquote{border-left:4px solid var(--dorado);background:var(--panel2);padding:10px 14px;font-style:italic;font-size:.9rem;margin:8px 0;color:#c3cede;border-radius:0 8px 8px 0}
+.aviso{background:rgba(248,113,113,.07);border:1px solid rgba(248,113,113,.35);border-left:4px solid var(--rojo);padding:13px 16px;border-radius:8px;font-size:.85rem;margin-bottom:20px}
+.aviso b{color:var(--rojo)}
+.filtros{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:16px}
+.filtros .f{padding:.4rem .95rem;border-radius:18px;border:1px solid var(--border);background:var(--panel);cursor:pointer;font-size:.8rem;color:var(--texto)}
+.filtros .f.on{background:var(--dorado);color:#0a0e18;font-weight:700;border-color:var(--dorado)}
+footer{background:var(--fondo-acento);border-top:2px solid var(--dorado);color:var(--gris);text-align:center;padding:16px;font-size:.78rem}
+:root{--org:var(--morado);--per:var(--verde);--vid:var(--azul);--clm:var(--ambar)}
+.searchbox{width:100%;max-width:520px;background:var(--panel2);border:1px solid var(--border);border-radius:10px;padding:12px 16px;color:var(--texto);font-size:14px;margin-bottom:18px}
+.searchbox:focus{outline:none;border-color:var(--dorado)}
+@media(max-width:720px){.wrap{padding:18px 12px 50px}.hero h1{font-size:26px}.grid-cards{grid-template-columns:1fr}}
+.tag-rel{display:inline-block;background:var(--panel2);border:1px solid var(--border);padding:2px 8px;border-radius:6px;font-size:.72rem;margin:2px;color:var(--gris)}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="brand">CRONOS <small>V2 · ARCHIVO DOCUMENTAL OSINT</small></div>
+  <span class="meta-chip" id="chip-datos">cargando…</span>
+  <nav id="nav">
+    <button onclick="vista('home')" class="activo" id="nv-home">🏛️ Inicio</button>
+    <button onclick="vista('personas')" id="nv-personas">👤 Personas</button>
+    <button onclick="vista('organizaciones')" id="nv-organizaciones">🏢 Organizaciones</button>
+    <button onclick="vista('meditateca')" id="nv-meditateca">🎬 Mediateca</button>
+    <button onclick="vista('afirmaciones')" id="nv-afirmaciones">🗣️ Afirmaciones</button>
+    <button onclick="vista('grafo')" id="nv-grafo">🕸️ Grafo</button>
+    <button onclick="vista('cronologia')" id="nv-cronologia">🗓️ Cronología</button>
+    <button onclick="vista('protocolos')" id="nv-protocolos">📜 Protocolos</button>
+  </nav>
+</div>
+
+<div class="wrap">
+
+  <div class="vista activo" id="v-home">
+    <div class="hero">
+      <h1>🦉 CRONOS</h1>
+      <p>Archivo documental de conflictos, poder y evidencia audiovisual. Almacenamos <b>evidencia, relaciones, fuentes y grados de certeza</b> — no conclusiones.</p>
+      <div class="verbs">DOCUMENTAR · ANALIZAR · CONECTAR · COMPRENDER</div>
+    </div>
+    <div class="stats" id="stats"></div>
+    <div class="grid-cards" id="ult-reg"></div>
+    <div class="aviso" style="margin-top:22px"><b>Integridad:</b> esta versión V2 se construyó desde cero sobre datos JSON separados del código. Los datos provienen del semilla original (147 personas, 78 organizaciones, 152 relaciones con detalle) y del expediente (240 pistas, 300 videos en disco). Nada fue truncado.</div>
+  </div>
+
+  <div class="vista" id="v-personas">
+    <h1 class="seccion">👤 Personas <span class="chip" id="n-personas"></span></h1>
+    <div class="sub">Cada persona con su fotografía, roles, biografía y nivel de certeza.</div>
+    <input class="searchbox" id="bus-personas" placeholder="Buscar persona…" oninput="renderPersonas(this.value)">
+    <div id="grid-personas" class="grid-cards"></div>
+  </div>
+
+  <div class="vista" id="v-organizaciones">
+    <h1 class="seccion">🏢 Organizaciones <span class="chip" id="n-orgs"></span></h1>
+    <div class="sub">Gobiernos, empresas, alianzas, medios y grupos de presión.</div>
+    <div class="filtros" id="filtros-org"></div>
+    <input class="searchbox" id="bus-orgs" placeholder="Buscar organización…" oninput="renderOrgs(this.value)">
+    <div id="grid-orgs" class="grid-cards"></div>
+  </div>
+
+  <div class="vista" id="v-meditateca">
+    <h1 class="seccion">🎬 Mediateca <span class="chip" id="n-videos"></span></h1>
+    <div class="sub">Evidencia audiovisual organizada por secciones de plataforma y tema.</div>
+    <div class="filtros" id="filtros-media"></div>
+    <table><thead><tr><th>ID</th><th>Título</th><th>Canal</th><th>Plataforma</th><th>Fecha</th><th>Fuente</th></tr></thead><tbody id="tb-videos"></tbody></table>
+  </div>
+
+  <div class="vista" id="v-afirmaciones">
+    <h1 class="seccion">🗣️ Afirmaciones <span class="chip" id="n-claims"></span></h1>
+    <div class="sub">Texto COMPLETO (no truncado) de cada afirmación registrada.</div>
+    <input class="searchbox" id="bus-claims" placeholder="Buscar en afirmaciones…" oninput="renderClaims(this.value)">
+    <div id="grid-claims" class="grid-cards"></div>
+  </div>
+
+  <div class="vista" id="v-grafo">
+    <h1 class="seccion">🕸️ Grafo de relaciones</h1>
+    <div class="sub">Cada nodo con su nombre real (persona/organización). Haz clic en una conexión para ver el detalle.</div>
+    <div class="grafo-wrap"><div id="grafo"></div></div>
+    <div class="info-panel" id="info-grafo"></div>
+  </div>
+
+  <div class="vista" id="v-cronologia">
+    <h1 class="seccion">🗓️ Cronología <span class="chip" id="n-eventos"></span></h1>
+    <div class="sub">Línea de tiempo de eventos documentados.</div>
+    <div class="timeline" id="linea"></div>
+  </div>
+
+  <div class="vista" id="v-protocolos">
+    <h1 class="seccion">📜 Protocolos vs. Actualidad</h1>
+    <div class="sub">Análisis sesión por sesión del texto apócrifo de 1903/1936 contra mecanismos contemporáneos documentados.</div>
+    <div class="aviso"><b>Documento base:</b> texto apócrifo (falsificación reconocida, USHMM: los nazis sabían que era falso; plagiado de Joly 1864 / Goedsche 1868). Se estudia como documento histórico de poder, no como evidencia sobre judíos. Escala: CONFIRMADO / PROBABLE / HIPÓTESIS / NO RESPALDADO.</div>
+    <div id="grid-protocolos" class="grid-cards"></div>
+  </div>
+
+</div>
+
+<footer>CRONOS V2 · Reconstruido desde cero · Datos separados del código (data/json → data.js) · Repo: echla-magia/el-tonal-cronos (privado) · 300 videos en disco · PISTA-001→240</footer>
+
+<script src="./data.js"></script>
+<script>
+// ============ UTILIDADES ============
+const $=id=>document.getElementById(id);
+const certBadge=c=>{
+  const s=(c||'').toUpperCase();
+  const cls = s.includes('CONFIRM')?'b-conf':s.includes('PROB')?'b-prob':s.includes('HIP')?'b-hip':'b-nver';
+  return `<span class="badge ${cls}">${(c||'NO VERIFICADO')}</span>`;
+};
+function vista(name){
+  document.querySelectorAll('.vista').forEach(v=>v.classList.remove('activo'));
+  $('v-'+name).classList.add('activo');
+  document.querySelectorAll('#nav button').forEach(b=>b.classList.remove('activo'));
+  $('nv-'+name).classList.add('activo');
+}
+// resolver id -> objeto
+const idx={};
+DB.persons.forEach(p=>idx[p.id]=p);
+DB.orgs.forEach(o=>idx[o.id]=o);
+DB.videos.forEach(v=>idx[v.id]=v);
+DB.claims.forEach(c=>idx[c.id]=c);
+DB.events.forEach(e=>idx[e.id]=e);
+function nombre(id){ const o=idx[id]; return o?o.name||o.title||o.text||id:id; }
+function foto(id){
+  const o=idx[id]; if(!o)return'';
+  const src=(o.img&&o.img!=='#')?o.img:'';
+  if(!src)return '';
+  const isOrg=o.type!==undefined;
+  return `<img src="${src}" class="${isOrg?'foto-org':'foto'}" alt="" onerror="this.style.display='none'">`;
+}
+
+// ============ HOME ============
+function renderHome(){
+  $('chip-datos').textContent = `${DB.persons.length} pers · ${DB.orgs.length} orgs · ${DB.videos.length} videos · ${DB.claims.length} afirmaciones · ${DB.rels.length} relaciones`;
+  const datos=[
+    [DB.persons.length,'Personas'],[DB.orgs.length,'Organizaciones'],[DB.videos.length,'Videos'],
+    [DB.claims.length,'Afirmaciones'],[DB.rels.length,'Relaciones'],['300','Videos en disco'],['240','Pistas']
+  ];
+  $('stats').innerHTML=datos.map(s=>`<div class="stat"><div class="num">${s[0]}</div><div class="lab">${s[1]}</div></div>`).join('');
+  const recientes = DB.persons.slice(-6);
+  $('ult-reg').innerHTML=recientes.map(p=>`
+    <div class="card"><h3>${foto(p.id)} ${p.name} ${certBadge(p.certainty)}</h3>
+    <div class="cuerpo">${(p.bio||'').slice(0,140)}</div>
+    <div class="pie">Roles: ${(p.roles||[]).join(', ')||'—'}</div></div>`).join('');
+}
+
+// ============ PERSONAS ============
+function renderPersonas(q=''){
+  const f=DB.persons.filter(p=>!q || (p.name||'').toLowerCase().includes(q.toLowerCase()) || (p.bio||'').toLowerCase().includes(q.toLowerCase()));
+  $('n-personas').textContent=f.length+' personas';
+  $('grid-personas').innerHTML=f.map(p=>`
+    <div class="card"><h3>${foto(p.id)} ${p.name} ${certBadge(p.certainty)}</h3>
+    <div class="cuerpo">${p.bio||'Sin biografía.'}</div>
+    <div class="pie">Roles: ${(p.roles||[]).join(', ')||'—'} · ${p.nationality||''}</div></div>`).join('');
+}
+
+// ============ ORGANIZACIONES ============
+function tiposOrg(){
+  const t={}; DB.orgs.forEach(o=>{const k=(o.type||'otra'); t[k]=(t[k]||0)+1;}); return t;
+}
+function renderFiltrosOrg(){
+  const ts=Object.keys(tiposOrg()).sort();
+  $('filtros-org').innerHTML='<span class="f on" onclick="filtrarOrg(this,\'\')">Todas ('+DB.orgs.length+')</span>'+ts.map(t=>`<span class="f" onclick="filtrarOrg(this,'${t.replace(/'/g,"\\'")}')">${t} (${tiposOrg()[t]})</span>`).join('');
+}
+let orgFiltro='';
+function filtrarOrg(el,val){ orgFiltro=val; document.querySelectorAll('#filtros-org .f').forEach(x=>x.classList.remove('on')); el.classList.add('on'); renderOrgs($('bus-orgs').value); }
+function renderOrgs(q=''){
+  let f=DB.orgs.filter(o=>!q || (o.name||'').toLowerCase().includes(q.toLowerCase()));
+  if(orgFiltro) f=f.filter(o=>(o.type||'otra')===orgFiltro);
+  $('n-orgs').textContent=f.length+' organizaciones';
+  $('grid-orgs').innerHTML=f.map(o=>`
+    <div class="card"><h3>${foto(o.id)} ${o.name} ${certBadge(o.certainty)}</h3>
+    <div class="cuerpo">${o.bio||''}</div>
+    <div class="pie">${o.type} · ${o.country||''}</div></div>`).join('');
+}
+
+// ============ MEDIATECA ============
+function renderMediateca(){
+  $('n-videos').textContent=DB.videos.length+' videos';
+  // filtros por plataforma
+  const plat={}; DB.videos.forEach(v=>{const p=v.platform||'desconocida'; plat[p]=(plat[p]||0)+1;});
+  $('filtros-media').innerHTML=Object.entries(plat).map(([p,n])=>`<span class="tag-rel">${p}: ${n}</span>`).join('');
+  $('tb-videos').innerHTML=DB.videos.map(v=>{
+    const url=v.url||v.master_file||'';
+    return `<tr><td><code style="font-size:10px">${v.id}</code></td><td><b>${v.title||v.id}</b></td><td>${v.channel||'-'}</td><td>${v.platform||'-'}</td><td>${v.published||''}</td><td>${url?'<a href="'+url+'" target="_blank">fuente ↗</a>':'-'}</td></tr>`;
+  }).join('');
+}
+
+// ============ AFIRMACIONES ============
+function renderClaims(q=''){
+  let f=DB.claims.filter(c=>!q || c.text.toLowerCase().includes(q.toLowerCase()) || c.author_name.toLowerCase().includes(q.toLowerCase()));
+  $('n-claims').textContent=f.length+' afirmaciones';
+  $('grid-claims').innerHTML=f.map(c=>`
+    <div class="card"><h3>${c.id} ${certBadge(c.status||c.certainty)}</h3>
+    <blockquote>${c.text}</blockquote>
+    <div class="pie">Autor: ${c.author_name||c.author||'—'} · Confianza: ${c.confidence||0}%</div></div>`).join('');
+}
+
+// ============ GRAFO ============
+function renderGrafo(){
+  const NONODES = 300, centre={x:600,y:360};
+  // elegir relaciones válidas
+  const validas = DB.rels.filter(r=>idx[r.subject]&&idx[r.object]);
+  const contarGrado = {};
+  validas.forEach(r=>{contarGrado[r.subject]=(contarGrado[r.subject]||0)+1; contarGrado[r.object]=(contarGrado[r.object]||0)+1;});
+  const nodoIds = Object.keys(contarGrado).filter(id=>contarGrado[id]>=1).slice(0,40);
+  // layout circular
+  const N=nodoIds.length, pos={};
+  nodoIds.forEach((id,i)=>{const a=2*Math.PI*i/N; pos[id]={x:centre.x+Math.cos(a)*280, y:centre.y+Math.sin(a)*240};});
+  // dims reales
+  let svg=`<svg viewBox="0 0 1200 720">`;
+  validas.filter(r=>pos[r.subject]&&pos[r.object]).forEach(r=>{
+    const a=pos[r.subject],b=pos[r.object];
+    const conf=(r.certeza||'').toUpperCase();
+    const cls=conf.includes('CONFIRM')?'e-conf':conf.includes('HIP')?'e-hip':'e-solid';
+    svg+=`<line class="edge ${cls}" x1="${a.x}" y1="${a.y}" x2="${b.x}" y2="${b.y}"
+      data-det="${(r.detalle||r.predicate||'').replace(/"/g,'&quot;')}" data-p="${r.predicate||''}" data-t="${(r.tipo||'').replace(/"/g,'&quot;')}"></line>`;
+  });
+  nodoIds.forEach(id=>{
+    const o=idx[id], lab=o.name||o.title||id;
+    const col=o.type? 'var(--org)':'var(--per)';
+    svg+=`<circle cx="${pos[id].x}" cy="${pos[id].y}" r="16" fill="${col}" fill-opacity="0.2" stroke="${col}" stroke-width="2.4"></circle>`;
+    svg+=`<text class="node-label" x="${pos[id].x}" y="${pos[id].y+26}" text-anchor="middle">${lab.slice(0,26)}</text>`;
+  });
+  svg+=`</svg>`;
+  $('grafo').innerHTML=svg;
+  document.querySelectorAll('.edge').forEach(e=>e.addEventListener('click',()=>{
+    const ip=$('info-grafo');
+    ip.style.display='block';
+    ip.innerHTML=`<b>Relación: ${e.dataset.p}</b> · tipo <span class="tag-rel">${e.dataset.t}</span><br>${e.dataset.det}`;
+  }));
+}
+
+// ============ CRONOLOGÍA ============
+function renderCronologia(){
+  $('n-eventos').textContent=DB.events.length+' eventos';
+  const ordenados=[...DB.events].sort((a,b)=>(a.date||'').localeCompare(b.date||''));
+  $('linea').innerHTML='<div style="border-left:3px solid var(--dorado);padding-left:22px;margin-left:6px">'+
+    ordenados.map(e=>`<div style="margin-bottom:16px;position:relative">
+      <div style="color:var(--dorado);font-weight:700;font-size:13px">${e.date||'—'}</div>
+      <div><b>${e.name||e.id}</b></div>
+      <div style="color:var(--gris);font-size:.83rem">${e.desc||''}</div></div>`).join('')+'</div>';
+}
+
+// ============ PROTOCOLOS ============
+const PROTOCOLOS=[
+ {n:'1 · El derecho de la fuerza',c:'PROBABLE',t:'"El derecho está en la fuerza."',p:'Doctrina de potencia: sanciones, bloqueos, uso de fuerza.'},
+ {n:'2 · El poder económico',c:'CONFIRMADO',t:'"El poder del dinero del cual disponemos exclusivamente nosotros."',p:'FOBAPROA 873 mmdp + crisis 2008 TARP $700B (PISTA-052).'},
+ {n:'3 · Control de la prensa',c:'CONFIRMADO',t:'"Mediante la prensa obtenemos influencia, quedando nosotros en la sombra."',p:'Concentración en Google/Meta/X; Pew 2025: 86% digital (PISTA-051/037).'},
+ {n:'4 · La masa como elemento ciego',c:'PROBABLE',t:'"La masa es ciega, carece de juicio."',p:'Ingeniería de opinión; marketing político masivo.'},
+ {n:'5 · Arte de gobernar sin moral',c:'PROBABLE',t:'"El arte de gobernar no tiene que ver con las leyes morales."',p:'Realpolitik: decisión por interés.'},
+ {n:'6 · Poder invisible / la logia',c:'NO RESPALDADO',t:'"Nuestro poder será invencible porque será invisible."',p:'Red real (Fink, Palantir); sin "centro único étnico".'},
+ {n:'7 · Fomentar guerras',c:'CONFIRMADO',t:'"Evitar que las guerras traigan ganancias territoriales."',p:'DoD $849–892B; Brown >$8B pos-9/11 (PISTA-016/178/081).'},
+ {n:'8 · Liberalismo como herramienta',c:'PROBABLE',t:'"La libertad cambia de aspecto según se use para dominar."',p:'Uso instrumental de ideologías.'},
+ {n:'9 · Poder de la moneda',c:'CONFIRMADO',t:'"El oro — la fuerza motriz de la máquina del Estado."',p:'Control del crédito y emisión concentrado.'},
+ {n:'10 · Crisis económica fabricada',c:'CONFIRMADO',t:'"Produciremos la crisis general."',p:'2008: bancos rescatados, pérdida socializada (TARP $700B).'},
+ {n:'11 · Sembrar desconfianza',c:'CONFIRMADO',t:'"Sembrar desconfianza y discordia."',p:'Cámaras de eco y desinformación (PISTA-037).'},
+ {n:'12 · El monopolio',c:'CONFIRMADO',t:'"Manos invisibles trabajan para el monopolio."',p:'Oligopolios; 3 gestoras >$33B AUM (PISTA-187).'},
+ {n:'13 · Deuda y endeudamiento',c:'CONFIRMADO',t:'"El endeudamiento de la propiedad inmueble."',p:'Deuda soberana y socialización del crédito.'},
+ {n:'14 · Salarios-precios',c:'PROBABLE',t:'"Induciremos aumento de salarios y subiremos los precios."',p:'Inflación y ciclos salarios-precios.'},
+ {n:'15 · Puerta giratoria',c:'CONFIRMADO',t:'"Los gobernantes son empleados escogidos."',p:'Revolving door gobierno↔consejos (Fink, Karp).'},
+ {n:'16 · Vigilancia',c:'CONFIRMADO',t:'"Un poder que vigila y controla."',p:'Vigilancia masiva; IA de vigilancia (Palantir) (PISTA-040).'},
+ {n:'17 · Religión como instrumento',c:'PROBABLE',t:'"Reemplazar la creencia por el cálculo."',p:'Instrumentalización de la fe (PISTA-038).'},
+ {n:'18 · Educación dirigida',c:'PROBABLE',t:'"Educar en el sentido que necesitamos."',p:'Financiamiento corporativo de educación/think tanks.'},
+ {n:'19 · Político títere',c:'PROBABLE',t:'"Los mandatarios elegidos son pantalla."',p:'Puerta giratoria y cabildeo (AIPAC, PISTA-088/091).'},
+ {n:'20 · Fin de la propiedad de la nobleza',c:'PROBABLE',t:'"Despojar a la nobleza por impuestos."',p:'Reformas fiscales y redistribución de poder.'},
+ {n:'21 · Control de los partidos',c:'PROBABLE',t:'"Hacer del poder un campo de batalla."',p:'Division partidista como estrategia (PISTA-086).'},
+ {n:'22 · Idolatría al oro',c:'PROBABLE',t:'"Su única meta será la codicia."',p:'Cultura del consumo y del lujo (PISTA-028).'},
+ {n:'23 · Soberano mundial único',c:'NO RESPALDADO',t:'"Un soberano que domina todas las naciones."',p:'No existe soberano único; gobernanza fragmentada.'},
+ {n:'24 · Genocidio económico',c:'CONFIRMADO',t:'El poder económico como arma de dominación.',p:'Orbia/Netafim (PISTA-250); tesis Perkins; control de agua.'}
+];
+function renderProtocolos(){
+  $('grid-protocolos').innerHTML=PROTOCOLOS.map(p=>`
+    <div class="card"><h3>${p.n} ${certBadge(p.c)}</h3>
+    <blockquote>${p.t}</blockquote>
+    <div class="cuerpo"><b>Paralelo actual:</b> ${p.p}</div></div>`).join('');
+}
+
+// ============ INICIALIZAR ============
+function init(){
+  renderHome(); renderPersonas(); renderFiltrosOrg(); renderOrgs(); renderMediateca(); renderClaims(); renderGrafo(); renderCronologia(); renderProtocolos();
+}
+document.addEventListener('DOMContentLoaded', init);
+if(document.readyState!=='loading') init();
+</script>
+</body>
+</html>

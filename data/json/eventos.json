@@ -1,0 +1,208 @@
+[
+ {
+  "id": "EVT-000001",
+  "name": "Ofensiva en Gaza (cruce de declaraciones)",
+  "date": "2025-2026",
+  "place": "Gaza / Israel",
+  "conflict": "CNF-000001",
+  "desc": "Declaraciones de ministros y diputados israelíes durante la ofensiva, recogidas por GBC_Press.",
+  "certainty": "REPORTADO",
+  "review": "PENDIENTE",
+  "refs": [
+   "SRC-000003"
+  ]
+ },
+ {
+  "id": "EVT-000002",
+  "name": "Debate sobre antisemitismo y cristianismo sionista",
+  "date": "2026",
+  "place": "EUA",
+  "conflict": "CNF-000001",
+  "desc": "Cruz vs Carlson; sionismo, judaísmo y crítica a Israel.",
+  "certainty": "REPORTADO",
+  "review": "PENDIENTE",
+  "refs": [
+   "SRC-000003"
+  ]
+ },
+ {
+  "id": "EVT-000003",
+  "name": "Atentados del 7 de octubre",
+  "date": "2023-10-07",
+  "desc": "Ataque de Hamás contra el sur de Israel que dio inicio a la guerra en Gaza.",
+  "video": "batch2_ARGCRT_2093489975652126721.mp4",
+  "certainty": "PROBABLE",
+  "review": "PENDIENTE"
+ },
+ {
+  "id": "EVT-000004",
+  "name": "Guerra en Gaza",
+  "date": "2023-2026",
+  "desc": "Conflicto armado entre Israel y Hamás con alto número de víctimas civiles y destrucción de la Franja.",
+  "video": "045_youtube_@BreezyPolitics_11R9RVUgOUk.mp4",
+  "certainty": "PROBABLE",
+  "review": "PENDIENTE"
+ },
+ {
+  "id": "EVT-000005",
+  "name": "Incursión en el Hospital Al-Shifa",
+  "date": "2023-2024",
+  "desc": "Operación militar israelí en el principal hospital de Gaza denunciado como ataque a instalación sanitaria.",
+  "video": "Nadira_ali20_2093337835894198272.mp4",
+  "certainty": "PROBABLE",
+  "review": "PENDIENTE"
+ },
+ {
+  "id": "EVT-000006",
+  "name": "Bloqueo de Gaza",
+  "date": "2007-2026",
+  "desc": "Restricción de mercancías y movimiento en la Franja de Gaza denunciada como castigo colectivo.",
+  "video": "041_twitter_Bry___l_2093765417848250368.mp4",
+  "certainty": "PROBABLE",
+  "review": "PENDIENTE"
+ },
+ {
+  "id": "EVT-000007",
+  "name": "Muerte de Hind Rajab y paramédicos",
+  "date": "2024-01",
+  "desc": "Niña de 6 años y rescatistas hallados muertos tras ser alcanzados por fuego; caso ampliamente documentado.",
+  "video": "GBC_Press_1758014173005434880.mp4",
+  "certainty": "PROBABLE",
+  "review": "PENDIENTE"
+ },
+ {
+  "id": "EVT-000008",
+  "name": "Quema de tierras palestinas en Cisjordania",
+  "date": "2026",
+  "desc": "Soldados israelíes se filmaron prendiendo fuego a tierra palestina, que se propagó.",
+  "video": "026_twitter_Parodyjeffx_2094063840782606336.mp4",
+  "certainty": "PROBABLE",
+  "review": "PENDIENTE"
+ },
+ {
+  "id": "EVT-000009",
+  "name": "Disparo a niño de 14 años en Cisjordania",
+  "date": "reciente",
+  "desc": "Supuesta muerte de un joven desarmado en un centro de refugiados.",
+  "video": "Ignaciogjv_2092971978768408577.mp4",
+  "certainty": "PROBABLE",
+  "review": "PENDIENTE"
+ },
+ {
+  "id": "EVT-000010",
+  "name": "Asesinatos de ciudadanos estadounidenses en Cisjordania",
+  "date": "últimos 4 años",
+  "desc": "Nueve ciudadanos estadounidenses asesinados en Cisjordania, según un legislador.",
+  "video": "NA_twitter_Haitham47117914_2093141696368234496.mp4",
+  "certainty": "PROBABLE",
+  "review": "PENDIENTE"
+ },
+ {
+  "id": "EVT-000011",
+  "name": "Destrucción de la iglesia de San Porfirio",
+  "date": "indeterminada",
+  "desc": "Iglesia ortodoxa griega de Gaza, una de las más antiguas del mundo, dañada o destruida.",
+  "video": "047_twitter_100_alpha_2094423973412880512.mp4",
+  "certainty": "PROBABLE",
+  "review": "PENDIENTE"
+ },
+ {
+  "id": "EVT-000012",
+  "name": "Incendio de la iglesia de San Jorge",
+  "date": "desconocida",
+  "desc": "Sitio sagrado que, según el narrador, fue incendiado por colonos israelíes.",
+  "video": "NA_twitter_ARGCRT_2093481005868834816.mp4",
+  "certainty": "PROBABLE",
+  "review": "PENDIENTE"
+ },
+ {
+  "id": "EVT-000013",
+  "name": "Nakba / 1948",
+  "date": "1948",
+  "desc": "Limpieza étnica y desplazamiento masivo de palestinos durante la creación del Estado de Israel.",
+  "video": "048_youtube_@BreezyPolitics_U_rTXJcTgeQ.mp4",
+  "certainty": "PROBABLE",
+  "review": "PENDIENTE"
+ },
+ {
+  "id": "EVT-000014",
+  "name": "Partición de Palestina de 1947",
+  "date": "1947",
+  "desc": "Plan de la ONU de dividir Palestina, referido como origen de la creación del Estado de Israel.",
+  "video": "DaniMayakovski_2010271361365626880.mp4",
+  "certainty": "PROBABLE",
+  "review": "PENDIENTE"
+ },
+ {
+  "id": "EVT-000015",
+  "name": "Holocausto",
+  "date": "1939-1945",
+  "desc": "Genocidio de judíos por la Alemania nazi; su cifra de víctimas es cuestionada en algunos clips.",
+  "video": "006_twitter_After_TheTruth_2092998932745900032.mp4",
+  "certainty": "PROBABLE",
+  "review": "PENDIENTE"
+ },
+ {
+  "id": "EVT-000016",
+  "name": "Creación de Israel",
+  "date": "1948",
+  "desc": "Establecimiento del Estado de Israel, correlacionado por el narrador con el Holocausto.",
+  "video": "044_twitter_IIFBS__1848140035670806528.mp4",
+  "certainty": "PROBABLE",
+  "review": "PENDIENTE"
+ },
+ {
+  "id": "EVT-000017",
+  "name": "Normalización Marruecos-Israel",
+  "date": "2020",
+  "desc": "Acuerdo de normalización de relaciones entre Marruecos e Israel reconocido mutuamente.",
+  "video": "NA_twitter_ultras_antifaa_2093448788103061504.mp4",
+  "certainty": "PROBABLE",
+  "review": "PENDIENTE"
+ },
+ {
+  "id": "EVT-000018",
+  "name": "Caso Pegasus en México",
+  "date": "2017-2026",
+  "desc": "Presunto uso del software de espionaje Pegasus de NSO Group contra periodistas y activistas.",
+  "video": "049_youtube_BreezyPolitics_rZcAVNi5XbY_android.mp4",
+  "certainty": "PROBABLE",
+  "review": "PENDIENTE"
+ },
+ {
+  "id": "EVT-000019",
+  "name": "Solicitud de orden de arresto contra Netanyahu",
+  "date": "2026",
+  "desc": "Solicitud ante la Corte Penal Internacional citada como motivo de las sanciones estadounidenses.",
+  "video": "batch2_praxedes416_2093674783183433728.mp4",
+  "certainty": "PROBABLE",
+  "review": "PENDIENTE"
+ },
+ {
+  "id": "EVT-000020",
+  "name": "Intervención en el Parlamento Europeo",
+  "date": "2026",
+  "desc": "Discurso de un eurodiputado sobre muertes y detenciones de palestinos previas al ataque de Hamás.",
+  "video": "030_twitter_GBC_Press_1969636382587924480.mp4",
+  "certainty": "PROBABLE",
+  "review": "PENDIENTE"
+ },
+ {
+  "id": "EVT-000021",
+  "name": "Discurso del primer ministro israelí ante el Congreso",
+  "date": "reciente",
+  "desc": "Discurso ante el Congreso de EE.UU. que recibió 26 ovaciones de pie, según el orador.",
+  "video": "new_xIsraelExposedx_2091205336354938880.mp4",
+  "certainty": "PROBABLE",
+  "review": "PENDIENTE"
+ },
+ {
+  "id": "EVT-000022",
+  "name": "Emigración de judíos desde países árabes",
+  "date": "siglo XX",
+  "desc": "Episodios de emigración de judíos desde Marruecos, Irak y Egipto hacia Israel descritos por el narrador.",
+  "video": "1_twitter_DaniMayakovski_2093315930432372736.mp4",
+  "certainty": "PROBABLE",
+  "review": "PENDIENTE"
+ }
+]

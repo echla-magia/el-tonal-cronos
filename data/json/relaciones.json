@@ -1,0 +1,990 @@
+[
+ {
+  "subject": "PER-000001",
+  "predicate": "lidera",
+  "object": "ORG-000002",
+  "type": "INSTITUCIONAL",
+  "src": "SRC-000001"
+ },
+ {
+  "subject": "PER-000002",
+  "predicate": "recibió_lobby_de",
+  "object": "ORG-000001",
+  "type": "LOBBYING",
+  "src": "SRC-000001"
+ },
+ {
+  "subject": "PER-000001",
+  "predicate": "se_reunió_con",
+  "object": "PER-000002",
+  "type": "REUNION",
+  "src": "SRC-000001"
+ },
+ {
+  "subject": "ORG-000004",
+  "predicate": "registrada_bajo_FARA_de",
+  "object": "ORG-000002",
+  "type": "CONTRATO",
+  "src": "SRC-000002"
+ },
+ {
+  "subject": "PER-000008",
+  "predicate": "relacionado_con",
+  "object": "PER-000002",
+  "type": "LABORAL",
+  "src": "SRC-000001"
+ },
+ {
+  "subject": "ORG-000003",
+  "predicate": "apoya_a",
+  "object": "ORG-000002",
+  "type": "ALIANZA",
+  "src": "SRC-000001"
+ },
+ {
+  "subject": "PER-000019",
+  "predicate": "appears_in",
+  "object": "VID-000027",
+  "type": "SECUENCIA",
+  "src": "SRC-000003"
+ },
+ {
+  "subject": "PER-000022",
+  "predicate": "appears_in",
+  "object": "VID-000028",
+  "type": "SECUENCIA",
+  "src": "SRC-000003"
+ },
+ {
+  "subject": "PER-000021",
+  "predicate": "appears_in",
+  "object": "VID-000028",
+  "type": "SECUENCIA",
+  "src": "SRC-000003"
+ },
+ {
+  "subject": "PER-000089",
+  "predicate": "appears_in",
+  "object": "VID-000030",
+  "type": "SECUENCIA",
+  "src": "SRC-000003"
+ },
+ {
+  "subject": "PER-000018",
+  "predicate": "appears_in",
+  "object": "VID-000030",
+  "type": "SECUENCIA",
+  "src": "SRC-000003"
+ },
+ {
+  "subject": "PER-000090",
+  "predicate": "appears_in",
+  "object": "VID-000031",
+  "type": "SECUENCIA",
+  "src": "SRC-000003"
+ },
+ {
+  "subject": "PER-000091",
+  "predicate": "appears_in",
+  "object": "VID-000031",
+  "type": "SECUENCIA",
+  "src": "SRC-000003"
+ },
+ {
+  "subject": "PER-000092",
+  "predicate": "appears_in",
+  "object": "VID-000031",
+  "type": "SECUENCIA",
+  "src": "SRC-000003"
+ },
+ {
+  "subject": "PER-000093",
+  "predicate": "appears_in",
+  "object": "VID-000031",
+  "type": "SECUENCIA",
+  "src": "SRC-000003"
+ },
+ {
+  "subject": "PER-000094",
+  "predicate": "appears_in",
+  "object": "VID-000031",
+  "type": "SECUENCIA",
+  "src": "SRC-000003"
+ },
+ {
+  "subject": "PER-000095",
+  "predicate": "appears_in",
+  "object": "VID-000032",
+  "type": "SECUENCIA",
+  "src": "SRC-000003"
+ },
+ {
+  "subject": "PER-000001",
+  "predicate": "appears_in",
+  "object": "VID-000036",
+  "type": "SECUENCIA",
+  "src": "SRC-000003"
+ },
+ {
+  "subject": "PER-000025",
+  "predicate": "appears_in",
+  "object": "VID-000036",
+  "type": "SECUENCIA",
+  "src": "SRC-000003"
+ },
+ {
+  "subject": "PER-000020",
+  "predicate": "appears_in",
+  "object": "VID-000037",
+  "type": "SECUENCIA",
+  "src": "SRC-000003"
+ },
+ {
+  "subject": "PER-000096",
+  "predicate": "appears_in",
+  "object": "VID-000043",
+  "type": "SECUENCIA",
+  "src": "SRC-000003"
+ },
+ {
+  "subject": "PER-000027",
+  "predicate": "appears_in",
+  "object": "VID-000044",
+  "type": "SECUENCIA",
+  "src": "SRC-000003"
+ },
+ {
+  "subject": "PER-000021",
+  "predicate": "appears_in",
+  "object": "VID-000046",
+  "type": "SECUENCIA",
+  "src": "SRC-000003"
+ },
+ {
+  "subject": "PER-000002",
+  "predicate": "appears_in",
+  "object": "VID-000048",
+  "type": "SECUENCIA",
+  "src": "SRC-000003"
+ },
+ {
+  "subject": "PER-000097",
+  "predicate": "appears_in",
+  "object": "VID-000048",
+  "type": "SECUENCIA",
+  "src": "SRC-000003"
+ },
+ {
+  "subject": "PER-000098",
+  "predicate": "appears_in",
+  "object": "VID-000048",
+  "type": "SECUENCIA",
+  "src": "SRC-000003"
+ },
+ {
+  "subject": "PER-000001",
+  "predicate": "appears_in",
+  "object": "VID-000049",
+  "type": "SECUENCIA",
+  "src": "SRC-000003"
+ },
+ {
+  "subject": "PER-000096",
+  "predicate": "appears_in",
+  "object": "VID-000050",
+  "type": "SECUENCIA",
+  "src": "SRC-000003"
+ },
+ {
+  "subject": "PER-000099",
+  "predicate": "appears_in",
+  "object": "VID-000054",
+  "type": "SECUENCIA",
+  "src": "SRC-000003"
+ },
+ {
+  "subject": "PER-000021",
+  "predicate": "appears_in",
+  "object": "VID-000058",
+  "type": "SECUENCIA",
+  "src": "SRC-000003"
+ },
+ {
+  "subject": "PER-000006",
+  "predicate": "appears_in",
+  "object": "VID-000059",
+  "type": "SECUENCIA",
+  "src": "SRC-000003"
+ },
+ {
+  "subject": "PER-000100",
+  "predicate": "appears_in",
+  "object": "VID-000059",
+  "type": "SECUENCIA",
+  "src": "SRC-000003"
+ },
+ {
+  "subject": "PER-000015",
+  "predicate": "appears_in",
+  "object": "VID-000059",
+  "type": "SECUENCIA",
+  "src": "SRC-000003"
+ },
+ {
+  "subject": "PER-000002",
+  "predicate": "appears_in",
+  "object": "VID-000059",
+  "type": "SECUENCIA",
+  "src": "SRC-000003"
+ },
+ {
+  "subject": "PER-000101",
+  "predicate": "appears_in",
+  "object": "VID-000062",
+  "type": "SECUENCIA",
+  "src": "SRC-000003"
+ },
+ {
+  "subject": "PER-000102",
+  "predicate": "appears_in",
+  "object": "VID-000062",
+  "type": "SECUENCIA",
+  "src": "SRC-000003"
+ },
+ {
+  "subject": "PER-000103",
+  "predicate": "appears_in",
+  "object": "VID-000062",
+  "type": "SECUENCIA",
+  "src": "SRC-000003"
+ },
+ {
+  "subject": "PER-000104",
+  "predicate": "appears_in",
+  "object": "VID-000062",
+  "type": "SECUENCIA",
+  "src": "SRC-000003"
+ },
+ {
+  "subject": "PER-000105",
+  "predicate": "appears_in",
+  "object": "VID-000062",
+  "type": "SECUENCIA",
+  "src": "SRC-000003"
+ },
+ {
+  "subject": "PER-000106",
+  "predicate": "appears_in",
+  "object": "VID-000062",
+  "type": "SECUENCIA",
+  "src": "SRC-000003"
+ },
+ {
+  "subject": "PER-000013",
+  "predicate": "appears_in",
+  "object": "VID-000070",
+  "type": "SECUENCIA",
+  "src": "SRC-000003"
+ },
+ {
+  "subject": "PER-000012",
+  "predicate": "appears_in",
+  "object": "VID-000070",
+  "type": "SECUENCIA",
+  "src": "SRC-000003"
+ },
+ {
+  "subject": "PER-000107",
+  "predicate": "appears_in",
+  "object": "VID-000070",
+  "type": "SECUENCIA",
+  "src": "SRC-000003"
+ },
+ {
+  "subject": "PER-000010",
+  "predicate": "appears_in",
+  "object": "VID-000071",
+  "type": "SECUENCIA",
+  "src": "SRC-000003"
+ },
+ {
+  "subject": "PER-000099",
+  "predicate": "appears_in",
+  "object": "VID-000071",
+  "type": "SECUENCIA",
+  "src": "SRC-000003"
+ },
+ {
+  "subject": "PER-000006",
+  "predicate": "appears_in",
+  "object": "VID-000073",
+  "type": "SECUENCIA",
+  "src": "SRC-000003"
+ },
+ {
+  "subject": "PER-000108",
+  "predicate": "appears_in",
+  "object": "VID-000075",
+  "type": "SECUENCIA",
+  "src": "SRC-000003"
+ },
+ {
+  "subject": "PER-000109",
+  "predicate": "appears_in",
+  "object": "VID-000075",
+  "type": "SECUENCIA",
+  "src": "SRC-000003"
+ },
+ {
+  "subject": "PER-000001",
+  "predicate": "appears_in",
+  "object": "VID-000075",
+  "type": "SECUENCIA",
+  "src": "SRC-000003"
+ },
+ {
+  "subject": "PER-000110",
+  "predicate": "appears_in",
+  "object": "VID-000076",
+  "type": "SECUENCIA",
+  "src": "SRC-000003"
+ },
+ {
+  "subject": "PER-000011",
+  "predicate": "appears_in",
+  "object": "VID-000077",
+  "type": "SECUENCIA",
+  "src": "SRC-000003"
+ },
+ {
+  "subject": "PER-000111",
+  "predicate": "appears_in",
+  "object": "VID-000078",
+  "type": "SECUENCIA",
+  "src": "SRC-000003"
+ },
+ {
+  "subject": "VID-000078",
+  "predicate": "mentions",
+  "object": "ORG-000001",
+  "type": "SECUENCIA",
+  "src": "SRC-000003"
+ },
+ {
+  "subject": "PER-000053",
+  "predicate": "appears_in",
+  "object": "VID-000079",
+  "type": "SECUENCIA",
+  "src": "SRC-000003"
+ },
+ {
+  "subject": "PER-000049",
+  "predicate": "appears_in",
+  "object": "VID-000081",
+  "type": "SECUENCIA",
+  "src": "SRC-000003"
+ },
+ {
+  "subject": "PER-000112",
+  "predicate": "appears_in",
+  "object": "VID-000081",
+  "type": "SECUENCIA",
+  "src": "SRC-000003"
+ },
+ {
+  "subject": "PER-000048",
+  "predicate": "appears_in",
+  "object": "VID-000087",
+  "type": "SECUENCIA",
+  "src": "SRC-000003"
+ },
+ {
+  "subject": "PER-000113",
+  "predicate": "appears_in",
+  "object": "VID-000088",
+  "type": "SECUENCIA",
+  "src": "SRC-000003"
+ },
+ {
+  "subject": "PER-000114",
+  "predicate": "appears_in",
+  "object": "VID-000088",
+  "type": "SECUENCIA",
+  "src": "SRC-000003"
+ },
+ {
+  "subject": "PER-000047",
+  "predicate": "appears_in",
+  "object": "VID-000089",
+  "type": "SECUENCIA",
+  "src": "SRC-000003"
+ },
+ {
+  "subject": "PER-000115",
+  "predicate": "appears_in",
+  "object": "VID-000092",
+  "type": "SECUENCIA",
+  "src": "SRC-000003"
+ },
+ {
+  "subject": "PER-000116",
+  "predicate": "appears_in",
+  "object": "VID-000094",
+  "type": "SECUENCIA",
+  "src": "SRC-000003"
+ },
+ {
+  "subject": "PER-000052",
+  "predicate": "appears_in",
+  "object": "VID-000095",
+  "type": "SECUENCIA",
+  "src": "SRC-000003"
+ },
+ {
+  "subject": "PER-000057",
+  "predicate": "appears_in",
+  "object": "VID-000097",
+  "type": "SECUENCIA",
+  "src": "SRC-000003"
+ },
+ {
+  "subject": "PER-000055",
+  "predicate": "appears_in",
+  "object": "VID-000100",
+  "type": "SECUENCIA",
+  "src": "SRC-000003"
+ },
+ {
+  "subject": "PER-000117",
+  "predicate": "appears_in",
+  "object": "VID-000100",
+  "type": "SECUENCIA",
+  "src": "SRC-000003"
+ },
+ {
+  "subject": "PER-000118",
+  "predicate": "appears_in",
+  "object": "VID-000100",
+  "type": "SECUENCIA",
+  "src": "SRC-000003"
+ },
+ {
+  "subject": "PER-000065",
+  "predicate": "appears_in",
+  "object": "VID-000103",
+  "type": "SECUENCIA",
+  "src": "SRC-000003"
+ },
+ {
+  "subject": "PER-000047",
+  "predicate": "appears_in",
+  "object": "VID-000105",
+  "type": "SECUENCIA",
+  "src": "SRC-000003"
+ },
+ {
+  "subject": "PER-000017",
+  "predicate": "appears_in",
+  "object": "VID-000106",
+  "type": "SECUENCIA",
+  "src": "SRC-000003"
+ },
+ {
+  "subject": "PER-000025",
+  "predicate": "appears_in",
+  "object": "VID-000106",
+  "type": "SECUENCIA",
+  "src": "SRC-000003"
+ },
+ {
+  "subject": "PER-000119",
+  "predicate": "appears_in",
+  "object": "VID-000106",
+  "type": "SECUENCIA",
+  "src": "SRC-000003"
+ },
+ {
+  "subject": "PER-000051",
+  "predicate": "appears_in",
+  "object": "VID-000107",
+  "type": "SECUENCIA",
+  "src": "SRC-000003"
+ },
+ {
+  "subject": "PER-000120",
+  "predicate": "appears_in",
+  "object": "VID-000107",
+  "type": "SECUENCIA",
+  "src": "SRC-000003"
+ },
+ {
+  "subject": "PER-000043",
+  "predicate": "appears_in",
+  "object": "VID-000108",
+  "type": "SECUENCIA",
+  "src": "SRC-000003"
+ },
+ {
+  "subject": "PER-000030",
+  "predicate": "appears_in",
+  "object": "VID-000108",
+  "type": "SECUENCIA",
+  "src": "SRC-000003"
+ },
+ {
+  "subject": "PER-000121",
+  "predicate": "appears_in",
+  "object": "VID-000108",
+  "type": "SECUENCIA",
+  "src": "SRC-000003"
+ },
+ {
+  "subject": "PER-000122",
+  "predicate": "appears_in",
+  "object": "VID-000108",
+  "type": "SECUENCIA",
+  "src": "SRC-000003"
+ },
+ {
+  "subject": "PER-000062",
+  "predicate": "appears_in",
+  "object": "VID-000112",
+  "type": "SECUENCIA",
+  "src": "SRC-000003"
+ },
+ {
+  "subject": "PER-000124",
+  "predicate": "appears_in",
+  "object": "VID-000117",
+  "type": "SECUENCIA",
+  "src": "SRC-000003"
+ },
+ {
+  "subject": "PER-000074",
+  "predicate": "appears_in",
+  "object": "VID-000118",
+  "type": "SECUENCIA",
+  "src": "SRC-000003"
+ },
+ {
+  "subject": "PER-000076",
+  "predicate": "appears_in",
+  "object": "VID-000118",
+  "type": "SECUENCIA",
+  "src": "SRC-000003"
+ },
+ {
+  "subject": "PER-000075",
+  "predicate": "appears_in",
+  "object": "VID-000118",
+  "type": "SECUENCIA",
+  "src": "SRC-000003"
+ },
+ {
+  "subject": "PER-000125",
+  "predicate": "appears_in",
+  "object": "VID-000118",
+  "type": "SECUENCIA",
+  "src": "SRC-000003"
+ },
+ {
+  "subject": "PER-000021",
+  "predicate": "appears_in",
+  "object": "VID-000126",
+  "type": "SECUENCIA",
+  "src": "SRC-000003"
+ },
+ {
+  "subject": "PER-000084",
+  "predicate": "appears_in",
+  "object": "VID-000129",
+  "type": "SECUENCIA",
+  "src": "SRC-000003"
+ },
+ {
+  "subject": "VID-000129",
+  "predicate": "mentions",
+  "object": "ORG-000002",
+  "type": "SECUENCIA",
+  "src": "SRC-000003"
+ },
+ {
+  "subject": "PER-000002",
+  "predicate": "appears_in",
+  "object": "VID-000131",
+  "type": "SECUENCIA",
+  "src": "SRC-000003"
+ },
+ {
+  "subject": "PER-000041",
+  "predicate": "appears_in",
+  "object": "VID-000134",
+  "type": "SECUENCIA",
+  "src": "SRC-000003"
+ },
+ {
+  "subject": "PER-000030",
+  "predicate": "appears_in",
+  "object": "VID-000135",
+  "type": "SECUENCIA",
+  "src": "SRC-000003"
+ },
+ {
+  "subject": "PER-000031",
+  "predicate": "appears_in",
+  "object": "VID-000136",
+  "type": "SECUENCIA",
+  "src": "SRC-000003"
+ },
+ {
+  "subject": "PER-000041",
+  "predicate": "appears_in",
+  "object": "VID-000137",
+  "type": "SECUENCIA",
+  "src": "SRC-000003"
+ },
+ {
+  "subject": "PER-000127",
+  "predicate": "appears_in",
+  "object": "VID-000138",
+  "type": "SECUENCIA",
+  "src": "SRC-000003"
+ },
+ {
+  "subject": "PER-000128",
+  "predicate": "appears_in",
+  "object": "VID-000138",
+  "type": "SECUENCIA",
+  "src": "SRC-000003"
+ },
+ {
+  "subject": "PER-000129",
+  "predicate": "appears_in",
+  "object": "VID-000138",
+  "type": "SECUENCIA",
+  "src": "SRC-000003"
+ },
+ {
+  "subject": "PER-000001",
+  "predicate": "appears_in",
+  "object": "VID-000142",
+  "type": "SECUENCIA",
+  "src": "SRC-000003"
+ },
+ {
+  "subject": "PER-000018",
+  "predicate": "appears_in",
+  "object": "VID-000144",
+  "type": "SECUENCIA",
+  "src": "SRC-000003"
+ },
+ {
+  "subject": "PER-000079",
+  "predicate": "appears_in",
+  "object": "VID-000144",
+  "type": "SECUENCIA",
+  "src": "SRC-000003"
+ },
+ {
+  "subject": "PER-000080",
+  "predicate": "appears_in",
+  "object": "VID-000144",
+  "type": "SECUENCIA",
+  "src": "SRC-000003"
+ },
+ {
+  "subject": "PER-000082",
+  "predicate": "appears_in",
+  "object": "VID-000144",
+  "type": "SECUENCIA",
+  "src": "SRC-000003"
+ },
+ {
+  "subject": "PER-000130",
+  "predicate": "appears_in",
+  "object": "VID-000148",
+  "type": "SECUENCIA",
+  "src": "SRC-000003"
+ },
+ {
+  "subject": "PER-000018",
+  "predicate": "appears_in",
+  "object": "VID-000149",
+  "type": "SECUENCIA",
+  "src": "SRC-000003"
+ },
+ {
+  "subject": "PER-000085",
+  "predicate": "appears_in",
+  "object": "VID-000149",
+  "type": "SECUENCIA",
+  "src": "SRC-000003"
+ },
+ {
+  "subject": "PER-000131",
+  "predicate": "appears_in",
+  "object": "VID-000149",
+  "type": "SECUENCIA",
+  "src": "SRC-000003"
+ },
+ {
+  "subject": "PER-000001",
+  "predicate": "appears_in",
+  "object": "VID-000150",
+  "type": "SECUENCIA",
+  "src": "SRC-000003"
+ },
+ {
+  "subject": "PER-000006",
+  "predicate": "appears_in",
+  "object": "VID-000151",
+  "type": "SECUENCIA",
+  "src": "SRC-000003"
+ },
+ {
+  "subject": "PER-000047",
+  "predicate": "appears_in",
+  "object": "VID-000152",
+  "type": "SECUENCIA",
+  "src": "SRC-000003"
+ },
+ {
+  "subject": "PER-000132",
+  "predicate": "appears_in",
+  "object": "VID-000155",
+  "type": "SECUENCIA",
+  "src": "SRC-000003"
+ },
+ {
+  "subject": "PER-000001",
+  "predicate": "appears_in",
+  "object": "VID-000156",
+  "type": "SECUENCIA",
+  "src": "SRC-000003"
+ },
+ {
+  "subject": "PER-000001",
+  "predicate": "lidera",
+  "object": "ORG-000002",
+  "type": "INSTITUCIONAL",
+  "src": "SRC-000003"
+ },
+ {
+  "subject": "PER-000002",
+  "predicate": "recibió_lobby_de",
+  "object": "ORG-000001",
+  "type": "LOBBYING",
+  "src": "SRC-000003"
+ },
+ {
+  "subject": "PER-000001",
+  "predicate": "se_reunió_con",
+  "object": "PER-000002",
+  "type": "REUNION",
+  "src": "SRC-000003"
+ },
+ {
+  "subject": "PER-000006",
+  "predicate": "appears_in",
+  "object": "VID-000157",
+  "type": "SECUENCIA",
+  "src": "SRC-000003"
+ },
+ {
+  "subject": "PER-000040",
+  "predicate": "mencionado_en",
+  "object": "VID-000157",
+  "type": "SECUENCIA",
+  "src": "SRC-000003"
+ },
+ {
+  "subject": "VID-000157",
+  "predicate": "produces_claim",
+  "object": "CLM-000073",
+  "type": "DECLARACION",
+  "src": "SRC-000003"
+ },
+ {
+  "subject": "PER-000006",
+  "predicate": "hizo_claim",
+  "object": "CLM-000073",
+  "type": "DECLARACION",
+  "src": "SRC-000003"
+ },
+ {},
+ {},
+ {},
+ {},
+ {},
+ {},
+ {},
+ {},
+ {},
+ {},
+ {},
+ {},
+ {},
+ {},
+ {},
+ {},
+ {},
+ {},
+ {},
+ {},
+ {},
+ {},
+ {
+  "subject": "PER-000144",
+  "predicate": "dirige",
+  "object": "ORG-000074",
+  "type": "LABORAL",
+  "detalle": "Larry Fink es CEO y cofundador de BlackRock, mayor gestora de activos del mundo.",
+  "fecha": "2008-2026",
+  "lugar": "Nueva York, EE.UU.",
+  "fuente": "PISTA-187",
+  "certeza": "CONFIRMADO"
+ },
+ {
+  "subject": "PER-000142",
+  "predicate": "cofundó",
+  "object": "ORG-000072",
+  "type": "LABORAL",
+  "detalle": "Peter Thiel cofundó Palantir en 2003; provee IA de vigilancia a gobiernos.",
+  "fecha": "2003-2026",
+  "lugar": "Palo Alto, EE.UU.",
+  "fuente": "registro corporativo",
+  "certeza": "CONFIRMADO"
+ },
+ {
+  "subject": "PER-000143",
+  "predicate": "dirige",
+  "object": "ORG-000072",
+  "type": "LABORAL",
+  "detalle": "Alex Karp es CEO de Palantir; contratos de inteligencia con DoD y gobiernos.",
+  "fecha": "2003-2026",
+  "lugar": "EE.UU.",
+  "fuente": "registro corporativo",
+  "certeza": "CONFIRMADO"
+ },
+ {
+  "subject": "ORG-000074",
+  "predicate": "forma_triada_con",
+  "object": "ORG-000075",
+  "type": "INSTITUCIONAL",
+  "detalle": "BlackRock, Vanguard y State Street: la 'tríada' de mayor gestión de activos (>US$33B combinados).",
+  "fecha": "2026",
+  "lugar": "global",
+  "fuente": "informes 10-K/13F",
+  "certeza": "CONFIRMADO"
+ },
+ {
+  "subject": "ORG-000074",
+  "predicate": "forma_triada_con",
+  "object": "ORG-000076",
+  "type": "INSTITUCIONAL",
+  "detalle": "Tríada de indexación BlackRock-Vanguard-State Street.",
+  "fecha": "2026",
+  "lugar": "global",
+  "fuente": "informes 10-K",
+  "certeza": "CONFIRMADO"
+ },
+ {
+  "subject": "ORG-000077",
+  "predicate": "pertenece_a",
+  "object": "PER-000145",
+  "type": "PROPIEDAD",
+  "detalle": "Orbia es el conglomerado industrial de la familia Del Valle (Kaluz, Elementia, Banco Ve por Más).",
+  "fecha": "2026",
+  "lugar": "México",
+  "fuente": "PISTA-250",
+  "certeza": "CONFIRMADO"
+ },
+ {
+  "subject": "ORG-000077",
+  "predicate": "lucra_con",
+  "object": "ORG-000026",
+  "type": "ECONÓMICO",
+  "detalle": "Informe ONU (Albanese, 'From Occupation Economy to Genocide Economy') señala a Orbia/Netafim por lucrar con el genocidio en Gaza; técnica de riego agota río Jordán/mar Muerto.",
+  "fecha": "2026",
+  "lugar": "Gaza / Israel",
+  "fuente": "PISTA-250 / Albanese",
+  "certeza": "REPORTADO"
+ },
+ {
+  "subject": "ORG-000069",
+  "predicate": "controla_información_de",
+  "object": "ORG-000034",
+  "type": "PLATAFORMA",
+  "detalle": "Meta (Facebook/Instagram/WhatsApp) es canal central de distribución de información.",
+  "fecha": "2026",
+  "lugar": "global",
+  "fuente": "registro",
+  "certeza": "CONFIRMADO"
+ },
+ {
+  "subject": "ORG-000070",
+  "predicate": "controla_búsqueda_de",
+  "object": "ORG-000034",
+  "type": "PLATAFORMA",
+  "detalle": "Google/Alphabet domina búsqueda, YouTube y Android: nodo central de distribución de información y publicidad.",
+  "fecha": "2026",
+  "lugar": "global",
+  "fuente": "registro",
+  "certeza": "CONFIRMADO"
+ },
+ {
+  "subject": "ORG-000071",
+  "predicate": "propaga_narrativas_en",
+  "object": "ORG-000034",
+  "type": "PLATAFORMA",
+  "detalle": "TikTok (ByteDance) como vector de propagación viral.",
+  "fecha": "2026",
+  "lugar": "global",
+  "fuente": "registro",
+  "certeza": "CONFIRMADO"
+ },
+ {
+  "subject": "PER-000138",
+  "predicate": "investiga_a",
+  "object": "ORG-000078",
+  "type": "INVESTIGACIÓN",
+  "detalle": "Roger Mariaca, fiscal general de Bolivia, en el centro del caso drogas/DEA (detenido Viru Viru, Santa Cruz).",
+  "fecha": "2026-09-30/10-01",
+  "lugar": "Bolivia",
+  "fuente": "PISTA-244/lote 10-01",
+  "certeza": "CONFIRMADO"
+ },
+ {
+  "subject": "ORG-000078",
+  "predicate": "opera_con",
+  "object": "ORG-000015",
+  "type": "INSTITUCIONAL",
+  "detalle": "Historial documentado de unidades estatales facilitando tráfico para objetivos (Irán-Contra: Kerry 1988; Afganistán: McCoy). 'DEA administra el narco global' = HIPÓTESIS.",
+  "fecha": "1980-2026",
+  "lugar": "global",
+  "fuente": "Kerry 1988 / McCoy",
+  "certeza": "HIPOTESIS"
+ },
+ {
+  "subject": "ORG-000068",
+  "predicate": "agrupa_a",
+  "object": "ORG-000034",
+  "type": "ALIANZA",
+  "detalle": "OTAN: alianza militar de 32 países liderada en la práctica por EE.UU.",
+  "fecha": "1949-2026",
+  "lugar": "transatlántico",
+  "fuente": "registro",
+  "certeza": "CONFIRMADO"
+ },
+ {
+  "subject": "PER-000138",
+  "predicate": "actúa_en",
+  "object": "ORG-000030",
+  "type": "INSTITUCIONAL",
+  "detalle": "Roger Mariaca ejerce como Fiscal General del Estado de Bolivia (Ministerio Público).",
+  "fecha": "2026",
+  "lugar": "Bolivia",
+  "fuente": "registro",
+  "certeza": "CONFIRMADO"
+ }
+]

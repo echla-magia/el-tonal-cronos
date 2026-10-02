@@ -1,0 +1,1453 @@
+[
+ {
+  "id": "CLM-132",
+  "author": "Fiscalía General de Bolivia",
+  "text": "'se procedió al secuestro de nuestro Fiscal General del Estado… todos los fiscales se encuentran aprehendidos sin ningún tipo de fundamento… personal policial allanando de manera ilegal las instalaciones de la Fiscalía'",
+  "video": "",
+  "status": "DOCUMENTADO (transmisión oficial fiscalía; caso Roger Mariaca, PISTA-227/229)",
+  "confidence": 95,
+  "reviewed": "2026-10-01",
+  "srcs": [
+   "SRC-000003"
+  ]
+ },
+ {
+  "id": "CLM-133",
+  "author": "PER-000018",
+  "text": "'me gusta hablar con el dueño del circo, no con el payaso' (Cerimedo, en audio sobre protección de vuelos de cocaína en el Beni)",
+  "video": "",
+  "status": "DOCUMENTADO (audio del vicepresidente de Bolivia presentado en video ElMono/Pampa139; PISTA-242)",
+  "confidence": 90,
+  "reviewed": "2026-10-01",
+  "srcs": [
+   "SRC-000003"
+  ]
+ },
+ {
+  "id": "CLM-134",
+  "author": "PER-000088",
+  "text": "'Roger Mariaca es el hombre que llevaba adelante la investigación contra Fernando Cerimedo… por chanchullos con el gobierno del presidente Paz'",
+  "video": "",
+  "status": "DOCUMENTADO (video Julián Macías sobre entrega del fiscal a la DEA; PISTA-229)",
+  "confidence": 90,
+  "reviewed": "2026-10-01",
+  "srcs": [
+   "SRC-000003"
+  ]
+ },
+ {
+  "id": "CLM-135",
+  "author": "pers-video-Ecuador",
+  "text": "'el 70% de la cocaína del mundo fluye por Ecuador… contenedores de Noboa Trading usados para contrabandear cocaína a Europa (OCCRP)'",
+  "video": "",
+  "status": "PROBABLE (afirmación del video ElMonoPikoso; caso Noboa Trading verificable por el OCCRP; PISTA-232)",
+  "confidence": 70,
+  "reviewed": "2026-10-01",
+  "srcs": [
+   "SRC-000003"
+  ]
+ },
+ {
+  "id": "CLM-136",
+  "author": "PER-000018",
+  "text": "'Yo no voy a permitir que ningún peruano, venezolano, colombiano, argentino ni uruguayo, que tienen 200 años, vengan a decirme que el pueblo judío con 3.850 años no tiene derecho' — declaración proactiva 'ir a buscar a los enemigos en territorio enemigo'",
+  "video": "",
+  "status": "DOCUMENTADO (audio verificado; identidad del orador NO VERIFICADA; PISTA-230)",
+  "confidence": 85,
+  "reviewed": "2026-10-01",
+  "srcs": [
+   "SRC-000003"
+  ]
+ },
+ {
+  "id": "CLM-000001",
+  "author": "PER-000003",
+  "text": "'No podemos vivir si queda un palestino'",
+  "video": "VID-000001",
+  "status": "CORROBORADA (cita)",
+  "confidence": 60,
+  "reviewed": "2026-09-03",
+  "srcs": [
+   "SRC-000003"
+  ]
+ },
+ {
+  "id": "CLM-000002",
+  "author": "PER-000009",
+  "text": "'Criticar el sionismo no es antisemitismo'",
+  "video": "VID-000005",
+  "status": "PARCIALMENTE_CORROBORADA",
+  "confidence": 55,
+  "reviewed": "2026-09-03",
+  "srcs": [
+   "SRC-000003"
+  ]
+ },
+ {
+  "id": "CLM-000003",
+  "author": "PER-000008",
+  "text": "'Gaza como waterfront teardown, torres de lujo sobre escombros'",
+  "video": "VID-000004",
+  "status": "CORROBORADA (cita)",
+  "confidence": 63,
+  "reviewed": "2026-09-03",
+  "srcs": [
+   "SRC-000003"
+  ]
+ },
+ {
+  "id": "CLM-000004",
+  "text": "Los grupos feministas 'permanecieron en silencio' sobre las violaciones de Hamás a jóvenes judías mostrando hipocresía; pidió que se publiquen todos los expedientes Epstein.",
+  "author": "PER-000022",
+  "author_name": "Alan Dershowitz",
+  "contra": "Autoexculpación personal; afirmaciones sobre silencio feminista y National Lawyers Guild a verificar",
+  "video_file": "batch2_GBC_Press_1742951094727163904.mp4",
+  "source_url": "https://x.com/GBC_Press/status/1742951094727163904",
+  "status": "DOCUMENTADO",
+  "confidence": 0,
+  "reviewed": "PENDIENTE"
+ },
+ {
+  "id": "CLM-000005",
+  "text": "'Eso no fue genocidio por definición'; las muertes palestinas fueron 'colateral de una guerra urbana' forzada por Hamás; es apropiado eliminar a la cúpula de Hamás responsable del 7-O.",
+  "author": "",
+  "author_name": "",
+  "contra": "Niega la calificación de genocidio sostenida por organismos internacionales",
+  "video_file": "batch2_GBC_Press_2085101964832944128.mp4",
+  "source_url": "https://x.com/GBC_Press/status/2085101964832944128",
+  "status": "POSIBLE",
+  "confidence": 0,
+  "reviewed": "PENDIENTE"
+ },
+ {
+  "id": "CLM-000006",
+  "text": "EE.UU. congeló los activos de la presidenta de la CPI como represalia por la solicitud de arresto contra Netanyahu y presionó a países latinoamericanos para abandonar el Estatuto de Roma.",
+  "author": "",
+  "author_name": "",
+  "contra": "Número de países, medida exacta y alcance a verificar con fuentes primarias",
+  "video_file": "batch2_praxedes416_2093674783183433728.mp4",
+  "source_url": "https://x.com/praxedes416/status/2093674783183433728",
+  "status": "PROBABLE",
+  "confidence": 0,
+  "reviewed": "PENDIENTE",
+  "extr_sources": [
+   "https://en.wikipedia.org/wiki/Executive_Order_14203"
+  ],
+  "corrob_nota": "Trump sancionó a la CPI en feb 2025 (Exec Order 14203) pero contra el FISCAL Karim Khan, no una 'presidenta'. Fondo real, destinatario mal identificado.",
+  "corrob_fecha": "2026-09-05"
+ },
+ {
+  "id": "CLM-000007",
+  "text": "'Un presidente estadounidense debe pensar primero en lo mejor para EE.UU. y no dar a los israelíes un cheque en blanco'.",
+  "author": "PER-000020",
+  "author_name": "Richard Nixon",
+  "contra": "Autoría del audio y contexto a verificar con fuente primaria",
+  "video_file": "batch2_PRO_X_313_1973082220513599488.mp4",
+  "source_url": "https://x.com/PRO_X_313/status/1973082220513599488",
+  "status": "DOCUMENTADO",
+  "confidence": 0,
+  "reviewed": "PENDIENTE"
+ },
+ {
+  "id": "CLM-000008",
+  "text": "Hind Rajab, de 6 años, llamó a emergencias y fue hallada muerta junto a los paramédicos de la ambulancia enviada; el portavoz dijo 'hemos visto cómo Hamás toma ambulancias'.",
+  "author": "",
+  "author_name": "",
+  "contra": "Versión del portavoz israelí frente a las denuncias del caso Hind Rajab",
+  "video_file": "GBC_Press_1758014173005434880.mp4",
+  "source_url": "https://x.com/GBC_Press/status/1758014173005434880",
+  "status": "CORROBORADO",
+  "confidence": 0,
+  "reviewed": "PENDIENTE",
+  "extr_sources": [
+   "https://www.aljazeera.com/news/2024/2/10/body-of-6-year-old-killed-in-deliberate-israeli-fire-found-after-12-days",
+   "https://www.aljazeera.com/news/2026/8/20/who-was-hind-rajab-and-why-is-israel-investigating-her-killing",
+   "https://en.wikipedia.org/wiki/Hind_Rajab_Foundation"
+  ],
+  "corrob_nota": "Completo: Hind Rajab, 6 años, llamó a la Media Luna Roja, hallada muerta con sus familiares y 2 paramédicos 12 días después.",
+  "corrob_fecha": "2026-09-05"
+ },
+ {
+  "id": "CLM-000009",
+  "text": "El Congreso dio a Netanyahu 26 ovaciones de pie en su discurso; un congresista vistió uniforme militar israelí en el hemiciclo.",
+  "author": "",
+  "author_name": "",
+  "contra": "Número exacto de ovaciones y el episodio del uniforme a verificar",
+  "video_file": "hippyygoat_2093399759134343168.mp4",
+  "source_url": "https://x.com/hippyygoat/status/2093399759134343168",
+  "status": "PROBABLE",
+  "confidence": 0,
+  "reviewed": "PENDIENTE",
+  "extr_sources": [
+   "https://www.aljazeera.com/news/2024/7/24/key-takeaways-from-netanyahus-speech-and-the-protests-outside-us-congress"
+  ],
+  "corrob_nota": "Ovaciones de pie reales en el Congreso (24/7/2024), pero el conteo exacto '26' no está verificado en las fuentes.",
+  "corrob_fecha": "2026-09-05"
+ },
+ {
+  "id": "CLM-000010",
+  "text": "Se ordenó suspender las patrullas de la valla fronteriza entre las 5:20 y las 9:00, coincidiendo con el plan de ataque de Hamás; Israel tuvo que conocer el plan y permitirlo.",
+  "author": "",
+  "author_name": "",
+  "contra": "No se presenta el audio de la orden; relato testimonial sin corroboración de la cúpula",
+  "video_file": "irlandarra2019_2093559993932840960.mp4",
+  "source_url": "https://x.com/irlandarra2019/status/2093559993932840960",
+  "status": "NO_VERIFICADO",
+  "confidence": 0,
+  "reviewed": "PENDIENTE",
+  "extr_sources": [],
+  "corrob_nota": "Sin aparición en prensa reputada con esos detalles de franja horaria; NO_CONFIRMADO.",
+  "corrob_fecha": "2026-09-05"
+ },
+ {
+  "id": "CLM-000011",
+  "text": "Si los judíos no repudian el título de 'Estado del pueblo judío', la inferencia razonable es que apoyan las acciones de Israel; sin una ruptura de la opinión judía estadounidense crecerá la animadversión.",
+  "author": "",
+  "author_name": "",
+  "contra": "Argumento de opinión; analogías disputadas",
+  "video_file": "Partisan_12_2093706022993219584.mp4",
+  "source_url": "https://x.com/Partisan_12/status/2093706022993219584",
+  "status": "POSIBLE",
+  "confidence": 0,
+  "reviewed": "PENDIENTE"
+ },
+ {
+  "id": "CLM-000012",
+  "text": "El ejército israelí es el más moral del mundo y no dispara en ráfagas",
+  "author": "PER-000010",
+  "author_name": "May Golan",
+  "contra": "Se trata de una película de destrucción: 70% de Gaza reducida a un aparcamiento (Piers Morgan)",
+  "video_file": "001_twitter_GBC_Press_1966879451855372288.mp4",
+  "source_url": "https://x.com/001_twitter_GBC_Press/status/1966879451855372288",
+  "status": "DOCUMENTADO",
+  "confidence": 0,
+  "reviewed": "PENDIENTE"
+ },
+ {
+  "id": "CLM-000013",
+  "text": "El gobierno israelí lleva 20 meses prohibiendo la entrada de periodistas internacionales a Gaza",
+  "author": "PER-000099",
+  "author_name": "Piers Morgan",
+  "contra": "",
+  "video_file": "001_twitter_GBC_Press_1966879451855372288.mp4",
+  "source_url": "https://x.com/001_twitter_GBC_Press/status/1966879451855372288",
+  "status": "CORROBORADO",
+  "confidence": 0,
+  "reviewed": "PENDIENTE",
+  "extr_sources": [
+   "https://www.aljazeera.com/news/2026/1/7/media-body-condemns-israels-continued-ban-on-foreign-media-access-to-gaza",
+   "https://www.aljazeera.com/news/2026/4/30/media-organisations-call-on-israel-to-allow-independent-access-to-gaza"
+  ],
+  "corrob_nota": "Ban continuado a la prensa extranjera para acceso independiente a Gaza (CPJ/RSF exigen acceso); ~20 meses coherente.",
+  "corrob_fecha": "2026-09-05"
+ },
+ {
+  "id": "CLM-000014",
+  "text": "El sionismo político se implementó mediante colonización, ocupación, apartheid, desposesión, limpieza étnica y genocidio",
+  "author": "",
+  "author_name": "",
+  "contra": "",
+  "video_file": "002_twitter_MrsRoyKeaneo_2093330918773592064.mp4",
+  "source_url": "https://x.com/002_twitter_MrsRoyKeaneo/status/2093330918773592064",
+  "status": "PROBABLE",
+  "confidence": 0,
+  "reviewed": "PENDIENTE",
+  "extr_sources": [
+   "https://www.hrw.org/report/2021/04/27/threshold-crossed/israeli-authorities-and-crimes-apartheid-and-persecution",
+   "https://www.amnesty.org/en/latest/news/2022/02/israels-apartheid-against-palestinians-a-cruel-system-of-domination-and-a-crime-against-humanity/"
+  ]
+ },
+ {
+  "id": "CLM-000015",
+  "text": "El antisionismo es la oposición a esos crímenes y no equivale a antisemitismo",
+  "author": "",
+  "author_name": "",
+  "contra": "",
+  "video_file": "002_twitter_MrsRoyKeaneo_2093330918773592064.mp4",
+  "source_url": "https://x.com/002_twitter_MrsRoyKeaneo/status/2093330918773592064",
+  "status": "POSIBLE",
+  "confidence": 0,
+  "reviewed": "PENDIENTE",
+  "extr_sources": [
+   "https://jerusalemdeclaration.org/",
+   "https://holocaustremembrance.com/resources/working-definition-antisemitism"
+  ]
+ },
+ {
+  "id": "CLM-000016",
+  "text": "No busco la destrucción de Israel ni de ningún país",
+  "author": "PER-000006",
+  "author_name": "Tucker Carlson",
+  "contra": "",
+  "video_file": "003_twitter_GBC_Press_2035100852491325440.mp4",
+  "source_url": "https://x.com/003_twitter_GBC_Press/status/2035100852491325440",
+  "status": "DOCUMENTADO",
+  "confidence": 0,
+  "reviewed": "PENDIENTE"
+ },
+ {
+  "id": "CLM-000017",
+  "text": "Israel tomó el sur del Líbano en las dos primeras semanas de la guerra",
+  "author": "PER-000006",
+  "author_name": "Tucker Carlson",
+  "contra": "",
+  "video_file": "003_twitter_GBC_Press_2035100852491325440.mp4",
+  "source_url": "https://x.com/003_twitter_GBC_Press/status/2035100852491325440",
+  "status": "DOCUMENTADO",
+  "confidence": 0,
+  "reviewed": "PENDIENTE"
+ },
+ {
+  "id": "CLM-000018",
+  "text": "Criticar el sionismo no equivale a antisemitismo",
+  "author": "",
+  "author_name": "",
+  "contra": "Quienes no apoyan al estado de Israel serían antisemitas (otro interviniente)",
+  "video_file": "004_twitter_Haitham47117914_2091644922826768386.mp4",
+  "source_url": "https://x.com/004_twitter_Haitham47117914/status/2091644922826768386",
+  "status": "POSIBLE",
+  "confidence": 0,
+  "reviewed": "PENDIENTE",
+  "extr_sources": [
+   "https://jerusalemdeclaration.org/",
+   "https://holocaustremembrance.com/resources/working-definition-antisemitism"
+  ]
+ },
+ {
+  "id": "CLM-000019",
+  "text": "El catolicismo no atribuye significado de profecía cumplida al nuevo estado de Israel",
+  "author": "",
+  "author_name": "",
+  "contra": "",
+  "video_file": "004_twitter_Haitham47117914_2091644922826768386.mp4",
+  "source_url": "https://x.com/004_twitter_Haitham47117914/status/2091644922826768386",
+  "status": "POSIBLE",
+  "confidence": 0,
+  "reviewed": "PENDIENTE",
+  "extr_sources": [
+   "https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_decl_19651028_nostra-aetate_en.html"
+  ]
+ },
+ {
+  "id": "CLM-000020",
+  "text": "La firma israelí Black Core, vinculada al Mossad, interfirió elecciones en Francia, Escocia, Angola, Togo y Nueva York",
+  "author": "PER-000067",
+  "author_name": "Diego Vélez (Gar)",
+  "contra": "",
+  "video_file": "005_twitter_DiegoVelezGar_2093159697415024640.mp4",
+  "source_url": "https://x.com/005_twitter_DiegoVelezGar/status/2093159697415024640",
+  "status": "CORROBORADO",
+  "confidence": 0,
+  "reviewed": "PENDIENTE",
+  "extr_sources": [
+   "https://www.theguardian.com/uk-news/2026/jun/12/france-accuses-israeli-firm-interfering-scottish-elections-john-swinney-snp"
+  ],
+  "corrob_nota": "Viginum (Francia) atribuyó a BlackCore interferencias en elecciones francesas, Escocia, Nueva York 2025, Angola y Togo. Matiz: vínculo 'oficial al Mossad' no demostrado.",
+  "corrob_fecha": "2026-09-05"
+ },
+ {
+  "id": "CLM-000021",
+  "text": "The Guardian destapó un equipo de contratistas israelíes que manipuló más de 30 elecciones en el mundo, dirigido por Tal Hanan",
+  "author": "PER-000067",
+  "author_name": "Diego Vélez (Gar)",
+  "contra": "",
+  "video_file": "005_twitter_DiegoVelezGar_2093159697415024640.mp4",
+  "source_url": "https://x.com/005_twitter_DiegoVelezGar/status/2093159697415024640",
+  "status": "CORROBORADO",
+  "confidence": 0,
+  "reviewed": "PENDIENTE",
+  "extr_sources": [
+   "https://www.theguardian.com/world/2023/feb/15/revealed-disinformation-team-jorge-claim-meddling-elections-tal-hanan"
+  ],
+  "corrob_nota": "Guardian/Forbidden Stories: 'Team Jorge' de Tal Hanan afirmó manipular >30 elecciones (33 presidenciales, 27 exitosas). Son afirmaciones del propio Hanan, no todas verificadas.",
+  "corrob_fecha": "2026-09-05"
+ },
+ {
+  "id": "CLM-000022",
+  "text": "Israel vende armas y tecnología probadas primero en los territorios ocupados",
+  "author": "PER-000011",
+  "author_name": "Eran Efrati",
+  "contra": "",
+  "video_file": "007_twitter_Ylainoa_2093794922897780736.mp4",
+  "source_url": "https://x.com/007_twitter_Ylainoa/status/2093794922897780736",
+  "status": "DOCUMENTADO",
+  "confidence": 0,
+  "reviewed": "PENDIENTE"
+ },
+ {
+  "id": "CLM-000023",
+  "text": "El gobierno israelí usa el antisemitismo como arma política para defender crímenes",
+  "author": "PER-000011",
+  "author_name": "Eran Efrati",
+  "contra": "",
+  "video_file": "007_twitter_Ylainoa_2093794922897780736.mp4",
+  "source_url": "https://x.com/007_twitter_Ylainoa/status/2093794922897780736",
+  "status": "DOCUMENTADO",
+  "confidence": 0,
+  "reviewed": "PENDIENTE"
+ },
+ {
+  "id": "CLM-000024",
+  "text": "El gobierno de Netanyahu tiene lazos fuertes con supremacistas blancos, fascistas y neonazis en Europa y EEUU",
+  "author": "PER-000011",
+  "author_name": "Eran Efrati",
+  "contra": "",
+  "video_file": "007_twitter_Ylainoa_2093794922897780736.mp4",
+  "source_url": "https://x.com/007_twitter_Ylainoa/status/2093794922897780736",
+  "status": "DOCUMENTADO",
+  "confidence": 0,
+  "reviewed": "PENDIENTE"
+ },
+ {
+  "id": "CLM-000025",
+  "text": "No hubo política programada de exterminio de los judíos por parte de Alemania",
+  "author": "PER-000053",
+  "author_name": "Mark Weber",
+  "contra": "",
+  "video_file": "009_twitter_forbiddenmerch_2093754760935387136.mp4",
+  "source_url": "https://x.com/009_twitter_forbiddenmerch/status/2093754760935387136",
+  "status": "REFUTADO",
+  "confidence": 0,
+  "reviewed": "PENDIENTE",
+  "corrob_nota": "NEGACIÓN DEL HOLOCAUSTO. La política nazi de exterminio de los judíos europeos ('Solución Final') está documentada por archivos, testimonios y sentencias de Núremberg. Esta afirmación contradice la evidencia histórica abrumadora.",
+  "corrob_fecha": "2026-09-05"
+ },
+ {
+  "id": "CLM-000026",
+  "text": "Las guerras en Ucrania, Gaza, Irán y la presión sobre Venezuela son resultado de la pretensión hegemónica de EEUU y Europa de 'dirigir el mundo'",
+  "author": "PER-000049",
+  "author_name": "Jeffrey Sachs",
+  "contra": "",
+  "video_file": "012_twitter_apocalypseos_2093798890260828160.mp4",
+  "source_url": "https://x.com/012_twitter_apocalypseos/status/2093798890260828160",
+  "status": "DOCUMENTADO",
+  "confidence": 0,
+  "reviewed": "PENDIENTE"
+ },
+ {
+  "id": "CLM-000027",
+  "text": "El mercado bursátil estadounidense está en una burbuja financiera impulsada por las valoraciones de IA",
+  "author": "PER-000049",
+  "author_name": "Jeffrey Sachs",
+  "contra": "",
+  "video_file": "012_twitter_apocalypseos_2093798890260828160.mp4",
+  "source_url": "https://x.com/012_twitter_apocalypseos/status/2093798890260828160",
+  "status": "DOCUMENTADO",
+  "confidence": 0,
+  "reviewed": "PENDIENTE"
+ },
+ {
+  "id": "CLM-000028",
+  "text": "Vi al lobby israelí dictar términos dentro de la Casa Blanca bajo Trump, manipulando la inteligencia y el entorno del presidente",
+  "author": "PER-000048",
+  "author_name": "Joe Kent",
+  "contra": "",
+  "video_file": "020_twitter_GBC_Press_2060335504353288192.mp4",
+  "source_url": "https://x.com/020_twitter_GBC_Press/status/2060335504353288192",
+  "status": "DOCUMENTADO",
+  "confidence": 0,
+  "reviewed": "PENDIENTE"
+ },
+ {
+  "id": "CLM-000029",
+  "text": "Eliminar a Sadam Huseín tendría un enorme efecto positivo en la región",
+  "author": "PER-000116",
+  "author_name": "Dick Cheney",
+  "contra": "",
+  "video_file": "027_twitter_BowesChay_1841987050326589441.mp4",
+  "source_url": "https://x.com/027_twitter_BowesChay/status/1841987050326589441",
+  "status": "DOCUMENTADO",
+  "confidence": 0,
+  "reviewed": "PENDIENTE"
+ },
+ {
+  "id": "CLM-000030",
+  "text": "Los tres principios para ganar la guerra contra el terrorismo son ganar, ganar y ganar; la victoria en Afganistán facilita la de Irak",
+  "author": "PER-000116",
+  "author_name": "Dick Cheney",
+  "contra": "",
+  "video_file": "027_twitter_BowesChay_1841987050326589441.mp4",
+  "source_url": "https://x.com/027_twitter_BowesChay/status/1841987050326589441",
+  "status": "DOCUMENTADO",
+  "confidence": 0,
+  "reviewed": "PENDIENTE"
+ },
+ {
+  "id": "CLM-000031",
+  "text": "La cifra de seis millones de víctimas judías del Holocausto es una mentira",
+  "author": "PER-000052",
+  "author_name": "George Lincoln Rockwell",
+  "contra": "",
+  "video_file": "028_twitter_forbiddenmerch_2093843476240605184.mp4",
+  "source_url": "https://x.com/028_twitter_forbiddenmerch/status/2093843476240605184",
+  "status": "REFUTADO",
+  "confidence": 0,
+  "reviewed": "PENDIENTE",
+  "corrob_nota": "NEGACIÓN DEL HOLOCAUSTO (cifra). El número de ~6 millones de víctimas judías está corroborado por los registros de deportación, los archivos de los campos y la investigación histórica (USHMM, Yad Vashem). Es un tropo negacionista.",
+  "corrob_fecha": "2026-09-05"
+ },
+ {
+  "id": "CLM-000032",
+  "text": "Mis padres estuvieron en Auschwitz y Majdanek y toda mi familia fue exterminada; no callaré ante los crímenes de Israel contra los palestinos",
+  "author": "",
+  "author_name": "",
+  "contra": "",
+  "video_file": "029_twitter_myzccc_2042055085920858112.mp4",
+  "source_url": "https://x.com/029_twitter_myzccc/status/2042055085920858112",
+  "status": "CORROBORADO",
+  "confidence": 0,
+  "reviewed": "PENDIENTE"
+ },
+ {
+  "id": "CLM-000033",
+  "text": "Israel mató un número de palestinos cada año antes del ataque de Hamás y detiene sin justificación a civiles, incluso niños como rehenes",
+  "author": "PER-000057",
+  "author_name": "Jussi Saramo",
+  "contra": "",
+  "video_file": "030_twitter_GBC_Press_1969636382587924480.mp4",
+  "source_url": "https://x.com/030_twitter_GBC_Press/status/1969636382587924480",
+  "status": "DOCUMENTADO",
+  "confidence": 0,
+  "reviewed": "PENDIENTE"
+ },
+ {
+  "id": "CLM-000034",
+  "text": "La derecha israelí nunca aceptó un modelo de estado único democrático ni el de dos estados, y ha apoyado a Hamás para impedir la paz",
+  "author": "PER-000057",
+  "author_name": "Jussi Saramo",
+  "contra": "",
+  "video_file": "030_twitter_GBC_Press_1969636382587924480.mp4",
+  "source_url": "https://x.com/030_twitter_GBC_Press/status/1969636382587924480",
+  "status": "DOCUMENTADO",
+  "confidence": 0,
+  "reviewed": "PENDIENTE"
+ },
+ {
+  "id": "CLM-000035",
+  "text": "Ucrania no es un estado soberano con fronteras reconocidas y sigue siendo parte de Rusia desde el siglo X; es 'Rusia invadiendo Rusia'",
+  "author": "PER-000055",
+  "author_name": "Riccardo Bosi",
+  "contra": "",
+  "video_file": "033_twitter_nightglow98_2093771390553849856.mp4",
+  "source_url": "https://x.com/033_twitter_nightglow98/status/2093771390553849856",
+  "status": "DOCUMENTADO",
+  "confidence": 0,
+  "reviewed": "PENDIENTE"
+ },
+ {
+  "id": "CLM-000036",
+  "text": "Putin está 'cortando la cabeza de la serpiente' al tumbar el centro del deep state en Ucrania",
+  "author": "PER-000055",
+  "author_name": "Riccardo Bosi",
+  "contra": "",
+  "video_file": "033_twitter_nightglow98_2093771390553849856.mp4",
+  "source_url": "https://x.com/033_twitter_nightglow98/status/2093771390553849856",
+  "status": "DOCUMENTADO",
+  "confidence": 0,
+  "reviewed": "PENDIENTE"
+ },
+ {
+  "id": "CLM-000037",
+  "text": "Ben Gvir habría amenazado a una presa palestina diciendo que 'se acabaron los campamentos de verano'",
+  "author": "",
+  "author_name": "",
+  "contra": "",
+  "video_file": "037_twitter_dw_espanol_2094178030813958145.mp4",
+  "source_url": "https://x.com/037_twitter_dw_espanol/status/2094178030813958145",
+  "status": "CORROBORADO",
+  "confidence": 0,
+  "reviewed": "PENDIENTE",
+  "extr_sources": [
+   "https://www.aljazeera.com/news/2026/8/30/israels-ben-gvir-lauds-harsh-conditions-for-palestinian-female-prisoners"
+  ]
+ },
+ {
+  "id": "CLM-000038",
+  "text": "Avionetas que salían de Bolivia llevaban hasta 500 kg de cocaína al día y el jefe antinarcóticos cobraba 50.000 dólares por avioneta, respondiendo a la primera dama",
+  "author": "",
+  "author_name": "",
+  "contra": "La primera dama salió a negarlo",
+  "video_file": "038_twitter_petrogustavo_2093648099285569537.mp4",
+  "source_url": "https://x.com/038_twitter_petrogustavo/status/2093648099285569537",
+  "status": "PROBABLE",
+  "confidence": 0,
+  "reviewed": "PENDIENTE"
+ },
+ {
+  "id": "CLM-000039",
+  "text": "Cinco israelíes ('Dancing Israelis'), dos de ellos confirmados como agentes del Mosad, tuvieron conocimiento previo del 11-S y celebraban mientras grababan",
+  "author": "PER-000051",
+  "author_name": "David Icke",
+  "contra": "",
+  "video_file": "039_twitter_GBC_Press_1793120979432116224.mp4",
+  "source_url": "https://x.com/039_twitter_GBC_Press/status/1793120979432116224",
+  "status": "NO_VERIFICADO",
+  "confidence": 0,
+  "reviewed": "PENDIENTE",
+  "corrob_nota": "Tropo conspirativo de los 'Dancing Israelis' y presunto conocimiento previo del 11-S. Descartado por la Comisión 9/11. Sin fuente confiable que lo sustente.",
+  "corrob_fecha": "2026-09-05"
+ },
+ {
+  "id": "CLM-000040",
+  "text": "Los sionistas no son los judíos originales sino 'adoradores de demonios' (secta frankista), y Theodor Herzl procedía de la zona donde se fundó ese culto",
+  "author": "PER-000043",
+  "author_name": "Candace Owens",
+  "contra": "",
+  "video_file": "040_twitter_TheWyteRabbit1_2093171875820023808.mp4",
+  "source_url": "https://x.com/040_twitter_TheWyteRabbit1/status/2093171875820023808",
+  "status": "NO_VERIFICADO",
+  "confidence": 0,
+  "reviewed": "PENDIENTE",
+  "corrob_nota": "Tropo antisemita (sionistas='secta frankista adoradora de demonios'). Sin sustento histórico; Theodor Herzl era periodista laico vienés. Afirmación sin evidencia seria.",
+  "corrob_fecha": "2026-09-05"
+ },
+ {
+  "id": "CLM-000041",
+  "text": "Israel bloqueó cientos de alimentos, medicinas y bienes (incluidos anestesia, oxígeno, lápices, libros y ropa) a Gaza durante 19 años",
+  "author": "",
+  "author_name": "",
+  "contra": "",
+  "video_file": "041_twitter_Bry___l_2093765417848250368.mp4",
+  "source_url": "https://x.com/041_twitter_Bry___l/status/2093765417848250368",
+  "status": "PROBABLE",
+  "confidence": 0,
+  "reviewed": "PENDIENTE",
+  "extr_sources": [
+   "https://www.theguardian.com/world/article/2024/jun/24/gaza-blockade-israel-banned-items"
+  ],
+  "corrob_nota": "Bloqueo desde 2006-2007, cientos/miles de artículos impedidos (Guardian/Gisha/CNN); '~19 años' razonable; los items concretos (lápices/libros/ropa) no verbatim.",
+  "corrob_fecha": "2026-09-05"
+ },
+ {
+  "id": "CLM-000042",
+  "text": "Israel pagó a Havas y a Piro Inc para crear el falso think tank Hanover Institute (124 informes en 9 días) y manipular las respuestas de los chatbots como ChatGPT",
+  "author": "",
+  "author_name": "",
+  "contra": "",
+  "video_file": "043_twitter_ajplusfrancais_2094075699225042945.mp4",
+  "source_url": "https://x.com/043_twitter_ajplusfrancais/status/2094075699225042945",
+  "status": "CORROBORADO",
+  "confidence": 0,
+  "reviewed": "PENDIENTE",
+  "extr_sources": [
+   "https://www.theguardian.com/world/2026/aug/26/fake-thinktank-israel-ai-propaganda"
+  ],
+  "corrob_nota": "Piro Inc creó el falso 'Hanover Institute' (124 informes/560.000 palabras en 9 días), registrado bajo FARA para el gobierno israelí; Havas intermediaria (~$1M).",
+  "corrob_fecha": "2026-09-05"
+ },
+ {
+  "id": "CLM-000043",
+  "text": "Politico confirmó que ChatGPT y Perplexity citaron ya al Hanover Institute como fuente en preguntas neutras sobre Gaza",
+  "author": "",
+  "author_name": "",
+  "contra": "",
+  "video_file": "043_twitter_ajplusfrancais_2094075699225042945.mp4",
+  "source_url": "https://x.com/043_twitter_ajplusfrancais/status/2094075699225042945",
+  "status": "PROBABLE",
+  "confidence": 0,
+  "reviewed": "PENDIENTE",
+  "extr_sources": [
+   "https://www.theguardian.com/world/2026/aug/26/fake-thinktank-israel-ai-propaganda"
+  ],
+  "corrob_nota": "ChatGPT ofrecía enlaces a 4 informes del Hanover; el matiz 'preguntas neutras sobre Gaza' y la atribución literal a Politico no textuales.",
+  "corrob_fecha": "2026-09-05"
+ },
+ {
+  "id": "CLM-000044",
+  "text": "La Torá ordena exterminar a la nación llamada Amalek, incluidos hombres, mujeres, niños y bebés",
+  "author": "PER-000062",
+  "author_name": "Yitzchak Breitowitz",
+  "contra": "",
+  "video_file": "044_twitter_IIFBS__1848140035670806528.mp4",
+  "source_url": "https://x.com/044_twitter_IIFBS_/status/1848140035670806528",
+  "status": "DOCUMENTADO",
+  "confidence": 0,
+  "reviewed": "PENDIENTE"
+ },
+ {
+  "id": "CLM-000045",
+  "text": "La guerra contra los palestinos lleva 75 años y fue iniciada por Israel en 1948 con la limpieza étnica de 750.000 personas",
+  "author": "",
+  "author_name": "",
+  "contra": "",
+  "video_file": "048_youtube_@BreezyPolitics_U_rTXJcTgeQ.mp4",
+  "source_url": "",
+  "status": "CORROBORADO",
+  "confidence": 0,
+  "reviewed": "PENDIENTE"
+ },
+ {
+  "id": "CLM-000046",
+  "text": "Neriah y Spacher habrían dado unos 25 millones de dólares a Peña Nieto (parte para su campaña) a cambio de acceso a funcionarios y contratos, incluido Pegasus",
+  "author": "",
+  "author_name": "",
+  "contra": "Peña Nieto niega haber recibido el dinero",
+  "video_file": "049_youtube_BreezyPolitics_rZcAVNi5XbY_android.mp4",
+  "source_url": "",
+  "status": "PROBABLE",
+  "confidence": 0,
+  "reviewed": "PENDIENTE"
+ },
+ {
+  "id": "CLM-000047",
+  "text": "Activistas sionistas se disfrazaban de musulmanes en Marruecos para acosar a niñas judías y asustar a sus padres y así impulsar la emigración de judíos",
+  "author": "",
+  "author_name": "",
+  "contra": "",
+  "video_file": "1_twitter_DaniMayakovski_2093315930432372736.mp4",
+  "source_url": "https://x.com/1_twitter_DaniMayakovski/status/2093315930432372736",
+  "status": "NO_VERIFICADO",
+  "confidence": 0,
+  "reviewed": "PENDIENTE",
+  "extr_sources": [
+   "https://en.wikipedia.org/wiki/Jewish_exodus_from_the_Muslim_world"
+  ]
+ },
+ {
+  "id": "CLM-000048",
+  "text": "Ben-Gurion habría preferido salvar la mitad de los niños judíos que pudieran enviarse a Palestina antes que a todos si iban a otra parte",
+  "author": "PER-000124",
+  "author_name": "David Ben-Gurion (citado)",
+  "contra": "",
+  "video_file": "1_twitter_DaniMayakovski_2093315930432372736.mp4",
+  "source_url": "https://x.com/1_twitter_DaniMayakovski/status/2093315930432372736",
+  "status": "DOCUMENTADO",
+  "confidence": 0,
+  "reviewed": "PENDIENTE"
+ },
+ {
+  "id": "CLM-000049",
+  "text": "Yosef Basri y Shalom Salah Shalom fueron responsables de tres de las cinco bombas, y la controladora de Basri era un oficial israelí llamado Max Binet",
+  "author": "",
+  "author_name": "",
+  "contra": "",
+  "video_file": "2_twitter_DaniMayakovski_2093313123524427776.mp4",
+  "source_url": "https://x.com/2_twitter_DaniMayakovski/status/2093313123524427776",
+  "status": "CORROBORADO",
+  "confidence": 0,
+  "reviewed": "PENDIENTE",
+  "extr_sources": [
+   "https://en.wikipedia.org/wiki/1950%E2%80%931951_Baghdad_bombings",
+   "https://en.wikipedia.org/wiki/Jewish_exodus_from_the_Muslim_world"
+  ]
+ },
+ {
+  "id": "CLM-000050",
+  "text": "Hay un campamento que alberga a unos 5.000 palestinos detenidos sin cargo ni juicio bajo la ley administrativa israelí",
+  "author": "",
+  "author_name": "",
+  "contra": "",
+  "video_file": "NA_twitter_Compass_Report_2093054672340672512.mp4",
+  "source_url": "https://x.com/NA_twitter_Compass_Report/status/2093054672340672512",
+  "status": "PROBABLE",
+  "confidence": 0,
+  "reviewed": "PENDIENTE",
+  "extr_sources": [
+   "https://en.wikipedia.org/wiki/Sde_Teiman_detention_camp",
+   "https://en.wikipedia.org/wiki/Mass_detentions_in_the_Gaza_war"
+  ],
+  "corrob_nota": "Sde Teiman real con detenciones masivas sin cargo y abusos, ~10.000 detenidos (abr 2025); la cifra exacta '5.000 en ese campamento bajo ley administrativa' no se confirma.",
+  "corrob_fecha": "2026-09-05"
+ },
+ {
+  "id": "CLM-000051",
+  "text": "Violentos colonos israelíes atacan a civiles palestinos con impunidad, con los consejos del IDF y del gobierno de Netanyahu",
+  "author": "",
+  "author_name": "",
+  "contra": "",
+  "video_file": "NA_twitter_Haitham47117914_2093141696368234496.mp4",
+  "source_url": "https://x.com/NA_twitter_Haitham47117914/status/2093141696368234496",
+  "status": "CORROBORADO",
+  "confidence": 0,
+  "reviewed": "PENDIENTE",
+  "extr_sources": [
+   "https://www.aljazeera.com/news/2026/7/26/why-are-israeli-settlers-on-a-rampage-in-the-occupied-west-bank",
+   "https://www.aljazeera.com/news/2026/6/10/west-bank-ethnic-cleansing-settler-attacks-israels-state-policy-amnesty"
+  ],
+  "corrob_nota": "Violencia de colonos israelíes contra civiles palestinos en Cisjordania documentada (Amnistía habla de limpieza étnica/ataques como política de Estado).",
+  "corrob_fecha": "2026-09-05"
+ },
+ {
+  "id": "CLM-000052",
+  "text": "En poco más de cuatro años nueve ciudadanos estadounidenses fueron asesinados por colonos israelíes o fuerzas de seguridad israelíes sin rendición de cuentas",
+  "author": "",
+  "author_name": "",
+  "contra": "",
+  "video_file": "NA_twitter_Haitham47117914_2093141696368234496.mp4",
+  "source_url": "https://x.com/NA_twitter_Haitham47117914/status/2093141696368234496",
+  "status": "PROBABLE",
+  "confidence": 0,
+  "reviewed": "PENDIENTE"
+ },
+ {
+  "id": "CLM-000053",
+  "text": "La fundación Hind Rajab busca el arresto de soldados israelíes tras reunir pruebas de guerras y genocidio",
+  "author": "",
+  "author_name": "",
+  "contra": "",
+  "video_file": "NA_twitter_trtworld_2093203674566647809.mp4",
+  "source_url": "https://x.com/NA_twitter_trtworld/status/2093203674566647809",
+  "status": "CORROBORADO",
+  "confidence": 0,
+  "reviewed": "PENDIENTE",
+  "extr_sources": [
+   "https://www.aljazeera.com/news/2024/12/26/advocates-launch-legal-push-for-argentina-chile-to-arrest-israeli-soldier",
+   "https://en.wikipedia.org/wiki/Hind_Rajab_Foundation"
+  ],
+  "corrob_nota": "HRF denunció a soldado Saar Hirshoren en Argentina/Chile, a su batallón en la CPI y contra 1.000 soldados.",
+  "corrob_fecha": "2026-09-05"
+ },
+ {
+  "id": "CLM-000054",
+  "text": "El pasaporte israelí permite viajar a más de 117 destinos sin visa, mientras los palestinos de la Franja viven en 'prisión a cielo abierto'",
+  "author": "",
+  "author_name": "",
+  "contra": "",
+  "video_file": "NA_twitter_trtworld_2093203674566647809.mp4",
+  "source_url": "https://x.com/NA_twitter_trtworld/status/2093203674566647809",
+  "status": "CORROBORADO",
+  "confidence": 0,
+  "reviewed": "PENDIENTE",
+  "extr_sources": [
+   "https://en.wikipedia.org/wiki/Israeli_passport"
+  ],
+  "corrob_nota": "Pasaporte israelí: 170 países visa-free (supera el '117'); 'prisión a cielo abierto' es caracterización de DDHH ampliamente usada.",
+  "corrob_fecha": "2026-09-05"
+ },
+ {
+  "id": "CLM-000055",
+  "text": "Marruecos construyó el muro militar activo más largo del mundo (2.700 km) para consolidar su ocupación",
+  "author": "",
+  "author_name": "",
+  "contra": "",
+  "video_file": "NA_twitter_ultras_antifaa_2093448788103061504.mp4",
+  "source_url": "https://x.com/NA_twitter_ultras_antifaa/status/2093448788103061504",
+  "status": "CORROBORADO",
+  "confidence": 0,
+  "reviewed": "PENDIENTE",
+  "extr_sources": [
+   "https://en.wikipedia.org/wiki/Moroccan_Western_Sahara_wall"
+  ],
+  "corrob_nota": "Muro Marroquí ~2.700 km; cinturón de minas = campo minado continuo más largo del mundo.",
+  "corrob_fecha": "2026-09-05"
+ },
+ {
+  "id": "CLM-000056",
+  "text": "Amihai Eliyahu dijo que 'New Gaza' era una opción y pidió métodos más dolorosos que la muerte para los palestinos",
+  "author": "",
+  "author_name": "",
+  "contra": "",
+  "video_file": "NA_youtube_@BreezyPolitics_lWWCG--Q7gU.mp4",
+  "source_url": "",
+  "status": "PROBABLE",
+  "confidence": 0,
+  "reviewed": "PENDIENTE",
+  "extr_sources": [
+   "https://news.google.com/rss/articles/CBMi8AFBVV95cUxNeE1rcE5SS2NVZndfa0JMT3BkcmVCNXgtT1FUYmRWeFV1TjVzRDc4aXNOU0ZfaDhjeEtId2ZUYVd3VDhZVUZ1Ync0YmZpYm0yOXg0T05mQXl6WExKN2wyMWw1MWNNeHlNc01HOXB6cWxuMnZTWGZyblpDay1nNWFfdndURHgxVWNLQkZ6N3p0aHJWMnlIVjUwbm0yNzVaMXQ3ZFhBRnJVN3QtOFNqUFBtWWhGN2NQUEFoMVRIR1FHWTJlYkF3cTBkLW9ITzZPUGc2SHEyX0FIUWFGc2ZRUllTOTZtcEhxaTlqR1FoUW9kWU0?oc=5"
+  ],
+  "corrob_nota": "Eliyahu pidió formas 'más dolorosas que la muerte' (radio 103FM) y bomba nuclear sobre Gaza (Reuters). 'New Gaza' no se le atribuye en fuentes confiables.",
+  "corrob_fecha": "2026-09-05"
+ },
+ {
+  "id": "CLM-000057",
+  "text": "Más periodistas mueren en Gaza que en ambas guerras mundiales, Vietnam, la ex Yugoslavia y Afganistán combinados, según el proyecto Cost of War del Watson Institute",
+  "author": "",
+  "author_name": "",
+  "contra": "",
+  "video_file": "NA_youtube_@BreezyPolitics_lWWCG--Q7gU.mp4",
+  "source_url": "",
+  "status": "CORROBORADO",
+  "confidence": 0,
+  "reviewed": "PENDIENTE",
+  "extr_sources": [
+   "https://www.aljazeera.com/news/2025/4/2/gaza-war-deadliest-ever-for-journalists-says-report"
+  ],
+  "corrob_nota": "Watson Costs of War: 232 periodistas muertos en Gaza, más que ambas guerras mundiales + Vietnam + Yugoslavia + Afganistán.",
+  "corrob_fecha": "2026-09-05"
+ },
+ {
+  "id": "CLM-000058",
+  "text": "Sergio Bergman sostiene que la 'tierra prometida' de Argentina debe ser partida y repartida como se hizo en Palestina con la creación del Estado de Israel (partición de 1947 de las Naciones Unidas)",
+  "author": "PER-000031",
+  "author_name": "Sergio Bergman",
+  "contra": "",
+  "video_file": "DaniMayakovski_2010271361365626880.mp4",
+  "source_url": "https://x.com/DaniMayakovski/status/2010271361365626880",
+  "status": "DOCUMENTADO",
+  "confidence": 0,
+  "reviewed": "PENDIENTE"
+ },
+ {
+  "id": "CLM-000059",
+  "text": "Miembros del ejército de Israel, señalados por crímenes de lesa humanidad contra el pueblo palestino, estarían en Argentina",
+  "author": "",
+  "author_name": "",
+  "contra": "",
+  "video_file": "Nexo_Latino_2018095954583330817.mp4",
+  "source_url": "https://x.com/Nexo_Latino/status/2018095954583330817",
+  "status": "PROBABLE",
+  "confidence": 0,
+  "reviewed": "PENDIENTE"
+ },
+ {
+  "id": "CLM-000060",
+  "text": "En 2011 el turista israelí Rotem Singer causó un incendio en Torres del Paine que destruyó más de 15.000 hectáreas; tras juicio pagó multa y plantó 50.000 árboles",
+  "author": "PER-000127",
+  "author_name": "Rotem Singer (reporte)",
+  "contra": "",
+  "video_file": "p4purrip0p_1937570539767242752.mp4",
+  "source_url": "https://x.com/p4purrip0p/status/1937570539767242752",
+  "status": "DOCUMENTADO",
+  "confidence": 0,
+  "reviewed": "PENDIENTE"
+ },
+ {
+  "id": "CLM-000061",
+  "text": "Israel controla el Congreso, el Senado y el dinero de EE.UU., y EE.UU. cedió su poder a un país extranjero",
+  "author": "",
+  "author_name": "",
+  "contra": "",
+  "video_file": "liderfiscal_2092854016547942400.mp4",
+  "source_url": "https://x.com/liderfiscal/status/2092854016547942400",
+  "status": "NO_VERIFICADO",
+  "confidence": 0,
+  "reviewed": "PENDIENTE",
+  "extr_sources": [
+   "https://www.opensecrets.org/orgs/aipac/summary?id=D000027162",
+   "https://jerusalemdeclaration.org/"
+  ]
+ },
+ {
+  "id": "CLM-000062",
+  "text": "Israel no apunta a bebés en Gaza; defiende que quien porte un arma en guerra, incluso un menor de 16-17 años, merece la muerte",
+  "author": "",
+  "author_name": "",
+  "contra": "",
+  "video_file": "GBC_Press_1903468208364879872.mp4",
+  "source_url": "https://x.com/GBC_Press/status/1903468208364879872",
+  "status": "CORROBORADO",
+  "confidence": 0,
+  "reviewed": "PENDIENTE"
+ },
+ {
+  "id": "CLM-000063",
+  "text": "Gaza solo se reconstruirá cuando no exista Hamás, quizá con fuerzas de EAU, Arabia Saudita, europeas y estadounidenses",
+  "author": "",
+  "author_name": "",
+  "contra": "",
+  "video_file": "GBC_Press_1903468208364879872.mp4",
+  "source_url": "https://x.com/GBC_Press/status/1903468208364879872",
+  "status": "CORROBORADO",
+  "confidence": 0,
+  "reviewed": "PENDIENTE"
+ },
+ {
+  "id": "CLM-000064",
+  "text": "El genocidio es un término legal específico de la ONU: destrucción sistemática patrocinada por el estado de un gran segmento de la comunidad",
+  "author": "",
+  "author_name": "",
+  "contra": "",
+  "video_file": "hippyygoat_2092929163262914560.mp4",
+  "source_url": "https://x.com/hippyygoat/status/2092929163262914560",
+  "status": "PROBABLE",
+  "confidence": 0,
+  "reviewed": "PENDIENTE",
+  "extr_sources": [
+   "https://en.wikipedia.org/wiki/Genocide_Convention"
+  ],
+  "corrob_nota": "Definición legal (Convención 1948/Estatuto Roma art.6) correcta en esencia; 'sistemática' y 'patrocinada por el estado' no están en el texto legal.",
+  "corrob_fecha": "2026-09-05"
+ },
+ {
+  "id": "CLM-000065",
+  "text": "La muerte en una guerra no es genocidio, y no lo es sin intención probada",
+  "author": "",
+  "author_name": "",
+  "contra": "",
+  "video_file": "hippyygoat_2092929163262914560.mp4",
+  "source_url": "https://x.com/hippyygoat/status/2092929163262914560",
+  "status": "DOCUMENTADO",
+  "confidence": 0,
+  "reviewed": "PENDIENTE",
+  "extr_sources": [
+   "https://en.wikipedia.org/wiki/Genocide_Convention"
+  ],
+  "corrob_nota": "Argumento jurídico del autor ('sin intención no hay genocidio'); debate de interpretación, no dato verificable.",
+  "corrob_fecha": "2026-09-05"
+ },
+ {
+  "id": "CLM-000066",
+  "text": "Tropas israelíes habrían disparado a un niño palestino de 14 años en un centro de refugiados de Cisjordania (centro de la ONU), asesinándolo desarmado",
+  "author": "",
+  "author_name": "",
+  "contra": "",
+  "video_file": "Ignaciogjv_2092971978768408577.mp4",
+  "source_url": "https://x.com/Ignaciogjv/status/2092971978768408577",
+  "status": "NO_VERIFICADO",
+  "confidence": 0,
+  "reviewed": "PENDIENTE",
+  "extr_sources": [],
+  "corrob_nota": "El subagente no halló fuente que confirme los detalles exactos (menor de 14 años desarmado en centro de refugiados de la ONU en Cisjordania). Existen casos reales de menores asesinados en campamentos de Cisjordania, pero no con esta especificidad.",
+  "corrob_fecha": "2026-09-05"
+ },
+ {
+  "id": "CLM-000067",
+  "text": "Ben Gvir dijo que vale más la vida de un israelí que la de miles de palestinos y construye un centro para colgar palestinos",
+  "author": "",
+  "author_name": "",
+  "contra": "",
+  "video_file": "Ignaciogjv_2092971978768408577.mp4",
+  "source_url": "https://x.com/Ignaciogjv/status/2092971978768408577",
+  "status": "PROBABLE",
+  "confidence": 0,
+  "reviewed": "PENDIENTE",
+  "extr_sources": [
+   "https://www.theguardian.com/world/2026/aug/20/israel-ben-gvir-video-gallows-site-hanging-palestinians"
+  ],
+  "corrob_nota": "Instalación de horca confirmada (Guardian/JPost); la cita literal 'vale más la vida de un israelí' no se halló textual.",
+  "corrob_fecha": "2026-09-05"
+ },
+ {
+  "id": "CLM-000068",
+  "text": "El objetivo es una guerra interminable y no una guerra exitosa",
+  "author": "",
+  "author_name": "",
+  "contra": "",
+  "video_file": "liderfiscal_2093139117508853760.mp4",
+  "source_url": "https://x.com/liderfiscal/status/2093139117508853760",
+  "status": "POSIBLE",
+  "confidence": 0,
+  "reviewed": "PENDIENTE"
+ },
+ {
+  "id": "CLM-000069",
+  "text": "'No es posible vivir en la Tierra de Israel si no expulsamos a los [no judíos]', y 'no puede haber ni un gentil que se oponga a Israel' en la Tierra de Israel",
+  "author": "",
+  "author_name": "",
+  "contra": "",
+  "video_file": "new_GBC_Press_1994388519125663745.mp4",
+  "source_url": "https://x.com/new_GBC_Press/status/1994388519125663745",
+  "status": "PROBABLE",
+  "confidence": 0,
+  "reviewed": "PENDIENTE",
+  "extr_sources": [
+   "https://en.wikipedia.org/wiki/Itamar_Ben-Gvir"
+  ],
+  "corrob_nota": "Kahanismo y postura de expulsión documentados; la cita literal exacta atribuida no confirmada (tratar como paráfrasis).",
+  "corrob_fecha": "2026-09-05"
+ },
+ {
+  "id": "CLM-000070",
+  "text": "Un rabino norteamericano compró un pueblo completo (200.000 hectáreas) en un remate del Banco Nación en Buenos Aires, incluido el depósito de agua dulce más importante de La Rioja",
+  "author": "",
+  "author_name": "",
+  "contra": "",
+  "video_file": "new_SinCensuraCol_2093025147091333121.mp4",
+  "source_url": "https://x.com/new_SinCensuraCol/status/2093025147091333121",
+  "status": "NO_VERIFICADO",
+  "confidence": 0,
+  "reviewed": "PENDIENTE",
+  "extr_sources": [
+   "https://chequeado.com/verificacionfb/es-falsoenlasredes-que-la-comunidad-judia-compro-tierras-en-la-patagonia-para-fundar-un-segundo-israel/"
+  ],
+  "corrob_nota": "Rumor sin evidencia; Chequeado desmiente el patrón antisemita de que la comunidad judía compra tierras/agua en Argentina.",
+  "corrob_fecha": "2026-09-05"
+ },
+ {
+  "id": "CLM-000071",
+  "text": "EE.UU. envía 18.000 millones de dólares al año a Israel sin recibir nada a cambio",
+  "author": "",
+  "author_name": "",
+  "contra": "",
+  "video_file": "new_xIsraelExposedx_2091205336354938880.mp4",
+  "source_url": "https://x.com/new_xIsraelExposedx/status/2091205336354938880",
+  "status": "PROBABLE",
+  "confidence": 0,
+  "reviewed": "PENDIENTE",
+  "extr_sources": [
+   "https://www.reuters.com/world/middle-east/what-military-support-does-us-provide-israel-2024-04-08/",
+   "https://en.wikipedia.org/wiki/Israel%E2%80%93United_States_relations"
+  ],
+  "corrob_nota": "MOU 2019-28 = $3.8B/año ($38B); $18B/año no correcto; cifras altas = paquetes de emergencia extraordinarios; 'sin recibir nada' es editorial.",
+  "corrob_fecha": "2026-09-05"
+ },
+ {
+  "id": "CLM-000072",
+  "text": "La ayuda israelí pasó por alto al presidente; el primer ministro israelí habló directamente al Congreso y recibió 26 ovaciones de pie",
+  "author": "",
+  "author_name": "",
+  "contra": "",
+  "video_file": "new_xIsraelExposedx_2091205336354938880.mp4",
+  "source_url": "https://x.com/new_xIsraelExposedx/status/2091205336354938880",
+  "status": "CORROBORADO",
+  "confidence": 0,
+  "reviewed": "PENDIENTE"
+ },
+ {
+  "id": "CLM-000073",
+  "text": "Tucker Carlson: 'genocidio' es la definición de lo que ocurre en Gaza, no un término propagandístico; 'la gente está siendo asesinada y expulsada del lugar donde nació por su linaje'. Cita a Bezalel Smotrich proponiendo mover a la población a terceros países / internamiento.",
+  "author": "PER-000006",
+  "author_name": "Tucker Carlson",
+  "contra": "Afirmación interpretativa de un comentarista; la caracterización de 'genocidio' es disputada y depende de verificación legal (CIJ/CPI). La cita exacta de Smotrich requiere transcripción/contexto oficial.",
+  "video_file": "MlmvVfzqh8Q_BreezyPolitics.webm",
+  "source_url": "https://www.youtube.com/shorts/MlmvVfzqh8Q",
+  "status": "PROBABLE",
+  "confidence": 50,
+  "reviewed": "PENDIENTE",
+  "srcs": [
+   "SRC-000003"
+  ]
+ },
+ {
+  "id": "CLM-000110",
+  "text": "Residente en la Comisión del Condado de Palm Beach: 'I strongly oppose extending the Israeli bond investment, both fiscally unsound as Israeli bonds are not AA rated', oponiéndose a ~USD 1000M en bonos israelíes. (PISTA-080)",
+  "author": "",
+  "author_name": "Residente de Palm Beach",
+  "contra": "",
+  "video_file": "",
+  "source_url": "https://x.com/DanielGilr44222/status/2102465770882056203",
+  "tema": "Financiamiento público a Israel (EEUU local)",
+  "status": "DOCUMENTADO",
+  "confidence": 75,
+  "reviewed": "PENDIENTE",
+  "srcs": [
+   "SRC-000004"
+  ]
+ },
+ {
+  "id": "CLM-000111",
+  "text": "Comisionado del Condado: 'We are not setting any policies regarding Israeli bonds tonight. We are only discussing the budget', matizando que la sesión era de presupuesto, no de bonos. (PISTA-080)",
+  "author": "",
+  "author_name": "Comisionado de Palm Beach",
+  "contra": "",
+  "video_file": "",
+  "source_url": "https://x.com/DanielGilr44222/status/2102465770882056203",
+  "tema": "Presupuesto público",
+  "status": "DOCUMENTADO",
+  "confidence": 90,
+  "reviewed": "PENDIENTE",
+  "srcs": [
+   "SRC-000004"
+  ]
+ },
+ {
+  "id": "CLM-000112",
+  "text": "'This is your last warning. If you clap again, we're going to ask you to be removed. Sir, you're removed', ordenando retirar a un asistente por aplaudir. (PISTA-080)",
+  "author": "",
+  "author_name": "Presidente de la sesión (Palm Beach)",
+  "contra": "",
+  "video_file": "",
+  "source_url": "https://x.com/DanielGilr44222/status/2102465770882056203",
+  "tema": "Procedimiento público",
+  "status": "DOCUMENTADO",
+  "confidence": 85,
+  "reviewed": "PENDIENTE",
+  "srcs": [
+   "SRC-000004"
+  ]
+ },
+ {
+  "id": "CLM-000113",
+  "text": "Narración en árabe: 'Los pilotos iraníes encontraron objetivos fáciles ante ellos, incluida Bagdad, que no está a más de 6 minutos de la frontera' (video de la guerra Irán-Irak). (PISTA-081)",
+  "author": "",
+  "author_name": "Narrador de video (archivo)",
+  "contra": "",
+  "video_file": "",
+  "source_url": "https://x.com/DaniMayakovski/status/2102396835419541970",
+  "tema": "Irán-Irak",
+  "status": "REPORTADO",
+  "confidence": 40,
+  "reviewed": "PENDIENTE",
+  "srcs": [
+   "SRC-000004"
+  ]
+ },
+ {
+  "id": "CLM-000114",
+  "text": "'Durante la guerra contra el pueblo iraní, Irak lanzó más de 350 ataques químicos a gran escala... los materiales fueron suministrados por corporaciones alemanas, francesas y holandesas'. (PISTA-081)",
+  "author": "",
+  "author_name": "Daniel Mayakovski",
+  "contra": "",
+  "video_file": "",
+  "source_url": "https://x.com/DaniMayakovski/status/2102396835419541970",
+  "tema": "Irán-Irak-químico",
+  "status": "PROBABLE",
+  "confidence": 55,
+  "reviewed": "PENDIENTE",
+  "srcs": [
+   "SRC-000004"
+  ]
+ },
+ {
+  "id": "CLM-000115",
+  "text": "'La misma EEUU que hablaría de Sadam como dictador... financió y armó al propio Sadam en 1980 para que invadiese y arrasara a Irán'. (PISTA-081)",
+  "author": "",
+  "author_name": "Daniel Mayakovski",
+  "contra": "",
+  "video_file": "",
+  "source_url": "https://x.com/DaniMayakovski/status/2102396835419541970",
+  "tema": "EEUU-Irán-Irak",
+  "status": "PROBABLE",
+  "confidence": 60,
+  "reviewed": "PENDIENTE",
+  "srcs": [
+   "SRC-000004"
+  ]
+ },
+ {
+  "id": "CLM-000116",
+  "text": "'EEUU derribó con misiles tierra-aire el Vuelo 655 de Iran Air, matando a 290 civiles' (agosto 1988). (PISTA-081)",
+  "author": "",
+  "author_name": "Daniel Mayakovski",
+  "contra": "",
+  "video_file": "",
+  "source_url": "https://x.com/DaniMayakovski/status/2102396835419541970",
+  "tema": "EEUU-Irán",
+  "status": "DOCUMENTADO",
+  "confidence": 80,
+  "reviewed": "PENDIENTE",
+  "srcs": [
+   "SRC-000004"
+  ]
+ },
+ {
+  "id": "CLM-000117",
+  "text": "Testimonio: 'Suddenly, boom, we see... It was clear to me that there was a tank... I ran away from the tank' (reportaje Canal 12, 7-oct). (PISTA-082)",
+  "author": "",
+  "author_name": "Residente israelí (testigo)",
+  "contra": "",
+  "video_file": "",
+  "source_url": "https://x.com/RedCollectiveUK/status/2102083350320103502",
+  "tema": "7-Oct / fuego amigo",
+  "status": "TESTIMONIO",
+  "confidence": 50,
+  "reviewed": "PENDIENTE",
+  "srcs": [
+   "SRC-000004"
+  ]
+ },
+ {
+  "id": "CLM-000118",
+  "text": "Testimonio en reportaje del Canal 12 (encabezado hebreo: 'Exclusive footage | The tank that fired towards the sons of...'): 'Half an hour later, the police arrived... the first help after the tank ran away'. (PISTA-082)",
+  "author": "",
+  "author_name": "Residente israelí (testigo)",
+  "contra": "",
+  "video_file": "",
+  "source_url": "https://x.com/RedCollectiveUK/status/2102083350320103502",
+  "tema": "7-Oct / respuesta de autoridades",
+  "status": "TESTIMONIO",
+  "confidence": 55,
+  "reviewed": "PENDIENTE",
+  "srcs": [
+   "SRC-000004"
+  ]
+ },
+ {
+  "id": "CLM-000119",
+  "text": "Presidente de Irán en la AGNU: '¿Ven estos niños? Estos niños murieron bajo las bombas con armas utilizadas por los Estados Unidos e Israel'. (PISTA-083)",
+  "author": "PER-000133",
+  "author_name": "Masoud Pezeshkian",
+  "contra": "",
+  "video_file": "",
+  "source_url": "https://x.com/catrina_nortena/status/2102774914658783552",
+  "tema": "EEUU-Irán-ONU",
+  "status": "DISCURSO",
+  "confidence": 70,
+  "reviewed": "PENDIENTE",
+  "srcs": [
+   "SRC-000004"
+  ]
+ },
+ {
+  "id": "CLM-000120",
+  "text": "Presidente de Irán: 'Ellos bombardearon una escuela... un salón de deportes donde los niños estaban cansados de jugar... asesinaron a nuestros científicos, hombres, mujeres y niños'. (PISTA-083)",
+  "author": "PER-000133",
+  "author_name": "Masoud Pezeshkian",
+  "contra": "",
+  "video_file": "",
+  "source_url": "https://x.com/catrina_nortena/status/2102774914658783552",
+  "tema": "EEUU-Irán",
+  "status": "DISCURSO",
+  "confidence": 60,
+  "reviewed": "PENDIENTE",
+  "srcs": [
+   "SRC-000004"
+  ]
+ },
+ {
+  "id": "CLM-000121",
+  "text": "AJ+ (Al Jazeera): 'Los palestinos llaman a esos drones zennane... Israel lleva utilizando drones sobre Gaza desde principios de los años 2000'. (PISTA-084)",
+  "author": "",
+  "author_name": "Narración AJ+ Español",
+  "contra": "",
+  "video_file": "",
+  "source_url": "https://youtube.com/shorts/PDtgODWsbGU",
+  "tema": "Gaza-drones",
+  "status": "PROBABLE",
+  "confidence": 60,
+  "reviewed": "PENDIENTE",
+  "srcs": [
+   "SRC-000004"
+  ]
+ },
+ {
+  "id": "CLM-000122",
+  "text": "AJ+ (Al Jazeera): 'Algunos drones israelíes hasta llegaron a reproducir grabaciones de bebés llorando o niños pidiendo ayuda para atraer a civiles y convertirlos en blancos'. —AFIRMACIÓN GRAVE, requiere fuente independiente. (PISTA-084)",
+  "author": "",
+  "author_name": "Narración AJ+ Español",
+  "contra": "",
+  "video_file": "",
+  "source_url": "https://youtube.com/shorts/PDtgODWsbGU",
+  "tema": "Gaza-drones",
+  "status": "NO_VERIFICADO",
+  "confidence": 30,
+  "reviewed": "PENDIENTE",
+  "srcs": [
+   "SRC-000004"
+  ]
+ },
+ {
+  "id": "CLM-000123",
+  "text": "AJ+ (Al Jazeera): 'Pese al supuesto alto al fuego, Israel está utilizando los drones como una forma de terror/provocación'. (PISTA-084)",
+  "author": "",
+  "author_name": "Narración AJ+ Español",
+  "contra": "",
+  "video_file": "",
+  "source_url": "https://youtube.com/shorts/PDtgODWsbGU",
+  "tema": "Gaza-tregua",
+  "status": "POSIBLE",
+  "confidence": 35,
+  "reviewed": "PENDIENTE",
+  "srcs": [
+   "SRC-000004"
+  ]
+ },
+ {
+  "id": "CLM-000124",
+  "text": "Presidente de Irán (AGNU, farsi): 'Estos niños fueron bombardeados y asesinados con armas de Estados Unidos e Israel... no habían cometido ningún crimen'. (PISTA-085)",
+  "author": "PER-000133",
+  "author_name": "Masoud Pezeshkian",
+  "contra": "",
+  "video_file": "",
+  "source_url": "https://youtube.com/shorts/D_pNU1j4vIY",
+  "tema": "EEUU-Irán-ONU",
+  "status": "DISCURSO",
+  "confidence": 65,
+  "reviewed": "PENDIENTE",
+  "srcs": [
+   "SRC-000004"
+  ]
+ },
+ {
+  "id": "CLM-000125",
+  "text": "Presidente de Irán: 'Ellos bombardearon el salón de deportes con bombas de racimo que se fragmentaron en miles' (incidente no verificado independientemente). (PISTA-085)",
+  "author": "PER-000133",
+  "author_name": "Masoud Pezeshkian",
+  "contra": "",
+  "video_file": "",
+  "source_url": "https://youtube.com/shorts/D_pNU1j4vIY",
+  "tema": "EEUU-Irán",
+  "status": "DISCURSO",
+  "confidence": 55,
+  "reviewed": "PENDIENTE",
+  "srcs": [
+   "SRC-000004"
+  ]
+ },
+ {
+  "id": "CLM-000126",
+  "text": "Presidente de Irán: 'Irán nunca ha iniciado ninguna guerra... Irán nunca se arrodillará'. (PISTA-085)",
+  "author": "PER-000133",
+  "author_name": "Masoud Pezeshkian",
+  "contra": "",
+  "video_file": "",
+  "source_url": "https://youtube.com/shorts/D_pNU1j4vIY",
+  "tema": "EEUU-Irán",
+  "status": "DISCURSO",
+  "confidence": 75,
+  "reviewed": "PENDIENTE",
+  "srcs": [
+   "SRC-000004"
+  ]
+ },
+ {
+  "id": "CLM-000127",
+  "text": "Intereconomía: 'Japón trasladó a Donald Trump la posición de Japón sobre varios asuntos relacionados con China, incluida la seguridad económica'. (PISTA-086)",
+  "author": "",
+  "author_name": "Locutor Intereconomía News",
+  "contra": "",
+  "video_file": "",
+  "source_url": "https://youtube.com/shorts/KUAo_HE2pk4",
+  "tema": "Asia-EEUU-China",
+  "status": "REPORTADO",
+  "confidence": 55,
+  "reviewed": "PENDIENTE",
+  "srcs": [
+   "SRC-000004"
+  ]
+ },
+ {
+  "id": "CLM-000128",
+  "text": "Intereconomía: 'El diálogo se celebró al margen de la AGNU, persisten tensiones en torno a Taiwán; Japón y EEUU acordaron coordinación estrecha; Xi Jinping llegará un día después'. (PISTA-086)",
+  "author": "",
+  "author_name": "Locutor Intereconomía News",
+  "contra": "",
+  "video_file": "",
+  "source_url": "https://youtube.com/shorts/KUAo_HE2pk4",
+  "tema": "Asia-EEUU-China-Taiwán",
+  "status": "REPORTADO",
+  "confidence": 50,
+  "reviewed": "PENDIENTE",
+  "srcs": [
+   "SRC-000004"
+  ]
+ },
+ {
+  "id": "CLM-000129",
+  "text": "Audio filtrado de AIPAC (vía Tucker Carlson): 'John Ratcliffe... Marco Rubio... Mike Waltz... These are our lifelines inside the administration'. (PISTA-087)",
+  "author": "",
+  "author_name": "Fuente anónima (autodenominado veterano de AIPAC)",
+  "contra": "",
+  "video_file": "",
+  "source_url": "https://youtube.com/shorts/CQQMYp1VRnY",
+  "tema": "Lobby-Israel-EEUU",
+  "status": "NO_VERIFICADO",
+  "confidence": 25,
+  "reviewed": "PENDIENTE",
+  "srcs": [
+   "SRC-000004"
+  ]
+ },
+ {
+  "id": "CLM-000130",
+  "text": "Comentario: 'Marco Rubio's career has been advanced by Paul Singer's donations, a major Israel-first billionaire'. (PISTA-087)",
+  "author": "",
+  "author_name": "Tucker Carlson",
+  "contra": "",
+  "video_file": "",
+  "source_url": "https://youtube.com/shorts/CQQMYp1VRnY",
+  "tema": "Lobby-Israel",
+  "status": "NO_VERIFICADO",
+  "confidence": 30,
+  "reviewed": "PENDIENTE",
+  "srcs": [
+   "SRC-000004"
+  ]
+ },
+ {
+  "id": "CLM-000131",
+  "text": "Audio filtrado de AIPAC: 'Israel will get more or less what it wants'. (PISTA-087)",
+  "author": "",
+  "author_name": "Fuente anónima (autodenominado veterano de AIPAC)",
+  "contra": "",
+  "video_file": "",
+  "source_url": "https://youtube.com/shorts/CQQMYp1VRnY",
+  "tema": "Lobby-Israel",
+  "status": "NO_VERIFICADO",
+  "confidence": 20,
+  "reviewed": "PENDIENTE",
+  "srcs": [
+   "SRC-000004"
+  ]
+ }
+]

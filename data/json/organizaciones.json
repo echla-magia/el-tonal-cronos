@@ -1,0 +1,894 @@
+[
+ {
+  "id": "ORG-000001",
+  "name": "AIPAC",
+  "full": "American Israel Public Affairs Committee",
+  "type": "grupo de presión (lobby)",
+  "country": "EUA",
+  "bio": "Principal lobby pro-Israel en Estados Unidos.",
+  "img": "img/aipac.jpg",
+  "certainty": "DOCUMENTADO",
+  "review": "REVISADO",
+  "refs": [
+   "SRC-000001"
+  ]
+ },
+ {
+  "id": "ORG-000002",
+  "name": "IDF",
+  "full": "Fuerzas de Defensa de Israel",
+  "type": "fuerza militar",
+  "country": "Israel",
+  "bio": "Ejército del Estado de Israel.",
+  "img": "img/idf.svg",
+  "certainty": "DOCUMENTADO",
+  "review": "REVISADO",
+  "refs": [
+   "SRC-000001"
+  ]
+ },
+ {
+  "id": "ORG-000003",
+  "name": "CUFI",
+  "full": "Christians United for Israel",
+  "type": "organización religioso-política",
+  "country": "EUA",
+  "bio": "Movimiento cristiano sionista estadounidense.",
+  "img": "img/cufi.png",
+  "certainty": "DOCUMENTADO",
+  "review": "REVISADO",
+  "refs": [
+   "SRC-000001"
+  ]
+ },
+ {
+  "id": "ORG-000004",
+  "name": "Clock Tower X LLC",
+  "type": "empresa (registrante FARA)",
+  "country": "EUA",
+  "bio": "Registrante del caso FARA 7649; relación con Havas Media y State of Israel.",
+  "certainty": "CORROBORADO",
+  "review": "VERIFICADO",
+  "refs": [
+   "SRC-000002"
+  ]
+ },
+ {
+  "id": "ORG-000005",
+  "name": "NSO Group",
+  "type": "empresa de ciberseguridad",
+  "country": "Israel",
+  "bio": "Desarrolladora de Pegasus (software de espionaje).Tema en clips de México.",
+  "img": "img/nso.svg",
+  "certainty": "CORROBORADO",
+  "review": "REVISADO",
+  "refs": [
+   "SRC-000003"
+  ]
+ },
+ {
+  "id": "ORG-000006",
+  "name": "Armada de EEUU",
+  "type": "ARMADA",
+  "country": "Estados Unidos",
+  "certainty": "POSIBLE",
+  "review": "PENDIENTE",
+  "refs": [
+   "SRC-000003"
+  ]
+ },
+ {
+  "id": "ORG-000007",
+  "name": "Autoridad Palestina",
+  "type": "GOBIERNO",
+  "country": "Palestina",
+  "certainty": "POSIBLE",
+  "review": "PENDIENTE",
+  "refs": [
+   "SRC-000003"
+  ]
+ },
+ {
+  "id": "ORG-000008",
+  "name": "BRICS",
+  "type": "ORGANISMO",
+  "country": "Internacional",
+  "certainty": "POSIBLE",
+  "review": "PENDIENTE",
+  "refs": [
+   "SRC-000003"
+  ]
+ },
+ {
+  "id": "ORG-000009",
+  "name": "Banco Central de Irán",
+  "type": "ORGANISMO",
+  "country": "Irán",
+  "certainty": "POSIBLE",
+  "review": "PENDIENTE",
+  "refs": [
+   "SRC-000003"
+  ]
+ },
+ {
+  "id": "ORG-000010",
+  "name": "Banco Nación (Argentina)",
+  "type": "EMPRESA",
+  "country": "Argentina",
+  "certainty": "POSIBLE",
+  "review": "PENDIENTE",
+  "refs": [
+   "SRC-000003"
+  ]
+ },
+ {
+  "id": "ORG-000011",
+  "name": "Banco de Inglaterra",
+  "type": "ORGANISMO",
+  "country": "Reino Unido",
+  "certainty": "POSIBLE",
+  "review": "PENDIENTE",
+  "refs": [
+   "SRC-000003"
+  ]
+ },
+ {
+  "id": "ORG-000012",
+  "name": "Brigada Golani",
+  "type": "EJERCITO",
+  "country": "Israel",
+  "certainty": "POSIBLE",
+  "review": "PENDIENTE",
+  "refs": [
+   "SRC-000003"
+  ]
+ },
+ {
+  "id": "ORG-000013",
+  "name": "CAS",
+  "type": "EMPRESA",
+  "country": "Chile",
+  "certainty": "POSIBLE",
+  "review": "PENDIENTE",
+  "refs": [
+   "SRC-000003"
+  ]
+ },
+ {
+  "id": "ORG-000014",
+  "name": "CGRI (IRGC)",
+  "type": "EJERCITO",
+  "country": "Irán",
+  "certainty": "POSIBLE",
+  "review": "PENDIENTE",
+  "refs": [
+   "SRC-000003"
+  ]
+ },
+ {
+  "id": "ORG-000015",
+  "name": "CIA",
+  "type": "AGENCIA",
+  "country": "Estados Unidos",
+  "certainty": "POSIBLE",
+  "review": "PENDIENTE",
+  "refs": [
+   "SRC-000003"
+  ]
+ },
+ {
+  "id": "ORG-000016",
+  "name": "CIJ",
+  "type": "TRIBUNAL",
+  "country": "Internacional",
+  "certainty": "POSIBLE",
+  "review": "PENDIENTE",
+  "refs": [
+   "SRC-000003"
+  ]
+ },
+ {
+  "id": "ORG-000017",
+  "name": "CPI",
+  "type": "TRIBUNAL",
+  "country": "Internacional",
+  "certainty": "POSIBLE",
+  "review": "PENDIENTE",
+  "refs": [
+   "SRC-000003"
+  ]
+ },
+ {
+  "id": "ORG-000018",
+  "name": "Cabildero Digital",
+  "type": "EMPRESA",
+  "country": "España",
+  "certainty": "POSIBLE",
+  "review": "PENDIENTE",
+  "refs": [
+   "SRC-000003"
+  ]
+ },
+ {
+  "id": "ORG-000019",
+  "name": "ChatGPT / OpenAI",
+  "type": "EMPRESA",
+  "country": "Estados Unidos",
+  "certainty": "POSIBLE",
+  "review": "PENDIENTE",
+  "refs": [
+   "SRC-000003"
+  ]
+ },
+ {
+  "id": "ORG-000020",
+  "name": "Congreso de EE.UU.",
+  "type": "ORGANISMO",
+  "country": "Estados Unidos",
+  "certainty": "POSIBLE",
+  "review": "PENDIENTE",
+  "refs": [
+   "SRC-000003"
+  ]
+ },
+ {
+  "id": "ORG-000021",
+  "name": "Corte Suprema de EE.UU.",
+  "type": "TRIBUNAL",
+  "country": "Estados Unidos",
+  "certainty": "POSIBLE",
+  "review": "PENDIENTE",
+  "refs": [
+   "SRC-000003"
+  ]
+ },
+ {
+  "id": "ORG-000022",
+  "name": "De Marker (Calcalist)",
+  "type": "MEDIO",
+  "country": "Israel",
+  "certainty": "POSIBLE",
+  "review": "PENDIENTE",
+  "refs": [
+   "SRC-000003"
+  ]
+ },
+ {
+  "id": "ORG-000023",
+  "name": "Democracy Engine",
+  "type": "EMPRESA",
+  "country": "Estados Unidos",
+  "certainty": "POSIBLE",
+  "review": "PENDIENTE",
+  "refs": [
+   "SRC-000003"
+  ]
+ },
+ {
+  "id": "ORG-000024",
+  "name": "Departamento de Justicia de EEUU",
+  "type": "GOBIERNO",
+  "country": "Estados Unidos",
+  "certainty": "POSIBLE",
+  "review": "PENDIENTE",
+  "refs": [
+   "SRC-000003"
+  ]
+ },
+ {
+  "id": "ORG-000025",
+  "name": "Ejército de EEUU",
+  "type": "EJERCITO",
+  "country": "Estados Unidos",
+  "certainty": "POSIBLE",
+  "review": "PENDIENTE",
+  "refs": [
+   "SRC-000003"
+  ]
+ },
+ {
+  "id": "ORG-000026",
+  "name": "Estado de Israel",
+  "type": "GOBIERNO",
+  "country": "Israel",
+  "certainty": "POSIBLE",
+  "review": "PENDIENTE",
+  "refs": [
+   "SRC-000003"
+  ]
+ },
+ {
+  "id": "ORG-000027",
+  "name": "FBI",
+  "type": "AGENCIA",
+  "country": "Estados Unidos",
+  "certainty": "POSIBLE",
+  "review": "PENDIENTE",
+  "refs": [
+   "SRC-000003"
+  ]
+ },
+ {
+  "id": "ORG-000028",
+  "name": "FDLE (Florida Department of Law Enforcement)",
+  "type": "AGENCIA",
+  "country": "Estados Unidos",
+  "certainty": "POSIBLE",
+  "review": "PENDIENTE",
+  "refs": [
+   "SRC-000003"
+  ]
+ },
+ {
+  "id": "ORG-000029",
+  "name": "Fiscalía General de México",
+  "type": "GOBIERNO",
+  "country": "México",
+  "certainty": "POSIBLE",
+  "review": "PENDIENTE",
+  "refs": [
+   "SRC-000003"
+  ]
+ },
+ {
+  "id": "ORG-000030",
+  "name": "Fiscalía boliviana",
+  "type": "GOBIERNO",
+  "country": "Bolivia",
+  "certainty": "POSIBLE",
+  "review": "PENDIENTE",
+  "refs": [
+   "SRC-000003"
+  ]
+ },
+ {
+  "id": "ORG-000031",
+  "name": "Fuerza Fronteriza Australiana (ABF)",
+  "type": "AGENCIA",
+  "country": "Australia",
+  "certainty": "POSIBLE",
+  "review": "PENDIENTE",
+  "refs": [
+   "SRC-000003"
+  ]
+ },
+ {
+  "id": "ORG-000032",
+  "name": "Fundación Rockefeller",
+  "type": "ONG",
+  "country": "Estados Unidos",
+  "certainty": "POSIBLE",
+  "review": "PENDIENTE",
+  "refs": [
+   "SRC-000003"
+  ]
+ },
+ {
+  "id": "ORG-000033",
+  "name": "Gobierno de Argentina",
+  "type": "GOBIERNO",
+  "country": "Argentina",
+  "certainty": "POSIBLE",
+  "review": "PENDIENTE",
+  "refs": [
+   "SRC-000003"
+  ]
+ },
+ {
+  "id": "ORG-000034",
+  "name": "Gobierno de EE.UU.",
+  "type": "GOBIERNO",
+  "country": "Estados Unidos",
+  "certainty": "POSIBLE",
+  "review": "PENDIENTE",
+  "refs": [
+   "SRC-000003"
+  ]
+ },
+ {
+  "id": "ORG-000035",
+  "name": "Gobierno de Israel",
+  "type": "GOBIERNO",
+  "country": "Israel",
+  "certainty": "POSIBLE",
+  "review": "PENDIENTE",
+  "refs": [
+   "SRC-000003"
+  ]
+ },
+ {
+  "id": "ORG-000036",
+  "name": "Gobierno de México",
+  "type": "GOBIERNO",
+  "country": "México",
+  "certainty": "POSIBLE",
+  "review": "PENDIENTE",
+  "refs": [
+   "SRC-000003"
+  ]
+ },
+ {
+  "id": "ORG-000037",
+  "name": "Hamás",
+  "type": "ORGANISMO",
+  "country": "Palestina",
+  "certainty": "POSIBLE",
+  "review": "PENDIENTE",
+  "refs": [
+   "SRC-000003"
+  ]
+ },
+ {
+  "id": "ORG-000038",
+  "name": "Hanover Institute for Public Policy",
+  "type": "THINK_TANK",
+  "country": "Estados Unidos",
+  "certainty": "POSIBLE",
+  "review": "PENDIENTE",
+  "refs": [
+   "SRC-000003"
+  ]
+ },
+ {
+  "id": "ORG-000039",
+  "name": "Havas Media Germany",
+  "type": "EMPRESA",
+  "country": "Alemania",
+  "certainty": "POSIBLE",
+  "review": "PENDIENTE",
+  "refs": [
+   "SRC-000003"
+  ]
+ },
+ {
+  "id": "ORG-000040",
+  "name": "Hind Rajab Foundation",
+  "type": "ONG",
+  "country": "Internacional",
+  "certainty": "POSIBLE",
+  "review": "PENDIENTE",
+  "refs": [
+   "SRC-000003"
+  ]
+ },
+ {
+  "id": "ORG-000041",
+  "name": "Knesset",
+  "type": "ORGANISMO",
+  "country": "Israel",
+  "certainty": "POSIBLE",
+  "review": "PENDIENTE",
+  "refs": [
+   "SRC-000003"
+  ]
+ },
+ {
+  "id": "ORG-000042",
+  "name": "La Derecha (medio digital)",
+  "type": "MEDIO",
+  "country": "Chile",
+  "certainty": "POSIBLE",
+  "review": "PENDIENTE",
+  "refs": [
+   "SRC-000003"
+  ]
+ },
+ {
+  "id": "ORG-000043",
+  "name": "La Francia Insumisa",
+  "type": "PARTIDO",
+  "country": "Francia",
+  "certainty": "POSIBLE",
+  "review": "PENDIENTE",
+  "refs": [
+   "SRC-000003"
+  ]
+ },
+ {
+  "id": "ORG-000044",
+  "name": "MI6",
+  "type": "AGENCIA",
+  "country": "Reino Unido",
+  "certainty": "POSIBLE",
+  "review": "PENDIENTE",
+  "refs": [
+   "SRC-000003"
+  ]
+ },
+ {
+  "id": "ORG-000045",
+  "name": "Media Luna Roja Palestina (PRCS)",
+  "type": "ONG",
+  "country": "Palestina",
+  "certainty": "POSIBLE",
+  "review": "PENDIENTE",
+  "refs": [
+   "SRC-000003"
+  ]
+ },
+ {
+  "id": "ORG-000046",
+  "name": "Mekorot",
+  "type": "EMPRESA",
+  "country": "Israel",
+  "certainty": "POSIBLE",
+  "review": "PENDIENTE",
+  "refs": [
+   "SRC-000003"
+  ]
+ },
+ {
+  "id": "ORG-000047",
+  "name": "Ministerio de Exteriores de Rusia",
+  "type": "GOBIERNO",
+  "country": "Rusia",
+  "certainty": "POSIBLE",
+  "review": "PENDIENTE",
+  "refs": [
+   "SRC-000003"
+  ]
+ },
+ {
+  "id": "ORG-000048",
+  "name": "Mossad",
+  "type": "AGENCIA",
+  "country": "Israel",
+  "certainty": "POSIBLE",
+  "review": "PENDIENTE",
+  "refs": [
+   "SRC-000003"
+  ]
+ },
+ {
+  "id": "ORG-000049",
+  "name": "NCTC (Centro Nacional de Contraterrorismo)",
+  "type": "AGENCIA",
+  "country": "Estados Unidos",
+  "certainty": "POSIBLE",
+  "review": "PENDIENTE",
+  "refs": [
+   "SRC-000003"
+  ]
+ },
+ {
+  "id": "ORG-000050",
+  "name": "National Lawyers Guild",
+  "type": "ONG",
+  "country": "Estados Unidos",
+  "certainty": "POSIBLE",
+  "review": "PENDIENTE",
+  "refs": [
+   "SRC-000003"
+  ]
+ },
+ {
+  "id": "ORG-000051",
+  "name": "ONU",
+  "type": "ORGANISMO",
+  "country": "Internacional",
+  "certainty": "POSIBLE",
+  "review": "PENDIENTE",
+  "refs": [
+   "SRC-000003"
+  ]
+ },
+ {
+  "id": "ORG-000052",
+  "name": "OSS",
+  "type": "AGENCIA",
+  "country": "Estados Unidos",
+  "certainty": "POSIBLE",
+  "review": "PENDIENTE",
+  "refs": [
+   "SRC-000003"
+  ]
+ },
+ {
+  "id": "ORG-000053",
+  "name": "Parlamento Europeo",
+  "type": "ORGANISMO",
+  "country": "Unión Europea",
+  "certainty": "POSIBLE",
+  "review": "PENDIENTE",
+  "refs": [
+   "SRC-000003"
+  ]
+ },
+ {
+  "id": "ORG-000054",
+  "name": "Partido Demócrata (EE.UU.)",
+  "type": "PARTIDO",
+  "country": "Estados Unidos",
+  "certainty": "POSIBLE",
+  "review": "PENDIENTE",
+  "refs": [
+   "SRC-000003"
+  ]
+ },
+ {
+  "id": "ORG-000055",
+  "name": "Pentágono / Departamento de Defensa",
+  "type": "GOBIERNO",
+  "country": "Estados Unidos",
+  "certainty": "POSIBLE",
+  "review": "PENDIENTE",
+  "refs": [
+   "SRC-000003"
+  ]
+ },
+ {
+  "id": "ORG-000056",
+  "name": "Perplexity",
+  "type": "EMPRESA",
+  "country": "Estados Unidos",
+  "certainty": "POSIBLE",
+  "review": "PENDIENTE",
+  "refs": [
+   "SRC-000003"
+  ]
+ },
+ {
+  "id": "ORG-000057",
+  "name": "Petróleos de Venezuela",
+  "type": "EMPRESA",
+  "country": "Venezuela",
+  "certainty": "POSIBLE",
+  "review": "PENDIENTE",
+  "refs": [
+   "SRC-000003"
+  ]
+ },
+ {
+  "id": "ORG-000058",
+  "name": "Piro Inc",
+  "type": "EMPRESA",
+  "country": "Estados Unidos",
+  "certainty": "POSIBLE",
+  "review": "PENDIENTE",
+  "refs": [
+   "SRC-000003"
+  ]
+ },
+ {
+  "id": "ORG-000059",
+  "name": "Policía Metropolitana de Londres",
+  "type": "AGENCIA",
+  "country": "Reino Unido",
+  "certainty": "POSIBLE",
+  "review": "PENDIENTE",
+  "refs": [
+   "SRC-000003"
+  ]
+ },
+ {
+  "id": "ORG-000060",
+  "name": "Policía israelí",
+  "type": "AGENCIA",
+  "country": "Israel",
+  "certainty": "POSIBLE",
+  "review": "PENDIENTE",
+  "refs": [
+   "SRC-000003"
+  ]
+ },
+ {
+  "id": "ORG-000061",
+  "name": "Politico",
+  "type": "MEDIO",
+  "country": "Estados Unidos",
+  "certainty": "POSIBLE",
+  "review": "PENDIENTE",
+  "refs": [
+   "SRC-000003"
+  ]
+ },
+ {
+  "id": "ORG-000062",
+  "name": "Pro-Israel Network",
+  "type": "ONG",
+  "country": "Estados Unidos",
+  "certainty": "POSIBLE",
+  "review": "PENDIENTE",
+  "refs": [
+   "SRC-000003"
+  ]
+ },
+ {
+  "id": "ORG-000063",
+  "name": "Senado de EE.UU.",
+  "type": "ORGANISMO",
+  "country": "Estados Unidos",
+  "certainty": "POSIBLE",
+  "review": "PENDIENTE",
+  "refs": [
+   "SRC-000003"
+  ]
+ },
+ {
+  "id": "ORG-000064",
+  "name": "The Guardian",
+  "type": "MEDIO",
+  "country": "Reino Unido",
+  "certainty": "POSIBLE",
+  "review": "PENDIENTE",
+  "refs": [
+   "SRC-000003"
+  ]
+ },
+ {
+  "id": "ORG-000065",
+  "name": "UNRWA",
+  "type": "AGENCIA",
+  "country": "Palestina",
+  "certainty": "POSIBLE",
+  "review": "PENDIENTE",
+  "refs": [
+   "SRC-000003"
+  ]
+ },
+ {
+  "id": "ORG-000066",
+  "name": "Unión Europea",
+  "type": "ORGANISMO",
+  "country": "Unión Europea",
+  "certainty": "POSIBLE",
+  "review": "PENDIENTE",
+  "refs": [
+   "SRC-000003"
+  ]
+ },
+ {
+  "id": "ORG-000067",
+  "name": "Watson Institute (Cost of War)",
+  "type": "THINK_TANK",
+  "country": "Estados Unidos",
+  "certainty": "POSIBLE",
+  "review": "PENDIENTE",
+  "refs": [
+   "SRC-000003"
+  ]
+ },
+ {
+  "name": "OTAN (NATO)",
+  "full": "Organización del Tratado del Atlántico Norte",
+  "type": "alianza militar",
+  "country": "Transnacional",
+  "bio": "Alianza militar intergubernamental de 32 países. Eje de la geopolítica occidental.",
+  "certainty": "DOCUMENTADO",
+  "review": "REVISADO",
+  "refs": [
+   "SRC-000001"
+  ],
+  "id": "ORG-000068"
+ },
+ {
+  "name": "Meta Platforms",
+  "full": "Meta Platforms, Inc.",
+  "type": "empresa tecnológica/red social",
+  "country": "EE.UU.",
+  "bio": "Conglomerado que controla Facebook, Instagram, WhatsApp. Uno de los mayores distribuidores de información del mundo.",
+  "certainty": "DOCUMENTADO",
+  "review": "REVISADO",
+  "refs": [
+   "SRC-000001"
+  ],
+  "id": "ORG-000069"
+ },
+ {
+  "name": "Google",
+  "full": "Alphabet Inc. (Google)",
+  "type": "empresa tecnológica",
+  "country": "EE.UU.",
+  "bio": "Controla el buscador dominante, YouTube y Android. Nodo central de distribución de información y publicidad.",
+  "certainty": "DOCUMENTADO",
+  "review": "REVISADO",
+  "refs": [
+   "SRC-000001"
+  ],
+  "id": "ORG-000070"
+ },
+ {
+  "name": "TikTok",
+  "full": "TikTok (ByteDance)",
+  "type": "red social",
+  "country": "China",
+  "bio": "Red social de video corto de ByteDance; nodo de propagación viral de narrativas.",
+  "certainty": "DOCUMENTADO",
+  "review": "REVISADO",
+  "refs": [
+   "SRC-000001"
+  ],
+  "id": "ORG-000071"
+ },
+ {
+  "name": "Palantir Technologies",
+  "full": "Palantir Technologies Inc.",
+  "type": "empresa de inteligencia de datos/IA",
+  "country": "EE.UU.",
+  "bio": "Empresa fundada por Peter Thiel y Alex Karp; provee software de análisis de datos e IA a gobiernos y fuerzas armadas. Nodo clave de vigilancia.",
+  "certainty": "DOCUMENTADO",
+  "review": "REVISADO",
+  "refs": [
+   "SRC-000001"
+  ],
+  "id": "ORG-000072"
+ },
+ {
+  "name": "X (Twitter)",
+  "full": "X Corp.",
+  "type": "red social",
+  "country": "EE.UU.",
+  "bio": "Red social de microblogging, propiedad de Elon Musk. Canal central de difusión política.",
+  "certainty": "DOCUMENTADO",
+  "review": "REVISADO",
+  "refs": [
+   "SRC-000001"
+  ],
+  "id": "ORG-000073"
+ },
+ {
+  "name": "BlackRock",
+  "full": "BlackRock, Inc.",
+  "type": "gestora de activos financieros",
+  "country": "EE.UU.",
+  "bio": "Mayor gestora de activos del mundo (~US$15.3 trillones AUM). Nodo del poder financiero concentrado.",
+  "certainty": "DOCUMENTADO",
+  "review": "REVISADO",
+  "refs": [
+   "SRC-000001"
+  ],
+  "id": "ORG-000074"
+ },
+ {
+  "name": "Vanguard",
+  "full": "The Vanguard Group",
+  "type": "gestora de activos financieros",
+  "country": "EE.UU.",
+  "bio": "Segunda mayor gestora de fondos del mundo (~US$13.3 trillones AUM).",
+  "certainty": "DOCUMENTADO",
+  "review": "REVISADO",
+  "refs": [
+   "SRC-000001"
+  ],
+  "id": "ORG-000075"
+ },
+ {
+  "name": "State Street",
+  "full": "State Street Corporation",
+  "type": "gestora de activos financieros",
+  "country": "EE.UU.",
+  "bio": "Tercera gestora de la 'tríada' de indexación (~US$4.7 trillones AUM).",
+  "certainty": "DOCUMENTADO",
+  "review": "REVISADO",
+  "refs": [
+   "SRC-000001"
+  ],
+  "id": "ORG-000076"
+ },
+ {
+  "name": "Orbia / Netafim",
+  "full": "Orbia Advance Corporation (Netafim)",
+  "type": "empresa industrial/agrícola",
+  "country": "México",
+  "bio": "Conglomerado de la familia Del Valle; señalado por informe de la ONU por lucrar con el genocidio en Gaza vía Netafim (riego por goteo). PISTA-250.",
+  "certainty": "REPORTADO",
+  "review": "PENDIENTE",
+  "refs": [
+   "SRC-000001"
+  ],
+  "id": "ORG-000077"
+ },
+ {
+  "id": "ORG-000078",
+  "name": "DEA",
+  "full": "Drug Enforcement Administration",
+  "type": "agencia federal",
+  "country": "EE.UU.",
+  "bio": "Agencia antidrogas de EE.UU.; eje del caso Bolivia y de la tesis DEA-narco.",
+  "certainty": "DOCUMENTADO",
+  "review": "REVISADO",
+  "refs": [
+   "SRC-000001"
+  ]
+ }
+]

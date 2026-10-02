@@ -1,0 +1,33 @@
+[
+ {
+  "id": "SRC-000001",
+  "name": "Expediente Sombras de Israel 2026",
+  "type": "archivo de investigación",
+  "url": "C:\\Users\\USUARIO\\Downloads\\expediente_sombras_israel_2026-08-29\\",
+  "accessed": "2026-09-03",
+  "note": "Fuente de verdad local del archivo documental."
+ },
+ {
+  "id": "SRC-000002",
+  "name": "Caso FARA 7649 Clock Tower X LLC",
+  "type": "documento oficial (DOJ FARA)",
+  "url": "expediente/evidence/fara_7649_clock_tower_x_israel/",
+  "accessed": "2026-09-03",
+  "note": "Registro de agente extranjero. No prueba por sí solo contrato directo con OpenAI."
+ },
+ {
+  "id": "SRC-000003",
+  "name": "X / Twitter",
+  "type": "red social",
+  "accessed": "2026-09-03",
+  "note": "Plataforma de publicación de los videos; los videos son pistas hasta conectarse con fuentes primarias."
+ },
+ {
+  "id": "SRC-000004",
+  "name": "Redes sociales X/YouTube — lote 23-sep-2026",
+  "type": "red social / clip",
+  "url": "C:\\\\Users\\\\USUARIO\\\\Downloads\\\\expediente_sombras_israel_2026-08-29\\\\_fichas\\\\",
+  "accessed": "2026-09-23",
+  "note": "Pistas PISTA-080 a 087 archivadas en la ficha y el inventario del expediente (X + YouTube Shorts)."
+ }
+]

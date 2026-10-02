@@ -1,0 +1,19 @@
+[
+ {
+  "id": "CNF-000001",
+  "name": "Conflicto Israel-Palestina",
+  "period": "1848–presente (fase moderna: 1948–actualidad)",
+  "background": "Conflicto entre el Estado de Israel, el pueblo palestino y actores regionales/internacionales, atravesado por tensiones territoriales, religiosas, políticas y geopolíticas.",
+  "actors": [
+   "Estado de Israel",
+   "Hamás",
+   "Autoridad Nacional Palestina",
+   "colonos",
+   "población civil palestina"
+  ],
+  "status": "documentado",
+  "refs": [
+   "SRC-000001"
+  ]
+ }
+]
