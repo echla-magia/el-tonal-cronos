@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
-<head><link rel="icon" href="img/isotipo_tonal.jpg">
+<head><link rel="icon" href="/cronos/img/isotipo_tonal.jpg">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Cronos — Archivo Documental OSINT</title>
@@ -1659,7 +1659,7 @@ function renderHome(){
       <div class="hero aghero">
         <div class="agh-bg" style="background:radial-gradient(ellipse at 30% 40%,rgba(205,153,51,.18),rgba(11,15,25,.9) 70%),linear-gradient(135deg,#0a1526,#0b0f19)"></div>
         <div class="agh-content">
-          <div class="agh-logo" style="margin-bottom:6px"><img src="img/isotipo_central_tonal.jpg" alt="El Tonal del León" style="height:170px;width:170px;border-radius:50%;border:3px solid rgba(205,153,51,.4);box-shadow:0 0 40px rgba(205,153,51,.35),0 0 80px rgba(205,153,51,.12)"></div>
+          <div class="agh-logo" style="margin-bottom:6px"><img src="/cronos/img/isotipo_central_tonal.jpg" alt="El Tonal del León" style="height:170px;width:170px;border-radius:50%;border:3px solid rgba(205,153,51,.4);box-shadow:0 0 40px rgba(205,153,51,.35),0 0 80px rgba(205,153,51,.12)"></div>
           <h1>🦉 CRONOS</h1>
           <p><b>Archivo Documental de Conflictos, Poder y Evidencia Audiovisual.</b><br>
           No almacenamos conclusiones: almacenamos <b>evidencia, relaciones, fuentes y grados de certeza</b> que permiten construir o refutar conclusiones.</p>
@@ -1678,10 +1678,10 @@ function renderHome(){
       <div class="grid2">
         <div class="panel"><h2>📌 Últimos registros</h2>
           <div class="reg-list">
-            ${DB.orgs.slice(0,2).map(o=>`<div class="reg" onclick="abrirFicha('${o.id}')"><div class="reg-avatar">${o.img?`<img src="img/${o.img.split('/').pop()}" class="reg-foto" onerror="this.outerHTML='<span>🏢</span>'">`:''}${!o.img?'<span>🏢</span>':''}</div><div class="reg-info"><b>${o.name}</b><span class="reg-tag tag-org">ORGANIZACIÓN</span></div><div class="reg-fecha">Actualizado ${new Date().getDate()} ${['ene','feb','mar','abr','may','jun','jul','ago','sep','oct','nov','dic'][new Date().getMonth()]}</div></div>`).join('')}
+            ${DB.orgs.slice(0,2).map(o=>`<div class="reg" onclick="abrirFicha('${o.id}')"><div class="reg-avatar">${o.img?`<img src="/cronos/img/${o.img.split('/').pop()}" class="reg-foto" onerror="this.outerHTML='<span>🏢</span>'">`:''}${!o.img?'<span>🏢</span>':''}</div><div class="reg-info"><b>${o.name}</b><span class="reg-tag tag-org">ORGANIZACIÓN</span></div><div class="reg-fecha">Actualizado ${new Date().getDate()} ${['ene','feb','mar','abr','may','jun','jul','ago','sep','oct','nov','dic'][new Date().getMonth()]}</div></div>`).join('')}
             ${(DB.conflicts||[]).slice(0,2).map(c=>`<div class="reg" onclick="abrirFicha('${c.id}')"><div class="reg-avatar">⚔️</div><div class="reg-info"><b>${c.name}</b><span class="reg-tag tag-conflicto">CONFLICTO</span></div><div class="reg-fecha">${c.date||'vigente'}</div></div>`).join('')}
             ${(DB.events||[]).slice(0,3).map(e=>`<div class="reg" onclick="abrirFicha('${e.id}')"><div class="reg-avatar">📅</div><div class="reg-info"><b>${e.name}</b><span class="reg-tag tag-evento">EVENTO</span></div><div class="reg-fecha">${e.date||''}</div></div>`).join('')}
-            ${DB.persons.slice(0,4).map(p=>`<div class="reg" onclick="abrirFicha('${p.id}')"><div class="reg-avatar">${p.img?`<img src="img/${p.img.split('/').pop()}" class="reg-foto" onerror="this.outerHTML='<span>👤</span>'">`:''}${!p.img?'<span>👤</span>':''}</div><div class="reg-info"><b>${p.name}</b><span class="reg-tag tag-persona">PERSONA</span></div><div class="reg-fecha">Actualizado ${new Date().getDate()} ${['ene','feb','mar','abr','may','jun','jul','ago','sep','oct','nov','dic'][new Date().getMonth()]}</div></div>`).join('')}
+            ${DB.persons.slice(0,4).map(p=>`<div class="reg" onclick="abrirFicha('${p.id}')"><div class="reg-avatar">${p.img?`<img src="/cronos/img/${p.img.split('/').pop()}" class="reg-foto" onerror="this.outerHTML='<span>👤</span>'">`:''}${!p.img?'<span>👤</span>':''}</div><div class="reg-info"><b>${p.name}</b><span class="reg-tag tag-persona">PERSONA</span></div><div class="reg-fecha">Actualizado ${new Date().getDate()} ${['ene','feb','mar','abr','may','jun','jul','ago','sep','oct','nov','dic'][new Date().getMonth()]}</div></div>`).join('')}
           </div></div>
         <div class="panel"><h2>🏛️ Organizaciones</h2>
           <div style="display:flex;flex-wrap:wrap;gap:8px">
@@ -1694,31 +1694,14 @@ function renderHome(){
         // Documento base: biblioteca_protocolos (PDF 1936). El texto es una falsificación reconocida
         // (USHMM: los nazis sabían que era falso). Se estudia como documento de poder, no como fuente de verdad.
         const prot=[
-                  {n:'1 · El derecho de la fuerza',t:'"El derecho está en la fuerza."',p:'Doctrina de potencia: sanciones, bloqueos, uso de fuerza (PISTA-016).',c:'PROBABLE',cl:'b-rep'},
-                  {n:'2 · El poder económico',t:'"El poder del dinero del cual disponemos exclusivamente nosotros."',p:'FOBAPROA 873 mmdp + crisis 2008 TARP $700B (PISTA-052).',c:'CONFIRMADO',cl:'b-doc'},
-                  {n:'3 · Control de la prensa',t:'"Mediante la prensa obtenemos influencia, quedando nosotros en la sombra."',p:'Concentración en Google/Meta/X; Pew 2025: 86% digital (PISTA-051/037).',c:'CONFIRMADO',cl:'b-doc'},
-                  {n:'4 · La masa como elemento ciego',t:'"La masa es ciega, carece de juicio."',p:'Ingeniería de la opinión; marketing político masivo.',c:'PROBABLE',cl:'b-rep'},
-                  {n:'5 · El arte de gobernar sin moral',t:'"El arte de gobernar no tiene que ver con las leyes morales."',p:'Realpolitik: decisión por interés, no por ética.',c:'PROBABLE',cl:'b-rep'},
-                  {n:'6 · El poder invisible / la logia',t:'"Nuestro poder será más invencible porque será invisible."',p:'Red de poder económica real (Fink, Palantir); sin "centro único étnico".',c:'NO RESPALDADO',cl:'b-roro'},
-                  {n:'7 · Fomentar guerras',t:'"Evitar que las guerras traigan ganancias territoriales."',p:'DoD $849–892B; Brown >$8B pos-9/11 (PISTA-016/178/081).',c:'CONFIRMADO',cl:'b-doc'},
-                  {n:'8 · Liberalismo como herramienta',t:'"La libertad cambia de aspecto según se use para dominar."',p:'Uso instrumental de ideologías por el poder.',c:'PROBABLE',cl:'b-rep'},
-                  {n:'9 · El poder de la moneda',t:'"El oro — la fuerza motriz de la máquina del Estado."',p:'Control del crédito y emisión monetaria concentrado.',c:'CONFIRMADO',cl:'b-doc'},
-                  {n:'10 · La crisis económica fabricada',t:'"Produciremos la crisis general y arrojaremos a los trabajadores a la calle."',p:'2008: bancos rescatados, pérdida socializada (TARP $700B).',c:'CONFIRMADO',cl:'b-doc'},
-                  {n:'11 · Sembrar desconfianza y discordia',t:'"Sembrar desconfianza y discordia hasta que los pueblos no tengan opinión."',p:'Cámaras de eco y desinformación (PISTA-037).',c:'CONFIRMADO',cl:'b-doc'},
-                  {n:'12 · El monopolio',t:'"Manos invisibles trabajan para el monopolio en comercio e industria."',p:'Oligopolios tecnológicos; 3 gestoras >$33B AUM (PISTA-187).',c:'CONFIRMADO',cl:'b-doc'},
-                  {n:'13 · La deuda y el endeudamiento',t:'"El endeudamiento y sobreendeudamiento de la propiedad inmueble."',p:'Deuda soberana y socialización de crédito (FOBAPROA, 2008).',c:'CONFIRMADO',cl:'b-doc'},
-                  {n:'14 · El aumento de salarios + encarecimiento',t:'"Induciremos aumento de salarios y haremos subir los precios."',p:'Inflación y ciclos de salarios-precios.',c:'PROBABLE',cl:'b-rep'},
-                  {n:'15 · La puerta giratoria',t:'"Los gobernantes son empleados escogidos y administran para la élite."',p:'Revolving door gobierno↔consejos corporativos (Fink, Karp).',c:'CONFIRMADO',cl:'b-doc'},
-                  {n:'16 · La vigilancia',t:'"Un poder que vigila y controla."',p:'Vigilancia masiva; IA de vigilancia (Palantir, PRISM) (PISTA-040).',c:'CONFIRMADO',cl:'b-doc'},
-                  {n:'17 · La religión y la moral como instrumento',t:'"Reemplazar la creencia por el cálculo en cifras."',p:'Instrumentalización de la fe en política (PISTA-038).',c:'PROBABLE',cl:'b-rep'},
-                  {n:'18 · La educación dirigida',t:'"Educar a los hombres en el sentido que necesitamos."',p:'Financiamiento corporativo de educación y think tanks.',c:'PROBABLE',cl:'b-rep'},
-                  {n:'19 · El político como títere',t:'"Los mandatarios elegidos son pantalla."',p:'Puerta giratoria y cabildeo (AIPAC, PISTA-088/091).',c:'PROBABLE',cl:'b-rep'},
-                  {n:'20 · El fin de la propiedad de la nobleza',t:'"Despojar a la nobleza de su propiedad inmueble por impuestos."',p:'Reformas fiscales y redistribución de poder económico.',c:'PROBABLE',cl:'b-rep'},
-                  {n:'21 · El control de los partidos',t:'"Equipar todos los partidos y hacer del poder un campo de batalla."',p:'División partidista como estrategia (PISTA-086).',c:'PROBABLE',cl:'b-rep'},
-                  {n:'22 · La idolatría al oro',t:'"Su única meta será la codicia, la idolatría al oro."',p:'Cultura del consumo y del lujo (PISTA-028).',c:'PROBABLE',cl:'b-rep'},
-                  {n:'23 · El soberano mundial único',t:'"Un soberano que domina todas las naciones."',p:'No existe soberano único; gobernanza fragmentada (BRICS, G7).',c:'NO RESPALDADO',cl:'b-roro'},
-                  {n:'24 · La genocidio económico / colonización',t:'Sintesis: el poder económico como arma de dominación.',p:'Orbia/Netafim (PISTA-250); tesis Perkins; control de agua.',c:'CONFIRMADO',cl:'b-doc'}
-                ];
+          {n:'1 · Poder del dinero / crisis',t:'"Produciremos la crisis general y arrojaremos a los trabajadores a la calle."',p:'FOBAPROA 873 mmdp + crisis 2008 TARP $700B: deuda privada→pública (PISTA-052).',c:'CONFIRMADO',cl:'b-doc'},
+          {n:'3 · Control de la prensa',t:'"Mediante la prensa obtenemos influencia, quedando nosotros en la sombra."',p:'Concentración en Google/Meta/X; Pew 2025: 86% noticias digitales (PISTA-051/037).',c:'CONFIRMADO',cl:'b-doc'},
+          {n:'7 · Fomentar guerras',t:'"Evitar que las guerras traigan ganancias territoriales."',p:'DoD $849–892B; Brown >$8B pos-9/11 sin anexión (PISTA-016/178/081).',c:'CONFIRMADO',cl:'b-doc'},
+          {n:'16 · Deuda / salarios-precios',t:'"Induciremos aumento de salarios... y haremos subir los precios."',p:'Ciclos de auge-caída y presión inflacionaria-salarios.',c:'PROBABLE',cl:'b-rep'},
+          {n:'17 · Monopolio',t:'"Manos invisibles trabajan para el monopolio en comercio e industria."',p:'Oligopolios tecnológicos y financieros; 3 gestoras >$33B AUM (PISTA-187).',c:'CONFIRMADO',cl:'b-doc'},
+          {n:'14 · Centro invisible único',t:'"La serpiente que aprieta los reinos como un tornillo."',p:'Red de poder económico REAL (Fink, Palantir, DEA); pero SIN "centro único étnico" — actores nombrables.',c:'NO RESPALDADO',cl:'b-roro'},
+          {n:'Genocidio económico',t:'PTSA-250: Orbia/Netafim señalada por ONU.',p:'Familia Del Valle lucrando con genocidio en Gaza + control de agua (río Jordán/mar Muerto). Informe F. Albanese.',c:'PROBABLE',cl:'b-rep'}
+        ];
         const pend=[
                   ['✔ FMI Argentina 2018','imf.org/PR18199 → préstamo récord US$57.000M ($50B+$7B); condicionalidad: déficit a 0, inflación 44%→23%','VERIFICADO'],
                   ['✔ John Perkins / "Confessions of an Economic Hit Man"','Berrett-Koehler, 2004, 250 pp., ISBN 0-452-28708-1 (fuente primaria del libro)','VERIFICADO'],
@@ -1738,7 +1721,7 @@ function renderHome(){
       }
       function render(tipo){
       const listas={
-        persons:{title:'👤 Personas',cols:['Foto','ID','Nombre','Rol','Certeza','Estado'],arr:DB.persons,cel:p=>[`${p.img?`<img src="img/${(p.img||'').split('/').pop()}" style="width:30px;height:30px;border-radius:50%;object-fit:cover" onerror="this.style.display='none'">`:''}`,`<code style="font-size:10px">${p.id}</code>`,`<b>${p.name}</b>`,(p.roles||[]).join(', '),certezaBadge(p.certainty),p.review||'PENDIENTE']},orgs:{title:'🏢 Organizaciones',cols:['Logo','ID','Nombre','Tipo','País','Certeza'],arr:DB.orgs,cel:o=>[`${o.img&&o.img!=='#'?`<img src="img/${o.img.split('/').pop()}" style="width:38px;height:38px;border-radius:8px;object-fit:contain;background:#fff" onerror="this.outerHTML='<span style=font-weight:800;color:#C79227>'+ (o.name||'?')[0]+'</span>'">`:`${(o.name||'?')[0]}`}`.trim(),`<code style="font-size:10px">${o.id}</code>`,`<b>${o.name}</b>`,o.type,o.country||'-',certezaBadge(o.certainty)]},
+        persons:{title:'👤 Personas',cols:['Foto','ID','Nombre','Rol','Certeza','Estado'],arr:DB.persons,cel:p=>[`${p.img?`<img src="/cronos/img/${(p.img||'').split('/').pop()}" style="width:30px;height:30px;border-radius:50%;object-fit:cover" onerror="this.style.display='none'">`:''}`,`<code style="font-size:10px">${p.id}</code>`,`<b>${p.name}</b>`,(p.roles||[]).join(', '),certezaBadge(p.certainty),p.review||'PENDIENTE']},orgs:{title:'🏢 Organizaciones',cols:['Logo','ID','Nombre','Tipo','País','Certeza'],arr:DB.orgs,cel:o=>[`${o.img&&o.img!=='#'?`<img src="/cronos/img/${o.img.split('/').pop()}" style="width:38px;height:38px;border-radius:8px;object-fit:contain;background:#fff" onerror="this.outerHTML='<span style=font-weight:800;color:#C79227>'+ (o.name||'?')[0]+'</span>'">`:`${(o.name||'?')[0]}`}`.trim(),`<code style="font-size:10px">${o.id}</code>`,`<b>${o.name}</b>`,o.type,o.country||'-',certezaBadge(o.certainty)]},
         videos:{title:'🎥 Videos',cols:['ID','Título','Canal','Duración','Clase','Certeza'],arr:DB.videos,cel:v=>[`<code style="font-size:10px">${v.id}</code>`,`<b>${v.title}</b>`,v.channel||'-',(v.dur?v.dur:(v.size_mb?`${v.size_mb} MB`:'-')),v.manipulation?'Cl. '+v.manipulation:'-',certezaBadge(v.certainty)]},
         claims:{title:'🗣️ Afirmaciones',cols:['ID','Afirmación','Autor','Estado','Confianza'],arr:DB.claims,cel:c=>[`<code style="font-size:10px">${c.id}</code>`,(c.text||'').slice(0,60),enlazar(c.author),certezaBadge(c.status||c.certainty),(c.confidence||0)+'%']}
       };
@@ -1767,7 +1750,7 @@ function renderHome(){
       const rels=DB.rels.filter(r=>r.subject===id||r.object===id);
       document.getElementById('app').innerHTML=`<div class="grid grid2">
         <div class="lateral">
-          <div class="avatar" style="width:190px;height:210px;margin:6px 0;display:flex;justify-content:center;align-items:center;background:#0d211b;border-radius:12px;overflow:hidden;border:2px solid #C79227">${p.img&&p.img!=='#'?`<img src="img/${p.img.split('/').pop()}" alt="${p.name}" style="width:100%;height:100%;object-fit:cover" onerror="this.parentNode.innerHTML=String.fromCharCode(60)+'div style=font-size:64px;color:#C79227'>${(p.name||'?')[0]}</div>'+String.fromCharCode(62)">`:`<div style="font-size:64px;color:#C79227;font-weight:700">${(p.name||'?')[0]}</div>`}</div>
+          <div class="avatar" style="width:190px;height:210px;margin:6px 0;display:flex;justify-content:center;align-items:center;background:#0d211b;border-radius:12px;overflow:hidden;border:2px solid #C79227">${p.img&&p.img!=='#'?`<img src="/cronos/img/${p.img.split('/').pop()}" alt="${p.name}" style="width:100%;height:100%;object-fit:cover" onerror="this.parentNode.innerHTML=String.fromCharCode(60)+'div style=font-size:64px;color:#C79227'>${(p.name||'?')[0]}</div>'+String.fromCharCode(62)">`:`<div style="font-size:64px;color:#C79227;font-weight:700">${(p.name||'?')[0]}</div>`}</div>
           <style>.avatar{overflow:hidden}.avatar img{width:100%;height:100%;object-fit:cover}</style>
           <h3 style="margin-top:0">${p.name}</h3>
           ${p.original?`<div style="color:var(--gris);font-size:13px">${p.original}</div>`:''}
@@ -1795,7 +1778,7 @@ function renderHome(){
     const rels=DB.rels.filter(r=>r.subject===id||r.object===id);
     document.getElementById('app').innerHTML=`<div class="grid grid2">
       <div class="lateral">
-        <div style="text-align:center">${o.img&&o.img!=='#'?`<img src="img/${o.img.split('/').pop()}" alt="${o.name}" style="width:150px;height:150px;object-fit:contain;display:block;margin:0 auto 8px;border-radius:12px;border:2px solid var(--dorado)">`:`<div style="font-size:56px;margin:0 auto 8px">🏢</div>`}</div>
+        <div style="text-align:center">${o.img&&o.img!=='#'?`<img src="/cronos/img/${o.img.split('/').pop()}" alt="${o.name}" style="width:150px;height:150px;object-fit:contain;display:block;margin:0 auto 8px;border-radius:12px;border:2px solid var(--dorado)">`:`<div style="font-size:56px;margin:0 auto 8px">🏢</div>`}</div>
         <h3 style="margin-top:6px;margin-bottom:2px">${o.name}</h3>${o.full?`<div style="color:var(--gris);font-size:11.5px;line-height:1.3;margin-bottom:6px;word-wrap:normal">${o.full}</div>`:''}
         ${certezaBadge(o.certainty)} <span class="badge b-cer">${o.review||'PENDIENTE'}</span>
         <dl><dt>Tipo</dt><dd>${o.type}</dd><dt>País</dt><dd>${o.country}</dd><dt>ID</dt><dd>${o.id}</dd></dl>
@@ -1803,7 +1786,7 @@ function renderHome(){
       <div class="panel">
         <h2>${o.name}</h2>
         <p style="color:var(--gris)">${o.bio||''}</p>
-        ${o.guia?`<div class="panel" style="margin-top:8px;background:rgba(11,15,25,.4)"><h3 style="color:#C79227">📊 Guía documental</h3><img src="img/${o.guia}" alt="Guía ${o.name}" style="width:100%;height:auto;object-fit:contain;border:1px solid var(--dorado);border-radius:8px;margin-top:6px"></div>`:''}
+        ${o.guia?`<div class="panel" style="margin-top:8px;background:rgba(11,15,25,.4)"><h3 style="color:#C79227">📊 Guía documental</h3><img src="/cronos/img/${o.guia}" alt="Guía ${o.name}" style="width:100%;height:auto;object-fit:contain;border:1px solid var(--dorado);border-radius:8px;margin-top:6px"></div>`:''}
         <h3>Relaciones (${rels.length})</h3>
         ${rels.length?`<ul style="list-style:none;padding:0">${rels.map(r=>{
           const otro=r.subject===id?r.object:r.subject;
@@ -1901,8 +1884,8 @@ function renderHome(){
     // ---- VISUALIZACIONES DE CRONOLOGIA (generadas) ----
     try{var appTl=document.getElementById('app');
       appTl.innerHTML+='<div style="margin-top:30px;border-top:2px solid #C79227;padding-top:12px"><h3>🖼️ Líneas de tiempo generadas</h3>'
-      +'<div style="margin:12px 0"><b style="color:#C79227">Línea 2015-2026</b><br><img src="img/ag_linea_tiempo_1.png" style="width:100%;height:auto;max-height:980px;object-fit:contain;border:1px solid #C79227;border-radius:8px" onclick="window.open(this.src)"></div>'
-      +'<div style="margin:12px 0"><b style="color:#C79227">Línea 2017-2026</b><br><img src="img/ag_linea_tiempo_2.png" style="width:100%;height:auto;max-height:980px;object-fit:contain;border:1px solid #C79227;border-radius:8px" onclick="window.open(this.src)"></div></div>';
+      +'<div style="margin:12px 0"><b style="color:#C79227">Línea 2015-2026</b><br><img src="/cronos/img/ag_linea_tiempo_1.png" style="width:100%;height:auto;max-height:980px;object-fit:contain;border:1px solid #C79227;border-radius:8px" onclick="window.open(this.src)"></div>'
+      +'<div style="margin:12px 0"><b style="color:#C79227">Línea 2017-2026</b><br><img src="/cronos/img/ag_linea_tiempo_2.png" style="width:100%;height:auto;max-height:980px;object-fit:contain;border:1px solid #C79227;border-radius:8px" onclick="window.open(this.src)"></div></div>';
     }catch(e){}
   }
 window._GOBIERNOS = { 'ESTADOS UNIDOS':[{cargo:'Presidente',nombre:'Donald Trump',foto:'https://upload.wikimedia.org/wikipedia/commons/thumb/1/16/Official_Presidential_Portrait_of_President_Donald_J._Trump_%282025%29.jpg/330px-Official_Presidential_Portrait_of_President_Donald_J._Trump_%282025%29.jpg'},{cargo:'Vicepresidente',nombre:'JD Vance',foto:'https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/March_2026_Official_Vice_Presidential_Portrait_of_JD_Vance_%28medium_crop%29_%282%29.jpg/330px-March_2026_Official_Vice_Presidential_Portrait_of_JD_Vance_%28medium_crop%29_%282%29.jpg'},{cargo:'Secretario de Estado',nombre:'Marco Rubio',foto:'https://upload.wikimedia.org/wikipedia/commons/thumb/f/f7/Official_portrait_of_Secretary_Marco_Rubio_%28cropped%29%282%29.jpg/330px-Official_portrait_of_Secretary_Marco_Rubio_%28cropped%29%282%29.jpg'},{cargo:'Secretario de Defensa',nombre:'Pete Hegseth',foto:'https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Pete_Hegseth_Official_Portrait.jpg/330px-Pete_Hegseth_Official_Portrait.jpg'},{cargo:'Secretario del Tesoro',nombre:'Scott Bessent',foto:'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d6/Official_portrait_of_Treasury_Secretary_Scott_Bessent_%28borderless%29_%28cropped%29.jpg/330px-Official_portrait_of_Treasury_Secretary_Scott_Bessent_%28borderless%29_%28cropped%29.jpg'},{cargo:'Fiscal General',nombre:'Pam Bondi',foto:'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Pam_Bondi_official_portrait_%28cropped%29%282%29.jpg/330px-Pam_Bondi_official_portrait_%28cropped%29%282%29.jpg'}],'CHINA':[{cargo:'Presidente',nombre:'Xi Jinping',foto:'https://upload.wikimedia.org/wikipedia/commons/thumb/d/dc/Prime_Minister_Keir_Starmer_visits_China_%2855066713683%29_%28cropped%2Bangle%29.jpg/330px-Prime_Minister_Keir_Starmer_visits_China_%2855066713683%29_%28cropped%2Bangle%29.jpg'},{cargo:'Premier',nombre:'Li Qiang',foto:'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Li_Qiang_meets_Keir_Starmer_Jan_2026.jpg/330px-Li_Qiang_meets_Keir_Starmer_Jan_2026.jpg'},{cargo:'Ministro RREE',nombre:'Wang Yi',foto:'https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/Jake_Sullivan_and_Wang_Yi_met_in_Bangkok_%282024%29_%28cropped%29.jpg/330px-Jake_Sullivan_and_Wang_Yi_met_in_Bangkok_%282024%29_%28cropped%29.jpg'}],'RUSIA':[{cargo:'Presidente',nombre:'Vladimir Putin',foto:'https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/%D0%92%D0%BB%D0%B0%D0%B4%D0%B8%D0%BC%D0%B8%D1%80_%D0%9F%D1%83%D1%82%D0%B8%D0%BD_%2808-03-2024%29_%28cropped%29_%28higher_res%29_2.jpg/330px-%D0%92%D0%BB%D0%B0%D0%B4%D0%B8%D0%BC%D0%B8%D1%80_%D0%9F%D1%83%D1%82%D0%B8%D0%BD_%2808-03-2024%29_%28cropped%29_%28higher_res%29_2.jpg'},{cargo:'Primer Ministro',nombre:'Mikhail Mishustin',foto:'https://upload.wikimedia.org/wikipedia/commons/thumb/9/9f/Mikhail_Mishustin_%282026-02-25%29.jpg/330px-Mikhail_Mishustin_%282026-02-25%29.jpg'},{cargo:'Ministro RREE',nombre:'Sergey Lavrov',foto:'https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/%D0%A1%D0%B5%D1%80%D0%B3%D0%B5%D0%B9_%D0%9B%D0%B0%D0%B2%D1%80%D0%BE%D0%B2_%2821-01-2022%29_%28cropped%29_%282%29.jpg/330px-%D0%A1%D0%B5%D1%80%D0%B3%D0%B5%D0%B9_%D0%9B%D0%B0%D0%B2%D1%80%D0%BE%D0%B2_%2821-01-2022%29_%28cropped%29_%282%29.jpg'}],'ISRAEL':[{cargo:'Primer Ministro',nombre:'Benjamin Netanyahu',foto:'https://thumb.wikimedia.org/wikipedia/commons/thumb/7/74/Benjamin_Netanyahu%2C_February_2023.jpg/500px-Benjamin_Netanyahu%2C_February_2023.jpg'},{cargo:'Ministro Defensa',nombre:'Israel Katz',foto:'https://thumb.wikimedia.org/wikipedia/commons/thumb/a/af/Israel_Katz_on_July_3%2C_2024_%28cropped%29.jpg/500px-Israel_Katz_on_July_3%2C_2024_%28cropped%29.jpg'},{cargo:'Ministro RREE',nombre:'Gideon Sa\'ar',foto:'https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d1/Gideon_Saar_new.jpg/500px-Gideon_Saar_new.jpg'}],'MÉXICO':[{cargo:'Presidenta',nombre:'Claudia Sheinbaum',foto:'https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e4/President_Sheinbaum_Pardo_in_2026_%28cropped%29.jpg/500px-President_Sheinbaum_Pardo_in_2026_%28cropped%29.jpg'},{cargo:'Sec. RREE',nombre:'Roberto Velasco Álvarez',foto:'https://thumb.wikimedia.org/wikipedia/commons/thumb/7/79/Roberto_Velasco_%C3%81lvarez_in_March_2024.jpg/500px-Roberto_Velasco_%C3%81lvarez_in_March_2024.jpg'}] };
@@ -1935,7 +1918,7 @@ function renderOrganigrama(){
   var f=paises.find(function(pr){return pr[0]===sel;});
   h+='<h3 style="color:#C79227;margin:4px 0 8px">'+sel+'</h3>';
   if(f && f[1]){
-    h+='<div style="margin:0 auto;text-align:center"><img src="img/'+f[1]+'" alt="Organigrama '+sel+'" style="width:100%;max-width:1100px;height:auto;object-fit:contain;border:1px solid var(--dorado);border-radius:8px"></div>';
+    h+='<div style="margin:0 auto;text-align:center"><img src="/cronos/img/'+f[1]+'" alt="Organigrama '+sel+'" style="width:100%;max-width:1100px;height:auto;object-fit:contain;border:1px solid var(--dorado);border-radius:8px"></div>';
   } else {
     h+='<p style="color:var(--gris)">No hay organigrama de '+sel+' en el archivo.</p>';
   }
@@ -1951,9 +1934,9 @@ function renderGrafo(){
   var redImg='';
   try{redImg='<div style="margin:10px 0;background:var(--azul-osc);border:1px solid #C79227;border-radius:10px;padding:10px">'
     +'<div style="color:#C79227;font-weight:700">🗺️ Red de relaciones (mapa generado del expediente · Archivos de Guerra)</div>'
-    +'<select id="redSelect" onchange="var s=document.getElementById(\'redImg\');s.src=\'img/ag_\'+this.value+\'.png\'" style="margin-bottom:6px;background:#0d211b;color:#F7F3E9;border:1px solid #C79227;border-radius:6px;padding:4px">'
+    +'<select id="redSelect" onchange="var s=document.getElementById(\'redImg\');s.src=\'/cronos/img/ag_\'+this.value+\'.png\'" style="margin-bottom:6px;background:#0d211b;color:#F7F3E9;border:1px solid #C79227;border-radius:6px;padding:4px">'
     +'<option value="red_principal">Red principal</option><option value="red_politica">Red política</option><option value="red_completa">Red completa</option><option value="red_mundo_ejemplo">Red mundo (ejemplo)</option></select><br>'
-    +'<img id="redImg" src="img/ag_red_principal.png" style="width:100%;max-height:980px;object-fit:contain;border-radius:6px" onclick="window.open(this.src)"></div>';}catch(e){}
+    +'<img id="redImg" src="/cronos/img/ag_red_principal.png" style="width:100%;max-height:980px;object-fit:contain;border-radius:6px" onclick="window.open(this.src)"></div>';}catch(e){}
   // --- barra de capas ---
   var capasBarra='<div style="display:flex;gap:4px;flex-wrap:wrap;margin:8px 0;justify-content:flex-start">'
     +'<button class="capa-b" data-c="TODAS" onclick="filtrarCapa(\'TODAS\')" style="background:#C79227;color:#0d211b;font-weight:700;border:0;border-radius:6px;padding:4px 10px;cursor:pointer;margin:2px">TODAS</button>'
@@ -2249,7 +2232,7 @@ function renderDashboard(){
     ['ag_fara_pegasus.png','Caso FARA + NSO/Pegasus'],['ag_lobby_sionismo.png','Lobby y sionismo cristiano'],
     ['ag_red_mundo_ejemplo.png','Ejemplo red global']];
   var g='<h3>🖼️ Visualizaciones de Archivos de Guerra</h3>';
-  gal.forEach(function(x){g+='<div style="margin:12px 0;background:var(--azul-osc);border:1px solid #C79227;border-radius:10px;padding:8px"><b style="color:#C79227;font-size:12px">'+x[1]+'</b><br><img src="img/'+x[0]+'" style="width:100%;max-height:980px;object-fit:contain;border-radius:6px" onclick="window.open(this.src)"></div>';});
+  gal.forEach(function(x){g+='<div style="margin:12px 0;background:var(--azul-osc);border:1px solid #C79227;border-radius:10px;padding:8px"><b style="color:#C79227;font-size:12px">'+x[1]+'</b><br><img src="/cronos/img/'+x[0]+'" style="width:100%;max-height:980px;object-fit:contain;border-radius:6px" onclick="window.open(this.src)"></div>';});
   document.getElementById('galeria-visual').innerHTML=g;
 }
 function ejecutarConsulta(){
@@ -2283,7 +2266,7 @@ function decorarAvatares(){
     var obj=name2ibj[nombre];if(!obj||!obj.img)return;
     var av=row.querySelector('.reg-avatar');if(!av)return;
     var f=obj.img.split('/').pop();
-    av.innerHTML='<img src="img/'+f+'" style="width:100%;height:100%;border-radius:50%;object-fit:cover;display:block" onerror="this.remove()">';
+    av.innerHTML='<img src="/cronos/img/'+f+'" style="width:100%;height:100%;border-radius:50%;object-fit:cover;display:block" onerror="this.remove()">';
   });
 }
 
@@ -2291,7 +2274,7 @@ function decorarAvatares(){
     var ids=[]; for(var n=110;n<=131;n++) ids.push('CLM-'+String(n).padStart(6,'0'));
     var nuevos=DB.claims.filter(c=>ids.indexOf(c.id)>=0);
     var imgs=[['ev_pezeshkian.jpg','Pezeshkian en la AGNU · 23-sep-2026'],['ev_gaza_drones.jpg','AJ+ · Drones sobre Gaza'],['ev_palmbeach.jpg','Comisión Palm Beach · bonos israelíes'],['ev_aipac.jpg','Tucker · Audio AIPAC (lobby)']];
-    var gal=imgs.map(i=>'<img src="img/'+i[0]+'" title="'+i[1]+'" style="width:170px;height:170px;object-fit:cover;border-radius:12px;border:2px solid var(--dorado);margin:6px" onclick="window.open(this.src)">').join('');
+    var gal=imgs.map(i=>'<img src="/cronos/img/'+i[0]+'" title="'+i[1]+'" style="width:170px;height:170px;object-fit:cover;border-radius:12px;border:2px solid var(--dorado);margin:6px" onclick="window.open(this.src)">').join('');
     document.getElementById('app').innerHTML=`
       <div class="hero aghero">
         <div class="agh-bg" style="background:radial-gradient(ellipse at 35% 40%,rgba(205,153,51,.15),rgba(11,15,25,.9) 70%)"></div>

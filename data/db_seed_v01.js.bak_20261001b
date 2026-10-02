@@ -753,6 +753,8 @@ DB.orgs.push({
 // ----------------------------------------------------------------------------
 DB.videos.push({
   id: "VID-000001", title: "Feiglin: exterminio implícito", url: "https://x.com/GBC_Press/status/2094438857618174386",
+  master_file:"C:\\Users\\USUARIO\\Downloads\\CRONOS\\expediente_sombras_israel_2026-08-29\\media\\GBC_Press_2094438857618174386.mp4",
+  sha256:"c0710ede597fb3f7fd221444d2221c2c10edbcfe1ccca3bfb1c1292ba8a0c609",
   platform: "X", channel: "GBC_Press", published: "2026-09", dur: "00:00:45",
   lang: "he/en", manipulation: "B", by: "PER-000003", subject: "clima de exterminio",
   desc: "Ex-MK Moshe Feiglin: 'no podemos vivir si queda un palestino'.", certainty: "CORROBORADO", review: "PENDIENTE",
@@ -760,36 +762,48 @@ DB.videos.push({
 });
 DB.videos.push({
   id: "VID-000002", title: "Amit Halevi: '300 terroristas'", url: "https://x.com/GBC_Press/status/2094786200934764993",
+  master_file:"C:\\Users\\USUARIO\\Downloads\\CRONOS\\expediente_sombras_israel_2026-08-29\\media\\GBC_Press_2094786200934764993.mp4",
+  sha256:"5ed7791552331ed58bcda20e6a5fb9136ea1d9f98f87c113a5043f903856342e",
   platform: "X", channel: "GBC_Press", published: "2026-09", dur: "00:00:38", lang: "he/en",
   manipulation: "C", by: "PER-000004", desc: "Diputado sobre maternidad y supuestos terroristas.",
   certainty: "REPORTADO", review: "PENDIENTE", refs: ["PER-000004"], src: "SRC-000003"
 });
 DB.videos.push({
   id: "VID-000003", title: "Ted Cruz vs Tucker Carlson", url: "https://x.com/GBC_Press/status/2094502293953708473",
+  master_file:"C:\\Users\\USUARIO\\Downloads\\CRONOS\\expediente_sombras_israel_2026-08-29\\media\\GBC_Press_2094502293953708473.mp4",
+  sha256:"7e8e0f09ea58448817e23b2cab650a789c2d53f9802daaa3bf17a40c3f5d60f6",
   platform: "X", channel: "GBC_Press", published: "2026-09", dur: "00:00:52", lang: "en",
   manipulation: "B", by: "PER-000007", desc: "Cruz 'panicking'; llama a Carlson 'mayor antisemita'.",
   certainty: "REPORTADO", review: "PENDIENTE", refs: ["PER-000007","PER-000006"], src: "SRC-000003"
 });
 DB.videos.push({
   id: "VID-000004", title: "Kushner: Gaza teardown", url: "https://x.com/DaniMayakovski/status/2094661570869469242",
+  master_file:"C:\\Users\\USUARIO\\Downloads\\CRONOS\\expediente_sombras_israel_2026-08-29\\media\\DaniMayakovski_2094661570869469242.mp4",
+  sha256:"8609bd66a0b7fb33761c0736f42f19e63b849b341105510d7834a88f21fce007",
   platform: "X", channel: "DaniMayakovski", published: "2026-09", dur: "00:00:41", lang: "en",
   manipulation: "B", by: "PER-000008", desc: "Kushner sobre Gaza como 'waterfront teardown' y torres de lujo.",
   certainty: "CORROBORADO", review: "PENDIENTE", refs: ["PER-000008"], src: "SRC-000003"
 });
 DB.videos.push({
   id: "VID-000005", title: "Haitham: crítica al sionismo", url: "https://youtube.com/shorts/yb76gKV8fJQ",
+  master_file:"C:\\Users\\USUARIO\\Downloads\\CRONOS\\expediente_sombras_israel_2026-08-29\\media\\youtube_yb76gKV8fJQ_BreezyPolitics.mp4",
+  sha256:"062902a64145786e23374150ad8fba75466ff86c6a35d8e88ae5f27d9115af9b",
   platform: "YouTube", channel: "Shorts", published: "2026-09", dur: "00:00:33", lang: "en",
   manipulation: "A", by: "PER-000009", desc: "Criticar el sionismo no es antisemitismo.",
   certainty: "REPORTADO", review: "PENDIENTE", refs: ["PER-000009"], src: "SRC-000003"
 });
 DB.videos.push({
   id: "VID-000006", title: "May Golan: destrucción Gaza", url: "https://x.com/GBC_Press/status/2094795333297672625",
+  master_file:"C:\\Users\\USUARIO\\Downloads\\CRONOS\\expediente_sombras_israel_2026-08-29\\media\\GBC_Press_2094795333297672625.mp4",
+  sha256:"48797708308e95b7f4791238a77fbfbe84f80e2c20c2c90670f0f0c66966c836",
   platform: "X", channel: "GBC_Press", published: "2026-09", dur: "00:00:29", lang: "en",
   manipulation: "A", by: "PER-000010", desc: "Ministra orgullosa de la devastación.",
   certainty: "CORROBORADO", review: "PENDIENTE", refs: ["PER-000010"], src: "SRC-000003"
 });
 
-DB.videos.push({ id: "VID-000007", title: "GBC: denuncias de Gaza (Golan/IDF)", url: "https://x.com/GBC_Press/status/2094474126778065211", platform: "X", channel: "GBC_Press", published: "2026-09", dur: "00:00:40", lang: "en", manipulation: "B", desc: "GBC Press sobre May Golan e IDF en Gaza.", certainty: "REPORTADO", review: "PENDIENTE", src: "SRC-000003" });
+DB.videos.push({ id: "VID-000007", title: "GBC: denuncias de Gaza (Golan/IDF)", url: "https://x.com/GBC_Press/status/2094474126778065211",
+  master_file:"C:\\Users\\USUARIO\\Downloads\\CRONOS\\expediente_sombras_israel_2026-08-29\\media\\GBC_Press_2094474126778065211.mp4",
+  sha256:"b34c9cb7644c05d7b8c413bc7c0d6ef974115d75ace36ed89ba48f6e298f092c", platform: "X", channel: "GBC_Press", published: "2026-09", dur: "00:00:40", lang: "en", manipulation: "B", desc: "GBC Press sobre May Golan e IDF en Gaza.", certainty: "REPORTADO", review: "PENDIENTE", src: "SRC-000003" });
 DB.videos.push({ id: "VID-000008", title: "Dr. Hossam: escenario Gaza", url: "https://x.com/drhossamsamy65/status/2094597567405273525", platform: "X", channel: "drhossamsamy65", published: "2026-09", dur: "00:01:00", lang: "ar/en", manipulation: "A", desc: "Profesional médico sobre la situación en Gaza.", certainty: "REPORTADO", review: "PENDIENTE", src: "SRC-000003" });
 DB.videos.push({ id: "VID-000009", title: "GBC: presas/política israelí", url: "https://x.com/GBC_Press/status/2094799910637822418", platform: "X", channel: "GBC_Press", published: "2026-09", dur: "00:00:35", lang: "en", manipulation: "B", desc: "GBC Press sobre presa palestina y política israelí.", certainty: "REPORTADO", review: "PENDIENTE", src: "SRC-000003" });
 DB.videos.push({ id: "VID-000010", title: "MrsRoyKeaneo: testimonio", url: "https://x.com/MrsRoyKeaneo/status/2094768446235979902", platform: "X", channel: "MrsRoyKeaneo", published: "2026-09", dur: "00:00:47", lang: "en", manipulation: "A", desc: "Testimonio sobre conflicto en Gaza.", certainty: "REPORTADO", review: "PENDIENTE", src: "SRC-000003" });
@@ -2778,7 +2792,11 @@ DB.claims.push({
   contra:"Número de países, medida exacta y alcance a verificar con fuentes primarias",
   video_file:"batch2_praxedes416_2093674783183433728.mp4",
   source_url:"https://x.com/praxedes416/status/2093674783183433728",
-  status:"PROBABLE", confidence: 0, reviewed:"PENDIENTE"
+  status:"PROBABLE", confidence: 0, reviewed:"PENDIENTE",
+  extr_sources:["https://en.wikipedia.org/wiki/Executive_Order_14203"],
+  corrob_nota:"Trump sancionó a la CPI en feb 2025 (Exec Order 14203) pero contra el FISCAL Karim Khan, no una 'presidenta'. Fondo real, destinatario mal identificado.",
+  corrob_fecha:"2026-09-05"
+
 });
 DB.claims.push({
   id:"CLM-000007",
@@ -2798,7 +2816,11 @@ DB.claims.push({
   contra:"Versión del portavoz israelí frente a las denuncias del caso Hind Rajab",
   video_file:"GBC_Press_1758014173005434880.mp4",
   source_url:"https://x.com/GBC_Press/status/1758014173005434880",
-  status:"CORROBORADO", confidence: 0, reviewed:"PENDIENTE"
+  status:"CORROBORADO", confidence: 0, reviewed:"PENDIENTE",
+  extr_sources:["https://www.aljazeera.com/news/2024/2/10/body-of-6-year-old-killed-in-deliberate-israeli-fire-found-after-12-days", "https://www.aljazeera.com/news/2026/8/20/who-was-hind-rajab-and-why-is-israel-investigating-her-killing", "https://en.wikipedia.org/wiki/Hind_Rajab_Foundation"],
+  corrob_nota:"Completo: Hind Rajab, 6 años, llamó a la Media Luna Roja, hallada muerta con sus familiares y 2 paramédicos 12 días después.",
+  corrob_fecha:"2026-09-05"
+
 });
 DB.claims.push({
   id:"CLM-000009",
@@ -2808,7 +2830,11 @@ DB.claims.push({
   contra:"Número exacto de ovaciones y el episodio del uniforme a verificar",
   video_file:"hippyygoat_2093399759134343168.mp4",
   source_url:"https://x.com/hippyygoat/status/2093399759134343168",
-  status:"CORROBORADO", confidence: 0, reviewed:"PENDIENTE"
+  status:"PROBABLE", confidence: 0, reviewed:"PENDIENTE",
+  extr_sources:["https://www.aljazeera.com/news/2024/7/24/key-takeaways-from-netanyahus-speech-and-the-protests-outside-us-congress"],
+  corrob_nota:"Ovaciones de pie reales en el Congreso (24/7/2024), pero el conteo exacto '26' no está verificado en las fuentes.",
+  corrob_fecha:"2026-09-05"
+
 });
 DB.claims.push({
   id:"CLM-000010",
@@ -2818,7 +2844,11 @@ DB.claims.push({
   contra:"No se presenta el audio de la orden; relato testimonial sin corroboración de la cúpula",
   video_file:"irlandarra2019_2093559993932840960.mp4",
   source_url:"https://x.com/irlandarra2019/status/2093559993932840960",
-  status:"POSIBLE", confidence: 0, reviewed:"PENDIENTE"
+  status:"NO_VERIFICADO", confidence: 0, reviewed:"PENDIENTE",
+  extr_sources:[],
+  corrob_nota:"Sin aparición en prensa reputada con esos detalles de franja horaria; NO_CONFIRMADO.",
+  corrob_fecha:"2026-09-05"
+
 });
 DB.claims.push({
   id:"CLM-000011",
@@ -2848,7 +2878,11 @@ DB.claims.push({
   contra:"",
   video_file:"001_twitter_GBC_Press_1966879451855372288.mp4",
   source_url:"https://x.com/001_twitter_GBC_Press/status/1966879451855372288",
-  status:"DOCUMENTADO", confidence: 0, reviewed:"PENDIENTE"
+  status:"CORROBORADO", confidence: 0, reviewed:"PENDIENTE",
+  extr_sources:["https://www.aljazeera.com/news/2026/1/7/media-body-condemns-israels-continued-ban-on-foreign-media-access-to-gaza", "https://www.aljazeera.com/news/2026/4/30/media-organisations-call-on-israel-to-allow-independent-access-to-gaza"],
+  corrob_nota:"Ban continuado a la prensa extranjera para acceso independiente a Gaza (CPJ/RSF exigen acceso); ~20 meses coherente.",
+  corrob_fecha:"2026-09-05"
+
 });
 DB.claims.push({
   id:"CLM-000014",
@@ -2858,7 +2892,8 @@ DB.claims.push({
   contra:"",
   video_file:"002_twitter_MrsRoyKeaneo_2093330918773592064.mp4",
   source_url:"https://x.com/002_twitter_MrsRoyKeaneo/status/2093330918773592064",
-  status:"POSIBLE", confidence: 0, reviewed:"PENDIENTE"
+  status:"PROBABLE", confidence: 0, reviewed:"PENDIENTE",
+  extr_sources:["https://www.hrw.org/report/2021/04/27/threshold-crossed/israeli-authorities-and-crimes-apartheid-and-persecution", "https://www.amnesty.org/en/latest/news/2022/02/israels-apartheid-against-palestinians-a-cruel-system-of-domination-and-a-crime-against-humanity/"]
 });
 DB.claims.push({
   id:"CLM-000015",
@@ -2868,7 +2903,8 @@ DB.claims.push({
   contra:"",
   video_file:"002_twitter_MrsRoyKeaneo_2093330918773592064.mp4",
   source_url:"https://x.com/002_twitter_MrsRoyKeaneo/status/2093330918773592064",
-  status:"POSIBLE", confidence: 0, reviewed:"PENDIENTE"
+  status:"POSIBLE", confidence: 0, reviewed:"PENDIENTE",
+  extr_sources:["https://jerusalemdeclaration.org/", "https://holocaustremembrance.com/resources/working-definition-antisemitism"]
 });
 DB.claims.push({
   id:"CLM-000016",
@@ -2898,7 +2934,8 @@ DB.claims.push({
   contra:"Quienes no apoyan al estado de Israel serían antisemitas (otro interviniente)",
   video_file:"004_twitter_Haitham47117914_2091644922826768386.mp4",
   source_url:"https://x.com/004_twitter_Haitham47117914/status/2091644922826768386",
-  status:"POSIBLE", confidence: 0, reviewed:"PENDIENTE"
+  status:"POSIBLE", confidence: 0, reviewed:"PENDIENTE",
+  extr_sources:["https://jerusalemdeclaration.org/", "https://holocaustremembrance.com/resources/working-definition-antisemitism"]
 });
 DB.claims.push({
   id:"CLM-000019",
@@ -2908,7 +2945,8 @@ DB.claims.push({
   contra:"",
   video_file:"004_twitter_Haitham47117914_2091644922826768386.mp4",
   source_url:"https://x.com/004_twitter_Haitham47117914/status/2091644922826768386",
-  status:"POSIBLE", confidence: 0, reviewed:"PENDIENTE"
+  status:"POSIBLE", confidence: 0, reviewed:"PENDIENTE",
+  extr_sources:["https://www.vatican.va/archive/hist_councils/ii_vatican_council/documents/vat-ii_decl_19651028_nostra-aetate_en.html"]
 });
 DB.claims.push({
   id:"CLM-000020",
@@ -2918,7 +2956,11 @@ DB.claims.push({
   contra:"",
   video_file:"005_twitter_DiegoVelezGar_2093159697415024640.mp4",
   source_url:"https://x.com/005_twitter_DiegoVelezGar/status/2093159697415024640",
-  status:"DOCUMENTADO", confidence: 0, reviewed:"PENDIENTE"
+  status:"CORROBORADO", confidence: 0, reviewed:"PENDIENTE",
+  extr_sources:["https://www.theguardian.com/uk-news/2026/jun/12/france-accuses-israeli-firm-interfering-scottish-elections-john-swinney-snp"],
+  corrob_nota:"Viginum (Francia) atribuyó a BlackCore interferencias en elecciones francesas, Escocia, Nueva York 2025, Angola y Togo. Matiz: vínculo 'oficial al Mossad' no demostrado.",
+  corrob_fecha:"2026-09-05"
+
 });
 DB.claims.push({
   id:"CLM-000021",
@@ -2928,7 +2970,11 @@ DB.claims.push({
   contra:"",
   video_file:"005_twitter_DiegoVelezGar_2093159697415024640.mp4",
   source_url:"https://x.com/005_twitter_DiegoVelezGar/status/2093159697415024640",
-  status:"DOCUMENTADO", confidence: 0, reviewed:"PENDIENTE"
+  status:"CORROBORADO", confidence: 0, reviewed:"PENDIENTE",
+  extr_sources:["https://www.theguardian.com/world/2023/feb/15/revealed-disinformation-team-jorge-claim-meddling-elections-tal-hanan"],
+  corrob_nota:"Guardian/Forbidden Stories: 'Team Jorge' de Tal Hanan afirmó manipular >30 elecciones (33 presidenciales, 27 exitosas). Son afirmaciones del propio Hanan, no todas verificadas.",
+  corrob_fecha:"2026-09-05"
+
 });
 DB.claims.push({
   id:"CLM-000022",
@@ -2968,7 +3014,10 @@ DB.claims.push({
   contra:"",
   video_file:"009_twitter_forbiddenmerch_2093754760935387136.mp4",
   source_url:"https://x.com/009_twitter_forbiddenmerch/status/2093754760935387136",
-  status:"DOCUMENTADO", confidence: 0, reviewed:"PENDIENTE"
+  status:"REFUTADO", confidence: 0, reviewed:"PENDIENTE",
+  corrob_nota:"NEGACIÓN DEL HOLOCAUSTO. La política nazi de exterminio de los judíos europeos ('Solución Final') está documentada por archivos, testimonios y sentencias de Núremberg. Esta afirmación contradice la evidencia histórica abrumadora.",
+  corrob_fecha:"2026-09-05"
+
 });
 DB.claims.push({
   id:"CLM-000026",
@@ -3028,7 +3077,10 @@ DB.claims.push({
   contra:"",
   video_file:"028_twitter_forbiddenmerch_2093843476240605184.mp4",
   source_url:"https://x.com/028_twitter_forbiddenmerch/status/2093843476240605184",
-  status:"DOCUMENTADO", confidence: 0, reviewed:"PENDIENTE"
+  status:"REFUTADO", confidence: 0, reviewed:"PENDIENTE",
+  corrob_nota:"NEGACIÓN DEL HOLOCAUSTO (cifra). El número de ~6 millones de víctimas judías está corroborado por los registros de deportación, los archivos de los campos y la investigación histórica (USHMM, Yad Vashem). Es un tropo negacionista.",
+  corrob_fecha:"2026-09-05"
+
 });
 DB.claims.push({
   id:"CLM-000032",
@@ -3088,7 +3140,8 @@ DB.claims.push({
   contra:"",
   video_file:"037_twitter_dw_espanol_2094178030813958145.mp4",
   source_url:"https://x.com/037_twitter_dw_espanol/status/2094178030813958145",
-  status:"PROBABLE", confidence: 0, reviewed:"PENDIENTE"
+  status:"CORROBORADO", confidence: 0, reviewed:"PENDIENTE",
+  extr_sources:["https://www.aljazeera.com/news/2026/8/30/israels-ben-gvir-lauds-harsh-conditions-for-palestinian-female-prisoners"]
 });
 DB.claims.push({
   id:"CLM-000038",
@@ -3108,7 +3161,10 @@ DB.claims.push({
   contra:"",
   video_file:"039_twitter_GBC_Press_1793120979432116224.mp4",
   source_url:"https://x.com/039_twitter_GBC_Press/status/1793120979432116224",
-  status:"DOCUMENTADO", confidence: 0, reviewed:"PENDIENTE"
+  status:"NO_VERIFICADO", confidence: 0, reviewed:"PENDIENTE",
+  corrob_nota:"Tropo conspirativo de los 'Dancing Israelis' y presunto conocimiento previo del 11-S. Descartado por la Comisión 9/11. Sin fuente confiable que lo sustente.",
+  corrob_fecha:"2026-09-05"
+
 });
 DB.claims.push({
   id:"CLM-000040",
@@ -3118,7 +3174,10 @@ DB.claims.push({
   contra:"",
   video_file:"040_twitter_TheWyteRabbit1_2093171875820023808.mp4",
   source_url:"https://x.com/040_twitter_TheWyteRabbit1/status/2093171875820023808",
-  status:"DOCUMENTADO", confidence: 0, reviewed:"PENDIENTE"
+  status:"NO_VERIFICADO", confidence: 0, reviewed:"PENDIENTE",
+  corrob_nota:"Tropo antisemita (sionistas='secta frankista adoradora de demonios'). Sin sustento histórico; Theodor Herzl era periodista laico vienés. Afirmación sin evidencia seria.",
+  corrob_fecha:"2026-09-05"
+
 });
 DB.claims.push({
   id:"CLM-000041",
@@ -3128,7 +3187,11 @@ DB.claims.push({
   contra:"",
   video_file:"041_twitter_Bry___l_2093765417848250368.mp4",
   source_url:"https://x.com/041_twitter_Bry___l/status/2093765417848250368",
-  status:"CORROBORADO", confidence: 0, reviewed:"PENDIENTE"
+  status:"PROBABLE", confidence: 0, reviewed:"PENDIENTE",
+  extr_sources:["https://www.theguardian.com/world/article/2024/jun/24/gaza-blockade-israel-banned-items"],
+  corrob_nota:"Bloqueo desde 2006-2007, cientos/miles de artículos impedidos (Guardian/Gisha/CNN); '~19 años' razonable; los items concretos (lápices/libros/ropa) no verbatim.",
+  corrob_fecha:"2026-09-05"
+
 });
 DB.claims.push({
   id:"CLM-000042",
@@ -3138,7 +3201,11 @@ DB.claims.push({
   contra:"",
   video_file:"043_twitter_ajplusfrancais_2094075699225042945.mp4",
   source_url:"https://x.com/043_twitter_ajplusfrancais/status/2094075699225042945",
-  status:"CORROBORADO", confidence: 0, reviewed:"PENDIENTE"
+  status:"CORROBORADO", confidence: 0, reviewed:"PENDIENTE",
+  extr_sources:["https://www.theguardian.com/world/2026/aug/26/fake-thinktank-israel-ai-propaganda"],
+  corrob_nota:"Piro Inc creó el falso 'Hanover Institute' (124 informes/560.000 palabras en 9 días), registrado bajo FARA para el gobierno israelí; Havas intermediaria (~$1M).",
+  corrob_fecha:"2026-09-05"
+
 });
 DB.claims.push({
   id:"CLM-000043",
@@ -3148,7 +3215,11 @@ DB.claims.push({
   contra:"",
   video_file:"043_twitter_ajplusfrancais_2094075699225042945.mp4",
   source_url:"https://x.com/043_twitter_ajplusfrancais/status/2094075699225042945",
-  status:"CORROBORADO", confidence: 0, reviewed:"PENDIENTE"
+  status:"PROBABLE", confidence: 0, reviewed:"PENDIENTE",
+  extr_sources:["https://www.theguardian.com/world/2026/aug/26/fake-thinktank-israel-ai-propaganda"],
+  corrob_nota:"ChatGPT ofrecía enlaces a 4 informes del Hanover; el matiz 'preguntas neutras sobre Gaza' y la atribución literal a Politico no textuales.",
+  corrob_fecha:"2026-09-05"
+
 });
 DB.claims.push({
   id:"CLM-000044",
@@ -3188,7 +3259,8 @@ DB.claims.push({
   contra:"",
   video_file:"1_twitter_DaniMayakovski_2093315930432372736.mp4",
   source_url:"https://x.com/1_twitter_DaniMayakovski/status/2093315930432372736",
-  status:"POSIBLE", confidence: 0, reviewed:"PENDIENTE"
+  status:"NO_VERIFICADO", confidence: 0, reviewed:"PENDIENTE",
+  extr_sources:["https://en.wikipedia.org/wiki/Jewish_exodus_from_the_Muslim_world"]
 });
 DB.claims.push({
   id:"CLM-000048",
@@ -3208,7 +3280,8 @@ DB.claims.push({
   contra:"",
   video_file:"2_twitter_DaniMayakovski_2093313123524427776.mp4",
   source_url:"https://x.com/2_twitter_DaniMayakovski/status/2093313123524427776",
-  status:"PROBABLE", confidence: 0, reviewed:"PENDIENTE"
+  status:"CORROBORADO", confidence: 0, reviewed:"PENDIENTE",
+  extr_sources:["https://en.wikipedia.org/wiki/1950%E2%80%931951_Baghdad_bombings", "https://en.wikipedia.org/wiki/Jewish_exodus_from_the_Muslim_world"]
 });
 DB.claims.push({
   id:"CLM-000050",
@@ -3218,7 +3291,11 @@ DB.claims.push({
   contra:"",
   video_file:"NA_twitter_Compass_Report_2093054672340672512.mp4",
   source_url:"https://x.com/NA_twitter_Compass_Report/status/2093054672340672512",
-  status:"CORROBORADO", confidence: 0, reviewed:"PENDIENTE"
+  status:"PROBABLE", confidence: 0, reviewed:"PENDIENTE",
+  extr_sources:["https://en.wikipedia.org/wiki/Sde_Teiman_detention_camp", "https://en.wikipedia.org/wiki/Mass_detentions_in_the_Gaza_war"],
+  corrob_nota:"Sde Teiman real con detenciones masivas sin cargo y abusos, ~10.000 detenidos (abr 2025); la cifra exacta '5.000 en ese campamento bajo ley administrativa' no se confirma.",
+  corrob_fecha:"2026-09-05"
+
 });
 DB.claims.push({
   id:"CLM-000051",
@@ -3228,7 +3305,11 @@ DB.claims.push({
   contra:"",
   video_file:"NA_twitter_Haitham47117914_2093141696368234496.mp4",
   source_url:"https://x.com/NA_twitter_Haitham47117914/status/2093141696368234496",
-  status:"PROBABLE", confidence: 0, reviewed:"PENDIENTE"
+  status:"CORROBORADO", confidence: 0, reviewed:"PENDIENTE",
+  extr_sources:["https://www.aljazeera.com/news/2026/7/26/why-are-israeli-settlers-on-a-rampage-in-the-occupied-west-bank", "https://www.aljazeera.com/news/2026/6/10/west-bank-ethnic-cleansing-settler-attacks-israels-state-policy-amnesty"],
+  corrob_nota:"Violencia de colonos israelíes contra civiles palestinos en Cisjordania documentada (Amnistía habla de limpieza étnica/ataques como política de Estado).",
+  corrob_fecha:"2026-09-05"
+
 });
 DB.claims.push({
   id:"CLM-000052",
@@ -3248,7 +3329,11 @@ DB.claims.push({
   contra:"",
   video_file:"NA_twitter_trtworld_2093203674566647809.mp4",
   source_url:"https://x.com/NA_twitter_trtworld/status/2093203674566647809",
-  status:"CORROBORADO", confidence: 0, reviewed:"PENDIENTE"
+  status:"CORROBORADO", confidence: 0, reviewed:"PENDIENTE",
+  extr_sources:["https://www.aljazeera.com/news/2024/12/26/advocates-launch-legal-push-for-argentina-chile-to-arrest-israeli-soldier", "https://en.wikipedia.org/wiki/Hind_Rajab_Foundation"],
+  corrob_nota:"HRF denunció a soldado Saar Hirshoren en Argentina/Chile, a su batallón en la CPI y contra 1.000 soldados.",
+  corrob_fecha:"2026-09-05"
+
 });
 DB.claims.push({
   id:"CLM-000054",
@@ -3258,7 +3343,11 @@ DB.claims.push({
   contra:"",
   video_file:"NA_twitter_trtworld_2093203674566647809.mp4",
   source_url:"https://x.com/NA_twitter_trtworld/status/2093203674566647809",
-  status:"CORROBORADO", confidence: 0, reviewed:"PENDIENTE"
+  status:"CORROBORADO", confidence: 0, reviewed:"PENDIENTE",
+  extr_sources:["https://en.wikipedia.org/wiki/Israeli_passport"],
+  corrob_nota:"Pasaporte israelí: 170 países visa-free (supera el '117'); 'prisión a cielo abierto' es caracterización de DDHH ampliamente usada.",
+  corrob_fecha:"2026-09-05"
+
 });
 DB.claims.push({
   id:"CLM-000055",
@@ -3268,7 +3357,11 @@ DB.claims.push({
   contra:"",
   video_file:"NA_twitter_ultras_antifaa_2093448788103061504.mp4",
   source_url:"https://x.com/NA_twitter_ultras_antifaa/status/2093448788103061504",
-  status:"CORROBORADO", confidence: 0, reviewed:"PENDIENTE"
+  status:"CORROBORADO", confidence: 0, reviewed:"PENDIENTE",
+  extr_sources:["https://en.wikipedia.org/wiki/Moroccan_Western_Sahara_wall"],
+  corrob_nota:"Muro Marroquí ~2.700 km; cinturón de minas = campo minado continuo más largo del mundo.",
+  corrob_fecha:"2026-09-05"
+
 });
 DB.claims.push({
   id:"CLM-000056",
@@ -3278,7 +3371,11 @@ DB.claims.push({
   contra:"",
   video_file:"NA_youtube_@BreezyPolitics_lWWCG--Q7gU.mp4",
   source_url:"",
-  status:"PROBABLE", confidence: 0, reviewed:"PENDIENTE"
+  status:"PROBABLE", confidence: 0, reviewed:"PENDIENTE",
+  extr_sources:["https://news.google.com/rss/articles/CBMi8AFBVV95cUxNeE1rcE5SS2NVZndfa0JMT3BkcmVCNXgtT1FUYmRWeFV1TjVzRDc4aXNOU0ZfaDhjeEtId2ZUYVd3VDhZVUZ1Ync0YmZpYm0yOXg0T05mQXl6WExKN2wyMWw1MWNNeHlNc01HOXB6cWxuMnZTWGZyblpDay1nNWFfdndURHgxVWNLQkZ6N3p0aHJWMnlIVjUwbm0yNzVaMXQ3ZFhBRnJVN3QtOFNqUFBtWWhGN2NQUEFoMVRIR1FHWTJlYkF3cTBkLW9ITzZPUGc2SHEyX0FIUWFGc2ZRUllTOTZtcEhxaTlqR1FoUW9kWU0?oc=5"],
+  corrob_nota:"Eliyahu pidió formas 'más dolorosas que la muerte' (radio 103FM) y bomba nuclear sobre Gaza (Reuters). 'New Gaza' no se le atribuye en fuentes confiables.",
+  corrob_fecha:"2026-09-05"
+
 });
 DB.claims.push({
   id:"CLM-000057",
@@ -3288,7 +3385,11 @@ DB.claims.push({
   contra:"",
   video_file:"NA_youtube_@BreezyPolitics_lWWCG--Q7gU.mp4",
   source_url:"",
-  status:"CORROBORADO", confidence: 0, reviewed:"PENDIENTE"
+  status:"CORROBORADO", confidence: 0, reviewed:"PENDIENTE",
+  extr_sources:["https://www.aljazeera.com/news/2025/4/2/gaza-war-deadliest-ever-for-journalists-says-report"],
+  corrob_nota:"Watson Costs of War: 232 periodistas muertos en Gaza, más que ambas guerras mundiales + Vietnam + Yugoslavia + Afganistán.",
+  corrob_fecha:"2026-09-05"
+
 });
 DB.claims.push({
   id:"CLM-000058",
@@ -3328,7 +3429,8 @@ DB.claims.push({
   contra:"",
   video_file:"liderfiscal_2092854016547942400.mp4",
   source_url:"https://x.com/liderfiscal/status/2092854016547942400",
-  status:"POSIBLE", confidence: 0, reviewed:"PENDIENTE"
+  status:"NO_VERIFICADO", confidence: 0, reviewed:"PENDIENTE",
+  extr_sources:["https://www.opensecrets.org/orgs/aipac/summary?id=D000027162", "https://jerusalemdeclaration.org/"]
 });
 DB.claims.push({
   id:"CLM-000062",
@@ -3358,7 +3460,11 @@ DB.claims.push({
   contra:"",
   video_file:"hippyygoat_2092929163262914560.mp4",
   source_url:"https://x.com/hippyygoat/status/2092929163262914560",
-  status:"DOCUMENTADO", confidence: 0, reviewed:"PENDIENTE"
+  status:"PROBABLE", confidence: 0, reviewed:"PENDIENTE",
+  extr_sources:["https://en.wikipedia.org/wiki/Genocide_Convention"],
+  corrob_nota:"Definición legal (Convención 1948/Estatuto Roma art.6) correcta en esencia; 'sistemática' y 'patrocinada por el estado' no están en el texto legal.",
+  corrob_fecha:"2026-09-05"
+
 });
 DB.claims.push({
   id:"CLM-000065",
@@ -3368,7 +3474,11 @@ DB.claims.push({
   contra:"",
   video_file:"hippyygoat_2092929163262914560.mp4",
   source_url:"https://x.com/hippyygoat/status/2092929163262914560",
-  status:"PROBABLE", confidence: 0, reviewed:"PENDIENTE"
+  status:"DOCUMENTADO", confidence: 0, reviewed:"PENDIENTE",
+  extr_sources:["https://en.wikipedia.org/wiki/Genocide_Convention"],
+  corrob_nota:"Argumento jurídico del autor ('sin intención no hay genocidio'); debate de interpretación, no dato verificable.",
+  corrob_fecha:"2026-09-05"
+
 });
 DB.claims.push({
   id:"CLM-000066",
@@ -3378,7 +3488,11 @@ DB.claims.push({
   contra:"",
   video_file:"Ignaciogjv_2092971978768408577.mp4",
   source_url:"https://x.com/Ignaciogjv/status/2092971978768408577",
-  status:"PROBABLE", confidence: 0, reviewed:"PENDIENTE"
+  status:"NO_VERIFICADO", confidence: 0, reviewed:"PENDIENTE",
+  extr_sources:[],
+  corrob_nota:"El subagente no halló fuente que confirme los detalles exactos (menor de 14 años desarmado en centro de refugiados de la ONU en Cisjordania). Existen casos reales de menores asesinados en campamentos de Cisjordania, pero no con esta especificidad.",
+  corrob_fecha:"2026-09-05"
+
 });
 DB.claims.push({
   id:"CLM-000067",
@@ -3388,7 +3502,11 @@ DB.claims.push({
   contra:"",
   video_file:"Ignaciogjv_2092971978768408577.mp4",
   source_url:"https://x.com/Ignaciogjv/status/2092971978768408577",
-  status:"PROBABLE", confidence: 0, reviewed:"PENDIENTE"
+  status:"PROBABLE", confidence: 0, reviewed:"PENDIENTE",
+  extr_sources:["https://www.theguardian.com/world/2026/aug/20/israel-ben-gvir-video-gallows-site-hanging-palestinians"],
+  corrob_nota:"Instalación de horca confirmada (Guardian/JPost); la cita literal 'vale más la vida de un israelí' no se halló textual.",
+  corrob_fecha:"2026-09-05"
+
 });
 DB.claims.push({
   id:"CLM-000068",
@@ -3408,7 +3526,11 @@ DB.claims.push({
   contra:"",
   video_file:"new_GBC_Press_1994388519125663745.mp4",
   source_url:"https://x.com/new_GBC_Press/status/1994388519125663745",
-  status:"CORROBORADO", confidence: 0, reviewed:"PENDIENTE"
+  status:"PROBABLE", confidence: 0, reviewed:"PENDIENTE",
+  extr_sources:["https://en.wikipedia.org/wiki/Itamar_Ben-Gvir"],
+  corrob_nota:"Kahanismo y postura de expulsión documentados; la cita literal exacta atribuida no confirmada (tratar como paráfrasis).",
+  corrob_fecha:"2026-09-05"
+
 });
 DB.claims.push({
   id:"CLM-000070",
@@ -3418,7 +3540,11 @@ DB.claims.push({
   contra:"",
   video_file:"new_SinCensuraCol_2093025147091333121.mp4",
   source_url:"https://x.com/new_SinCensuraCol/status/2093025147091333121",
-  status:"PROBABLE", confidence: 0, reviewed:"PENDIENTE"
+  status:"NO_VERIFICADO", confidence: 0, reviewed:"PENDIENTE",
+  extr_sources:["https://chequeado.com/verificacionfb/es-falsoenlasredes-que-la-comunidad-judia-compro-tierras-en-la-patagonia-para-fundar-un-segundo-israel/"],
+  corrob_nota:"Rumor sin evidencia; Chequeado desmiente el patrón antisemita de que la comunidad judía compra tierras/agua en Argentina.",
+  corrob_fecha:"2026-09-05"
+
 });
 DB.claims.push({
   id:"CLM-000071",
@@ -3428,7 +3554,11 @@ DB.claims.push({
   contra:"",
   video_file:"new_xIsraelExposedx_2091205336354938880.mp4",
   source_url:"https://x.com/new_xIsraelExposedx/status/2091205336354938880",
-  status:"POSIBLE", confidence: 0, reviewed:"PENDIENTE"
+  status:"PROBABLE", confidence: 0, reviewed:"PENDIENTE",
+  extr_sources:["https://www.reuters.com/world/middle-east/what-military-support-does-us-provide-israel-2024-04-08/", "https://en.wikipedia.org/wiki/Israel%E2%80%93United_States_relations"],
+  corrob_nota:"MOU 2019-28 = $3.8B/año ($38B); $18B/año no correcto; cifras altas = paquetes de emergencia extraordinarios; 'sin recibir nada' es editorial.",
+  corrob_fecha:"2026-09-05"
+
 });
 DB.claims.push({
   id:"CLM-000072",
@@ -3630,5 +3760,449 @@ DB.rels.push({ subject:"PER-000002", predicate:"recibió_lobby_de", object:"ORG-
 DB.rels.push({ subject:"PER-000001", predicate:"se_reunió_con", object:"PER-000002", type:"REUNION", src:"SRC-000003" });
 
 
+
+// ===== INGESTA 2026-09-04: Short Breezy Politics 'Tucker Gets It' =====
+DB.videos.push({
+  id:"VID-000157",
+  title:"Tucker Carlson: 'Ese es el enemigo de la civilización' (Gaza)",
+  url:"https://www.youtube.com/shorts/MlmvVfzqh8Q",
+  platform:"YouTube",
+  channel:"Breezy Politics",
+  video_id:"MlmvVfzqh8Q",
+  master_file:"C:\\Users\\USUARIO\\Downloads\\CRONOS\\social-video-analysis\\investigacion-2026-08-28\\media\\MlmvVfzqh8Q_BreezyPolitics.webm",
+  sha256:"e20ebbfe1539c4153f5bd60cb3713f0a0a3bf0e91ce0f2ec58b71c5639c6abb1",
+  upload_date:"2026-09-04",
+  manipulation:"A",
+  roles:["PER-000006","PER-000040"],
+  desc:"Clip de Tucker Carlson (Breezy Politics) comentando la destrucción de Gaza: 'estamos desmembrando Gaza, dejándola como un montón de escombros'; afirma que 'genocidio' no es propaganda sino la definición de lo que ocurre; cita al ministro Bezalel Smotrich ('moverlos a terceros países', 'campos de internamiento') como testimonio de los perpetradores; argumenta en contra de matar y expulsar por 'linaje'. ASR en inglés, clip de 60s.",
+  certainty:"CORROBORADO",
+  review:"PENDIENTE",
+  src:"SRC-000003"
+});
+
+// AFIRMACIÓN: la cita de Smotrich / el argumento de Carlson
+DB.claims.push({
+  id:"CLM-000073",
+  text:"Tucker Carlson: 'genocidio' es la definición de lo que ocurre en Gaza, no un término propagandístico; 'la gente está siendo asesinada y expulsada del lugar donde nació por su linaje'. Cita a Bezalel Smotrich proponiendo mover a la población a terceros países / internamiento.",
+  author:"PER-000006",
+  author_name:"Tucker Carlson",
+  contra:"Afirmación interpretativa de un comentarista; la caracterización de 'genocidio' es disputada y depende de verificación legal (CIJ/CPI). La cita exacta de Smotrich requiere transcripción/contexto oficial.",
+  video_file:"MlmvVfzqh8Q_BreezyPolitics.webm",
+  source_url:"https://www.youtube.com/shorts/MlmvVfzqh8Q",
+  status:"PROBABLE",
+  confidence:50,
+  reviewed:"PENDIENTE",
+  srcs:["SRC-000003"]
+});
+
+// RELACIONES
+DB.rels.push({subject:"PER-000006",predicate:"appears_in",object:"VID-000157",type:"SECUENCIA",src:"SRC-000003"});
+DB.rels.push({subject:"PER-000040",predicate:"mencionado_en",object:"VID-000157",type:"SECUENCIA",src:"SRC-000003"});
+DB.rels.push({subject:"VID-000157",predicate:"produces_claim",object:"CLM-000073",type:"DECLARACION",src:"SRC-000003"});
+DB.rels.push({subject:"PER-000006",predicate:"hizo_claim",object:"CLM-000073",type:"DECLARACION",src:"SRC-000003"}, {},
+{},
+{},
+{},
+{},
+{},
+{},
+{},
+{},
+{},
+{},
+{},
+{},
+{},
+{},
+{},
+{},
+{},
+{},
+{},
+{},
+{});
+
+
 // Lugares
 DB.events.length; // placeholder
+
+// ============================================================
+// LOTE 23-SEP-2026 — PISTAS 080-087 (X + YouTube). Ingesta Atenea.
+// Fuente: C:\\Users\\USUARIO\\Downloads\\expediente_sombras_israel_2026-08-29\\_fichas\\
+// ============================================================
+DB.sources.push({
+  id: "SRC-000004",
+  name: "Redes sociales X/YouTube — lote 23-sep-2026",
+  type: "red social / clip",
+  url: "C:\\\\Users\\\\USUARIO\\\\Downloads\\\\expediente_sombras_israel_2026-08-29\\\\_fichas\\\\",
+  accessed: "2026-09-23",
+  note: "Pistas PISTA-080 a 087 archivadas en la ficha y el inventario del expediente (X + YouTube Shorts)."
+});
+DB.persons.push({
+  id: "PER-000133",
+  name: "Masoud Pezeshkian",
+  original: "مسعود پزشکیان",
+  roles: ["Presidente de la República Islámica de Irán (2024-)"],
+  nationality: "Iraní",
+  bio: "Presidente de Irán. En la AGNU del 23-sep-2026 mostró fotos de niños y atribuyó bombardeos a armas de EEUU e Israel; advirtió a Trump que Irán no se doblegará. (PISTA-083/085)",
+  img: "#",
+  certainty: "DOCUMENTADO (discurso AGNU)",
+  review: "PENDIENTE",
+  refs: ["SRC-000004"]
+});
+DB.persons.push({
+  id: "PER-000134",
+  name: "Marco Rubio",
+  original: "",
+  roles: ["Secretario de Estado de EEUU", "ex-senador (R-FL)"],
+  nationality: "Estadounidense",
+  bio: "Nombrado en audio filtrado de AIPAC (Tucker Carlson, PISTA-087) como una de las 'líneas de vida' del lobby israelí en la administración.",
+  img: "#",
+  certainty: "REPORTADO (fuente anónima)",
+  review: "PENDIENTE",
+  refs: ["SRC-000004"]
+});
+DB.persons.push({
+  id: "PER-000135",
+  name: "John Ratcliffe",
+  original: "",
+  roles: ["Director de Inteligencia Nacional de EEUU"],
+  nationality: "Estadounidense",
+  bio: "Nombrado en audio filtrado de AIPAC (PISTA-087) como 'línea de vida' del lobby israelí en la administración.",
+  img: "#",
+  certainty: "REPORTADO (fuente anónima)",
+  review: "PENDIENTE",
+  refs: ["SRC-000004"]
+});
+DB.persons.push({
+  id: "PER-000136",
+  name: "Mike Waltz",
+  original: "",
+  roles: ["Consejero de Seguridad Nacional de EEUU"],
+  nationality: "Estadounidense",
+  bio: "Nombrado en audio filtrado de AIPAC (PISTA-087) como 'línea de vida' del lobby israelí en la administración.",
+  img: "#",
+  certainty: "REPORTADO (fuente anónima)",
+  review: "PENDIENTE",
+  refs: ["SRC-000004"]
+});
+DB.persons.push({
+  id: "PER-000137",
+  name: "Paul Singer",
+  original: "",
+  roles: ["Inversor, fundador Elliott Management"],
+  nationality: "Estadounidense",
+  bio: "Descrito por Tucker Carlson (PISTA-087) como 'magnate Israel-first' cuyas donaciones habrían impulsado la carrera de Marco Rubio.",
+  img: "#",
+  certainty: "REPORTADO (opinión comentarista)",
+  review: "PENDIENTE",
+  refs: ["SRC-000004"]
+});
+DB.claims.push({
+  id: "CLM-000110",
+  text: "Residente en la Comisión del Condado de Palm Beach: 'I strongly oppose extending the Israeli bond investment, both fiscally unsound as Israeli bonds are not AA rated', oponiéndose a ~USD 1000M en bonos israelíes. (PISTA-080)",
+  author: "",
+  author_name: "Residente de Palm Beach",
+  contra: "",
+  video_file: "",
+  source_url: "https://x.com/DanielGilr44222/status/2102465770882056203",
+  tema: "Financiamiento público a Israel (EEUU local)",
+  status: "DOCUMENTADO",
+  confidence:75,
+  reviewed: "PENDIENTE",
+  srcs:["SRC-000004"]
+});
+DB.claims.push({
+  id: "CLM-000111",
+  text: "Comisionado del Condado: 'We are not setting any policies regarding Israeli bonds tonight. We are only discussing the budget', matizando que la sesión era de presupuesto, no de bonos. (PISTA-080)",
+  author: "",
+  author_name: "Comisionado de Palm Beach",
+  contra: "",
+  video_file: "",
+  source_url: "https://x.com/DanielGilr44222/status/2102465770882056203",
+  tema: "Presupuesto público",
+  status: "DOCUMENTADO",
+  confidence:90,
+  reviewed: "PENDIENTE",
+  srcs:["SRC-000004"]
+});
+DB.claims.push({
+  id: "CLM-000112",
+  text: "'This is your last warning. If you clap again, we're going to ask you to be removed. Sir, you're removed', ordenando retirar a un asistente por aplaudir. (PISTA-080)",
+  author: "",
+  author_name: "Presidente de la sesión (Palm Beach)",
+  contra: "",
+  video_file: "",
+  source_url: "https://x.com/DanielGilr44222/status/2102465770882056203",
+  tema: "Procedimiento público",
+  status: "DOCUMENTADO",
+  confidence:85,
+  reviewed: "PENDIENTE",
+  srcs:["SRC-000004"]
+});
+DB.claims.push({
+  id: "CLM-000113",
+  text: "Narración en árabe: 'Los pilotos iraníes encontraron objetivos fáciles ante ellos, incluida Bagdad, que no está a más de 6 minutos de la frontera' (video de la guerra Irán-Irak). (PISTA-081)",
+  author: "",
+  author_name: "Narrador de video (archivo)",
+  contra: "",
+  video_file: "",
+  source_url: "https://x.com/DaniMayakovski/status/2102396835419541970",
+  tema: "Irán-Irak",
+  status: "REPORTADO",
+  confidence:40,
+  reviewed: "PENDIENTE",
+  srcs:["SRC-000004"]
+});
+DB.claims.push({
+  id: "CLM-000114",
+  text: "'Durante la guerra contra el pueblo iraní, Irak lanzó más de 350 ataques químicos a gran escala... los materiales fueron suministrados por corporaciones alemanas, francesas y holandesas'. (PISTA-081)",
+  author: "",
+  author_name: "Daniel Mayakovski",
+  contra: "",
+  video_file: "",
+  source_url: "https://x.com/DaniMayakovski/status/2102396835419541970",
+  tema: "Irán-Irak-químico",
+  status: "PROBABLE",
+  confidence:55,
+  reviewed: "PENDIENTE",
+  srcs:["SRC-000004"]
+});
+DB.claims.push({
+  id: "CLM-000115",
+  text: "'La misma EEUU que hablaría de Sadam como dictador... financió y armó al propio Sadam en 1980 para que invadiese y arrasara a Irán'. (PISTA-081)",
+  author: "",
+  author_name: "Daniel Mayakovski",
+  contra: "",
+  video_file: "",
+  source_url: "https://x.com/DaniMayakovski/status/2102396835419541970",
+  tema: "EEUU-Irán-Irak",
+  status: "PROBABLE",
+  confidence:60,
+  reviewed: "PENDIENTE",
+  srcs:["SRC-000004"]
+});
+DB.claims.push({
+  id: "CLM-000116",
+  text: "'EEUU derribó con misiles tierra-aire el Vuelo 655 de Iran Air, matando a 290 civiles' (agosto 1988). (PISTA-081)",
+  author: "",
+  author_name: "Daniel Mayakovski",
+  contra: "",
+  video_file: "",
+  source_url: "https://x.com/DaniMayakovski/status/2102396835419541970",
+  tema: "EEUU-Irán",
+  status: "DOCUMENTADO",
+  confidence:80,
+  reviewed: "PENDIENTE",
+  srcs:["SRC-000004"]
+});
+DB.claims.push({
+  id: "CLM-000117",
+  text: "Testimonio: 'Suddenly, boom, we see... It was clear to me that there was a tank... I ran away from the tank' (reportaje Canal 12, 7-oct). (PISTA-082)",
+  author: "",
+  author_name: "Residente israelí (testigo)",
+  contra: "",
+  video_file: "",
+  source_url: "https://x.com/RedCollectiveUK/status/2102083350320103502",
+  tema: "7-Oct / fuego amigo",
+  status: "TESTIMONIO",
+  confidence:50,
+  reviewed: "PENDIENTE",
+  srcs:["SRC-000004"]
+});
+DB.claims.push({
+  id: "CLM-000118",
+  text: "Testimonio en reportaje del Canal 12 (encabezado hebreo: 'Exclusive footage | The tank that fired towards the sons of...'): 'Half an hour later, the police arrived... the first help after the tank ran away'. (PISTA-082)",
+  author: "",
+  author_name: "Residente israelí (testigo)",
+  contra: "",
+  video_file: "",
+  source_url: "https://x.com/RedCollectiveUK/status/2102083350320103502",
+  tema: "7-Oct / respuesta de autoridades",
+  status: "TESTIMONIO",
+  confidence:55,
+  reviewed: "PENDIENTE",
+  srcs:["SRC-000004"]
+});
+DB.claims.push({
+  id: "CLM-000119",
+  text: "Presidente de Irán en la AGNU: '¿Ven estos niños? Estos niños murieron bajo las bombas con armas utilizadas por los Estados Unidos e Israel'. (PISTA-083)",
+  author: "PER-000133",
+  author_name: "Masoud Pezeshkian",
+  contra: "",
+  video_file: "",
+  source_url: "https://x.com/catrina_nortena/status/2102774914658783552",
+  tema: "EEUU-Irán-ONU",
+  status: "DISCURSO",
+  confidence:70,
+  reviewed: "PENDIENTE",
+  srcs:["SRC-000004"]
+});
+DB.claims.push({
+  id: "CLM-000120",
+  text: "Presidente de Irán: 'Ellos bombardearon una escuela... un salón de deportes donde los niños estaban cansados de jugar... asesinaron a nuestros científicos, hombres, mujeres y niños'. (PISTA-083)",
+  author: "PER-000133",
+  author_name: "Masoud Pezeshkian",
+  contra: "",
+  video_file: "",
+  source_url: "https://x.com/catrina_nortena/status/2102774914658783552",
+  tema: "EEUU-Irán",
+  status: "DISCURSO",
+  confidence:60,
+  reviewed: "PENDIENTE",
+  srcs:["SRC-000004"]
+});
+DB.claims.push({
+  id: "CLM-000121",
+  text: "AJ+ (Al Jazeera): 'Los palestinos llaman a esos drones zennane... Israel lleva utilizando drones sobre Gaza desde principios de los años 2000'. (PISTA-084)",
+  author: "",
+  author_name: "Narración AJ+ Español",
+  contra: "",
+  video_file: "",
+  source_url: "https://youtube.com/shorts/PDtgODWsbGU",
+  tema: "Gaza-drones",
+  status: "PROBABLE",
+  confidence:60,
+  reviewed: "PENDIENTE",
+  srcs:["SRC-000004"]
+});
+DB.claims.push({
+  id: "CLM-000122",
+  text: "AJ+ (Al Jazeera): 'Algunos drones israelíes hasta llegaron a reproducir grabaciones de bebés llorando o niños pidiendo ayuda para atraer a civiles y convertirlos en blancos'. —AFIRMACIÓN GRAVE, requiere fuente independiente. (PISTA-084)",
+  author: "",
+  author_name: "Narración AJ+ Español",
+  contra: "",
+  video_file: "",
+  source_url: "https://youtube.com/shorts/PDtgODWsbGU",
+  tema: "Gaza-drones",
+  status: "NO_VERIFICADO",
+  confidence:30,
+  reviewed: "PENDIENTE",
+  srcs:["SRC-000004"]
+});
+DB.claims.push({
+  id: "CLM-000123",
+  text: "AJ+ (Al Jazeera): 'Pese al supuesto alto al fuego, Israel está utilizando los drones como una forma de terror/provocación'. (PISTA-084)",
+  author: "",
+  author_name: "Narración AJ+ Español",
+  contra: "",
+  video_file: "",
+  source_url: "https://youtube.com/shorts/PDtgODWsbGU",
+  tema: "Gaza-tregua",
+  status: "POSIBLE",
+  confidence:35,
+  reviewed: "PENDIENTE",
+  srcs:["SRC-000004"]
+});
+DB.claims.push({
+  id: "CLM-000124",
+  text: "Presidente de Irán (AGNU, farsi): 'Estos niños fueron bombardeados y asesinados con armas de Estados Unidos e Israel... no habían cometido ningún crimen'. (PISTA-085)",
+  author: "PER-000133",
+  author_name: "Masoud Pezeshkian",
+  contra: "",
+  video_file: "",
+  source_url: "https://youtube.com/shorts/D_pNU1j4vIY",
+  tema: "EEUU-Irán-ONU",
+  status: "DISCURSO",
+  confidence:65,
+  reviewed: "PENDIENTE",
+  srcs:["SRC-000004"]
+});
+DB.claims.push({
+  id: "CLM-000125",
+  text: "Presidente de Irán: 'Ellos bombardearon el salón de deportes con bombas de racimo que se fragmentaron en miles' (incidente no verificado independientemente). (PISTA-085)",
+  author: "PER-000133",
+  author_name: "Masoud Pezeshkian",
+  contra: "",
+  video_file: "",
+  source_url: "https://youtube.com/shorts/D_pNU1j4vIY",
+  tema: "EEUU-Irán",
+  status: "DISCURSO",
+  confidence:55,
+  reviewed: "PENDIENTE",
+  srcs:["SRC-000004"]
+});
+DB.claims.push({
+  id: "CLM-000126",
+  text: "Presidente de Irán: 'Irán nunca ha iniciado ninguna guerra... Irán nunca se arrodillará'. (PISTA-085)",
+  author: "PER-000133",
+  author_name: "Masoud Pezeshkian",
+  contra: "",
+  video_file: "",
+  source_url: "https://youtube.com/shorts/D_pNU1j4vIY",
+  tema: "EEUU-Irán",
+  status: "DISCURSO",
+  confidence:75,
+  reviewed: "PENDIENTE",
+  srcs:["SRC-000004"]
+});
+DB.claims.push({
+  id: "CLM-000127",
+  text: "Intereconomía: 'Japón trasladó a Donald Trump la posición de Japón sobre varios asuntos relacionados con China, incluida la seguridad económica'. (PISTA-086)",
+  author: "",
+  author_name: "Locutor Intereconomía News",
+  contra: "",
+  video_file: "",
+  source_url: "https://youtube.com/shorts/KUAo_HE2pk4",
+  tema: "Asia-EEUU-China",
+  status: "REPORTADO",
+  confidence:55,
+  reviewed: "PENDIENTE",
+  srcs:["SRC-000004"]
+});
+DB.claims.push({
+  id: "CLM-000128",
+  text: "Intereconomía: 'El diálogo se celebró al margen de la AGNU, persisten tensiones en torno a Taiwán; Japón y EEUU acordaron coordinación estrecha; Xi Jinping llegará un día después'. (PISTA-086)",
+  author: "",
+  author_name: "Locutor Intereconomía News",
+  contra: "",
+  video_file: "",
+  source_url: "https://youtube.com/shorts/KUAo_HE2pk4",
+  tema: "Asia-EEUU-China-Taiwán",
+  status: "REPORTADO",
+  confidence:50,
+  reviewed: "PENDIENTE",
+  srcs:["SRC-000004"]
+});
+DB.claims.push({
+  id: "CLM-000129",
+  text: "Audio filtrado de AIPAC (vía Tucker Carlson): 'John Ratcliffe... Marco Rubio... Mike Waltz... These are our lifelines inside the administration'. (PISTA-087)",
+  author: "",
+  author_name: "Fuente anónima (autodenominado veterano de AIPAC)",
+  contra: "",
+  video_file: "",
+  source_url: "https://youtube.com/shorts/CQQMYp1VRnY",
+  tema: "Lobby-Israel-EEUU",
+  status: "NO_VERIFICADO",
+  confidence:25,
+  reviewed: "PENDIENTE",
+  srcs:["SRC-000004"]
+});
+DB.claims.push({
+  id: "CLM-000130",
+  text: "Comentario: 'Marco Rubio's career has been advanced by Paul Singer's donations, a major Israel-first billionaire'. (PISTA-087)",
+  author: "",
+  author_name: "Tucker Carlson",
+  contra: "",
+  video_file: "",
+  source_url: "https://youtube.com/shorts/CQQMYp1VRnY",
+  tema: "Lobby-Israel",
+  status: "NO_VERIFICADO",
+  confidence:30,
+  reviewed: "PENDIENTE",
+  srcs:["SRC-000004"]
+});
+DB.claims.push({
+  id: "CLM-000131",
+  text: "Audio filtrado de AIPAC: 'Israel will get more or less what it wants'. (PISTA-087)",
+  author: "",
+  author_name: "Fuente anónima (autodenominado veterano de AIPAC)",
+  contra: "",
+  video_file: "",
+  source_url: "https://youtube.com/shorts/CQQMYp1VRnY",
+  tema: "Lobby-Israel",
+  status: "NO_VERIFICADO",
+  confidence:20,
+  reviewed: "PENDIENTE",
+  srcs:["SRC-000004"]
+});
