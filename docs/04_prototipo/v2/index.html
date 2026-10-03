@@ -29,7 +29,7 @@ nav button.activo{background:linear-gradient(135deg,#1a2a4a,#23345c);border-colo
 @keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
 h1.seccion{color:var(--dorado);font-size:1.55rem;margin-bottom:6px;display:flex;align-items:center;gap:10px}
 .sub{color:var(--gris);font-size:.9rem;margin-bottom:22px}
-.hero{text-align:center;padding:44px 20px 28px;background:var(--fondo-acento);border:1px solid var(--border);border-radius:18px;margin-bottom:26px}
+.hero{position:relative;text-align:center;padding:60px 20px 34px;background:linear-gradient(rgba(10,14,24,.55),rgba(10,14,24,.6)),url('./cronos_fondo.jpg') center/cover no-repeat;border:1px solid var(--dorado);border-radius:18px;margin-bottom:26px;box-shadow:0 4px 28px rgba(232,179,75,.15)}
 .hero h1{font-size:34px;color:var(--dorado);letter-spacing:1px}
 .hero p{color:var(--gris);max-width:760px;margin:12px auto 0;font-size:.95rem}
 .hero .verbs{margin-top:14px;color:var(--verde);font-weight:700;letter-spacing:2px;font-size:.85rem}
@@ -102,7 +102,7 @@ footer{background:var(--fondo-acento);border-top:2px solid var(--dorado);color:v
 
   <div class="vista activo" id="v-home">
     <div class="hero">
-      <h1>🦉 CRONOS</h1>
+      <h1 style="font-size:26px;letter-spacing:4px">CRONOS</h1>
       <p>Archivo documental de conflictos, poder y evidencia audiovisual. Almacenamos <b>evidencia, relaciones, fuentes y grados de certeza</b> — no conclusiones.</p>
       <div class="verbs">DOCUMENTAR · ANALIZAR · CONECTAR · COMPRENDER</div>
     </div>
