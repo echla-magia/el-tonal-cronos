@@ -1,0 +1,506 @@
+{
+  "lote": 1,
+  "total_archivos": 43,
+  "procesados": 43,
+  "afirmaciones": [
+    {
+      "archivo": "tweet_2098276548214161558_whisper.txt",
+      "autor": "Príncipe Bandar (embajador de Arabia Saudí en EEUU)",
+      "texto": "por otra parte, comprendimos que la gente estaba muy sensibilizada, así que con la cooperación del FBI le sacamos del país",
+      "tema": "Salida de miembros de la familia Bin Laden de EEUU tras el 11-S",
+      "certeza": "CONFIRMADO"
+    },
+    {
+      "archivo": "tweet_2098276548214161558_whisper.txt",
+      "autor": "Jack Clunan (agente jubilado del FBI)",
+      "texto": "A mí, como investigador, me hubiera gustado que esa gente no se hubiera marchado de aquí. Creo que en el caso de la familia Bin Laden habría sido mucho más prudente entregar citaciones, retenerles y tomarles declaración.",
+      "tema": "Familia Bin Laden y 11-S: debió tomarse declaración",
+      "certeza": "CONFIRMADO"
+    },
+    {
+      "archivo": "tweet_2098276548214161558_whisper.txt",
+      "autor": "Funcionario antiterrorismo de la administración (anónimo)",
+      "texto": "El presidente, de forma muy intimidatoria, nos dio a mi equipo y a mí indicaciones muy claras de que quería que volviéramos con la conclusión de que detrás del 11-S había una mano iraquí",
+      "tema": "Presión de la Casa Blanca para vincular el 11-S con Irak",
+      "certeza": "PROBABLE"
+    },
+    {
+      "archivo": "tweet_2098276548214161558_whisper.txt",
+      "autor": "Testimonio citado (sobre Donald Rumsfeld)",
+      "texto": "Bueno, Donald Rumsfeld, cuando hablamos de bombardear la infraestructura de alcaeda en Afganistán, dijo que no había buenos objetivos en Afganistán. Bombardeemos Irak.",
+      "tema": "Petición de Rumsfeld de bombardear Irak tras el 11-S",
+      "certeza": "PROBABLE"
+    },
+    {
+      "archivo": "youtube_5gJE367JTvk_SammyObeid_en.txt",
+      "autor": "Sammy Obeid (cómico/cronista)",
+      "texto": "Either it can be that Jeffrey Epstein is still alive and playing Fortnite in Tel Aviv, or somebody hacked into his account...",
+      "tema": "Hipótesis de que Epstein sigue vivo y su cuenta de Fortnite se usó desde Tel Aviv",
+      "certeza": "HIPÓTESIS"
+    },
+    {
+      "archivo": "youtube_5gJE367JTvk_SammyObeid_en.txt",
+      "autor": "Sammy Obeid (cómico/cronista)",
+      "texto": "Somebody logged into his Fortnite account in December 2019... And the login came from a city that I think was Tel Aviv.",
+      "tema": "Alguien accedió a la cuenta de Fortnite de Epstein en diciembre de 2019 desde Tel Aviv",
+      "certeza": "HIPÓTESIS"
+    },
+    {
+      "archivo": "tweet_2097103480020218312_whisper.txt",
+      "autor": "Juan Orlando Hernández (exprresidente de Honduras, audio filtrado)",
+      "texto": "El primer ministro de Israel no va a dar el apoyo. Tuvieron todo que ver de hecho ellos con mi salida y negociación.",
+      "tema": "Honduras Gate: papel de Israel en su liberación/indulto",
+      "certeza": "PROBABLE"
+    },
+    {
+      "archivo": "tweet_2097103480020218312_whisper.txt",
+      "autor": "Juan Orlando Hernández (exprresidente de Honduras, audio filtrado)",
+      "texto": "Yo voy a ganar las elecciones.",
+      "tema": "Ambición electoral de Hernández tras el indulto de Trump",
+      "certeza": "PROBABLE"
+    },
+    {
+      "archivo": "tweet_2097103480020218312_whisper.txt",
+      "autor": "Voz en audios filtrados 'Honduras Gate'",
+      "texto": "Si hay que matar a la gente, se va a hacer. Es que es lo que el presidente tomó un día.",
+      "tema": "Directivas de represión en la trama Honduras Gate",
+      "certeza": "PROBABLE"
+    },
+    {
+      "archivo": "tweet_2102046629977010263_whisper.txt",
+      "autor": "Alfonso Durazo (gobernador de Sonora)",
+      "texto": "Durazo dijo que eso era falta de ética y que jamás se volvería a reunir con ellos",
+      "tema": "Rechazo de Durazo al proyecto desalinizador israelí en Puerto Peñasco",
+      "certeza": "CONFIRMADO"
+    },
+    {
+      "archivo": "tweet_2102046629977010263_whisper.txt",
+      "autor": "Narrador/análisis (locutor)",
+      "texto": "Es una soberana tontería",
+      "tema": "Durazo calificó de 'soberana tontería' el plan de planta desalinizadora",
+      "certeza": "PROBABLE"
+    },
+    {
+      "archivo": "tweet_2097772815982166415_whisper.txt",
+      "autor": "Hugo Éric Flores Cervantes (diputado mexicano)",
+      "texto": "Siendo Israel un país tan importante para este país, para muchos millones de mexicanos como yo, nadie lo ha puesto en la agenda pública. Una política internacional mexicana en favor de Israel. Ese es nuestro gran objetivo.",
+      "tema": "Plan de política internacional mexicana en favor de Israel",
+      "certeza": "CONFIRMADO"
+    },
+    {
+      "archivo": "youtube_jCAH_cTVbfg_whisper.txt",
+      "autor": "Comentarista (anónimo)",
+      "texto": "the majority of the UN delegates simply walked out as soon as he took the stage",
+      "tema": "Delegados de la ONU abandonaron el pleno al intervenir Netanyahu",
+      "certeza": "NO_VERIFICADO"
+    },
+    {
+      "archivo": "youtube_jCAH_cTVbfg_whisper.txt",
+      "autor": "Comentarista (anónimo)",
+      "texto": "It's just a mass murderer who's proud of it",
+      "tema": "Caracterización de Netanyahu como 'asesino en masa'",
+      "certeza": "NO_VERIFICADO"
+    },
+    {
+      "archivo": "tweet_2094178640074326172_whisper.txt",
+      "autor": "Testimonio de preso (anónimo, árabe/hebreo, transcripción confusa)",
+      "texto": "وضعنا كتير سيئ... نتبلش ولا أي حكم... حتى خاصة إحنا بسيئة كنساء",
+      "tema": "Descripción de malas condiciones en cárceles israelíes",
+      "certeza": "NO_VERIFICADO"
+    },
+    {
+      "archivo": "youtube_hcpEwfEQfZA_whisper.txt",
+      "autor": "Relator/a (anónimo)",
+      "texto": "Todo mundo sabe que el dueño del conglomerado Azteca es el que está dando la orden para que desalojen a los garífunos",
+      "tema": "Ricardo Salinas Pliego vinculado al desalojo de garífunas en cayos cochinos",
+      "certeza": "NO_VERIFICADO"
+    },
+    {
+      "archivo": "youtube_hcpEwfEQfZA_whisper.txt",
+      "autor": "Relator/a (anónimo)",
+      "texto": "La Corte Interamericana de Derechos Humanos condenó Honduras en noviembre por excluir a los garífonos de la administración de los callos...",
+      "tema": "Condena de la Corte IDH a Honduras por el caso garífuna",
+      "certeza": "NO_VERIFICADO"
+    },
+    {
+      "archivo": "youtube_frLctOanTro_whisper.txt",
+      "autor": "Vecino/o de Palm Beach County (anónimo)",
+      "texto": "I strongly oppose extending the Israeli bond investment, both fiscally unsound as Israeli bonds are not AA rated.",
+      "tema": "Oposición a inversión de bonos israelíes por Palm Beach County",
+      "certeza": "CONFIRMADO"
+    },
+    {
+      "archivo": "youtube_frLctOanTro_whisper.txt",
+      "autor": "Vecino/o de Palm Beach County (anónimo)",
+      "texto": "This obscene investment violates the key statutes governing public finance investments designed to protect taxpayer dollars and it is actively funding the genocide in God.",
+      "tema": "Acusación de que los bonos israelíes financian genocidio",
+      "certeza": "CONFIRMADO"
+    },
+    {
+      "archivo": "youtube_frLctOanTro_whisper.txt",
+      "autor": "Funcionaria municipal (Madam Mayor)",
+      "texto": "We are not setting any policies in regarding Israeli bonds tonight. We are only discussing the budget to be approved.",
+      "tema": "Negación del condado sobre políticas de bonos israelíes",
+      "certeza": "CONFIRMADO"
+    },
+    {
+      "archivo": "tweet_2098095406420787302_whisper.txt",
+      "autor": "Voz (anónimo, hebreo, transcripción confusa)",
+      "texto": "הוא מודיע על השירות, יש לו ניסיון, הוא כבר היה בידן פעמיים",
+      "tema": "Testimonio sobre experiencia de servicio militar, probablemente en el ejército israelí",
+      "certeza": "NO_VERIFICADO"
+    },
+    {
+      "archivo": "youtube_JU657L3GXaM_es.txt",
+      "autor": "Presidente del Tribunal Supremo de Israel (juez Agranat, citado)",
+      "texto": "El presidente Agranate escribió que no había evidencia de que se hubiera formado una nación israelí separada de la nación judía.",
+      "tema": "Inexistencia de una nación israelí separada de la nación judía",
+      "certeza": "CONFIRMADO"
+    },
+    {
+      "archivo": "youtube_JU657L3GXaM_es.txt",
+      "autor": "Relator/a (anónimo)",
+      "texto": "y el único que votó en contra fue el juez Carra, que casualmente era el único juez árabe de toda esa corte",
+      "tema": "Voto único en contra de la Ley del Estado Nación por el único juez árabe",
+      "certeza": "NO_VERIFICADO"
+    },
+    {
+      "archivo": "youtube_1YdrsGpBGs0_WillSexton_en.txt",
+      "autor": "Will Sexton (locutor)",
+      "texto": "From the rabbinic perspective, they don't really view God as a loving, all-dominant, all-present entity, but more like a sentient energy that exists, that the rabbis can wield.",
+      "tema": "Concepción rabínica de Dios como energía que los rabinos pueden usar",
+      "certeza": "CONFIRMADO"
+    },
+    {
+      "archivo": "youtube_1YdrsGpBGs0_WillSexton_en.txt",
+      "autor": "Will Sexton (locutor)",
+      "texto": "This is also at the time in which Ashkenazim become fiercely insular and fiercely xenophobic towards their Gentile counterparts.",
+      "tema": "Insularidad y xenofobia ashkenazí hacia los gentiles",
+      "certeza": "NO_VERIFICADO"
+    },
+    {
+      "archivo": "youtube_y3ZUs8G-QFQ_whisper.txt",
+      "autor": "Mike Funelli (realtor en San Miguel de Allende)",
+      "texto": "from my understanding on September 18, Guanajuato's governor said publicly that there is no authorization to build a new golf course here in San Miguel",
+      "tema": "Negación del gobernador de Guanajuato sobre un cuarto campo de golf",
+      "certeza": "CONFIRMADO"
+    },
+    {
+      "archivo": "youtube_y3ZUs8G-QFQ_whisper.txt",
+      "autor": "Mike Funelli (realtor en San Miguel de Allende)",
+      "texto": "So on paper, the aquifer is already in a deficit.",
+      "tema": "Déficit hídrico del acuífero de San Miguel de Allende",
+      "certeza": "NO_VERIFICADO"
+    },
+    {
+      "archivo": "youtube_zUX0n140A50_whisper.txt",
+      "autor": "Relator/a (anónimo)",
+      "texto": "de hecho en los últimos 5 años se aumentaron un 60% los suicidios en Argentina",
+      "tema": "Aumento del 60% de suicidios en Argentina en 5 años",
+      "certeza": "NO_VERIFICADO"
+    },
+    {
+      "archivo": "youtube_PDtgODWsbGU_AJEspanol_es.txt",
+      "autor": "Relator/a (AJ Español, anónimo)",
+      "texto": "Y pese al supuesto alto al fuego, Israel está utilizando los drones como una forma de trascicolón",
+      "tema": "Uso de drones israelíes como acoso sobre la población de Gaza",
+      "certeza": "NO_VERIFICADO"
+    },
+    {
+      "archivo": "DanielGilr44222_2102465770882056203_en.txt",
+      "autor": "Vecino/o de Palm Beach County (anónimo)",
+      "texto": "I can say without a doubt the Florida taxpayers do not want our money invested in Israel bonds.",
+      "tema": "Los contribuyentes de Florida no quieren dinero en bonos israelíes",
+      "certeza": "CONFIRMADO"
+    },
+    {
+      "archivo": "DanielGilr44222_2102465770882056203_en.txt",
+      "autor": "Vecino/o de Palm Beach County (anónimo)",
+      "texto": "This obscene investment... is actively funding the genocide in God.",
+      "tema": "Los bonos israelíes financian genocidio",
+      "certeza": "CONFIRMADO"
+    },
+    {
+      "archivo": "youtube_qK9OAR9rtEY_whisper.txt",
+      "autor": "Relator/a (anónimo)",
+      "texto": "Israel arrancó 2.550 nervios palestinos entre el 23 de junio y el 13 de julio de 2026. Causando alrededor de 11.7 millones de dólares en daños.",
+      "tema": "Desarraigo de 2.550 olivos palestinos por Israel en 2026",
+      "certeza": "NO_VERIFICADO"
+    },
+    {
+      "archivo": "tweet_2103808967751110979_whisper.txt",
+      "autor": "Voz (anónimo, turco)",
+      "texto": "İsrail gıda yolluyorum numarası altında. Genetiği değiştirmiş, daha saldırgan hala gelmiş fareler yolladı gazeyi. Turların içinde.",
+      "tema": "Acusación de que Israel envió ratas genéticamente modificadas a Gaza bajo cobertura de ayuda alimentaria",
+      "certeza": "NO_VERIFICADO"
+    },
+    {
+      "archivo": "tweet_2099128014495699303_whisper.txt",
+      "autor": "Orador/a (anónimo, foro sobre agua)",
+      "texto": "And did we solve that? Like, did we actually manage to vaccinate everyone in the world? No, so highlighting water as a global commons...",
+      "tema": "El agua como bien común global y fracaso en resolver problemas similares",
+      "certeza": "NO_VERIFICADO"
+    },
+    {
+      "archivo": "tweet_2098282061475852510_whisper.txt",
+      "autor": "Oficial del Estado Mayor Conjunto del Pentágono (citado por narrador)",
+      "texto": "So I just got this memo from the Secretary of Defense's office that says we're gonna attack and destroy the government's in seven countries in five years. We're gonna start with Iraq and then we're gonna move to Syria Lebanon Libya Somalia Sudan and Iran",
+      "tema": "Plan de atacar y destruir gobiernos de siete países en cinco años",
+      "certeza": "PROBABLE"
+    },
+    {
+      "archivo": "tweet_2098282061475852510_whisper.txt",
+      "autor": "Oficial del Pentágono (citado por narrador)",
+      "texto": "We don't know",
+      "tema": "Respuesta sobre por qué atacar Irak",
+      "certeza": "PROBABLE"
+    },
+    {
+      "archivo": "youtube_eEtsHjZfP2s_whisper.txt",
+      "autor": "Locutor/a (anónimo)",
+      "texto": "el hebreo moderno, que no tiene nada que ver con el hebreo bíblico. Es un idioma artificial, podemos decir.",
+      "tema": "El hebreo moderno como idioma artificial sin relación con el bíblico",
+      "certeza": "NO_VERIFICADO"
+    },
+    {
+      "archivo": "youtube_eEtsHjZfP2s_whisper.txt",
+      "autor": "Locutor/a (anónimo)",
+      "texto": "Porque por cierto está perseguido. ¿Ah, sí? En Israel, sí. No les cae muy bien los sefastis y les intentan fastidiar la vida bastante.",
+      "tema": "Persecución/ladojá hacia los sefardíes en Israel",
+      "certeza": "NO_VERIFICADO"
+    },
+    {
+      "archivo": "youtube_csnG_6Sym9s_whisper.txt",
+      "autor": "Comentarista (anónimo)",
+      "texto": "There is no national conspiracy to buy elections in control America now. Need a formal conspiracy right when interests converge... There used to be seven oil companies. There are now three.",
+      "tema": "Estructura de poder sin conspiración formal por intereses convergentes; reducción de grandes corporaciones",
+      "certeza": "NO_VERIFICADO"
+    },
+    {
+      "archivo": "youtube_nHX134s_zeQ_whisper.txt",
+      "autor": "Comentarista (anónimo)",
+      "texto": "And I have to say, Putin banning witchcraft in Russia was like the great, why can't we ban witchcraft? No, you can't worship demons in my country because it could destroy my country.",
+      "tema": "Prohibición de la brujería por Putin en Rusia",
+      "certeza": "NO_VERIFICADO"
+    },
+    {
+      "archivo": "youtube_RLySZ_FOtf4_es.txt",
+      "autor": "Relator/a (anónimo)",
+      "texto": "La abundancia no era cantidad, era conexión.",
+      "tema": "Concepto de abundancia como conexión, no acumulación",
+      "certeza": "NO_VERIFICADO"
+    },
+    {
+      "archivo": "youtube_TlW_TjsbZuk_es.txt",
+      "autor": "Delegado/a en la Asamblea General de la ONU (anónimo)",
+      "texto": "Según una evaluación de la propia ONU, en menos de 2 años el régimen israelí dejó caer más de 200,000 toneladas de explosivos sobre Gasa, equivalentes a la energía total de aproximadamente 13 bombas nucleares tipo Hiroshima.",
+      "tema": "Cantidad de explosivos lanzados por Israel sobre Gaza según evaluación de la ONU",
+      "certeza": "PROBABLE"
+    },
+    {
+      "archivo": "youtube_TlW_TjsbZuk_es.txt",
+      "autor": "Delegado/a en la Asamblea General de la ONU (anónimo)",
+      "texto": "hoy el primer ministro del régimen dijo a esta asamblea que él ha asesinado brutalmente a casi 75,000 personas",
+      "tema": "Declaraciones del primer ministro israelí sobre víctimas en Gaza",
+      "certeza": "PROBABLE"
+    },
+    {
+      "archivo": "youtube_6RWR9sY0hWw_es.txt",
+      "autor": "Manifestante/a en Eslovenia (anónimo, esloveno)",
+      "texto": "To je največja sramota, ki se je zgodila sloven zadnjem času. Otvoritev ambasade za državo, ki izvaja genocido",
+      "tema": "Apertura de la embajada de Israel en Eslovenia como deshonra para un país que comete genocidio",
+      "certeza": "NO_VERIFICADO"
+    },
+    {
+      "archivo": "tweet_2098080507049173079_whisper.txt",
+      "autor": "Artículo/opinión citado sobre Benjamín Netanyahu (anónimo)",
+      "texto": "Para el Benjamin Nea Nojul, la reunión con Obama representa una prueba de voluntad",
+      "tema": "La reunión Netanyahu-Obama como prueba de voluntad, no negociación",
+      "certeza": "PROBABLE"
+    },
+    {
+      "archivo": "tweet_2098080507049173079_whisper.txt",
+      "autor": "Artículo/opinión citado sobre Benjamín Netanyahu (anónimo)",
+      "texto": "según Nea Nojul, la creación de un estado palestino es... Tendrá graves repercusiones para los Estados Unidos provocando la minoría latina exigir un estado propio en el sureste, un hostil segundo México",
+      "tema": "Netanyahu: un Estado palestino llevaría a un 'segundo México' en EEUU",
+      "certeza": "PROBABLE"
+    },
+    {
+      "archivo": "tweet_2098681353159991757_whisper.txt",
+      "autor": "Voz (anónimo, árabe, transcripción parcial)",
+      "texto": "ولكن المكتبة يمكنها ان يصنع الكتب... ما هو the difference بين هولاكو و بين بوش لا يوجد any difference",
+      "tema": "De la biblioteca destruida; comparación entre Hulagu y Bush sin diferencias",
+      "certeza": "NO_VERIFICADO"
+    },
+    {
+      "archivo": "youtube_n4lRwgH0610_whisper.txt",
+      "autor": "Dave (comentarista de podcast)",
+      "texto": "It's not like as if they took out you and Tucker Carlson and Joe Rogan. It's not like your audiences would then go back to listening to Jake Tapper",
+      "tema": "Despertar masivo y lealtad del público a comunicadores 'que dicen la verdad'",
+      "certeza": "PROBABLE"
+    },
+    {
+      "archivo": "youtube_nz5NmVrtKF0_whisper.txt",
+      "autor": "Narrador (anónimo)",
+      "texto": "Trump was still mad from four years before, when Netanyahu was the first foreign head of state to call Joe Biden... And yet, eight days after becoming president, Netanyahu was the first person to visit the White House",
+      "tema": "Tensión Trump-Netanyahu y primera visita de Netanyahu a la Casa Blanca en 2025",
+      "certeza": "NO_VERIFICADO"
+    },
+    {
+      "archivo": "tweet_2098028784628732214_whisper.txt",
+      "autor": "Orador (anónimo)",
+      "texto": "Imagínense que el hombre se asoció en una sociedad anónima de capital variado con otro socio y compró el 50% de las acciones y el otro 50% de las acciones las tiene el otro socio que se llama la naturaleza.",
+      "tema": "El ser humano y la naturaleza como socios al 50%",
+      "certeza": "NO_VERIFICADO"
+    },
+    {
+      "archivo": "tweet_2098986534753939761_whisper.txt",
+      "autor": "Voz (anónimo, hebreo, posible figura sionista/rabino)",
+      "texto": "כשאתה מותקף מתוך ארץ הבשורה והיעוד שלך, הארץ ישראל, אתה צריך לחבוש, לגרש את מי שמתקיף וליישב ולייצב גבול חדש... נחסל אותה לחלוטין",
+      "tema": "Expulsar al agresor y establecer nueva frontera; eliminar a la entidad enemiga",
+      "certeza": "NO_VERIFICADO"
+    },
+    {
+      "archivo": "youtube_Sj_QASJK-E4_es.txt",
+      "autor": "César (conductor de programa de radio)",
+      "texto": "César, por supuesto, insisto, el lugar favorito del país para los huachicoleros se llama Guanajuato... Tuvo permisos del pan esa planta de gas natural. Y adivina quién la inauguró. el presidente Enrique Peña Nieto.",
+      "tema": "Conexión del huachicol en Guanajuato con permisos del PAN e inauguración de Peña Nieto",
+      "certeza": "PROBABLE"
+    },
+    {
+      "archivo": "youtube_ddJSQpeTfZI_whisper.txt",
+      "autor": "Comentarista (anónimo)",
+      "texto": "Israel has become a nation of child killers, they kill children for play, for play. And there's ample at this point ample documentation of that.",
+      "tema": "Israel como 'nación de asesinos de niños'",
+      "certeza": "NO_VERIFICADO"
+    },
+    {
+      "archivo": "tweet_2099707007125131616_whisper.txt",
+      "autor": "Orador/a histórico (anónimo, contexto creación de Israel)",
+      "texto": "But don't think that decision to recognize Israel is an easy one. The Jews wanted to chase all the Arabs into the Tigris and Euphrates.",
+      "tema": "Dificultad del reconocimiento de Israel; intención de expulsar a los árabes",
+      "certeza": "NO_VERIFICADO"
+    },
+    {
+      "archivo": "youtube_NJ7jB9q90SU_TuckerCarlson_en.txt",
+      "autor": "Tucker Carlson",
+      "texto": "So indirectly it looks like the Israeli government is supporting Ted Cruz",
+      "tema": "Apoyo indirecto del gobierno israelí a Ted Cruz a través de iHeartMedia",
+      "certeza": "PROBABLE"
+    },
+    {
+      "archivo": "youtube_NJ7jB9q90SU_TuckerCarlson_en.txt",
+      "autor": "Tucker Carlson",
+      "texto": "But Pam Bondi got rid of the foreign corrupt practices division of the Department of Justice",
+      "tema": "Eliminación de la división anticorrupción extranjera del DOJ por Pam Bondi",
+      "certeza": "PROBABLE"
+    },
+    {
+      "archivo": "youtube_oezKOM7uKYw_whisper.txt",
+      "autor": "Funcionario del gobierno de Pakistán (anónimo)",
+      "texto": "Pakistán cree que la única solución justa y duradera es la creación de un estado de Palestina independiente, soberano, viable y contiguo, basado en las fronteras anteriores a 1967.",
+      "tema": "Posición de Pakistán sobre la solución de dos estados",
+      "certeza": "CONFIRMADO"
+    },
+    {
+      "archivo": "youtube_PjB5pOMfl3o_es.txt",
+      "autor": "Relator/a (anónimo)",
+      "texto": "El capitalismo es el sistema que Dios preparó a través de una ley para que después de la caída el trabajo continuara.",
+      "tema": "El capitalismo como sistema preparado por Dios",
+      "certeza": "NO_VERIFICADO"
+    },
+    {
+      "archivo": "youtube_JoUc-J2LXsk_whisper.txt",
+      "autor": "Figura israelí (anónimo, posible colono/funcionario)",
+      "texto": "La clave más grande para la emigración en Gaza es quitarles la esperanza... Si nos anexamos hasta la línea amarilla y eso es nuestro y lo que queda es diminuto, super poblado y destruido. Todos entenderán que no hay nada que buscar allí",
+      "tema": "Estrategia de anexión para forzar la emigración de Gaza quitando la esperanza",
+      "certeza": "NO_VERIFICADO"
+    },
+    {
+      "archivo": "tweet_2098020208908595274_whisper.txt",
+      "autor": "Político español (anónimo)",
+      "texto": "No trabajar con Isabel sobre nuestra defensa tiene también el precio sobre los ciudadanos españoles.",
+      "tema": "Costo para España de no cooperar en defensa con su aliado",
+      "certeza": "NO_VERIFICADO"
+    },
+    {
+      "archivo": "tweet_2103468653937098877_whisper.txt",
+      "autor": "Representante en la Asamblea General de la ONU (anónimo)",
+      "texto": "Do you know what one ton ballistic missile would do if it hit this place? It would obliterate the entire compound. In fact, two such missiles would obliterate the UN.",
+      "tema": "Amenaza de que un misil balístico de una tonelada destruiría la ONU",
+      "certeza": "NO_VERIFICADO"
+    },
+    {
+      "archivo": "DaniMayakovski_2102396835419541970.txt",
+      "autor": "DaniMayakovski (cuenta de X)",
+      "texto": "وجدوا الطيارون الإيرانيون أهدافا سهلة أمامهم بما في ذلك بغداد التي لا تبعد أكثر من 6 دقائق عن الحدود",
+      "tema": "Pilotos iraníes con objetivos fáciles incluida Bagdad a 6 minutos de la frontera",
+      "certeza": "NO_VERIFICADO"
+    }
+  ],
+  "archivos_sin_afirmaciones": [
+    {
+      "archivo": "tweet_2098733450358562923_whisper.txt",
+      "sin_afirmaciones": true,
+      "motivo": "Transcripción mínima/repetitiva ('Amiens, j'en ai marre'): audio mayormente inaudible"
+    }
+  ],
+  "eventos": [
+    {
+      "fecha": "2001-09-11",
+      "descripcion": "Atentados del 11-S; Bush leía a niños en un aula de Florida mientras la nación era atacada."
+    },
+    {
+      "fecha": "2001-09-13",
+      "descripcion": "George W. Bush invitó al embajador saudí, príncipe Bandar, a una cena privada en la Casa Blanca tras el 11-S."
+    },
+    {
+      "fecha": "2001 aprox.",
+      "descripcion": "Autorización estadounidense para que aviones sacaran de EEUU a familiares de Osama Bin Laden y otros saudíes (según la narración, ~142 saudíes incluidos ~24 Bin Laden)."
+    },
+    {
+      "fecha": "1935-09-15",
+      "descripcion": "Promulgación de las Leyes de Nuremberg; el relato las compara con la legislación israelí de registro de población."
+    },
+    {
+      "fecha": "2021-07-08",
+      "descripcion": "Panel de 11 jueces del Tribunal Supremo de Israel mantuvo la Ley Básica del Estado Nación por 10-1."
+    },
+    {
+      "fecha": "2024-11",
+      "descripcion": "La Corte Interamericana de Derechos Humanos condenó a Honduras por el caso de los garífunas de Cayos Cochinos (exclusión de administración, violación de derechos)."
+    },
+    {
+      "fecha": "2025 (finales)",
+      "descripcion": "Donald Trump indultó al expresidente de Honduras Juan Orlando Hernández (Honduras Gate); surgieron audios filtrados sobre el rol de Israel."
+    },
+    {
+      "fecha": "2025-01-20",
+      "descripcion": "Investidura de Donald Trump como presidente."
+    },
+    {
+      "fecha": "2025-02-04",
+      "descripcion": "Benjamin Netanyahu visitó la Casa Blanca, primera visita de un jefe de Estado, ocho días después de la investidura de Trump."
+    },
+    {
+      "fecha": "2026-06-23 / 2026-07-13",
+      "descripcion": "Israel desarraigó 2.550 olivos palestinos en Cisjordania, causando unos 11,7 millones de dólares en daños (reclamo relatado)."
+    },
+    {
+      "fecha": "2026-09-18",
+      "descripcion": "El gobernador de Guanajuato declaró públicamente que no hay autorización para construir un nuevo campo de golf en San Miguel de Allende."
+    },
+    {
+      "fecha": "2026-07",
+      "descripcion": "Apertura de la primera embajada de Israel en Eslovenia, que provocó protestas propalestinas y marcó un cambio frente al gobierno anterior."
+    },
+    {
+      "fecha": "2026 aprox.",
+      "descripcion": "Desalojo/despojo de garífunas en Cayos Cochinos, Honduras, vinculado a Ricardo Salinas Pliego (voces locales)."
+    },
+    {
+      "fecha": "2027-06",
+      "descripcion": "Elecciones en Sonora (México) monitoreadas por EEUU e Israel; se especula sobre presión para un gobernador afín al proyecto desalinizador."
+    }
+  ]
+}
